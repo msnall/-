@@ -1,0 +1,95 @@
+{
+  "status": "unreviewed machine transcript",
+  "detectedLanguage": "en",
+  "instructions": "Verify names, brands, product terms, numbers and claims against the audio. Token probabilities are not calibrated accuracy scores. No spelling was auto-corrected.",
+  "warnings": [
+    {
+      "index": 5,
+      "text": "biotic",
+      "startMs": 1250,
+      "endMs": 1630,
+      "confidence": 0.262024,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 13,
+      "text": "and",
+      "startMs": 3720,
+      "endMs": 4040,
+      "confidence": 0.467481,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 60,
+      "text": "I",
+      "startMs": 13680,
+      "endMs": 13720,
+      "confidence": 0.312975,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 63,
+      "text": "go",
+      "startMs": 14090,
+      "endMs": 14240,
+      "confidence": 0.295387,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 64,
+      "text": "the",
+      "startMs": 14240,
+      "endMs": 14320,
+      "confidence": 0.628072,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 73,
+      "text": "y'all.",
+      "startMs": 16580,
+      "endMs": 17160,
+      "confidence": 0.455823,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 80,
+      "text": "size",
+      "startMs": 18360,
+      "endMs": 18560,
+      "confidence": 0.390925,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 86,
+      "text": "has,",
+      "startMs": 20480,
+      "endMs": 20890,
+      "confidence": 0.285486,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 98,
+      "text": "day.",
+      "startMs": 24120,
+      "endMs": 24460,
+      "confidence": 0.596687,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 108,
+      "text": "so",
+      "startMs": 27000,
+      "endMs": 27120,
+      "confidence": 0.417064,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 111,
+      "text": "I'll",
+      "startMs": 28000,
+      "endMs": 28200,
+      "confidence": 0.477462,
+      "reason": "low token probability; human review needed"
+    }
+  ]
+}

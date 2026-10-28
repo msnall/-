@@ -1,0 +1,46 @@
+{
+  "revision": "bloom10-storyboard-r1",
+  "sourceSha256": "31bf76ef1375c072f53117d2379660d40973ed323d61037d34afc3786a8274c3",
+  "reviewDate": "2026-10-27",
+  "status": "storyboard-direction-accepted",
+  "source": "User submitted interactive storyboard review in this chat",
+  "reviews": [
+    {
+      "id": "b01",
+      "title": "体验开场",
+      "decision": "keep",
+      "notes": ""
+    },
+    {
+      "id": "b02",
+      "title": "独立包装",
+      "decision": "keep",
+      "notes": ""
+    },
+    {
+      "id": "b03",
+      "title": "解释粘瓶痛点",
+      "decision": "keep",
+      "notes": ""
+    },
+    {
+      "id": "b04",
+      "title": "链接引导与容器展示",
+      "decision": "keep",
+      "notes": ""
+    },
+    {
+      "id": "b05",
+      "title": "数量信息",
+      "decision": "keep",
+      "notes": ""
+    },
+    {
+      "id": "b06",
+      "title": "推荐结尾",
+      "decision": "keep",
+      "notes": ""
+    }
+  ],
+  "scope": "Keep approves storyboard graphic direction. Product quantity verification and final motion/audio checks remain pending."
+}

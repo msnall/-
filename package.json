@@ -27,6 +27,10 @@
   },
   "scripts": {
     "dev": "remotion studio",
+    "transcribe": "node scripts/transcribe.mjs",
+    "prepare:bloom10": "node scripts/prepare-bloom10-first-cut.mjs",
+    "render:bloom10": "remotion render src/index.ts Bloom10FirstCut out/bloom10-first-cut/Bloom10-first-cut-r1.mp4 --concurrency=2 --crf=18 --x264-preset=veryfast --disallow-parallel-encoding --offthreadvideo-cache-size-in-bytes=268435456",
+    "verify:bloom10": "node scripts/verify-bloom10-first-cut.mjs",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"

@@ -1,0 +1,16 @@
+{
+  "name": "packaging-label",
+  "producer": "HyperFrames 0.8.206",
+  "sourceProject": "hyperframes/packaging-label",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "frames": 60,
+  "durationMs": 2000,
+  "codec": "vp9",
+  "alpha": true,
+  "audio": false,
+  "labelRectangle": { "x": 110, "y": 220, "width": 760, "height": 154 },
+  "previewPlacement": { "x": 0, "y": -160 },
+  "integrationStatus": "awaiting user approval of effect; not yet integrated into full video"
+}

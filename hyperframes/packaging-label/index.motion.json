@@ -1,0 +1,7 @@
+{
+  "duration": 2,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#label-text", "bySec": 0.4 },
+    { "kind": "staysInFrame", "selector": "#label-motion" }
+  ]
+}

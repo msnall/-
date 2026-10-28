@@ -1,0 +1,121 @@
+{
+  "revision": "bloom10-storyboard-r1",
+  "sourceSha256": "31bf76ef1375c072f53117d2379660d40973ed323d61037d34afc3786a8274c3",
+  "fps": 30,
+  "totalFrames": 909,
+  "durationMs": 30278,
+  "editApproach": "First review retains source order and full duration. No final video has been edited.",
+  "palette": {
+    "ink": "#231b22",
+    "paper": "#fff8fb",
+    "pink": "#c95f8e"
+  },
+  "brandStatus": "Temporary package-inspired palette, not an approved brand sheet",
+  "sourcePlacement": {
+    "x": 43,
+    "y": 38,
+    "width": 842,
+    "height": 1498,
+    "note": "Inset full source to reserve caption space without covering face or package; pending user design acceptance"
+  },
+  "captionArea": {
+    "left": 90,
+    "right": 190,
+    "top": 1540,
+    "bottom": 1680,
+    "note": "1080x1920 proposal; inspect every shot and target platform UI before rendering"
+  },
+  "beats": [
+    {
+      "id": "b01",
+      "title": "体验开场",
+      "fromMs": 0,
+      "toMs": 7600,
+      "stillAt": 800,
+      "headline": "ONE WEEK IN",
+      "caption": "I've been taking these\nbiotic breast gummies",
+      "note": "保留真人建立信任。上方仅放小标题，不添加产品功效承诺。",
+      "graphic": "小标题淡入；面部不遮挡。",
+      "sound": "人声为主，配乐轻入。",
+      "layout": "top",
+      "fromFrame": 0,
+      "toFrame": 228
+    },
+    {
+      "id": "b02",
+      "title": "独立包装",
+      "fromMs": 7600,
+      "toMs": 10080,
+      "stillAt": 9000,
+      "headline": "INDIVIDUALLY WRAPPED",
+      "caption": "individually wrapped.",
+      "note": "在说 individually 的约 8.78 秒强调独立包装，配合原片产品展示。",
+      "graphic": "标签入场；HyperFrames 柔和光泽仅作为待验证方案。",
+      "sound": "轻微 pop，与标签落点同步。",
+      "layout": "middle",
+      "fromFrame": 228,
+      "toFrame": 303
+    },
+    {
+      "id": "b03",
+      "title": "解释粘瓶痛点",
+      "fromMs": 10080,
+      "toMs": 15190,
+      "stillAt": 12200,
+      "headline": "THE BOTTLE PROBLEM",
+      "caption": "to the side of the bottle.",
+      "note": "保留完整上下文，throw 已由用户明确确认。只用小标注，不制造不存在的前后对比。",
+      "graphic": "侧边短线标注；轻微镜头放大在成片阶段验证。",
+      "sound": "不覆盖口播，不对每个词加音效。",
+      "layout": "top",
+      "fromFrame": 303,
+      "toFrame": 456
+    },
+    {
+      "id": "b04",
+      "title": "链接引导与容器展示",
+      "fromMs": 15190,
+      "toMs": 19580,
+      "stillAt": 18400,
+      "headline": "A CLOSER LOOK",
+      "caption": "They come in a pretty\ngood size container,",
+      "note": "容器和包装保持完整可见。口播中有 link 引导；发布位置未确定，暂不画购物车箭头。",
+      "graphic": "简洁框线或标签，不遮挡包装文字。",
+      "sound": "可选一次轻滑动音。",
+      "layout": "top",
+      "fromFrame": 456,
+      "toFrame": 588
+    },
+    {
+      "id": "b05",
+      "title": "数量信息",
+      "fromMs": 19580,
+      "toMs": 27120,
+      "stillAt": 22300,
+      "headline": "30-DAY SUPPLY",
+      "caption": "30 days' worth,",
+      "note": "字幕忠实保留口播。30-DAY SUPPLY 大字图形暂标待核对，需与包装信息一致后再启用。",
+      "graphic": "数量卡片待确认；未确认时只保留字幕。",
+      "sound": "若启用卡片，仅一个柔和提示音。",
+      "layout": "middle",
+      "optional": true,
+      "fromFrame": 588,
+      "toFrame": 814
+    },
+    {
+      "id": "b06",
+      "title": "推荐结尾",
+      "fromMs": 27120,
+      "toMs": 30278,
+      "stillAt": 28800,
+      "headline": "SEE PRODUCT DETAILS",
+      "caption": "So I'll highly\nrecommend these to you.",
+      "note": "字幕合并重复 I'll，保留原声。结尾短文字作为行动引导；具体链接在发布时设置。",
+      "graphic": "小型结束提示，不制作无实际链接的按钮。",
+      "sound": "配乐自然收尾，避免截断推荐语。",
+      "layout": "top",
+      "fromFrame": 814,
+      "toFrame": 909
+    }
+  ]
+}

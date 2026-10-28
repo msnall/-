@@ -1,0 +1,17 @@
+{
+  "input": "F:\\VideoAutomation\\public\\recordings\\Bloom10\\Bloom10-达人素材.mp4",
+  "sourceSha256": "31bf76ef1375c072f53117d2379660d40973ed323d61037d34afc3786a8274c3",
+  "sourceBytes": 40260555,
+  "sourceModifiedAt": "2026-10-26T01:49:02.010Z",
+  "model": "F:\\VideoAutomation\\bin\\whisper.cpp\\models\\ggml-small.en.bin",
+  "detectedLanguage": "en",
+  "requestedLanguage": "en",
+  "durationMs": 30278,
+  "audioOffsetMs": 0,
+  "runDirectory": "F:\\VideoAutomation\\out\\transcriptions\\Bloom10-达人素材\\2026-10-27T03-38-57-555Z",
+  "unitCount": 115,
+  "cueCount": 14,
+  "timing": "Whisper estimated short segments; not forced alignment or guaranteed linguistic words. Chinese can contain characters/tokens.",
+  "validation": "finite integer milliseconds, ordered non-overlapping units within source duration",
+  "humanReviewRequired": true
+}

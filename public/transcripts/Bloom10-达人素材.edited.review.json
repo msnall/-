@@ -1,0 +1,27 @@
+{
+  "sourceSha256": "31bf76ef1375c072f53117d2379660d40973ed323d61037d34afc3786a8274c3",
+  "status": "editorial revision ready for storyboard acceptance",
+  "changes": [
+    {
+      "startMs": 14090,
+      "original": "go",
+      "revised": "throw",
+      "evidence": "User explicitly confirmed throw the bottle away in this chat"
+    },
+    {
+      "startMs": 27120,
+      "endMs": 28200,
+      "original": "I'll I'll",
+      "revised": "I'll",
+      "evidence": "Caption readability cleanup; both timings combined, source audio not cut"
+    },
+    {
+      "original": "automatic phrase breaks",
+      "revised": "18 readable cues, punctuation and at most two lines",
+      "evidence": "Editorial punctuation and line wrapping; original word times preserved except combined stutter"
+    }
+  ],
+  "retained": "gonna, y'all and other spoken forms retained; highly comes from small.en and was accepted for this revision, not separately certified by human listening",
+  "namePolicy": "Keep spoken biotic in captions. Do not replace it with BLOOM10 or a guessed formal brand; label text visible on the package is a separate visual reference.",
+  "timing": "Whisper estimated timings, rounded to nearest 30fps frame for cues; not forced alignment"
+}

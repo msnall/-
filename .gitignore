@@ -4,5 +4,15 @@ build
 .DS_Store
 .env
 
+# Local transcription tool checkout, compiled binaries and downloaded models.
+/bin/whisper.cpp/
+
+# Reproducible working media and generated audio stems.
+/public/derived/
+
 # Ignore the output video from Git but not videos you import into src/.
 out
+
+# Original talent footage stays outside Git; scripts verify it by SHA-256.
+/public/recordings/**/*.mp4
+/public/recordings/**/*.mov
