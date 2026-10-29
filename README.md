@@ -108,10 +108,24 @@ small.en 模型已下载并通过官方 SHA-1 校验。当前 public/transcripts
 
 Composition：Bloom10FirstCut。主画面、18条修订字幕、已验收的HyperFrames标签与声音已接入。视频目标909帧、30fps、1080×1920。查看 [动态初剪说明](docs/bloom10-first-cut-r1.md)。当前工作样式见 brand/BRAND.md。
 
-```powershell
-npm.cmd run prepare:bloom10
-npm.cmd run render:bloom10 -- --browser-executable="C:\Program Files\Google\Chrome\Application\chrome.exe"
-npm.cmd run verify:bloom10
-```
+r1 当时由硬编码组件 Bloom10FirstCut 渲染，代码保存在 Git 标签 bloom10-r1。现在用数据驱动引擎重现，见下一节。
 
 HyperFrames标签预览已验收，其独立3017预览服务在进入整片阶段后已停止；可按该项目README重新启动。Remotion整片预览使用3000端口。
+
+## 数据驱动剪辑引擎（Phase 1）
+
+每条视频由 `projects/<id>/edit-plan.json` 描述，渲染统一走 Remotion 组合 `EditPlan`。改标题、颜色、字幕样式、镜头缩放、产品图、跳剪只改配置。完整说明：[edit-plan 配置说明](docs/edit-plan.md)。
+
+```powershell
+Set-Location F:\VideoAutomation
+npm.cmd run prepare:bloom10          # 仅 Bloom10：生成 public/derived/bloom10 的工作帧与混音（已存在时无需重跑）
+npm.cmd run plan:check -- projects/bloom10/edit-plan.json
+npm.cmd run plan:render -- projects/bloom10/edit-plan.json out/phase1-test/bloom10-regression.mp4
+npm.cmd run plan:verify -- projects/bloom10/edit-plan.json out/phase1-test/bloom10-regression.mp4
+npm.cmd run plan:compare -- out/bloom10-first-cut/Bloom10-first-cut-r1.mp4 out/phase1-test/bloom10-regression.mp4
+```
+
+- `projects/bloom10/edit-plan.json`：重现 r1。回归结果：输出 MP4 与 r1 整个文件 SHA-256 一致（909 帧像素一致、解码音频一致）。Bloom10 的混音已在 prepare 中标准化，配置里关闭了渲染后响度处理。
+- `projects/bloom10-demo/edit-plan.json`：同一原片、只改配置得到的另一版（全屏布局、配色、大写字幕带底色与强调词、推近镜头、跳剪、真实产品图卡片），直接读取原视频，无需预抽帧。
+- 渲染后默认把整条音频标准化到 -16 LUFS / -1.5 dBTP（视频流不重新编码），可在 `audio.loudness` 配置或关闭。
+- `plan:render` 默认拒绝覆盖已有文件、拒绝写入 public/。prepare 日志改写到 out/bloom10-prepare/，不再写进 r1 交付目录。

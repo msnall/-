@@ -39,12 +39,14 @@ voice.wav、music.wav、effects.wav 是可独立调整的音轨，mix.wav 是当
 
 ## 复现
 
+r1 的原始渲染命令（render:bloom10 / verify:bloom10）和硬编码组件保存在 Git 标签 bloom10-r1。Phase 1 起改用 edit-plan 引擎，结果与 r1 逐帧一致：
+
 ```powershell
 Set-Location F:\VideoAutomation
 npm.cmd run prepare:bloom10
 npm.cmd run lint
-npm.cmd run render:bloom10 -- --browser-executable="C:\Program Files\Google\Chrome\Application\chrome.exe"
-npm.cmd run verify:bloom10
+npm.cmd run plan:render -- projects/bloom10/edit-plan.json out/bloom10/bloom10-rerender.mp4
+npm.cmd run plan:verify -- projects/bloom10/edit-plan.json out/bloom10/bloom10-rerender.mp4
 ```
 
 prepare 使用已审原片的SHA-256确认素材身份，生成909张842×1498工作画面，保留每帧对应关系。Remotion读取这些画面合成字幕与图形，减少重复视频解码。混合音轨独立加载，避免源视频声音重复播放。generated工作媒体在public/derived/，已从Git跟踪范围排除，可由脚本重建。

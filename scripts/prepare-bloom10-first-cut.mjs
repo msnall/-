@@ -8,7 +8,8 @@ import { fileURLToPath } from "node:url";
 const exec = promisify(execFile);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const derived = path.join(root, "public/derived/bloom10");
-const reportDir = path.join(root, "out/bloom10-first-cut");
+// Logs go next to, not into, the reviewed r1 deliverable folder.
+const reportDir = path.join(root, "out/bloom10-prepare");
 const source = path.join(root, "public/recordings/Bloom10/Bloom10-达人素材.mp4");
 const duration = 30.3;
 const rate = 48000;

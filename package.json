@@ -15,7 +15,8 @@
     "@remotion/cli": "4.0.539",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "remotion": "4.0.539"
+    "remotion": "4.0.539",
+    "zod": "4.6.7"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.539",
@@ -29,8 +30,10 @@
     "dev": "remotion studio",
     "transcribe": "node scripts/transcribe.mjs",
     "prepare:bloom10": "node scripts/prepare-bloom10-first-cut.mjs",
-    "render:bloom10": "remotion render src/index.ts Bloom10FirstCut out/bloom10-first-cut/Bloom10-first-cut-r1.mp4 --concurrency=2 --crf=18 --x264-preset=veryfast --disallow-parallel-encoding --offthreadvideo-cache-size-in-bytes=268435456",
-    "verify:bloom10": "node scripts/verify-bloom10-first-cut.mjs",
+    "plan:check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/edit-plan.mjs",
+    "plan:render": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/render-plan.mjs",
+    "plan:verify": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/verify-render.mjs",
+    "plan:compare": "node scripts/compare-renders.mjs",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"
