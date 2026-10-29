@@ -1,0 +1,130 @@
+{
+  "id": "clean-pink@1",
+  "name": "清爽粉",
+  "description": "满屏画面，白底粉色强调的卡片，大写黄色高亮字幕。适合美妆、保健品等女性向产品。",
+  "theme": {
+    "background": "#101820",
+    "textColor": "#ffffff",
+    "fontFamily": "\"BloomInter\", sans-serif",
+    "fonts": [
+      {
+        "family": "BloomInter",
+        "src": "fonts/Inter-700.woff2",
+        "weight": 700
+      }
+    ]
+  },
+  "layout": {
+    "box": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920
+    },
+    "borderRadius": 0,
+    "grade": {
+      "brightness": 1.02,
+      "contrast": 1.06,
+      "saturate": 1.1
+    }
+  },
+  "captions": {
+    "box": {
+      "x": 70,
+      "y": 1330,
+      "width": 860,
+      "height": 190
+    },
+    "fontSize": 66,
+    "lineHeight": 80,
+    "fontWeight": 700,
+    "color": "#ffffff",
+    "activeColor": "#ffd23f",
+    "background": "#101820b3",
+    "textTransform": "uppercase",
+    "singleLineMaxChars": 20
+  },
+  "parts": {
+    "hookCard": {
+      "top": {
+        "x": 90,
+        "y": 170,
+        "width": 820,
+        "fontSize": 76,
+        "lineHeight": 1.15,
+        "background": "#ffffff",
+        "color": "#101820",
+        "accentColor": "#ff7ab6",
+        "accentWidth": 14,
+        "borderRadius": 18,
+        "paddingX": 36,
+        "paddingY": 26,
+        "textTransform": "uppercase",
+        "enter": {
+          "type": "fade-up",
+          "fadeFrames": 6,
+          "riseFrames": 8,
+          "risePx": 30
+        }
+      },
+      "low": {
+        "x": 90,
+        "y": 1000,
+        "width": 820,
+        "fontSize": 76,
+        "lineHeight": 1.15,
+        "background": "#ffffff",
+        "color": "#101820",
+        "accentColor": "#ff7ab6",
+        "accentWidth": 14,
+        "borderRadius": 18,
+        "paddingX": 36,
+        "paddingY": 26,
+        "textTransform": "uppercase",
+        "enter": {
+          "type": "fade-up",
+          "fadeFrames": 6,
+          "riseFrames": 8,
+          "risePx": 30
+        }
+      }
+    },
+    "pip": {
+      "left": {
+        "x": 50,
+        "y": 260,
+        "width": 380,
+        "height": 628,
+        "fit": "cover",
+        "background": "#ffffff",
+        "padding": 10,
+        "borderRadius": 28,
+        "shadow": true
+      },
+      "left-low": {
+        "x": 50,
+        "y": 640,
+        "width": 380,
+        "height": 628,
+        "fit": "cover",
+        "background": "#ffffff",
+        "padding": 10,
+        "borderRadius": 28,
+        "shadow": true
+      }
+    },
+    "proof": {
+      "low": {
+        "x": 90,
+        "y": 880,
+        "width": 820,
+        "height": 400,
+        "fit": "contain",
+        "background": "#ffffff",
+        "padding": 14,
+        "borderRadius": 24,
+        "shadow": true
+      }
+    }
+  }
+}

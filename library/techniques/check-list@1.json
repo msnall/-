@@ -1,0 +1,22 @@
+{
+  "id": "check-list@1",
+  "name": "卖点打勾清单",
+  "category": "benefit",
+  "status": "needs-effect",
+  "blockedBy": [
+    "check-list@1 效果"
+  ],
+  "source": [
+    "tk-common"
+  ],
+  "description": "口播连续说出 2–4 个卖点时，屏幕上的清单逐条打勾出现，每条对应说出该卖点的词。",
+  "when": {
+    "roles": [
+      "benefit",
+      "product"
+    ],
+    "position": "any"
+  },
+  "scope": "beat",
+  "rules": []
+}

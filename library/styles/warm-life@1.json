@@ -1,0 +1,127 @@
+{
+  "id": "warm-life@1",
+  "name": "暖色生活感",
+  "description": "画框式布局（米色底、圆角画面），暖色调，奶油色卡片。适合家居、日常好物，显得亲切。",
+  "theme": {
+    "background": "#f6efe6",
+    "textColor": "#2b211b",
+    "fontFamily": "\"BloomInter\", sans-serif",
+    "fonts": [
+      {
+        "family": "BloomInter",
+        "src": "fonts/Inter-700.woff2",
+        "weight": 700
+      }
+    ]
+  },
+  "layout": {
+    "box": {
+      "x": 40,
+      "y": 40,
+      "width": 1000,
+      "height": 1380
+    },
+    "borderRadius": 28,
+    "grade": {
+      "brightness": 1.04,
+      "contrast": 1.02,
+      "saturate": 1.12
+    }
+  },
+  "captions": {
+    "box": {
+      "x": 70,
+      "y": 1440,
+      "width": 840,
+      "height": 150
+    },
+    "fontSize": 56,
+    "lineHeight": 68,
+    "fontWeight": 700,
+    "color": "#2b211b",
+    "activeColor": "#c2562b",
+    "textTransform": "none",
+    "singleLineMaxChars": 24
+  },
+  "parts": {
+    "hookCard": {
+      "top": {
+        "x": 90,
+        "y": 170,
+        "width": 820,
+        "fontSize": 70,
+        "lineHeight": 1.15,
+        "background": "#fff8ee",
+        "color": "#2b211b",
+        "accentColor": "#c2562b",
+        "accentWidth": 12,
+        "borderRadius": 24,
+        "paddingX": 36,
+        "paddingY": 24,
+        "enter": {
+          "type": "fade-up",
+          "fadeFrames": 8,
+          "riseFrames": 10,
+          "risePx": 24
+        }
+      },
+      "low": {
+        "x": 90,
+        "y": 1000,
+        "width": 820,
+        "fontSize": 70,
+        "lineHeight": 1.15,
+        "background": "#fff8ee",
+        "color": "#2b211b",
+        "accentColor": "#c2562b",
+        "accentWidth": 12,
+        "borderRadius": 24,
+        "paddingX": 36,
+        "paddingY": 24,
+        "enter": {
+          "type": "fade-up",
+          "fadeFrames": 8,
+          "riseFrames": 10,
+          "risePx": 24
+        }
+      }
+    },
+    "pip": {
+      "left": {
+        "x": 70,
+        "y": 260,
+        "width": 360,
+        "height": 600,
+        "fit": "cover",
+        "background": "#fff8ee",
+        "padding": 10,
+        "borderRadius": 26,
+        "shadow": true
+      },
+      "left-low": {
+        "x": 70,
+        "y": 640,
+        "width": 360,
+        "height": 600,
+        "fit": "cover",
+        "background": "#fff8ee",
+        "padding": 10,
+        "borderRadius": 26,
+        "shadow": true
+      }
+    },
+    "proof": {
+      "low": {
+        "x": 90,
+        "y": 880,
+        "width": 820,
+        "height": 400,
+        "fit": "contain",
+        "background": "#fff8ee",
+        "padding": 14,
+        "borderRadius": 24,
+        "shadow": true
+      }
+    }
+  }
+}

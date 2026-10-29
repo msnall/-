@@ -24,6 +24,11 @@ const definitions = {
       node("scripts/render-stills.mjs", id, `--frames=${params.frames.join(",")}`, ...(params.afterFrames ? [`--after-frames=${params.afterFrames.join(",")}`] : []), ...(params.proposal ? [`--proposal=${params.proposal}`] : [])),
     ],
   },
+  keyframes: {
+    params: z.object({ round: z.string().regex(/^r[1-9]\d*$/), option: z.string().regex(/^option-[a-z]$/) }),
+    commands: async (id, params) => [node("scripts/render-stills.mjs", id, `--round=${params.round}`, `--option=${params.option}`)],
+  },
+  candidates: { params: z.object({ every: z.number().positive().default(1) }), commands: async (id, params) => [node("scripts/find-candidates.mjs", id, "--sheet", `--every=${params.every}`)] },
   // Render the current revision to out/desk/<id>/<id>-r<rev>.mp4, then QC it.
   render: {
     params: z.object({}),
@@ -77,7 +82,7 @@ export async function createJob(project, type, body = {}) {
     attempts: 0,
     exitCode: null,
     log: `projects/${project}/logs/${id}.log`,
-    inputs: { editPlanSha256: await sha256File(projectFile(project, "edit-plan.json")) },
+    inputs: { editPlanSha256: await sha256File(projectFile(project, "edit-plan.json")).catch(() => null) },
     tools: await toolVersions(),
   };
   await save(record);

@@ -1,0 +1,113 @@
+{
+  "id": "option-c",
+  "round": "r1",
+  "title": "产品特写开场",
+  "style": "warm-life@1",
+  "summary": "画框式暖色布局。一开口就推近到产品并弹出产品正面图；中段讲独立包装和痛点；结尾放一张真实买家评论截图再推荐。需要你提供真实评论截图。",
+  "rows": [
+    {
+      "beat": "b1",
+      "keep": true,
+      "onScreen": "【开场】说到 gummies 时推近 1.2 倍，左下弹出产品正面图",
+      "cards": [
+        {
+          "card": "keyword-punch@1",
+          "slots": {
+            "word": 6,
+            "zoom": 1.2
+          }
+        },
+        {
+          "card": "product-pip@1",
+          "slots": {
+            "word": 5,
+            "image": "product-front",
+            "placement": "left-low"
+          }
+        }
+      ]
+    },
+    {
+      "beat": "b2",
+      "keep": true,
+      "onScreen": "说到 individually 时推近",
+      "cards": [
+        {
+          "card": "keyword-punch@1",
+          "slots": {
+            "word": 34,
+            "zoom": 1.12
+          }
+        }
+      ]
+    },
+    {
+      "beat": "b3",
+      "keep": true,
+      "onScreen": "字幕",
+      "cards": []
+    },
+    {
+      "beat": "b4",
+      "keep": true,
+      "onScreen": "字幕",
+      "cards": []
+    },
+    {
+      "beat": "b5",
+      "keep": true,
+      "onScreen": "字幕",
+      "cards": []
+    },
+    {
+      "beat": "b6",
+      "keep": false,
+      "reason": "含『30 天用量』『每天两颗』，尚无包装或商品页依据"
+    },
+    {
+      "beat": "b7",
+      "keep": true,
+      "onScreen": "说到 recommend 时下方淡入一张真实买家评论截图",
+      "cards": [
+        {
+          "card": "proof-card@1",
+          "slots": {
+            "word": 110,
+            "image": "review-screenshot",
+            "placement": "low"
+          }
+        }
+      ]
+    }
+  ],
+  "global": [],
+  "createdBy": "claude",
+  "createdAt": "2026-10-29T08:30:00.000Z",
+  "keyframes": [
+    {
+      "frame": 12,
+      "file": "storyboard/r1/option-c-k0012.jpg",
+      "label": "开场"
+    },
+    {
+      "frame": 61,
+      "file": "storyboard/r1/option-c-k0061.jpg",
+      "label": "product-pip-b1"
+    },
+    {
+      "frame": 588,
+      "file": "storyboard/r1/option-c-k0588.jpg",
+      "label": "剪辑点 s-b7"
+    },
+    {
+      "frame": 637,
+      "file": "storyboard/r1/option-c-k0637.jpg",
+      "label": "proof-card-b7"
+    },
+    {
+      "frame": 643,
+      "file": "storyboard/r1/option-c-k0643.jpg",
+      "label": "结尾"
+    }
+  ]
+}

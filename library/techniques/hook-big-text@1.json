@@ -1,0 +1,29 @@
+{
+  "id": "hook-big-text@1",
+  "name": "开头大字钩子",
+  "category": "hook",
+  "status": "ready",
+  "source": ["tk-common", "pdf#2"],
+  "description": "前 2–3 秒用大字打出钩子句（痛点问句或结果句），从下方淡入，可配合关键词推近。第一批用 title-card@1 的淡入，title-card@2 的弹入动画在 2b 加入。",
+  "when": { "roles": ["hook", "pain", "benefit", "intro", "product"], "position": "opening", "minDurationMs": 1500, "note": "钩子文案必须来自口播内容的如实概括，例如痛点句改写成问句" },
+  "slots": {
+    "text": { "type": "text", "label": "钩子文案（英文，大写显示）" },
+    "placement": { "type": "choice", "label": "位置", "options": ["top", "low"], "default": "top" }
+  },
+  "template": {
+    "overlays": [
+      { "id": "$id", "effect": "title-card@1", "from": { "segment": "$segment", "edge": "start" }, "durationFrames": 75, "layer": "below-captions",
+        "props": { "$merge": "@style.hookCard.$placement", "text": "$text" } }
+    ]
+  },
+  "tunables": { "placement": { "label": "位置", "options": ["top", "low"] } },
+  "rules": [
+    { "check": "maxPerVideo", "value": 1 },
+    { "check": "maxChars", "slot": "text", "value": 40 },
+    { "check": "opening" },
+    { "check": "noFaceOverlap", "max": 0.1 },
+    { "check": "safeZone" },
+    { "text": "文案里出现的产品事实必须列在 claims 里并已核实；不写口播里没有的承诺" },
+    { "text": "一行最好，最多两行；问句比陈述句更像钩子" }
+  ]
+}

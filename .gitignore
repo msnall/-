@@ -16,6 +16,12 @@ out
 # Review desk: preview proxies and their machine-specific record, job records
 # and logs are regenerated locally.
 /public/projects/*/proxy/
+# Uploaded video/audio assets stay outside Git like the recordings
+# (assets.json records their SHA-256); stills are small and tracked.
+/public/projects/*/assets/*.mp4
+/public/projects/*/assets/*.mov
+/public/projects/*/assets/*.wav
+/public/projects/*/assets/*.mp3
 /projects/*/analysis/proxies.json
 /projects/*/jobs/
 /projects/*/logs/

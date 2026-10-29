@@ -1,0 +1,22 @@
+{
+  "id": "cta-button@1",
+  "name": "购物车行动按钮",
+  "category": "cta",
+  "status": "needs-effect",
+  "blockedBy": [
+    "cta-button@1 效果"
+  ],
+  "source": [
+    "tk-common"
+  ],
+  "description": "结尾出现『点击下方链接』按钮和购物车图标（通用矢量图形），轻微跳动，配合口播里的行动句。",
+  "when": {
+    "roles": [
+      "cta",
+      "offer"
+    ],
+    "position": "closing"
+  },
+  "scope": "beat",
+  "rules": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "product-pip@1",
+  "name": "产品画中画",
+  "category": "benefit",
+  "status": "ready",
+  "source": ["tk-common"],
+  "description": "说到产品或卖点时，真实产品图在不遮挡人脸的位置弹出约 2 秒。",
+  "when": { "roles": ["benefit", "product", "intro", "pain"], "position": "any" },
+  "slots": {
+    "word": { "type": "word", "label": "在哪个词出现（词序号）" },
+    "image": { "type": "asset", "label": "产品图（assets.json 里的 id）" },
+    "placement": { "type": "choice", "label": "位置", "options": ["left", "left-low"], "default": "left" }
+  },
+  "needs": [
+    { "slot": "image", "kind": "image", "label": "产品正面图", "accept": "真实产品，标签文字可读，背景干净，不含人脸", "fallback": "candidate-from-footage",
+      "shotRequest": { "subject": "产品正面", "framing": "竖拍，正面平视，产品占画面 70%", "background": "浅色纯色", "duration": "静态照片即可", "notes": "标签完整、无反光" } }
+  ],
+  "template": {
+    "overlays": [
+      { "id": "$id", "effect": "image-card@1", "from": { "word": "$word", "expect": "$expect" }, "durationFrames": 66, "layer": "below-captions",
+        "props": { "$merge": "@style.pip.$placement", "asset": "$image" } }
+    ]
+  },
+  "tunables": { "placement": { "label": "位置", "options": ["left", "left-low"] } },
+  "rules": [
+    { "check": "maxPerVideo", "value": 2 },
+    { "check": "noFaceOverlap", "max": 0.1 },
+    { "check": "safeZone" },
+    { "text": "只用真实产品图，不用效果图或别家产品" }
+  ]
+}

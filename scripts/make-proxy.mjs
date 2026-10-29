@@ -10,14 +10,15 @@
 import { mkdir, rename, rm, stat } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { imageSequenceFile, parseEditPlan } from "../src/engine/load.ts";
+import { imageSequenceFile } from "../src/engine/load.ts";
 import { probe, publicDir, relative, run } from "./lib/media.mjs";
 import { projectFile, projectIdFrom, readJson, writeJson } from "./lib/storage.mjs";
+import { footageAssets } from "./lib/storyboard-files.mjs";
 
 const SHORT_SIDE = 540;
 
 export async function makeProxies(projectId, { force = false, log = console.log } = {}) {
-  const plan = parseEditPlan(await readJson(projectFile(projectId, "edit-plan.json")));
+  const footage = await footageAssets(projectId);
   const recordFile = projectFile(projectId, "analysis/proxies.json");
   const record = await readJson(recordFile, { version: 1, assets: {} });
   const { stdout: ffmpegVersion } = await run("ffmpeg", ["-hide_banner", "-version"]);
@@ -26,8 +27,7 @@ export async function makeProxies(projectId, { force = false, log = console.log 
 
   // Image sequences get a proxy too, so the browser streams one small video
   // instead of hundreds of full-size JPEGs.
-  for (const id of new Set(plan.segments.map((segment) => segment.asset))) {
-    const asset = plan.assets[id];
+  for (const [id, asset] of Object.entries(footage)) {
     const isSequence = asset.type === "imageSequence";
     const source = path.join(publicDir, isSequence ? imageSequenceFile(asset.dir, asset.pattern, 0) : asset.path);
     const input = isSequence ? ["-framerate", String(asset.fps), "-start_number", "0", "-i", path.join(publicDir, asset.dir, asset.pattern)] : ["-i", source];

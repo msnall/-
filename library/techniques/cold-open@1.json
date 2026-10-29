@@ -1,0 +1,14 @@
+{
+  "id": "cold-open@1",
+  "name": "金句前置",
+  "category": "hook",
+  "status": "ready",
+  "source": ["tk-common"],
+  "description": "把最有冲击力的一段（痛点、结果、惊讶的反应）挪到视频最开头，后面再按原顺序讲。只改段落顺序，不需要新效果。",
+  "when": { "roles": ["pain", "benefit", "proof", "hook"], "position": "opening", "minDurationMs": 1500, "note": "被挪到开头的那段必须能单独听懂，不依赖前文（没有 'and then', 'so' 开头的残句）" },
+  "template": { "moveBeatFirst": true },
+  "rules": [
+    { "check": "maxPerVideo", "value": 1 },
+    { "text": "挪走后，原位置前后两段要能自然衔接；不能自然衔接就不用这张卡" }
+  ]
+}

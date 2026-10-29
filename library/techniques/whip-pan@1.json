@@ -1,0 +1,29 @@
+{
+  "id": "whip-pan@1",
+  "name": "快甩转场",
+  "category": "transition",
+  "status": "needs-effect",
+  "blockedBy": [
+    "whip-pan@1 转场效果（段落交界处同时渲染两段）"
+  ],
+  "source": [
+    "pdf#10"
+  ],
+  "description": "前一段最后 6 帧左移 8% 并模糊，后一段从右 8% 处模糊滑入、6 帧内落定，像一次快速甩镜。",
+  "when": {
+    "roles": [
+      "hook",
+      "intro",
+      "pain",
+      "benefit",
+      "proof",
+      "product",
+      "dose",
+      "offer",
+      "cta"
+    ],
+    "position": "any"
+  },
+  "scope": "beat",
+  "rules": []
+}

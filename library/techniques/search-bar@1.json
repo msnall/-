@@ -1,0 +1,24 @@
+{
+  "id": "search-bar@1",
+  "name": "搜索框打字钩子",
+  "category": "hook",
+  "status": "needs-effect",
+  "blockedBy": [
+    "search-bar@1 效果"
+  ],
+  "source": [
+    "pdf#6",
+    "tk-common"
+  ],
+  "description": "通用样式的搜索框里逐字打出搜索词（如 gummies that actually work），然后切到口播。不模仿 TikTok 的界面和标志。",
+  "when": {
+    "roles": [
+      "hook",
+      "intro",
+      "pain"
+    ],
+    "position": "opening"
+  },
+  "scope": "beat",
+  "rules": []
+}

@@ -7,7 +7,11 @@ TikTok 电商竖屏视频的自动剪辑系统。引擎是 Remotion + FFmpeg + w
 1. 先读 `projects/<id>/status.json`，确认当前阶段和轮次。不要依赖对话记录，所有交接都在文件里。
 2. 按阶段使用对应的 Skill：
    - `video-workflow`：开始或继续一条视频；
+   - `asset-prep`：新素材，或者处于素材准备阶段（项目文件、段落角色、候选帧、产品事实、补拍清单）；
+   - `storyboard`：段落角色确认后出方案（用技巧卡片组合 3 套方案）；
    - `timeline-review`：用户说"看我的意见"时使用。
+
+技巧库在 `library/`，包括卡片、风格包和审美规则，设计见 `docs/storyboard-desk-design.md`。只有 `status: ready` 的卡片可以放进方案；审美规则只有用户批准后才生效。
 
 ## 阶段与闸门
 
@@ -47,6 +51,9 @@ npm run desk                                  # 构建并启动审阅台 http://
 npm run desk:proxy -- <id>                    # 540p 预览代理
 npm run desk:faces -- <id>                    # 人脸检测 -> analysis/faces.json
 npm run desk:stills -- <id> --frames=a,b [--proposal=p-NNNN]
+npm run desk:stills -- <id> --round=r1 --option=option-a   # 方案关键帧
+npm run desk:compile -- <id> r1 --all                        # 编译、检查方案
+npm run desk:candidates -- <id> --sheet | --extract=<帧> --as=<素材id> --crop=x,y,w,h
 npm run plan:check -- projects/<id>/edit-plan.json   # 校验，并给出人脸和安全区警告
 npm run plan:render -- projects/<id>/edit-plan.json out/<name>.mp4
 npm run plan:verify -- projects/<id>/edit-plan.json out/<name>.mp4

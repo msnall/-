@@ -7,13 +7,18 @@
 // the only writer of project files apart from Claude writing proposals.
 import { createServer } from "node:http";
 import path from "node:path";
+import { loadLayoutContext } from "../../scripts/lib/layout-context.mjs";
 import { root } from "../../scripts/lib/media.mjs";
 import { listProjects, NotFound, projectFile } from "../../scripts/lib/storage.mjs";
 import { badRequest, HttpError } from "./errors.mjs";
 import { emit, subscribe, watchProjects } from "./events.mjs";
 import { createJob, listJobs, readJob, readJobLog, recoverJobs } from "./jobs.mjs";
-import { mediaFile, publicFile, segmentThumb, sendFile, waveform } from "./media.mjs";
+import { footageThumb, mediaFile, publicFile, segmentThumb, sendFile, waveform } from "./media.mjs";
 import * as projects from "./projects.mjs";
+import * as storyboard from "./storyboard.mjs";
+
+// Validated project id (throws NotFound otherwise) for paths outside projects/.
+const projectDirName = (id) => path.basename(projectFile(id));
 
 const port = Number(process.argv.find((arg) => arg.startsWith("--port="))?.slice(7) ?? process.env.DESK_PORT ?? 4310);
 const uiDir = path.join(root, "out/desk-ui");
@@ -51,14 +56,35 @@ const ifMatch = (request) => {
 
 // [method, pattern, handler(params, request, response) -> body | undefined]
 const routes = [
-  ["GET", /^\/api\/projects$/, async () => {
-    const ids = await listProjects();
-    return Promise.all(ids.map(async (id) => {
-      const { plan, revision } = await projects.readPlan(id);
-      const status = await projects.readStatus(id);
-      return { id, revision, stage: status.stage, title: plan.meta?.title ?? id };
-    }));
+  ["GET", /^\/api\/projects$/, async () => Promise.all((await listProjects()).map((id) => storyboard.readOverview(id)))],
+  ["GET", /^\/api\/projects\/([^/]+)\/overview$/, ([id]) => storyboard.readOverview(id)],
+  ["GET", /^\/api\/library$/, () => storyboard.readLibrary()],
+  ["GET", /^\/api\/projects\/([^/]+)\/layout-context$/, async ([id]) => {
+    const context = await loadLayoutContext(projectFile(id), { segments: [] });
+    return { faces: context.faces, overrides: context.overrides, safeZones: context.safeZones };
   }],
+  ["GET", /^\/api\/projects\/([^/]+)\/assets$/, ([id]) => storyboard.readAssets(id)],
+  ["POST", /^\/api\/projects\/([^/]+)\/assets\/([^/]+)\/approve$/, async ([id, asset], request) => storyboard.approveCandidate(id, asset, await readBody(request))],
+  ["POST", /^\/api\/projects\/([^/]+)\/assets\/([^/]+)\/reject$/, async ([id, asset], request) => storyboard.rejectCandidate(id, asset, await readBody(request))],
+  ["POST", /^\/api\/projects\/([^/]+)\/assets\/([^/]+)\/reset$/, ([id, asset]) => storyboard.resetAsset(id, asset)],
+  ["POST", /^\/api\/projects\/([^/]+)\/assets\/([^/]+)\/upload$/, ([id, asset], request) => storyboard.uploadAsset(id, asset, request, new URL(request.url, "http://x").searchParams.get("name"))],
+  ["PUT", /^\/api\/projects\/([^/]+)\/claims\/([^/]+)$/, async ([id, claim], request) => storyboard.updateClaim(id, claim, await readBody(request))],
+  ["GET", /^\/api\/projects\/([^/]+)\/beat-times$/, ([id]) => storyboard.beatTimes(id)],
+  ["GET", /^\/api\/projects\/([^/]+)\/shotlist$/, ([id]) => storyboard.shotList(id)],
+  ["PUT", /^\/api\/projects\/([^/]+)\/beats$/, async ([id], request) => storyboard.saveBeats(id, await readBody(request))],
+  ["POST", /^\/api\/projects\/([^/]+)\/beats\/confirm$/, async ([id], request) => storyboard.saveBeats(id, await readBody(request), { confirm: true })],
+  ["GET", /^\/api\/projects\/([^/]+)\/thumbs\/at\/([^/]+)\/(\d+)$/, async ([id, asset, ms], request, response) => sendFile(request, response, await footageThumb(id, asset, Number(ms)), { cache: "max-age=3600" })],
+  ["GET", /^\/api\/projects\/([^/]+)\/storyboard\/([^/]+)$/, ([id, round]) => storyboard.readRound(id, round)],
+  ["POST", /^\/api\/projects\/([^/]+)\/storyboard\/([^/]+)\/(option-[a-z])\/compile$/, async ([id, round, option], request) => storyboard.compilePreview(id, round, option, await readBody(request))],
+  ["PUT", /^\/api\/projects\/([^/]+)\/storyboard\/([^/]+)\/selection$/, async ([id, round], request) => storyboard.saveSelection(id, round, await readBody(request))],
+  ["POST", /^\/api\/projects\/([^/]+)\/storyboard\/([^/]+)\/confirm$/, ([id, round]) => storyboard.confirmSelection(id, round)],
+  ["GET", /^\/api\/projects\/([^/]+)\/candidate-sheets$/, async ([id]) => {
+    const { readdir } = await import("node:fs/promises");
+    const names = await readdir(path.join(root, "out/desk-cache", projectDirName(id), "candidates")).catch(() => []);
+    return names.filter((name) => /^sheet-\d+\.jpg$/.test(name)).sort();
+  }],
+  ["GET", /^\/api\/projects\/([^/]+)\/candidate-sheets\/(sheet-\d+\.jpg)$/, ([id, name], request, response) => sendFile(request, response, path.join(root, "out/desk-cache", projectDirName(id), "candidates", name))],
+  ["GET", /^\/api\/projects\/([^/]+)\/files\/storyboard\/(r\d+)\/([\w.-]+\.jpg)$/, ([id, round, name], request, response) => sendFile(request, response, projectFile(id, "storyboard", round, name))],
   ["GET", /^\/api\/projects\/([^/]+)$/, ([id]) => projects.readProject(id)],
   ["PUT", /^\/api\/projects\/([^/]+)\/edit-plan$/, async ([id], request) => {
     const body = await readBody(request);

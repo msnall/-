@@ -1,0 +1,127 @@
+{
+  "id": "option-a",
+  "round": "r1",
+  "title": "痛点开场",
+  "style": "clean-pink@1",
+  "summary": "金句前置：用『软糖粘在瓶壁上』的痛点开场，打出问句大字并在 stuck 处推近；接着讲用了一周、独立包装的卖点（产品图弹出），最后推荐。剪掉含未核实用量信息的一段。",
+  "rows": [
+    {
+      "beat": "b3",
+      "keep": true,
+      "onScreen": "【开场】大字『GUMMIES STUCK TO THE BOTTLE?』在画面下方淡入（避开推近后的人脸）；说到 stuck 时推近 1.18 倍",
+      "cards": [
+        {
+          "card": "cold-open@1"
+        },
+        {
+          "card": "hook-big-text@1",
+          "slots": {
+            "text": "Gummies stuck to the bottle?",
+            "placement": "low"
+          }
+        },
+        {
+          "card": "keyword-punch@1",
+          "slots": {
+            "word": 44,
+            "zoom": 1.18
+          }
+        }
+      ]
+    },
+    {
+      "beat": "b1",
+      "keep": true,
+      "onScreen": "字幕；正常口播",
+      "cards": []
+    },
+    {
+      "beat": "b2",
+      "keep": true,
+      "onScreen": "说到 individually 时左侧弹出产品图并轻推近",
+      "cards": [
+        {
+          "card": "product-pip@1",
+          "slots": {
+            "word": 34,
+            "image": "product-front",
+            "placement": "left"
+          }
+        },
+        {
+          "card": "keyword-punch@1",
+          "slots": {
+            "word": 34,
+            "zoom": 1.1
+          }
+        }
+      ]
+    },
+    {
+      "beat": "b4",
+      "keep": true,
+      "onScreen": "字幕",
+      "cards": []
+    },
+    {
+      "beat": "b5",
+      "keep": true,
+      "onScreen": "字幕",
+      "cards": []
+    },
+    {
+      "beat": "b6",
+      "keep": false,
+      "reason": "含『30 天用量』『每天两颗』，尚无包装或商品页依据"
+    },
+    {
+      "beat": "b7",
+      "keep": true,
+      "onScreen": "说到 recommend 时推近收尾",
+      "cards": [
+        {
+          "card": "keyword-punch@1",
+          "slots": {
+            "word": 110,
+            "zoom": 1.12
+          }
+        }
+      ]
+    }
+  ],
+  "global": [],
+  "createdBy": "claude",
+  "createdAt": "2026-10-29T08:30:00.000Z",
+  "keyframes": [
+    {
+      "frame": 12,
+      "file": "storyboard/r1/option-a-k0012.jpg",
+      "label": "hook-big-text-b3"
+    },
+    {
+      "frame": 161,
+      "file": "storyboard/r1/option-a-k0161.jpg",
+      "label": "剪辑点 s-b1-b2"
+    },
+    {
+      "frame": 428,
+      "file": "storyboard/r1/option-a-k0428.jpg",
+      "label": "product-pip-b2"
+    },
+    {
+      "frame": 463,
+      "file": "storyboard/r1/option-a-k0463.jpg",
+      "label": "剪辑点 s-b4-b5"
+    },
+    {
+      "frame": 587,
+      "file": "storyboard/r1/option-a-k0587.jpg",
+      "label": "剪辑点 s-b7"
+    },
+    {
+      "frame": 642,
+      "file": "storyboard/r1/option-a-k0642.jpg",
+      "label": "结尾"
+    }
+  ]
+}

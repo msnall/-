@@ -1,0 +1,31 @@
+{
+  "id": "jump-cut@1",
+  "name": "去停顿跳剪加交替景别",
+  "category": "rhythm",
+  "status": "needs-effect",
+  "blockedBy": [
+    "去停顿规划器（按词级时间戳切小段）"
+  ],
+  "source": [
+    "pdf#14",
+    "tk-common"
+  ],
+  "description": "剪掉超过 0.22 秒的停顿，不在词中间下刀；每个剪辑点交替 1.0 和 1.15 倍景别。",
+  "when": {
+    "roles": [
+      "hook",
+      "intro",
+      "pain",
+      "benefit",
+      "proof",
+      "product",
+      "dose",
+      "offer",
+      "cta",
+      "filler"
+    ],
+    "position": "any"
+  },
+  "scope": "global",
+  "rules": []
+}

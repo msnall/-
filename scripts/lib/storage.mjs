@@ -28,7 +28,9 @@ export async function listProjects() {
   const entries = await readdir(projectsDir, { withFileTypes: true });
   const ids = [];
   for (const entry of entries) {
-    if (entry.isDirectory() && PROJECT_ID.test(entry.name) && (await exists(path.join(projectsDir, entry.name, "edit-plan.json")))) ids.push(entry.name);
+    if (!entry.isDirectory() || !PROJECT_ID.test(entry.name)) continue;
+    const dir = path.join(projectsDir, entry.name);
+    if ((await exists(path.join(dir, "edit-plan.json"))) || (await exists(path.join(dir, "project.json")))) ids.push(entry.name);
   }
   return ids.sort();
 }

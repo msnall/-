@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "t-0001",
+      "text": "标题卡和 CTA 文案保持一行；放大字号时同时加宽卡片或减小字间距",
+      "appliesTo": ["hook-big-text@1"],
+      "source": "bloom10-demo review r1：c-0002（拒绝 p-0001：放大后换成两行了，要保持一行）",
+      "status": "proposed",
+      "approvedAt": null
+    },
+    {
+      "id": "t-0002",
+      "text": "叠加元素不遮挡人脸",
+      "appliesTo": [],
+      "check": { "check": "noFaceOverlap", "max": 0.1 },
+      "source": "第一轮审阅台：用户把 demo 产品卡从人脸上拖开",
+      "status": "proposed",
+      "approvedAt": null
+    }
+  ]
+}

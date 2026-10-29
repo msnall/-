@@ -46,7 +46,9 @@
     "desk:serve": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON desk/server/index.mjs",
     "desk:proxy": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/make-proxy.mjs",
     "desk:faces": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/detect-faces.mjs",
-    "desk:stills": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/render-stills.mjs",
+    "desk:compile": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/compile-storyboard.mjs",
+    "desk:candidates": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/find-candidates.mjs",
+    "desk:stills":"node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/render-stills.mjs",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src desk/ui && tsc"

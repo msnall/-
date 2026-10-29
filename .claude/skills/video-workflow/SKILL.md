@@ -8,7 +8,8 @@ description: Start or continue a TikTok e-commerce video in this repo. Use when 
 1. Identify the project id (ask only if more than one project is in progress and the user did not name one). Read `projects/<id>/status.json`; if missing, the review desk server creates a default on first load (`npm run desk`).
 2. Report the stage, round, open proposals and anything `blocked` (with its reason) in one short paragraph.
 3. Route by `status.stage`:
-   - `asset-prep` / `storyboard`: not automated yet (rounds 2–3 of docs/review-desk-design.md). Work with the user directly; record decisions in `assets.json` / `storyboard/rN/selection.json`.
+   - `asset-prep`: use the `asset-prep` skill. The stage moves on when the editor confirms the beats in ① 素材准备.
+   - `storyboard`: use the `storyboard` skill. The editor confirms one option in ② 方案选择, which writes edit-plan r0 and moves to timeline review.
    - `timeline-review`: make sure the desk has what it needs, then hand over:
      - proxies: `analysis/proxies.json` lists every segment asset, otherwise `npm run desk:proxy -- <id>`;
      - faces: `analysis/faces.json` exists, otherwise `npm run desk:faces -- <id>`;

@@ -13,7 +13,8 @@ import { createServer } from "node:http";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import puppeteer from "puppeteer-core";
-import { imageSequenceFile, parseEditPlan } from "../src/engine/load.ts";
+import { imageSequenceFile } from "../src/engine/load.ts";
+import { footageAssets } from "./lib/storyboard-files.mjs";
 import { publicDir, relative, root, run, sha256File } from "./lib/media.mjs";
 import { projectFile, projectIdFrom, readJson, writeJson } from "./lib/storage.mjs";
 
@@ -84,14 +85,13 @@ function startServer(frameRoots) {
 
 export async function detectFaces(projectId, { sampleFps = 5, log = console.log } = {}) {
   if ((await sha256File(path.join(root, manifest.file))) !== manifest.sha256) throw new Error(`${manifest.file} does not match models/manifest.json; re-download it`);
-  const plan = parseEditPlan(await readJson(projectFile(projectId, "edit-plan.json")));
+  const footage = await footageAssets(projectId);
   const proxies = await readJson(projectFile(projectId, "analysis/proxies.json"), { assets: {} });
   const cache = path.join(root, "out/desk-cache", projectId, "faces");
 
   // asset id -> { dir to serve, [{ file, ms }] }
   const jobs = {};
-  for (const assetId of new Set(plan.segments.map((segment) => segment.asset))) {
-    const asset = plan.assets[assetId];
+  for (const [assetId, asset] of Object.entries(footage)) {
     if (asset.type === "imageSequence") {
       const step = asset.fps / sampleFps;
       const samples = [];

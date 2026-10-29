@@ -43,9 +43,25 @@ const proxyFor = async (project, assetId) => (await readJson(projectFile(project
 
 // File on disk for /media/<project>/<asset>[/<frame>].
 export async function mediaFile(project, assetId, frame) {
-  const plan = await loadPlan(project);
-  const asset = plan.assets[assetId];
-  if (!asset) throw new HttpError(404, `Project ${project} has no asset "${assetId}"`);
+  const plan = (await readJson(projectFile(project, "edit-plan.json"), null)) ? await loadPlan(project) : null;
+  const asset = plan?.assets[assetId];
+  if (!asset) {
+    // Before an edit-plan exists (asset prep, storyboard previews), assets come
+    // from assets.json: footage only as its proxy, others as approved or
+    // candidate files.
+    const assets = await readJson(projectFile(project, "assets.json"), { items: [] });
+    const item = assets.items.find((entry) => entry.id === assetId);
+    if (!item) throw new HttpError(404, `Project ${project} has no asset "${assetId}"`);
+    if (frame) throw new HttpError(404, "Not found");
+    if (item.kind === "footage") {
+      const proxy = await proxyFor(project, assetId);
+      if (!proxy) throw new HttpError(404, `No preview proxy for ${assetId} yet. Run the "proxy" job.`);
+      return path.join(publicDir, proxy);
+    }
+    const file = item.status === "available" ? item.file : item.candidates?.[0]?.file;
+    if (!file) throw new HttpError(404, `${assetId} has no file yet`);
+    return path.join(publicDir, file);
+  }
   if (asset.type === "imageSequence" && !frame) {
     const proxy = await proxyFor(project, assetId);
     if (!proxy) throw new HttpError(404, `No preview proxy for ${assetId} yet. Run the "proxy" job.`);
@@ -66,13 +82,29 @@ export async function mediaFile(project, assetId, frame) {
   return path.join(publicDir, asset.path);
 }
 
-// Fonts and transcript JSON the composition fetches by public path.
+// Fonts and transcript JSON the composition fetches by public path; images
+// under public/projects/ and public/desk/ (candidates, uploads, placeholders).
 const PUBLIC_EXTENSIONS = new Set([".json", ".woff2", ".woff", ".ttf", ".otf"]);
+const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp"]);
 export function publicFile(urlPath) {
   const relative = decodeURIComponent(urlPath).replace(/^\/+/, "");
   const file = path.resolve(publicDir, relative);
-  if (!file.startsWith(publicDir + path.sep) || relative.startsWith("recordings/") || !PUBLIC_EXTENSIONS.has(path.extname(file).toLowerCase())) return null;
-  return file;
+  if (!file.startsWith(publicDir + path.sep) || relative.startsWith("recordings/")) return null;
+  const extension = path.extname(file).toLowerCase();
+  if (PUBLIC_EXTENSIONS.has(extension)) return file;
+  if (IMAGE_EXTENSIONS.has(extension) && (relative.startsWith("projects/") || relative.startsWith("desk/"))) return file;
+  return null;
+}
+
+// A small frame of the footage at a source time (beat thumbnails).
+export async function footageThumb(project, assetId, ms) {
+  const output = path.join(cacheDir(project, "thumbs"), `${assetId}-${Math.round(ms)}.jpg`);
+  if ((await stat(output).catch(() => null)) !== null) return output;
+  const proxy = await proxyFor(project, assetId);
+  if (!proxy) throw new HttpError(404, `No preview proxy for ${assetId} yet. Run the "proxy" job.`);
+  await mkdir(path.dirname(output), { recursive: true });
+  await run("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-ss", String(ms / 1000), "-i", path.join(publicDir, proxy), "-frames:v", "1", "-vf", "scale=160:-2", "-q:v", "4", output]);
+  return output;
 }
 
 const cacheDir = (project, kind) => path.join(root, "out/desk-cache", project, kind);

@@ -23,7 +23,10 @@ export const previewPlan = (plan: RawPlan): RawPlan => {
   const assets: RawPlan["assets"] = {};
   for (const [id, asset] of Object.entries(plan.assets)) {
     const media = `media/${plan.id}/${id}`;
-    if (asset.type === "imageSequence" && segmentAssets.has(id)) {
+    if (asset.path?.startsWith("desk/")) {
+      // Desk placeholders (e.g. a missing asset in a storyboard preview).
+      assets[id] = { type: asset.type, path: asset.path };
+    } else if (asset.type === "imageSequence" && segmentAssets.has(id)) {
       // The proxy is a video at the sequence's frame rate (same as output fps).
       assets[id] = { type: "video", path: media };
     } else if (asset.type === "imageSequence") {

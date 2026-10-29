@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "confirmedAt": null,
+  "beats": [
+    { "id": "b1", "role": "intro", "words": [0, 11], "text": "I've been taking these biotic breast gummies for about a week now.", "textZh": "我吃这款益生菌丰胸软糖大约一周了。", "claims": [] },
+    { "id": "b2", "role": "benefit", "words": [12, 35], "text": "And I'm gonna tell you what I like the best about them, other than the flavor, is the fact that they are individually wrapped.", "textZh": "除了味道，我最喜欢的是它们是独立包装的。", "claims": ["individually-wrapped"] },
+    { "id": "b3", "role": "pain", "words": [36, 65], "text": "I don't have to worry about them getting stuck to the side of the bottle. And then I can't get them out, and I have to throw the bottle away.", "textZh": "不用担心软糖粘在瓶壁上倒不出来，最后整瓶只能扔掉。", "claims": [] },
+    { "id": "b4", "role": "cta", "words": [66, 72], "text": "So I'm gonna link them for y'all.", "textZh": "我会把链接放给大家。", "claims": [] },
+    { "id": "b5", "role": "product", "words": [73, 80], "text": "They come in a pretty good size container,", "textZh": "罐子的容量挺大的，", "claims": [] },
+    { "id": "b6", "role": "dose", "words": [81, 106], "text": "and this one here has, well, it's 30 days' worth, because you take two gummies a day. That's what's recommended, and that's what I've been taking.", "textZh": "这一罐是 30 天的量，每天吃两颗，这是推荐用量，我也是这么吃的。", "claims": ["30-days", "two-a-day"] },
+    { "id": "b7", "role": "cta", "words": [107, 113], "text": "So I'll highly recommend these to you.", "textZh": "所以我非常推荐给你们。", "claims": [] }
+  ]
+}

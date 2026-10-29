@@ -1,0 +1,30 @@
+{
+  "id": "word-captions@1",
+  "name": "逐词高亮字幕",
+  "category": "caption",
+  "status": "needs-effect",
+  "blockedBy": [
+    "captions 的 word-box 样式"
+  ],
+  "source": [
+    "pdf#3"
+  ],
+  "description": "每屏最多 3 个词，正在说的词加色块，其他词不加。替换风格包里的默认字幕样式。",
+  "when": {
+    "roles": [
+      "hook",
+      "intro",
+      "pain",
+      "benefit",
+      "proof",
+      "product",
+      "dose",
+      "offer",
+      "cta",
+      "filler"
+    ],
+    "position": "any"
+  },
+  "scope": "global",
+  "rules": []
+}

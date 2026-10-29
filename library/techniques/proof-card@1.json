@@ -1,0 +1,28 @@
+{
+  "id": "proof-card@1",
+  "name": "真实评论/截图卡",
+  "category": "proof",
+  "status": "ready",
+  "source": ["pdf#9", "tk-common"],
+  "description": "真实的买家评论、订单页或检测报告截图，圆角加阴影，在说到相关内容时淡入。",
+  "when": { "roles": ["proof", "benefit", "product", "cta"], "position": "any" },
+  "slots": {
+    "word": { "type": "word", "label": "在哪个词出现（词序号）" },
+    "image": { "type": "asset", "label": "截图（assets.json 里 kind 为 proof 的 id）" },
+    "placement": { "type": "choice", "label": "位置", "options": ["low"], "default": "low" }
+  },
+  "needs": [
+    { "slot": "image", "kind": "proof", "label": "真实评论或截图", "accept": "真实截图，来源记录在 assets.json（谁的评论、哪个平台、日期）；不打码就不能有他人隐私信息", "fallback": "user-supplies" }
+  ],
+  "template": {
+    "overlays": [
+      { "id": "$id", "effect": "image-card@1", "from": { "word": "$word", "expect": "$expect" }, "durationFrames": 75, "layer": "below-captions",
+        "props": { "$merge": "@style.proof.$placement", "asset": "$image" } }
+    ]
+  },
+  "rules": [
+    { "check": "maxPerVideo", "value": 2 },
+    { "check": "noFaceOverlap", "max": 0.1 },
+    { "text": "只能用真实截图，不做模拟；截图里的数字和说法同样算产品事实" }
+  ]
+}

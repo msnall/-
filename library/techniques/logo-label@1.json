@@ -1,0 +1,23 @@
+{
+  "id": "logo-label@1",
+  "name": "品牌/产品名标签",
+  "category": "benefit",
+  "status": "needs-effect",
+  "blockedBy": [
+    "logo-label@1 效果"
+  ],
+  "source": [
+    "pdf#4"
+  ],
+  "description": "说出产品名时 logo 淡入，名称从 logo 后面滑出，两者一起居中。",
+  "when": {
+    "roles": [
+      "product",
+      "intro",
+      "benefit"
+    ],
+    "position": "any"
+  },
+  "scope": "beat",
+  "rules": []
+}

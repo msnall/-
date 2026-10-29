@@ -1,0 +1,107 @@
+{
+  "id": "option-b",
+  "round": "r1",
+  "title": "一周测评开场",
+  "style": "dark-glass@1",
+  "summary": "按原顺序讲，开头大字『1 WEEK ON THESE GUMMIES』建立测评感；独立包装处弹出产品图并推近，痛点段保留，结尾推荐。剪掉含未核实用量信息的一段。",
+  "rows": [
+    {
+      "beat": "b1",
+      "keep": true,
+      "onScreen": "【开场】大字『1 week on these gummies』淡入；大字消失后，说到 week 时推近",
+      "cards": [
+        {
+          "card": "hook-big-text@1",
+          "slots": {
+            "text": "1 week on these gummies",
+            "placement": "top"
+          }
+        },
+        {
+          "card": "keyword-punch@1",
+          "slots": {
+            "word": 10,
+            "zoom": 1.15
+          }
+        }
+      ]
+    },
+    {
+      "beat": "b2",
+      "keep": true,
+      "onScreen": "说到 individually 时左侧弹出产品图",
+      "cards": [
+        {
+          "card": "product-pip@1",
+          "slots": {
+            "word": 34,
+            "image": "product-front",
+            "placement": "left"
+          }
+        }
+      ]
+    },
+    {
+      "beat": "b3",
+      "keep": true,
+      "onScreen": "说到 stuck 时推近",
+      "cards": [
+        {
+          "card": "keyword-punch@1",
+          "slots": {
+            "word": 44,
+            "zoom": 1.15
+          }
+        }
+      ]
+    },
+    {
+      "beat": "b4",
+      "keep": true,
+      "onScreen": "字幕",
+      "cards": []
+    },
+    {
+      "beat": "b5",
+      "keep": true,
+      "onScreen": "字幕",
+      "cards": []
+    },
+    {
+      "beat": "b6",
+      "keep": false,
+      "reason": "含『30 天用量』『每天两颗』，尚无包装或商品页依据"
+    },
+    {
+      "beat": "b7",
+      "keep": true,
+      "onScreen": "字幕",
+      "cards": []
+    }
+  ],
+  "global": [],
+  "createdBy": "claude",
+  "createdAt": "2026-10-29T08:30:00.000Z",
+  "keyframes": [
+    {
+      "frame": 12,
+      "file": "storyboard/r1/option-b-k0012.jpg",
+      "label": "hook-big-text-b1"
+    },
+    {
+      "frame": 275,
+      "file": "storyboard/r1/option-b-k0275.jpg",
+      "label": "product-pip-b2"
+    },
+    {
+      "frame": 588,
+      "file": "storyboard/r1/option-b-k0588.jpg",
+      "label": "剪辑点 s-b7"
+    },
+    {
+      "frame": 643,
+      "file": "storyboard/r1/option-b-k0643.jpg",
+      "label": "结尾"
+    }
+  ]
+}

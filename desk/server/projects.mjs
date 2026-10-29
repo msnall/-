@@ -15,7 +15,7 @@ const STAGES = ["asset-prep", "storyboard", "timeline-review", "render-qc"];
 
 // --- One writer at a time per project.
 const locks = new Map();
-const withLock = (id, task) => {
+export const withLock = (id, task) => {
   const previous = locks.get(id) ?? Promise.resolve();
   const next = previous.then(task, task);
   locks.set(id, next.catch(() => {}));
@@ -48,23 +48,32 @@ export async function validate(id, raw) {
 const now = () => new Date().toISOString();
 
 export async function readStatus(id) {
-  const plan = await readJson(projectFile(id, "edit-plan.json"));
-  return readJson(projectFile(id, "status.json"), {
-    project: id,
-    stage: "timeline-review",
-    stages: {
-      "asset-prep": { state: "done", note: "existing project, assets prepared before the desk existed" },
-      storyboard: { state: "done", note: "existing project, no storyboard round" },
-      "timeline-review": { state: "waiting-user", round: "r1", openProposals: 0 },
-      "render-qc": { state: "pending" },
-    },
-    editPlanRevision: plan.revision ?? 0,
-    updatedAt: now(),
-    updatedBy: "user",
-  });
+  const plan = await readJson(projectFile(id, "edit-plan.json"), null);
+  // Projects that started before the desk have an edit-plan and no status;
+  // new projects start at asset preparation.
+  const fallback = plan
+    ? {
+        stage: "timeline-review",
+        stages: {
+          "asset-prep": { state: "done", note: "existing project, assets prepared before the desk existed" },
+          storyboard: { state: "done", note: "existing project, no storyboard round" },
+          "timeline-review": { state: "waiting-user", round: "r1", openProposals: 0 },
+          "render-qc": { state: "pending" },
+        },
+      }
+    : {
+        stage: "asset-prep",
+        stages: {
+          "asset-prep": { state: "waiting-user" },
+          storyboard: { state: "pending", round: "r1" },
+          "timeline-review": { state: "pending", round: "r1", openProposals: 0 },
+          "render-qc": { state: "pending" },
+        },
+      };
+  return readJson(projectFile(id, "status.json"), { project: id, ...fallback, editPlanRevision: plan ? (plan.revision ?? 0) : null, updatedAt: now(), updatedBy: "user" });
 }
 
-async function updateStatus(id, change) {
+export async function updateStatus(id, change) {
   const status = await readStatus(id);
   change(status);
   status.updatedAt = now();
@@ -90,6 +99,20 @@ const versionLog = (id) => projectFile(id, "versions/log.json");
 export async function readPlan(id) {
   const plan = await readJson(projectFile(id, "edit-plan.json"));
   return { plan, revision: plan.revision ?? 0 };
+}
+
+// The edit-plan compiled from a confirmed storyboard option. A project's first
+// edit-plan is revision 0; later confirmations go through commitPlan so the
+// earlier plan stays in versions/. Call inside withLock.
+export async function installCompiledPlan(id, compiled, note) {
+  const existing = await readJson(projectFile(id, "edit-plan.json"), null);
+  if (existing) return commitPlan(id, compiled, { expectedRevision: existing.revision ?? 0, by: "user", note });
+  const plan = { schemaVersion: compiled.schemaVersion, id: compiled.id, revision: 0, ...compiled };
+  const { warnings } = await validate(id, plan);
+  await writeJson(projectFile(id, "edit-plan.json"), plan);
+  await writeJson(versionFile(id, 0), plan);
+  await writeJson(versionLog(id), [{ revision: 0, savedAt: now(), by: "user", note }]);
+  return { plan, revision: 0, warnings };
 }
 
 // The only way the edit-plan changes. Keeps the previous revision in versions/,

@@ -225,6 +225,9 @@ export const resolvePlan = (plan: EditPlan, transcript: Transcript | null, facts
         problems.push(`captions.emphasis: ${describeWord(wordIndex)} is not shown in any caption`);
       }
     });
+    // Transcript order is output order unless segments were reordered (a cold
+    // open); keep cues in output order. Stable, so unchanged plans are unaffected.
+    cues.sort((a, b) => a.from - b.from);
     captions = { ...style, cues };
   }
 

@@ -39,13 +39,6 @@ type SaveState =
   | { kind: "invalid"; problems: string[] }
   | { kind: "error"; message: string };
 
-const STAGES: [string, string][] = [
-  ["asset-prep", "素材准备"],
-  ["storyboard", "方案选择"],
-  ["timeline-review", "时间轴审阅"],
-  ["render-qc", "渲染质检"],
-];
-
 // The server owns the revision field.
 const withoutRevision = (plan: RawPlan): RawPlan => {
   const rest = { ...plan };
@@ -53,14 +46,12 @@ const withoutRevision = (plan: RawPlan): RawPlan => {
   return rest;
 };
 
-const hashProject = () =>
-  new URLSearchParams(location.hash.slice(1)).get("project");
-
-export const App: React.FC = () => {
-  const [projects, setProjects] = useState<
-    { id: string; title: string; revision: number }[]
-  >([]);
-  const [projectId, setProjectId] = useState<string | null>(hashProject());
+// The review desk (timeline review). The shell (Shell.tsx) supplies the
+// project and the stage navigation shown in the header.
+export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
+  projectId,
+  nav,
+}) => {
   const [project, setProject] = useState<Project | null>(null);
   const [draft, setDraft] = useState<RawPlan | null>(null);
   const [save, setSave] = useState<SaveState>({ kind: "saved" });
@@ -102,13 +93,6 @@ export const App: React.FC = () => {
   };
 
   // --- Loading.
-  useEffect(() => {
-    api.projects().then((list) => {
-      setProjects(list);
-      setProjectId((current) => current ?? list[0]?.id ?? null);
-    });
-  }, []);
-
   const loadProject = useCallback(
     async (id: string, { keepDraft = false } = {}) => {
       const data = await api.project(id);
@@ -128,8 +112,6 @@ export const App: React.FC = () => {
   );
 
   useEffect(() => {
-    if (!projectId) return;
-    location.hash = `project=${projectId}`;
     setSelection(null);
     setPreviewing(null);
     setPeaks(null);
@@ -537,8 +519,7 @@ export const App: React.FC = () => {
     );
   };
 
-  if (!projectId || !project || !draft)
-    return <div className="loading">加载中…</div>;
+  if (!project || !draft) return <div className="loading">加载中…</div>;
 
   const pendingCount = project.proposals.filter(
     (proposal) => proposal.state === "pending",
@@ -547,7 +528,6 @@ export const App: React.FC = () => {
     (review?.segments ?? []).map((entry) => [entry.segment, entry.decision]),
   );
   const fps = resolved?.resolved.fps ?? 30;
-  const status = project.status;
   const segmentNow = resolved ? segmentAt(resolved.resolved, frame) : undefined;
   const missingProxy = draft.segments.some(
     (segment) => !project.proxies[segment.asset],
@@ -568,29 +548,7 @@ export const App: React.FC = () => {
   return (
     <div className="app">
       <header>
-        <select
-          value={projectId}
-          onChange={(event) => setProjectId(event.target.value)}
-        >
-          {projects.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.id}
-            </option>
-          ))}
-        </select>
-        <ol className="stepper">
-          {STAGES.map(([key, label]) => (
-            <li
-              key={key}
-              className={`${status.stages[key]?.state ?? "pending"}${status.stage === key ? " current" : ""}`}
-            >
-              {label}
-              {key === "timeline-review" && status.stages[key]?.round
-                ? ` ${status.stages[key].round}`
-                : ""}
-            </li>
-          ))}
-        </ol>
+        {nav}
         <span className={`save-state ${save.kind}`}>{saveLabel}</span>
         <span className="spacer" />
         {review?.submittedAt ? (

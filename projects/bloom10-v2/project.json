@@ -1,0 +1,16 @@
+{
+  "id": "bloom10-v2",
+  "title": "Bloom10 breast gummies, UGC review (v2: storyboard flow)",
+  "market": "US",
+  "language": "en",
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "footage": "source",
+  "transcript": {
+    "words": "transcripts/Bloom10-达人素材.edited.json",
+    "cues": "transcripts/Bloom10-达人素材.edited.cues.json"
+  }
+}

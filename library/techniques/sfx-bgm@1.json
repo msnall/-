@@ -1,0 +1,31 @@
+{
+  "id": "sfx-bgm@1",
+  "name": "强调音效加背景音乐自动压低",
+  "category": "audio",
+  "status": "needs-effect",
+  "blockedBy": [
+    "音效轨与音乐压低",
+    "授权音效、音乐素材"
+  ],
+  "source": [
+    "tk-common"
+  ],
+  "description": "钩子大字、打勾、弹窗时加 pop/whoosh 音效；有人说话时背景音乐自动压低。",
+  "when": {
+    "roles": [
+      "hook",
+      "intro",
+      "pain",
+      "benefit",
+      "proof",
+      "product",
+      "dose",
+      "offer",
+      "cta",
+      "filler"
+    ],
+    "position": "any"
+  },
+  "scope": "global",
+  "rules": []
+}
