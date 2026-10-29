@@ -1,0 +1,37 @@
+{
+  "round": "r1",
+  "editPlanRevision": 5,
+  "segments": [
+    {
+      "segment": "hook-and-problem",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "dose-and-cta",
+      "decision": "undecided",
+      "comments": [
+        {
+          "id": "c-0001",
+          "text": "结尾 CTA 标题太小，字号放大一些，并且往上挪，别压到底部文案区",
+          "at": {
+            "frame": 580
+          },
+          "createdAt": "2026-10-29T06:56:39.869Z",
+          "by": "user"
+        },
+        {
+          "id": "c-0002",
+          "text": "放大后换成两行了，要保持一行",
+          "proposal": "p-0001",
+          "createdAt": "2026-10-29T06:58:08.206Z",
+          "by": "user"
+        }
+      ]
+    }
+  ],
+  "comments": [],
+  "submittedAt": "2026-10-29T06:56:45.149Z",
+  "updatedAt": "2026-10-29T07:00:35.720Z",
+  "updatedBy": "user"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "p-0001",
+  "state": "rejected",
+  "basedOnRevision": 5,
+  "answers": [
+    "c-0001"
+  ],
+  "summary": "CTA 标题字号 52 → 64，下移到 y=200，离开顶部标签栏",
+  "reason": "当前 CTA 标题在画面顶部（y=150），并没有压到底部文案区；它的上沿紧贴 TikTok 顶部标签栏（0–150）。放大字号后整体下移 50 像素，避开标签栏，也不碰人脸区。宽度不变，文字仍为一行。",
+  "changes": [
+    {
+      "op": "test",
+      "path": "/overlays/3/id",
+      "value": "cta-title"
+    },
+    {
+      "op": "replace",
+      "path": "/overlays/3/props/fontSize",
+      "value": 64
+    },
+    {
+      "op": "replace",
+      "path": "/overlays/3/props/y",
+      "value": 200
+    }
+  ],
+  "impact": {
+    "durationDeltaFrames": 0,
+    "segments": [
+      "dose-and-cta"
+    ]
+  },
+  "createdBy": "claude",
+  "createdAt": "2026-10-29T07:00:00.000Z",
+  "preview": {
+    "before": [
+      "proposals/previews/p-0001-before-f0770.jpg"
+    ],
+    "after": [
+      "proposals/previews/p-0001-after-f0770.jpg"
+    ]
+  },
+  "decidedAt": "2026-10-29T06:58:08.202Z",
+  "rejectComment": "放大后换成两行了，要保持一行"
+}

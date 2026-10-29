@@ -10,19 +10,17 @@
 import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { checkLayout } from "../src/engine/layout.ts";
 import { assetFile, imageSequenceFile, loadEditPlan, parseEditPlan, PlanError } from "../src/engine/load.ts";
+import { loadLayoutContext } from "./lib/layout-context.mjs";
 import { probe, publicDir, relative, root, sha256File } from "./lib/media.mjs";
 
 const isFile = async (file) => (await stat(file).catch(() => null))?.isFile() ?? false;
 
-export async function checkPlan(planArgument, { log = console.log } = {}) {
-  const planPath = path.resolve(root, planArgument);
-  let raw;
-  try {
-    raw = JSON.parse(await readFile(planPath, "utf8"));
-  } catch (error) {
-    throw new PlanError([`${relative(planPath)}: ${error.code === "ENOENT" ? "file not found" : error.message}`]);
-  }
+// Full validation of a raw plan object against the files it references.
+// `hashFile` / `probeFile` can be replaced by cached versions (the review desk
+// server validates on every save).
+export async function validatePlan(raw, { hashFile = sha256File, probeFile = probe } = {}) {
   const plan = parseEditPlan(raw);
 
   const problems = [];
@@ -45,11 +43,11 @@ export async function checkPlan(planArgument, { log = console.log } = {}) {
       continue;
     }
     if (asset.sha256) {
-      const actual = await sha256File(file);
+      const actual = await hashFile(file);
       if (actual !== asset.sha256) problems.push(`assets.${id}: public/${asset.path} SHA-256 is ${actual}, plan expects ${asset.sha256}. The file was replaced; re-review before using it.`);
     }
     if (asset.type === "video") {
-      const info = await probe(file);
+      const info = await probeFile(file);
       facts.durationMs[id] = Number(info.format.duration) * 1000;
     }
   }
@@ -71,6 +69,20 @@ export async function checkPlan(planArgument, { log = console.log } = {}) {
     ...resolved.overlays.flatMap((overlay) => (typeof overlay.props.asset === "string" ? [overlay.props.asset] : [])),
   ]);
   const unused = Object.keys(plan.assets).filter((id) => !used.has(id) && id !== plan.transcript?.asset);
+  return { plan, resolved, unused };
+}
+
+export async function checkPlan(planArgument, { log = console.log } = {}) {
+  const planPath = path.resolve(root, planArgument);
+  let raw;
+  try {
+    raw = JSON.parse(await readFile(planPath, "utf8"));
+  } catch (error) {
+    throw new PlanError([`${relative(planPath)}: ${error.code === "ENOENT" ? "file not found" : error.message}`]);
+  }
+  const { plan, resolved, unused } = await validatePlan(raw);
+  const layoutContext = await loadLayoutContext(path.dirname(planPath), plan);
+  const warnings = checkLayout(resolved, layoutContext);
 
   const outDir = path.join(root, "out/edit-plans", plan.id);
   await mkdir(outDir, { recursive: true });
@@ -92,8 +104,10 @@ export async function checkPlan(planArgument, { log = console.log } = {}) {
     log(`  loudness   ${loudness.normalize ? `normalize after render to ${loudness.targetLufs} LUFS, true peak ${loudness.truePeakDb} dBTP` : "no post-render normalization (plan turns it off)"}`);
   }
   if (unused.length) log(`  note       declared but unused assets (still verified): ${unused.join(", ")}`);
+  log(`  faces      ${layoutContext.faces ? `analysis from ${layoutContext.faces.createdAt}${layoutContext.overrides ? ", with manual corrections" : ""}` : "no analysis yet (run: npm run desk:faces -- " + plan.id + ")"}`);
+  for (const warning of warnings) log(`  WARN       ${warning.kind}: ${warning.message}`);
   log(`  wrote      ${relative(path.join(outDir, "edit-plan.resolved.json"))}`);
-  return { planPath, plan, resolved, propsPath, assetFiles: Object.values(plan.assets).map(assetFile) };
+  return { planPath, plan, resolved, warnings, propsPath, assetFiles: Object.values(plan.assets).map(assetFile) };
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {

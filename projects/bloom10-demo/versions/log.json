@@ -1,0 +1,80 @@
+[
+  {
+    "revision": 0,
+    "savedAt": "2026-10-29T06:53:18.687Z",
+    "by": "unknown",
+    "note": "state before the review desk first changed it"
+  },
+  {
+    "revision": 1,
+    "savedAt": "2026-10-29T06:53:18.702Z",
+    "by": "user",
+    "note": "edited in the review desk"
+  },
+  {
+    "revision": 2,
+    "savedAt": "2026-10-29T06:53:50.572Z",
+    "by": "user",
+    "note": "restored revision 0"
+  },
+  {
+    "revision": 3,
+    "savedAt": "2026-10-29T06:54:02.912Z",
+    "by": "user",
+    "note": "edited in the review desk"
+  },
+  {
+    "revision": 4,
+    "savedAt": "2026-10-29T06:54:15.366Z",
+    "by": "user",
+    "note": "restored revision 2"
+  },
+  {
+    "revision": 5,
+    "savedAt": "2026-10-29T06:54:35.374Z",
+    "by": "user",
+    "note": "edited in the review desk"
+  },
+  {
+    "revision": 6,
+    "savedAt": "2026-10-29T06:59:32.973Z",
+    "by": "user",
+    "note": "accepted p-0002: CTA 标题字号 52 → 60，卡片加宽到 860 并居中，去掉字间距，保持一行；下移到 y=200"
+  },
+  {
+    "revision": 7,
+    "savedAt": "2026-10-29T07:00:11.839Z",
+    "by": "user",
+    "note": "edited in the review desk"
+  },
+  {
+    "revision": 8,
+    "savedAt": "2026-10-29T07:00:35.315Z",
+    "by": "user",
+    "note": "restored revision 5"
+  },
+  {
+    "revision": 9,
+    "savedAt": "2026-10-29T07:00:35.529Z",
+    "by": "user",
+    "note": "restored revision 7"
+  },
+  {
+    "revision": 10,
+    "savedAt": "2026-10-29T07:18:13.879Z",
+    "by": "user",
+    "note": "edited in the review desk"
+  },
+  {
+    "revision": 11,
+    "savedAt": "2026-10-29T07:18:57.382Z",
+    "by": "user",
+    "note": "edited in the review desk"
+  },
+  {
+    "revision": 12,
+    "savedAt": "2026-10-29T07:26:32.810Z",
+    "by": "user",
+    "note": "edited in the review desk"
+  }
+]

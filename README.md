@@ -6,6 +6,16 @@
 
 成片：`out/bloom10-first-cut/Bloom10-first-cut-r1.mp4`。以下保留各阶段操作记录；当前完整流程以操作手册为准。
 
+## 审阅台（第一轮，2026-10-29）
+
+本地审阅页：拖动元素调整位置、标记段落、写意见、处理 Claude 的修改提案、查看版本和作业。
+
+```powershell
+npm.cmd run desk
+```
+
+打开 `http://127.0.0.1:4310/`。使用说明见 [docs/review-desk.md](docs/review-desk.md)，Claude 的工作规则见 [CLAUDE.md](CLAUDE.md)。
+
 ## 启动预览
 
 在 PowerShell 中执行：

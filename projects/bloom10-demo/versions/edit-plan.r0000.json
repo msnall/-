@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "id": "bloom10-demo",
+  "meta": {
+    "title": "Engine demo: same footage, different edit, configuration only",
+    "purpose": "Shows that titles, colours, caption style, camera zoom, cuts and product imagery change without touching code. Not a reviewed deliverable.",
+    "productImage": "public/projects/bloom10-demo/product-still.jpg is a crop of source frame 860 (real packaging, unedited)",
+    "claims": "The quantity sentence (source 19.33–22.92 s) is cut because the 30-day claim is still unverified."
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "theme": {
+    "background": "#101820",
+    "textColor": "#ffffff",
+    "fontFamily": "\"BloomInter\", sans-serif",
+    "fonts": [
+      {
+        "family": "BloomInter",
+        "src": "fonts/Inter-700.woff2",
+        "weight": 700
+      }
+    ]
+  },
+  "assets": {
+    "source": {
+      "type": "video",
+      "path": "recordings/Bloom10/Bloom10-达人素材.mp4",
+      "sha256": "31bf76ef1375c072f53117d2379660d40973ed323d61037d34afc3786a8274c3"
+    },
+    "product": {
+      "type": "image",
+      "path": "projects/bloom10-demo/product-still.jpg",
+      "sha256": "b7133cb3302b344676ff7bd699d480aa244a11286b40a299b101c6407d958fe3"
+    }
+  },
+  "transcript": {
+    "asset": "source",
+    "words": "transcripts/Bloom10-达人素材.edited.json",
+    "cues": "transcripts/Bloom10-达人素材.edited.cues.json"
+  },
+  "segments": [
+    {
+      "id": "hook-and-problem",
+      "asset": "source",
+      "sourceStartMs": 0,
+      "sourceEndMs": 19330,
+      "camera": {
+        "zoom": 1,
+        "originY": 0.4,
+        "punchIns": [
+          {
+            "at": {
+              "word": 44,
+              "expect": "stuck"
+            },
+            "durationFrames": 36,
+            "zoom": 1.18,
+            "rampFrames": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "dose-and-cta",
+      "asset": "source",
+      "sourceStartMs": 22920,
+      "sourceEndMs": 30300,
+      "camera": {
+        "zoom": 1.08,
+        "originY": 0.4
+      }
+    }
+  ],
+  "layout": {
+    "footage": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "fit": "cover",
+      "grade": {
+        "brightness": 1.02,
+        "contrast": 1.06,
+        "saturate": 1.1
+      }
+    }
+  },
+  "captions": {
+    "box": {
+      "x": 70,
+      "y": 1330,
+      "width": 860,
+      "height": 190
+    },
+    "fontSize": 66,
+    "lineHeight": 80,
+    "fontWeight": 700,
+    "color": "#ffffff",
+    "activeColor": "#ffd23f",
+    "background": "#101820b3",
+    "wordGap": 16,
+    "maxLines": 2,
+    "singleLineMaxChars": 20,
+    "textTransform": "uppercase",
+    "emphasis": [
+      {
+        "word": 34,
+        "expect": "individually",
+        "color": "#ff7ab6",
+        "scale": 1.12
+      },
+      {
+        "word": 35,
+        "expect": "wrapped",
+        "color": "#ff7ab6",
+        "scale": 1.12
+      },
+      {
+        "word": 44,
+        "expect": "stuck",
+        "color": "#ff7ab6"
+      }
+    ]
+  },
+  "overlays": [
+    {
+      "id": "hook-title",
+      "effect": "title-card@1",
+      "from": {
+        "frame": 0
+      },
+      "until": {
+        "word": 12,
+        "expect": "and"
+      },
+      "props": {
+        "text": "1 WEEK REVIEW",
+        "x": 140,
+        "y": 150,
+        "width": 800,
+        "minHeight": 120,
+        "background": "#ffd23f",
+        "color": "#101820",
+        "borderRadius": 60,
+        "fontSize": 54,
+        "letterSpacing": 2,
+        "enter": {
+          "type": "fade-up",
+          "fadeFrames": 6,
+          "riseFrames": 8,
+          "risePx": 30
+        }
+      }
+    },
+    {
+      "id": "wrapped-title",
+      "effect": "title-card@1",
+      "from": {
+        "word": 34,
+        "expect": "individually"
+      },
+      "durationFrames": 50,
+      "props": {
+        "text": "INDIVIDUALLY WRAPPED",
+        "x": 140,
+        "y": 150,
+        "width": 800,
+        "minHeight": 120,
+        "background": "#ff7ab6",
+        "color": "#101820",
+        "borderRadius": 60,
+        "fontSize": 52,
+        "letterSpacing": 2,
+        "enter": {
+          "type": "fade-up",
+          "fadeFrames": 6,
+          "riseFrames": 8,
+          "risePx": 30
+        }
+      }
+    },
+    {
+      "id": "product-card",
+      "effect": "image-card@1",
+      "from": {
+        "word": 73,
+        "expect": "They"
+      },
+      "durationFrames": 66,
+      "props": {
+        "asset": "product",
+        "x": 610,
+        "y": 300,
+        "width": 380,
+        "height": 628,
+        "fit": "cover",
+        "background": "#ffffff",
+        "padding": 10,
+        "borderRadius": 28,
+        "shadow": true
+      }
+    },
+    {
+      "id": "cta-title",
+      "effect": "title-card@1",
+      "from": {
+        "fromEnd": 75
+      },
+      "until": {
+        "fromEnd": 0
+      },
+      "props": {
+        "text": "SEE PRODUCT DETAILS",
+        "x": 140,
+        "y": 150,
+        "width": 800,
+        "minHeight": 120,
+        "background": "#ffffff",
+        "color": "#101820",
+        "accentColor": "#ff7ab6",
+        "accentWidth": 12,
+        "borderRadius": 16,
+        "fontSize": 52,
+        "letterSpacing": 2
+      }
+    }
+  ],
+  "audio": {
+    "segmentAudio": true
+  },
+  "qc": {
+    "maxTruePeakDb": -1
+  }
+}

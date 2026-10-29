@@ -12,7 +12,11 @@
     "zod": "4.6.7"
   },
   "dependencies": {
+    "@mediapipe/tasks-vision": "1.1.1",
+    "@remotion/bundler": "4.0.539",
     "@remotion/cli": "4.0.539",
+    "@remotion/player": "4.0.539",
+    "@remotion/renderer": "4.0.539",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "remotion": "4.0.539",
@@ -21,10 +25,13 @@
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.539",
     "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
     "@types/web": "0.0.166",
     "eslint": "10.12.0",
     "prettier": "3.8.1",
-    "typescript": "5.9.3"
+    "puppeteer-core": "25.14.0",
+    "typescript": "5.9.3",
+    "vite": "8.3.4"
   },
   "scripts": {
     "dev": "remotion studio",
@@ -34,9 +41,15 @@
     "plan:render": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/render-plan.mjs",
     "plan:verify": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/verify-render.mjs",
     "plan:compare": "node scripts/compare-renders.mjs",
+    "desk": "npm run desk:build && npm run desk:serve",
+    "desk:build": "vite build --config desk/vite.config.mjs",
+    "desk:serve": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON desk/server/index.mjs",
+    "desk:proxy": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/make-proxy.mjs",
+    "desk:faces": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/detect-faces.mjs",
+    "desk:stills": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/render-stills.mjs",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src desk/ui && tsc"
   },
   "allowScripts": {
     "esbuild": false

@@ -114,6 +114,10 @@ export const editPlanSchema = z
   .strictObject({
     schemaVersion: z.literal(SCHEMA_VERSION, { error: `Only schemaVersion ${SCHEMA_VERSION} is supported by this engine` }),
     id,
+    // Set by the review desk server: incremented on every saved change, used
+    // for conflict checks (If-Match, proposals' basedOnRevision). Never read by
+    // the renderer. A plan without it is revision 0.
+    revision: z.number().int().nonnegative().optional(),
     // Free-form notes (brief, reviewer, source of claims). Never read by the renderer.
     meta: z.record(z.string(), z.unknown()).optional(),
     output: z.strictObject({

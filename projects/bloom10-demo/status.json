@@ -1,0 +1,26 @@
+{
+  "project": "bloom10-demo",
+  "stage": "timeline-review",
+  "stages": {
+    "asset-prep": {
+      "state": "done",
+      "note": "existing project, assets prepared before the desk existed"
+    },
+    "storyboard": {
+      "state": "done",
+      "note": "existing project, no storyboard round"
+    },
+    "timeline-review": {
+      "state": "in-progress",
+      "round": "r1",
+      "openProposals": 0,
+      "note": "comments submitted; waiting for Claude's proposals"
+    },
+    "render-qc": {
+      "state": "pending"
+    }
+  },
+  "editPlanRevision": 12,
+  "updatedAt": "2026-10-29T07:26:32.821Z",
+  "updatedBy": "user"
+}

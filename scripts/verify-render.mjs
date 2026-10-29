@@ -163,8 +163,12 @@ const report = {
   frameScan: { region: scan, flatFrames, longestIdenticalRun, method: "36x64 grayscale scan of the central footage area; not an exhaustive glitch detector" },
   reviewImages: images.filter(Boolean),
   beatsFrames: beats,
+  // Overlays/captions over a detected face or a TikTok UI zone. Warnings only:
+  // they do not fail QC, the editor decides.
+  layoutWarnings: checked.warnings,
 };
 await writeFile(path.join(outDir, "validation.json"), JSON.stringify(report, null, 2) + "\n");
 console.log(JSON.stringify(report, null, 2));
-console.log(`${failures.length ? "FAILED" : "PASSED"}: ${relative(path.join(outDir, "validation.json"))}`);
+for (const warning of checked.warnings) console.log(`WARN ${warning.kind}: ${warning.message}`);
+console.log(`${failures.length ? "FAILED" : "PASSED"}: ${relative(path.join(outDir, "validation.json"))}${checked.warnings.length ? ` (${checked.warnings.length} layout warning(s))` : ""}`);
 process.exit(failures.length ? 1 : 0);

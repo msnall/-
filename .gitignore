@@ -13,6 +13,13 @@ build
 # Ignore the output video from Git but not videos you import into src/.
 out
 
+# Review desk: preview proxies and their machine-specific record, job records
+# and logs are regenerated locally.
+/public/projects/*/proxy/
+/projects/*/analysis/proxies.json
+/projects/*/jobs/
+/projects/*/logs/
+
 # Original talent footage stays outside Git; scripts verify it by SHA-256.
 /public/recordings/**/*.mp4
 /public/recordings/**/*.mov

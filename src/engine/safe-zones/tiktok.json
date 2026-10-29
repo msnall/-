@@ -1,0 +1,11 @@
+{
+  "platform": "tiktok",
+  "note": "TikTok 9:16 player chrome in output pixels (1080x1920). Approximate; adjust here, never in code.",
+  "width": 1080,
+  "height": 1920,
+  "zones": [
+    { "id": "top-tabs", "label": "顶部标签栏", "x": 0, "y": 0, "width": 1080, "height": 150 },
+    { "id": "right-rail", "label": "右侧按钮区", "x": 918, "y": 460, "width": 162, "height": 1000 },
+    { "id": "bottom-caption", "label": "底部文案区", "x": 0, "y": 1594, "width": 1080, "height": 326 }
+  ]
+}

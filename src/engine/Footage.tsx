@@ -1,25 +1,8 @@
-import { Img, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { zoomAt } from "./layout.ts";
 import { imageSequenceFile, type ResolvedPlan, type ResolvedSegment } from "./resolve.ts";
 
 type FootageLayout = ResolvedPlan["footage"];
-
-const zoomAt = (camera: ResolvedSegment["camera"], frame: number) => {
-  let zoom = camera.zoom;
-  for (const punch of camera.punchIns) {
-    const local = frame - punch.from;
-    if (local < 0 || local >= punch.durationInFrames) continue;
-    const ramp = punch.rampFrames;
-    const amount =
-      ramp === 0
-        ? 1
-        : interpolate(local, [0, ramp, punch.durationInFrames - ramp, punch.durationInFrames], [0, 1, 1, 0], {
-            extrapolateLeft: "clamp",
-            extrapolateRight: "clamp",
-          });
-    zoom = camera.zoom + (punch.zoom - camera.zoom) * amount;
-  }
-  return zoom;
-};
 
 const SegmentPicture: React.FC<{ segment: ResolvedSegment; layout: FootageLayout; segmentAudio: boolean }> = ({ segment, layout, segmentAudio }) => {
   const frame = useCurrentFrame();
