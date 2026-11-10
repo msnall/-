@@ -1,0 +1,30 @@
+{
+  "id": "product-fade@1",
+  "name": "产品图柔和淡入",
+  "category": "benefit",
+  "status": "ready",
+  "source": ["tk-common"],
+  "description": "真实产品图在说到产品时淡入并停留约两秒，节奏比弹出式画中画更平稳。",
+  "when": { "roles": ["benefit", "product", "intro", "pain"], "position": "any" },
+  "slots": {
+    "word": { "type": "word", "label": "在哪个词出现（词序号）" },
+    "image": { "type": "asset", "label": "产品图（assets.json 里的 id）" },
+    "placement": { "type": "choice", "label": "位置", "options": ["left", "left-low"], "default": "left" }
+  },
+  "needs": [
+    { "slot": "image", "kind": "image", "label": "产品正面图", "accept": "真实产品，标签文字可读，背景干净，不含人脸", "fallback": "candidate-from-footage" }
+  ],
+  "template": {
+    "overlays": [
+      { "id": "$id", "effect": "image-card@1", "from": { "word": "$word", "expect": "$expect" }, "durationFrames": 66, "layer": "below-captions",
+        "props": { "$merge": "@style.pip.$placement", "asset": "$image", "enter": { "type": "fade", "frames": 12 }, "exit": { "type": "fade", "frames": 8 } } }
+    ]
+  },
+  "tunables": { "placement": { "label": "位置", "options": ["left", "left-low"] } },
+  "rules": [
+    { "check": "maxPerVideo", "value": 2 },
+    { "check": "noFaceOverlap", "max": 0.1 },
+    { "check": "safeZone" },
+    { "text": "只使用真实产品图" }
+  ]
+}

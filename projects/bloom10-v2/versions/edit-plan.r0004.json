@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "id": "bloom10-v2",
+  "revision": 4,
+  "meta": {
+    "title": "Bloom10 breast gummies, UGC review (v2: storyboard flow)",
+    "storyboard": {
+      "round": "r2",
+      "option": "option-a",
+      "style": "clean-pink@1",
+      "title": "一周测评开场 · 自定义"
+    },
+    "compiledBy": "src/engine/storyboard.ts compileOption"
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "theme": {
+    "background": "#101820",
+    "textColor": "#ffffff",
+    "fontFamily": "\"BloomInter\", sans-serif",
+    "fonts": [
+      {
+        "family": "BloomInter",
+        "src": "fonts/Inter-700.woff2",
+        "weight": 700
+      }
+    ]
+  },
+  "assets": {
+    "source": {
+      "type": "video",
+      "path": "recordings/Bloom10/Bloom10-达人素材.mp4",
+      "sha256": "31bf76ef1375c072f53117d2379660d40973ed323d61037d34afc3786a8274c3"
+    },
+    "product-front": {
+      "type": "image",
+      "path": "projects/bloom10-v2/assets/product-front-f0150.jpg",
+      "sha256": "a6bed9d60474d2b51f2897bd2b4e94556c7298a4b02a5a17976f1e03b40bb888"
+    }
+  },
+  "transcript": {
+    "asset": "source",
+    "words": "transcripts/Bloom10-达人素材.edited.json",
+    "cues": "transcripts/Bloom10-达人素材.edited.cues.json"
+  },
+  "segments": [
+    {
+      "id": "s-b1-b2-b3-b4-b5",
+      "asset": "source",
+      "sourceStartMs": 0,
+      "sourceEndMs": 19330,
+      "camera": {
+        "punchIns": [
+          {
+            "at": {
+              "word": 10,
+              "expect": "week"
+            },
+            "durationFrames": 30,
+            "zoom": 1.15,
+            "rampFrames": 5
+          },
+          {
+            "at": {
+              "word": 44,
+              "expect": "stuck"
+            },
+            "durationFrames": 30,
+            "zoom": 1.15,
+            "rampFrames": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "s-b7",
+      "asset": "source",
+      "sourceStartMs": 27000,
+      "sourceEndMs": 29620
+    }
+  ],
+  "layout": {
+    "footage": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "borderRadius": 0,
+      "fit": "cover",
+      "grade": {
+        "brightness": 1.02,
+        "contrast": 1.06,
+        "saturate": 1.1
+      }
+    }
+  },
+  "captions": {
+    "box": {
+      "x": 70,
+      "y": 1330,
+      "width": 860,
+      "height": 190
+    },
+    "fontSize": 66,
+    "lineHeight": 80,
+    "fontWeight": 700,
+    "color": "#ffffff",
+    "activeColor": "#ffd23f",
+    "background": "#101820b3",
+    "textTransform": "uppercase",
+    "singleLineMaxChars": 20,
+    "wordGap": 12,
+    "maxLines": 2,
+    "balanceWeight": 0.2,
+    "emphasis": []
+  },
+  "overlays": [
+    {
+      "id": "hook-big-text-b1",
+      "effect": "title-card@1",
+      "from": {
+        "segment": "s-b1-b2-b3-b4-b5",
+        "edge": "start"
+      },
+      "durationFrames": 75,
+      "layer": "below-captions",
+      "props": {
+        "x": 90,
+        "y": 170,
+        "width": 820,
+        "fontSize": 76,
+        "lineHeight": 1.15,
+        "background": "#ffffff",
+        "color": "#101820",
+        "accentColor": "#ff7ab6",
+        "accentWidth": 14,
+        "borderRadius": 18,
+        "paddingX": 36,
+        "paddingY": 26,
+        "textTransform": "uppercase",
+        "enter": {
+          "type": "fade-up",
+          "fadeFrames": 6,
+          "riseFrames": 8,
+          "risePx": 30
+        },
+        "text": "1 week on these gummies"
+      }
+    },
+    {
+      "id": "product-pip-b2",
+      "effect": "image-card@1",
+      "from": {
+        "word": 34,
+        "expect": "individually"
+      },
+      "durationFrames": 66,
+      "layer": "below-captions",
+      "props": {
+        "x": 50,
+        "y": 260,
+        "width": 380,
+        "height": 628,
+        "fit": "cover",
+        "background": "#ffffff",
+        "padding": 10,
+        "borderRadius": 28,
+        "shadow": true,
+        "asset": "product-front"
+      }
+    }
+  ],
+  "audio": {
+    "segmentAudio": true
+  },
+  "qc": {
+    "maxTruePeakDb": -1
+  }
+}

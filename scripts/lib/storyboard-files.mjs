@@ -78,13 +78,14 @@ export async function footageAssets(projectId) {
     const ids = [...new Set(plan.segments.map((segment) => segment.asset))];
     return Object.fromEntries(ids.map((id) => [id, plan.assets[id]]));
   }
-  const { project, assets } = await loadProjectInputs(projectId);
+  const project = await readJson(projectFile(projectId, "project.json"));
+  const assets = await readJson(projectFile(projectId, "assets.json"));
   const item = assets.items.find((entry) => entry.id === project.footage);
   if (!item?.file) throw new Error(`projects/${projectId}: footage "${project.footage}" has no file in assets.json`);
   return { [item.id]: { type: "video", path: item.file, ...(item.sha256 ? { sha256: item.sha256 } : {}) } };
 }
 
-// Compile one option. `selection` overrides (style, layout) apply only when
+// Compile one option. `selection` overrides (style, layout, cards) apply only when
 // the selection is for that option.
 export async function compileProjectOption(projectId, round, optionId, { selection: selectionOverride, library } = {}) {
   const [inputs, { options, selection: stored }, lib] = await Promise.all([loadProjectInputs(projectId), loadRound(projectId, round), library ?? loadLibrary()]);
@@ -93,14 +94,48 @@ export async function compileProjectOption(projectId, round, optionId, { selecti
   if (!option) throw new Error(`No ${optionId} in storyboard/${round}`);
   const selection = selectionOverride ?? stored;
   const applies = selection?.option === optionId ? selection : null;
+  const mixLayers = await readJson(projectFile(projectId, "storyboard", round, "mix.json"), null);
+  if (mixLayers) inputs.project.footage = mixLayers.source.id;
   const layout = await loadLayoutContext(projectDir(projectId), { segments: [] });
-  return compileOption({
+  const result = compileOption({
     ...inputs,
     option,
     cards: lib.cards,
     styles: lib.styles,
-    selection: applies,
+    selection: applies && mixLayers ? { ...applies, layoutOverrides: Object.fromEntries(Object.entries(applies.layoutOverrides ?? {}).filter(([id]) => id !== "mix-presenter")) } : applies,
     tasteRules: lib.tasteRules,
     layout: { faces: layout.faces, overrides: layout.overrides, safeZones: layout.safeZones },
   });
+  if (mixLayers && result.plan) {
+    const inherit = mixLayers.inherited;
+    if (inherit && inherit.style === result.plan.meta.storyboard.style) {
+      if (inherit.captions) result.plan.captions = inherit.captions;
+      else if (result.plan.captions) result.plan.captions.box = { ...result.plan.captions.box, y: 840 };
+      result.plan.theme = inherit.theme;
+      result.plan.layout = inherit.layout;
+    } else if (result.plan.captions) {
+      result.plan.captions.box = { ...result.plan.captions.box, y: 840 };
+    }
+    result.plan.assets[mixLayers.actor.id] = { type: "video", path: mixLayers.actor.file };
+    const saved = inherit?.presenter;
+    const rect = applies?.layoutOverrides?.["mix-presenter"] ?? (saved ? { x: saved.x, y: saved.y, width: saved.width, height: saved.height } : { x: 590, y: 1060, width: 300, height: 534 });
+    result.plan.overlays.push({ id: "mix-presenter", effect: "alpha-video@1", from: { frame: 0 }, until: { fromEnd: 0 }, layer: "below-captions", props: { asset: mixLayers.actor.id, ...rect } });
+    result.plan.meta.mix = { variant: mixLayers.variant, revision: mixLayers.revision, round };
+  }
+  const settings = applies?.videoSettings;
+  if (result.plan && settings) {
+    if (settings.captions?.enabled === false) delete result.plan.captions;
+    else if (result.plan.captions && settings.captions) {
+      const { enabled, background, ...values } = settings.captions;
+      Object.assign(result.plan.captions, values);
+      if (background === null) delete result.plan.captions.background;
+      else if (background !== undefined) result.plan.captions.background = background;
+      if (values.fontSize) result.plan.captions.lineHeight = Math.round(values.fontSize * 1.2);
+    }
+    const presenter = result.plan.overlays.find((overlay) => overlay.id === "mix-presenter");
+    if (presenter && settings.presenter?.box) Object.assign(presenter.props, settings.presenter.box);
+    if (settings.presenter?.enabled === false) result.plan.overlays = result.plan.overlays.filter((overlay) => overlay.id !== "mix-presenter");
+    result.plan.meta.videoSettings = settings;
+  }
+  return result;
 }

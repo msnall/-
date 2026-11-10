@@ -1,0 +1,102 @@
+{
+  "status": "unreviewed machine transcript",
+  "detectedLanguage": "en",
+  "instructions": "Verify names, brands, product terms, numbers and claims against the audio. Token probabilities are not calibrated accuracy scores. No spelling was auto-corrected.",
+  "warnings": [
+    {
+      "index": 1,
+      "text": "every",
+      "startMs": 120,
+      "endMs": 510,
+      "confidence": 0.244752,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 7,
+      "text": "Most",
+      "startMs": 2560,
+      "endMs": 2750,
+      "confidence": 0.646794,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 28,
+      "text": "D",
+      "startMs": 8530,
+      "endMs": 8640,
+      "confidence": 0.507992,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 29,
+      "text": "ring",
+      "startMs": 8640,
+      "endMs": 8880,
+      "confidence": 0.425077,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 35,
+      "text": "Turn",
+      "startMs": 10180,
+      "endMs": 10320,
+      "confidence": 0.524227,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 45,
+      "text": "steel.",
+      "startMs": 12850,
+      "endMs": 13680,
+      "confidence": 0.363767,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 47,
+      "text": "pound",
+      "startMs": 14430,
+      "endMs": 14730,
+      "confidence": 0.43898,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 50,
+      "text": "limit.",
+      "startMs": 15430,
+      "endMs": 15870,
+      "confidence": 0.406276,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 53,
+      "text": "brake.",
+      "startMs": 17290,
+      "endMs": 17680,
+      "confidence": 0.550253,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 54,
+      "text": "Locks",
+      "reason": "zero-duration unit"
+    },
+    {
+      "index": 54,
+      "text": "Locks",
+      "startMs": 18560,
+      "endMs": 18560,
+      "confidence": 0.647654,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 55,
+      "text": "in",
+      "reason": "zero-duration unit"
+    },
+    {
+      "index": 56,
+      "text": "with",
+      "reason": "zero-duration unit"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "mix-mw4bbti2-d15090",
+  "name": "混剪版本 1",
+  "createdAt": "2026-11-06T01:45:36.794Z",
+  "selections": [
+    {
+      "slot": "hook",
+      "asset": "wrong-2"
+    },
+    {
+      "slot": "problem",
+      "asset": "wrong-4"
+    },
+    {
+      "slot": "solution",
+      "asset": "detail-9"
+    },
+    {
+      "slot": "demo-a",
+      "asset": "detail-7"
+    },
+    {
+      "slot": "demo-b",
+      "asset": "detail-5"
+    },
+    {
+      "slot": "detail-a",
+      "asset": "detail-8"
+    },
+    {
+      "slot": "detail-b",
+      "asset": "detail-2"
+    },
+    {
+      "slot": "ending",
+      "asset": "detail-1"
+    }
+  ],
+  "revision": 5,
+  "lockedSlots": [],
+  "preview": null,
+  "approvedRevision": null
+}

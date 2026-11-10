@@ -1,0 +1,35 @@
+{
+  "round": "r4",
+  "option": "option-a",
+  "state": "confirmed",
+  "style": null,
+  "layoutOverrides": {},
+  "draftOption": null,
+  "transitions": {},
+  "videoSettings": {
+    "captions": {
+      "enabled": true,
+      "fontSize": 52,
+      "color": "#ffffff",
+      "activeColor": "#4a3dff",
+      "background": null,
+      "box": {
+        "x": 110,
+        "y": 1643,
+        "width": 868,
+        "height": 190
+      }
+    },
+    "presenter": {
+      "enabled": true,
+      "box": {
+        "x": 48,
+        "y": 1243,
+        "width": 191,
+        "height": 339.9799999999999
+      }
+    }
+  },
+  "confirmedAt": "2026-11-06T05:57:14.021Z",
+  "updatedAt": "2026-11-06T05:45:28.765Z"
+}

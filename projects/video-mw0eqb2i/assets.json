@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "source",
+      "kind": "footage",
+      "status": "available",
+      "label": "口播原片",
+      "file": "projects/video-mw0eqb2i/video-mw0eqb2i-source.mp4",
+      "sha256": "a06d57cc837a452ee87d00976a5d7d7042f3d4fc834139811349ed76cfd693e0",
+      "source": "用户上传",
+      "neededBy": [],
+      "candidates": []
+    },
+    {
+      "id": "product-front",
+      "kind": "image",
+      "status": "available",
+      "label": "产品正面图",
+      "file": "projects/video-mw0eqb2i/assets/product-front-upload-20261105020708.png",
+      "originalName": "图片2.png",
+      "sha256": "91e74484fb360e0f700152c7619791c738e24894dde8a3d23ce741fdd98b4973",
+      "source": "用户上传（图片2.png）",
+      "approvedBy": "user",
+      "neededBy": [],
+      "candidates": []
+    }
+  ],
+  "claims": []
+}

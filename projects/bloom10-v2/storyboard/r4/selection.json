@@ -1,0 +1,13 @@
+{
+  "round": "r4",
+  "option": "option-a",
+  "state": "confirmed",
+  "style": "clean-pink@1",
+  "layoutOverrides": {},
+  "draftOption": null,
+  "transitions": {
+    "b2": "cut"
+  },
+  "confirmedAt": "2026-11-03T02:53:05.923Z",
+  "updatedAt": "2026-11-03T02:53:05.923Z"
+}

@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "id": "mix-mw4bb0i7-4c5eb0",
+  "revision": 5,
+  "meta": {
+    "title": "车锁-01",
+    "storyboard": {
+      "round": "r6",
+      "option": "option-a",
+      "style": "clean-pink@1",
+      "title": "混剪版本 3 · 效果方案"
+    },
+    "compiledBy": "src/engine/storyboard.ts compileOption",
+    "mix": {
+      "variant": "mix-mw4bbtic-4d4c7e",
+      "revision": 1,
+      "round": "r6"
+    },
+    "videoSettings": {
+      "captions": {
+        "enabled": true,
+        "fontSize": 52,
+        "color": "#ffffff",
+        "activeColor": "#4a3dff",
+        "background": null,
+        "box": {
+          "x": 110,
+          "y": 1643,
+          "width": 868,
+          "height": 190
+        }
+      },
+      "presenter": {
+        "enabled": true,
+        "box": {
+          "x": 48,
+          "y": 1243,
+          "width": 191,
+          "height": 339.9799999999999
+        }
+      }
+    }
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "theme": {
+    "background": "#101820",
+    "textColor": "#ffffff",
+    "fontFamily": "\"BloomInter\", sans-serif",
+    "fonts": [
+      {
+        "family": "BloomInter",
+        "src": "fonts/Inter-700.woff2",
+        "weight": 700
+      }
+    ]
+  },
+  "assets": {
+    "mixbase-5d8430ea80ff41d3": {
+      "type": "video",
+      "path": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/5d8430ea80ff41d3/footage.mp4"
+    },
+    "presenter-5d8430ea80ff41d3": {
+      "type": "video",
+      "path": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/5d8430ea80ff41d3/presenter-ead11174ea96c642.webm"
+    }
+  },
+  "transcript": {
+    "asset": "mixbase-5d8430ea80ff41d3",
+    "words": "transcripts/mix-mw4bb0i7-4c5eb0-source.json",
+    "cues": "transcripts/mix-mw4bb0i7-4c5eb0-source.cues.json"
+  },
+  "segments": [
+    {
+      "id": "s-b1",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 0,
+      "sourceEndMs": 2560
+    },
+    {
+      "id": "s-b2",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 2560,
+      "sourceEndMs": 4720
+    },
+    {
+      "id": "s-b3",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 4720,
+      "sourceEndMs": 5520
+    },
+    {
+      "id": "s-b4",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 5520,
+      "sourceEndMs": 7200
+    },
+    {
+      "id": "s-b5",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 7200,
+      "sourceEndMs": 10180
+    },
+    {
+      "id": "s-b6",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 10180,
+      "sourceEndMs": 12290
+    },
+    {
+      "id": "s-b7",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 12290,
+      "sourceEndMs": 13680
+    },
+    {
+      "id": "s-b8",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 13680,
+      "sourceEndMs": 15870
+    },
+    {
+      "id": "s-b9",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 15870,
+      "sourceEndMs": 18560
+    },
+    {
+      "id": "s-b10",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 18560,
+      "sourceEndMs": 19350
+    },
+    {
+      "id": "s-b11",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 19350,
+      "sourceEndMs": 20700
+    },
+    {
+      "id": "s-b12",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 20700,
+      "sourceEndMs": 21920
+    },
+    {
+      "id": "s-b13",
+      "asset": "mixbase-5d8430ea80ff41d3",
+      "sourceStartMs": 21920,
+      "sourceEndMs": 24999
+    }
+  ],
+  "layout": {
+    "footage": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "borderRadius": 0,
+      "fit": "cover",
+      "grade": {
+        "brightness": 1.02,
+        "contrast": 1.06,
+        "saturate": 1.1
+      }
+    }
+  },
+  "captions": {
+    "box": {
+      "x": 110,
+      "y": 1643,
+      "width": 868,
+      "height": 190
+    },
+    "fontSize": 52,
+    "lineHeight": 62,
+    "fontWeight": 700,
+    "color": "#ffffff",
+    "activeColor": "#4a3dff",
+    "textTransform": "uppercase",
+    "singleLineMaxChars": 20,
+    "wordGap": 12,
+    "maxLines": 2,
+    "balanceWeight": 0.2,
+    "emphasis": []
+  },
+  "overlays": [
+    {
+      "id": "mix-presenter",
+      "effect": "alpha-video@1",
+      "from": {
+        "frame": 0
+      },
+      "until": {
+        "fromEnd": 0
+      },
+      "layer": "below-captions",
+      "props": {
+        "asset": "presenter-5d8430ea80ff41d3",
+        "x": 48,
+        "y": 1243,
+        "width": 191,
+        "height": 339.9799999999999
+      }
+    }
+  ],
+  "audio": {
+    "segmentAudio": true
+  },
+  "qc": {
+    "maxTruePeakDb": -1
+  }
+}

@@ -96,10 +96,18 @@ const Rect: React.FC<EffectComponentProps<"rect@1">> = ({ props }) => (
   />
 );
 
+const FadeThroughBlack: React.FC<EffectComponentProps<"fade-through-black@1">> = ({ durationInFrames }) => {
+  const frame = useCurrentFrame();
+  const middle = (durationInFrames - 1) / 2;
+  const opacity = Math.max(0, 1 - Math.abs(frame - middle) / middle);
+  return <div style={{ position: "absolute", inset: 0, background: "#000", opacity, pointerEvents: "none" }} />;
+};
+
 // Every catalog entry must have a component (and nothing else may be listed).
 export const effectComponents: { [K in EffectId]: React.FC<EffectComponentProps<K>> } = {
   "title-card@1": TitleCard,
   "alpha-video@1": AlphaVideo,
   "image-card@1": ImageCard,
   "rect@1": Rect,
+  "fade-through-black@1": FadeThroughBlack,
 };

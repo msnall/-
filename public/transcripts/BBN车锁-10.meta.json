@@ -1,0 +1,17 @@
+{
+  "input": "F:\\VideoAutomation\\sucai\\口播\\BBN车锁-10.mp3",
+  "sourceSha256": "acd3e738385965c84f5465f90313b1936894d3709d1e868871373c07720c2129",
+  "sourceBytes": 416924,
+  "sourceModifiedAt": "2026-11-05T06:55:46.685Z",
+  "model": "F:\\VideoAutomation\\bin\\whisper.cpp\\models\\ggml-base.bin",
+  "detectedLanguage": "en",
+  "requestedLanguage": "en",
+  "durationMs": 24999,
+  "audioOffsetMs": 0,
+  "runDirectory": "F:\\VideoAutomation\\out\\transcriptions\\BBN车锁-10\\2026-11-05T08-46-21-668Z",
+  "unitCount": 73,
+  "cueCount": 13,
+  "timing": "Whisper estimated short segments; not forced alignment or guaranteed linguistic words. Chinese can contain characters/tokens.",
+  "validation": "finite integer milliseconds, ordered non-overlapping units within source duration",
+  "humanReviewRequired": true
+}

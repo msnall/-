@@ -1,17 +1,19 @@
-import { Composition } from "remotion";
+import { AbsoluteFill, Composition } from "remotion";
 import { EnvironmentTest } from "./Composition";
 import { calculateEditPlanMetadata, EditPlanVideo, type EditPlanProps } from "./engine/EditPlanVideo.tsx";
-import bloom10Plan from "../projects/bloom10/edit-plan.json";
+
+const EditPlanEntry: React.FC<EditPlanProps> = (props) => props.resolved
+  ? <EditPlanVideo {...props} />
+  : <AbsoluteFill style={{ background: "#111827", color: "#fff", justifyContent: "center", alignItems: "center", fontFamily: "sans-serif" }}>从工作台选择视频，或通过 --props 指定 edit-plan</AbsoluteFill>;
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* Any edit-plan renders through this composition. Studio opens the Bloom10
-          plan by default; scripts/render-plan.mjs passes other plans via --props. */}
+      {/* The render script supplies each project's plan via --props. */}
       <Composition
         id="EditPlan"
-        component={EditPlanVideo}
-        defaultProps={{ plan: bloom10Plan } satisfies EditPlanProps}
+        component={EditPlanEntry}
+        defaultProps={{ plan: null } satisfies EditPlanProps}
         calculateMetadata={calculateEditPlanMetadata}
       />
       <Composition

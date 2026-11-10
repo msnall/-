@@ -1,0 +1,75 @@
+{
+  "round": "r1",
+  "editPlanRevision": 0,
+  "segments": [
+    {
+      "segment": "s-b1",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b2",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b3",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b4",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b5",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b6",
+      "decision": "modify",
+      "comments": []
+    },
+    {
+      "segment": "s-b7",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b8",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b9",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b10",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b11",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b12",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b13",
+      "decision": "undecided",
+      "comments": []
+    }
+  ],
+  "comments": [],
+  "submittedAt": null,
+  "updatedAt": "2026-11-06T05:21:30.883Z",
+  "updatedBy": "user"
+}

@@ -1,0 +1,25 @@
+{
+  "round": "r1",
+  "editPlanRevision": 6,
+  "segments": [
+    {
+      "segment": "s-b1",
+      "decision": "keep",
+      "comments": []
+    },
+    {
+      "segment": "s-b3-b4-b5",
+      "decision": "keep",
+      "comments": []
+    },
+    {
+      "segment": "s-b7",
+      "decision": "keep",
+      "comments": []
+    }
+  ],
+  "comments": [],
+  "submittedAt": "2026-11-03T02:58:12.432Z",
+  "updatedAt": "2026-11-03T02:58:12.432Z",
+  "updatedBy": "user"
+}

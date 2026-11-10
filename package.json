@@ -17,6 +17,7 @@
     "@remotion/cli": "4.0.539",
     "@remotion/player": "4.0.539",
     "@remotion/renderer": "4.0.539",
+    "lucide-react": "^0.468.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "remotion": "4.0.539",
@@ -48,7 +49,7 @@
     "desk:faces": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/detect-faces.mjs",
     "desk:compile": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/compile-storyboard.mjs",
     "desk:candidates": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/find-candidates.mjs",
-    "desk:stills":"node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/render-stills.mjs",
+    "desk:stills": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/render-stills.mjs",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src desk/ui && tsc"

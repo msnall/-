@@ -1,0 +1,43 @@
+{
+  "id": "mix-mw4bbti4-da9ede",
+  "name": "混剪版本 2",
+  "createdAt": "2026-11-06T01:45:36.796Z",
+  "selections": [
+    {
+      "slot": "hook",
+      "asset": "wrong-4"
+    },
+    {
+      "slot": "problem",
+      "asset": "wrong-2"
+    },
+    {
+      "slot": "solution",
+      "asset": "detail-8"
+    },
+    {
+      "slot": "demo-a",
+      "asset": "detail-11"
+    },
+    {
+      "slot": "demo-b",
+      "asset": "detail-2"
+    },
+    {
+      "slot": "detail-a",
+      "asset": "detail-6"
+    },
+    {
+      "slot": "detail-b",
+      "asset": "detail-12"
+    },
+    {
+      "slot": "ending",
+      "asset": "detail-5"
+    }
+  ],
+  "revision": 1,
+  "lockedSlots": [],
+  "preview": null,
+  "approvedRevision": null
+}

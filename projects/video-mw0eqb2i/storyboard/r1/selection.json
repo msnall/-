@@ -1,0 +1,203 @@
+{
+  "round": "r1",
+  "option": "option-a",
+  "state": "confirmed",
+  "style": null,
+  "layoutOverrides": {},
+  "draftOption": {
+    "id": "option-a",
+    "round": "r1",
+    "title": "基础口播方案",
+    "style": "clean-pink@1",
+    "summary": "按原片顺序保留口播。确认段落角色后，可以逐段选择剪辑技巧。",
+    "rows": [
+      {
+        "beat": "b1",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": [
+          {
+            "card": "keyword-punch@1",
+            "slots": {
+              "word": 0,
+              "zoom": 1.15
+            },
+            "claims": []
+          }
+        ]
+      },
+      {
+        "beat": "b2",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b3",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b4",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b5",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b6",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": [
+          {
+            "card": "product-fade@1",
+            "slots": {
+              "word": 29,
+              "image": "product-front",
+              "placement": "left"
+            },
+            "claims": []
+          },
+          {
+            "card": "product-pip@1",
+            "slots": {
+              "word": 29,
+              "image": "product-front",
+              "placement": "left"
+            },
+            "claims": []
+          },
+          {
+            "card": "cold-open@1",
+            "slots": {},
+            "claims": []
+          },
+          {
+            "card": "keyword-punch@1",
+            "slots": {
+              "word": 29,
+              "zoom": 1.15
+            },
+            "claims": []
+          }
+        ]
+      },
+      {
+        "beat": "b7",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b8",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b9",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b10",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b11",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b12",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b13",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b14",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b15",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b16",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b17",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b18",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b19",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b20",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b21",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b22",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      },
+      {
+        "beat": "b23",
+        "keep": true,
+        "onScreen": "原片口播与字幕",
+        "cards": []
+      }
+    ],
+    "global": [],
+    "keyframes": [],
+    "createdBy": "workbench"
+  },
+  "transitions": {
+    "b6": "fade-black"
+  },
+  "confirmedAt": "2026-11-05T03:07:49.642Z",
+  "updatedAt": "2026-11-05T03:07:49.642Z"
+}

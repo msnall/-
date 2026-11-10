@@ -1,0 +1,24 @@
+{
+  "id": "video-mw0eqb2i",
+  "title": "P-01",
+  "productName": "peach8",
+  "market": "US",
+  "language": "en",
+  "media": {
+    "originalName": "TikSave.io_7695445119507385630-hd (1).mp4",
+    "bytes": 49924751,
+    "durationMs": 56590,
+    "width": 1080,
+    "height": 1920
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "footage": "source",
+  "transcript": {
+    "words": "transcripts/video-mw0eqb2i-source.json",
+    "cues": "transcripts/video-mw0eqb2i-source.cues.json"
+  }
+}

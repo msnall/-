@@ -24,6 +24,8 @@ type Props = {
   onCaptionBox: (rect: Rect, commit: boolean) => void;
   onFaceBox: (rect: Rect, commit: boolean) => void;
   previewing: string | null;
+  inspection?: boolean;
+  zoom?: number;
 };
 
 const round = (rect: Rect): Rect => ({ x: Math.round(rect.x), y: Math.round(rect.y), width: Math.max(4, Math.round(rect.width)), height: Math.max(4, Math.round(rect.height)) });
@@ -105,7 +107,7 @@ export const Stage: React.FC<Props> = (props) => {
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
-  const scale = Math.min(size.width / resolved.width, size.height / resolved.height);
+  const scale = Math.min(size.width / resolved.width, size.height / resolved.height) * (props.zoom ?? 1);
   const width = resolved.width * scale;
   const height = resolved.height * scale;
   const inputProps = useMemo(() => ({ plan: props.preview, resolved }), [props.preview, resolved]);
@@ -153,7 +155,7 @@ export const Stage: React.FC<Props> = (props) => {
           clickToPlay={false}
           acknowledgeRemotionLicense
         />
-        <div className="canvas-layer" style={{ width: resolved.width, height: resolved.height, transform: `scale(${scale})` }}>
+        {props.inspection !== false ? <div className="canvas-layer" style={{ width: resolved.width, height: resolved.height, transform: `scale(${scale})` }}>
           {toggles.safeZones
             ? safeZones?.zones.map((zone) => (
                 <div key={zone.id} className="safe-zone" style={{ left: zone.x, top: zone.y, width: zone.width, height: zone.height }}>
@@ -197,7 +199,7 @@ export const Stage: React.FC<Props> = (props) => {
                 rect={overlayBounds(overlay)}
                 scale={scale}
                 className={`overlay-box${frame >= overlay.from && frame < overlay.from + overlay.durationInFrames ? "" : " idle"}`}
-                label={`${overlay.id} · ${overlay.effect}${box.height === "minHeight" ? "（高度为估计）" : ""}`}
+                label={`画面元素${box.height === "minHeight" ? "（高度为估计）" : ""}`}
                 selected={selection?.kind === "overlay" && selection.id === overlay.id}
                 onSelect={() => props.onSelect({ kind: "overlay", id: overlay.id })}
                 onChange={(rect, commit) => props.onOverlayBox(overlay.id, rect, commit)}
@@ -209,8 +211,8 @@ export const Stage: React.FC<Props> = (props) => {
               {tag.text}
             </div>
           ) : null}
-        </div>
-        {props.previewing ? <div className="previewing-banner">正在预览 {props.previewing}（未采纳）</div> : null}
+        </div> : null}
+        {props.inspection !== false && props.previewing ? <div className="previewing-banner">正在预览提案（未采纳）</div> : null}
       </div>
     </div>
   );

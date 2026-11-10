@@ -1,1 +1,9 @@
-{ "round": "r1", "option": null, "state": "draft", "style": null, "layoutOverrides": {}, "confirmedAt": null }
+{
+  "round": "r1",
+  "option": "option-b",
+  "state": "confirmed",
+  "style": null,
+  "layoutOverrides": {},
+  "confirmedAt": "2026-11-02T02:05:34.383Z",
+  "updatedAt": "2026-11-02T02:05:34.383Z"
+}

@@ -1,0 +1,24 @@
+{
+  "project": "mix-mw4bb0i7-4c5eb0",
+  "stage": "storyboard",
+  "stages": {
+    "setup": {
+      "state": "done"
+    },
+    "asset-prep": {
+      "state": "waiting-user"
+    },
+    "storyboard": {
+      "state": "waiting-user"
+    },
+    "timeline-review": {
+      "state": "waiting-user"
+    },
+    "render-qc": {
+      "state": "waiting-user"
+    }
+  },
+  "updatedAt": "2026-11-06T08:35:23.138Z",
+  "editPlanRevision": 5,
+  "updatedBy": "user"
+}

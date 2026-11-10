@@ -28,8 +28,10 @@ import {
 import { Inspector } from "./Inspector.tsx";
 import { Jobs, Proposals, Versions } from "./Panels.tsx";
 import { resolvePreview } from "./preview.ts";
+import { copyText } from "./clipboard.ts";
 import { Stage, type Selection, type Toggles } from "./Stage.tsx";
 import { Timeline } from "./Timeline.tsx";
+import { Eye, ScanEye, PanelBottomClose, PanelBottomOpen, ZoomIn, ZoomOut } from "lucide-react";
 
 type SaveState =
   | { kind: "saved" }
@@ -48,14 +50,17 @@ const withoutRevision = (plan: RawPlan): RawPlan => {
 
 // The review desk (timeline review). The shell (Shell.tsx) supplies the
 // project and the stage navigation shown in the header.
-export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
+export const App: React.FC<{ projectId: string; nav: React.ReactNode; onOpenExport: () => void; initialTab?: "inspector" | "jobs" }> = ({
   projectId,
   nav,
+  onOpenExport,
+  initialTab = "inspector",
 }) => {
   const [project, setProject] = useState<Project | null>(null);
   const [draft, setDraft] = useState<RawPlan | null>(null);
   const [save, setSave] = useState<SaveState>({ kind: "saved" });
   const [review, setReview] = useState<Review | null>(null);
+  const [reviewHistory, setReviewHistory] = useState<Review[]>([]);
   const [resolved, setResolved] = useState<{
     preview: RawPlan;
     resolved: ResolvedPlan;
@@ -66,12 +71,16 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
   const [selection, setSelection] = useState<Selection>(null);
   const [tab, setTab] = useState<
     "inspector" | "proposals" | "versions" | "jobs"
-  >("inspector");
+  >(initialTab);
   const [toggles, setToggles] = useState<Toggles>({
     safeZones: true,
     faces: true,
     captionBox: true,
   });
+  const [inspection, setInspection] = useState(true);
+  const [zoom, setZoom] = useState(1);
+  const [timelineOpen, setTimelineOpen] = useState(true);
+  const [timelineHeight, setTimelineHeight] = useState(180);
   const [previewing, setPreviewing] = useState<string | null>(null);
   const [jobs, setJobs] = useState<Job[]>([]);
   const [versions, setVersions] = useState<Version[]>([]);
@@ -104,6 +113,7 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
       }
       const round = data.status.stages["timeline-review"]?.round ?? "r1";
       setReview(await api.review(id, round));
+      setReviewHistory(await api.reviewHistory(id));
       setVersions(await api.versions(id));
       setJobs(await api.jobs(id));
       return data;
@@ -308,6 +318,13 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
     }, commit);
   };
 
+  const removeOverlay = (id: string) => {
+    if (!draft?.overlays?.some((item) => item.id === id)) return;
+    updateDraft((plan) => ({ ...plan, overlays: plan.overlays?.filter((item) => item.id !== id) }), true);
+    setSelection(null);
+    notify("画面图层已删除，正在保存为新版本。可在“版本”中恢复旧版。");
+  };
+
   const setCaptionProp = (key: string, value: unknown, commit = true) =>
     updateDraft((plan) => {
       if (plan.captions) plan.captions = { ...plan.captions, [key]: value };
@@ -319,6 +336,7 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
     if (!review || !project) return;
     const next = change(structuredClone(review));
     next.editPlanRevision = project.revision;
+    next.submittedAt = null;
     setReview(next);
     window.clearTimeout(reviewTimer.current);
     reviewTimer.current = window.setTimeout(
@@ -467,7 +485,7 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
       setPreviewing(null);
       await loadProject(project.id);
       notify(
-        `已采纳 ${pid}，edit-plan 现在是 r${result.revision}。可在“版本”里回退。`,
+        `已采纳修改建议，当前为第 ${result.revision} 次修改。可在“版本”里回退。`,
       );
     } catch (error) {
       notify(
@@ -486,14 +504,14 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
     if (
       !project ||
       !window.confirm(
-        `把 r${revision} 恢复为新版本 r${project.revision + 1}？当前版本仍保留在历史中。`,
+        `把第 ${revision} 次修改恢复为新版本？当前版本仍保留在历史中。`,
       )
     )
       return;
     try {
       await api.restore(project.id, revision, project.revision);
       await loadProject(project.id);
-      notify(`已恢复 r${revision}。`);
+      notify(`已恢复第 ${revision} 次修改。`);
     } catch (error) {
       notify(`恢复失败：${(error as Error).message}`);
     }
@@ -510,13 +528,19 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
   };
   const submit = async () => {
     if (!project || !review) return;
-    window.clearTimeout(reviewTimer.current);
-    await api.saveReview(project.id, review);
-    setReview(await api.submitReview(project.id, review.round));
-    await loadProject(project.id, { keepDraft: true });
-    notify(
-      "意见已提交。在 Claude 对话里说“看我的意见”，Claude 会读取并生成提案。",
-    );
+    try {
+      window.clearTimeout(reviewTimer.current);
+      await api.saveReview(project.id, review);
+      setReview(await api.submitReview(project.id, review.round));
+      await loadProject(project.id, { keepDraft: true });
+      notify("审阅意见已保存。视频和剪辑方案不会自动修改；可复制意见交给 AI 助手处理。");
+    } catch (error) { notify(`审阅意见提交失败：${(error as Error).message}`); }
+  };
+  const copyReview = async (item: Review) => {
+    if (!project) return;
+    const lines = [`项目：${project.id}`, `分镜：${item.storyboardRound ?? "未记录"}`, `审阅轮次：${item.round}`, `剪辑方案版本：${item.editPlanRevision}`, `提交时间：${item.submittedAt ?? "未提交"}`, "", "整体意见：", ...item.comments.map((comment) => `- ${comment.text}`), "", "分镜意见：", ...item.segments.flatMap((entry) => [`${entry.segment} · ${entry.decision}`, ...entry.comments.map((comment) => `- ${comment.text}`)])];
+    if (await copyText(lines.join("\n"))) notify("审阅意见已复制，可交给 AI 助手处理。");
+    else notify("复制失败，请检查浏览器剪贴板权限。");
   };
 
   if (!project || !draft) return <div className="loading">加载中…</div>;
@@ -534,7 +558,7 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
   );
   const saveLabel =
     save.kind === "saved"
-      ? `已保存 · r${project.revision}`
+      ? `已保存 · 第 ${project.revision} 次修改`
       : save.kind === "saving"
         ? "保存中…"
         : save.kind === "dirty"
@@ -546,7 +570,7 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
               : "保存失败";
 
   return (
-    <div className="app">
+    <div className="app review-workspace" style={{ "--timeline-height": `${timelineOpen ? timelineHeight : 38}px` } as React.CSSProperties}>
       <header>
         {nav}
         <span className={`save-state ${save.kind}`}>{saveLabel}</span>
@@ -559,10 +583,14 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
             })}
           </span>
         ) : null}
-        <button className="primary" onClick={submit}>
-          提交意见给 Claude
+        <button onClick={submit}>
+          提交审阅意见
+        </button>
+        <button className="primary" onClick={onOpenExport} disabled={save.kind !== "saved"} title={save.kind !== "saved" ? "请等待剪辑方案保存后再进入导出中心" : "进入导出中心"}>
+          导出视频 →
         </button>
       </header>
+      <div className="review-feedback-bar"><span>记录你希望修改的内容。提交后不会自动修改视频，需要交由 AI 助手处理。</span>{review?.submittedAt ? <><strong>已保存 · {new Date(review.submittedAt).toLocaleString("zh-CN")} · 分镜 {review.storyboardRound ?? "未记录"}</strong><button onClick={() => copyReview(review)}>复制意见供 AI 处理</button></> : null}<details><summary>查看提交历史（{reviewHistory.length}）</summary>{reviewHistory.length ? reviewHistory.map((item, index) => <p key={`${item.submittedAt}-${index}`}>{new Date(item.submittedAt ?? "").toLocaleString("zh-CN")} · 分镜 {item.storyboardRound ?? "未记录"} · {item.round} · 方案 {item.editPlanRevision} <button onClick={() => copyReview(item)}>复制</button></p>) : <p>尚无提交记录</p>}</details></div>
       <div className="banner-slot">
         {save.kind === "conflict" ||
         save.kind === "invalid" ||
@@ -638,7 +666,7 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
               >
                 <img src={api.thumbUrl(project.id, segment.id)} alt="" />
                 <div>
-                  <b>{segment.id}</b>
+                  <b>片段 {resolved.resolved.footage.segments.indexOf(segment) + 1}</b>
                   <div className="muted small">
                     {(segment.from / fps).toFixed(1)}–
                     {((segment.from + segment.durationInFrames) / fps).toFixed(
@@ -687,6 +715,12 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
         </aside>
         <section className="center">
           <div className="toggles">
+            <div className="preview-mode" role="group" aria-label="预览模式">
+              <button className={!inspection ? "on" : ""} onClick={() => setInspection(false)} aria-pressed={!inspection}><Eye size={15} /> 纯净预览</button>
+              <button className={inspection ? "on" : ""} onClick={() => setInspection(true)} aria-pressed={inspection}><ScanEye size={15} /> 检查模式</button>
+            </div>
+            <span className="toolbar-divider" />
+            {inspection ? <>
             {(
               [
                 ["safeZones", "TikTok 安全区"],
@@ -713,6 +747,9 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
                 运行人脸检测
               </button>
             ) : null}
+            </> : <span className="muted small">仅显示实际视频画面</span>}
+            <span className="spacer" />
+            <div className="zoom-controls" aria-label="画面缩放"><button onClick={() => setZoom((value) => Math.max(.7, Math.round((value - .1) * 10) / 10))} aria-label="缩小画面"><ZoomOut size={15} /></button><span>{Math.round(zoom * 100)}%</span><button onClick={() => setZoom((value) => Math.min(1.5, Math.round((value + .1) * 10) / 10))} aria-label="放大画面"><ZoomIn size={15} /></button></div>
           </div>
           {resolved ? (
             <Stage
@@ -739,6 +776,8 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
               }
               onFaceBox={onFaceBox}
               previewing={previewing}
+              inspection={inspection}
+              zoom={zoom}
             />
           ) : (
             <div className="stage muted">{resolveError ?? "解析中…"}</div>
@@ -782,7 +821,7 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
                   `提案${pendingCount ? ` (${pendingCount})` : ""}`,
                 ],
                 ["versions", "版本"],
-                ["jobs", "作业"],
+                ["jobs", "任务"],
               ] as const
             ).map(([key, label]) => (
               <button
@@ -813,6 +852,8 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
                 onOverlayProp={(id, key, value) =>
                   setOverlayProp(id, key, value)
                 }
+                onSelectOverlay={(id) => setSelection({ kind: "overlay", id })}
+                onRemoveOverlay={removeOverlay}
                 onCaptionProp={(key, value) => setCaptionProp(key, value)}
                 onDecision={setDecision}
                 onComment={addComment}
@@ -844,8 +885,9 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
           </div>
         </aside>
       </main>
-      {resolved ? (
-        <Timeline
+      {resolved ? <div className={`timeline-shell${timelineOpen ? "" : " collapsed"}`}>
+        <div className="timeline-toolbar"><b>时间线</b><span className="muted small">{(resolved.resolved.durationInFrames / fps).toFixed(2)} 秒 · {resolved.resolved.footage.segments.length} 个片段</span><span className="spacer" />{timelineOpen ? <label className="timeline-size">高度 <input type="range" min="130" max="360" value={timelineHeight} onChange={(event) => setTimelineHeight(Number(event.target.value))} /></label> : null}<button onClick={() => setTimelineOpen((value) => !value)} aria-label={timelineOpen ? "收起时间线" : "展开时间线"}>{timelineOpen ? <PanelBottomClose size={15} /> : <PanelBottomOpen size={15} />}{timelineOpen ? "收起" : "展开"}</button></div>
+        {timelineOpen ? <Timeline
           resolved={resolved.resolved}
           frame={frame}
           decisions={decisions}
@@ -857,8 +899,8 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode }> = ({
             setSelection(next);
             setTab("inspector");
           }}
-        />
-      ) : null}
+        /> : null}
+      </div> : null}
       {toast ? <div className="toast">{toast}</div> : null}
     </div>
   );

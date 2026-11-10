@@ -1,0 +1,8 @@
+file 'F:/VideoAutomation/public/projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/clip-0.mp4'
+file 'F:/VideoAutomation/public/projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/clip-1.mp4'
+file 'F:/VideoAutomation/public/projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/clip-2.mp4'
+file 'F:/VideoAutomation/public/projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/clip-3.mp4'
+file 'F:/VideoAutomation/public/projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/clip-4.mp4'
+file 'F:/VideoAutomation/public/projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/clip-5.mp4'
+file 'F:/VideoAutomation/public/projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/clip-6.mp4'
+file 'F:/VideoAutomation/public/projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/clip-7.mp4'

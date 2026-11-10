@@ -16,6 +16,18 @@ import { projectFile, projectIdFrom, readJson, writeJson } from "./lib/storage.m
 import { footageAssets } from "./lib/storyboard-files.mjs";
 
 const SHORT_SIDE = 540;
+const validProxy = async (file, expectedDurationMs = null, requireAudio = false) => {
+  try {
+    if ((await stat(file)).size === 0) return null;
+    const info = await probe(file);
+    const video = info.streams.find((stream) => stream.codec_type === "video");
+    const durationMs = Number(info.format.duration) * 1000;
+    if (video?.codec_name !== "h264" || !video.width || !video.height || !Number.isFinite(durationMs) || durationMs <= 0) return null;
+    if (requireAudio && !info.streams.some((stream) => stream.codec_type === "audio" && stream.codec_name === "aac")) return null;
+    if (expectedDurationMs && Math.abs(durationMs - expectedDurationMs) > Math.max(1500, expectedDurationMs * 0.05)) return null;
+    return { info, video, durationMs };
+  } catch { return null; }
+};
 
 export async function makeProxies(projectId, { force = false, log = console.log } = {}) {
   const footage = await footageAssets(projectId);
@@ -32,10 +44,11 @@ export async function makeProxies(projectId, { force = false, log = console.log 
     const source = path.join(publicDir, isSequence ? imageSequenceFile(asset.dir, asset.pattern, 0) : asset.path);
     const input = isSequence ? ["-framerate", String(asset.fps), "-start_number", "0", "-i", path.join(publicDir, asset.dir, asset.pattern)] : ["-i", source];
     const info = await stat(source);
+    const sourceMedia = isSequence ? null : await probe(source);
+    const sourceHasAudio = sourceMedia?.streams.some((stream) => stream.codec_type === "audio") ?? false;
     const output = path.join(outDir, `${id}.mp4`);
     const previous = record.assets[id];
-    const outputExists = (await stat(output).catch(() => null)) !== null;
-    if (!force && outputExists && previous?.sourceSize === info.size && previous?.sourceMtimeMs === info.mtimeMs) {
+    if (!force && previous?.sourceSize === info.size && previous?.sourceMtimeMs === info.mtimeMs && await validProxy(output, previous.durationMs, sourceHasAudio)) {
       log(`proxy ${id}: up to date (${relative(output)})`);
       continue;
     }
@@ -55,10 +68,11 @@ export async function makeProxies(projectId, { force = false, log = console.log 
       decoder = "cpu";
       await run("ffmpeg", encode([]));
     }
+    const verified = await validProxy(temporary, sourceMedia ? Number(sourceMedia.format.duration) * 1000 : null, sourceHasAudio);
+    if (!verified) throw new Error(`proxy ${id}: FFmpeg 输出无效或时长与原片不符，请检查源文件并重试`);
     await rm(output, { force: true });
     await rename(temporary, output);
-    const probed = await probe(output);
-    const video = probed.streams.find((stream) => stream.codec_type === "video");
+    const { info: probed, video } = verified;
     record.assets[id] = {
       file: path.relative(publicDir, output).split(path.sep).join("/"),
       source: isSequence ? `${asset.dir}/${asset.pattern}` : asset.path,

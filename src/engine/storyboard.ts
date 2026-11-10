@@ -2,7 +2,8 @@ import { z } from "zod";
 import { getEffect, isEffectId } from "./effects/catalog.ts";
 import { checkLayout, type FaceAnalysis, type FaceOverrides, type LayoutWarning, type SafeZones } from "./layout.ts";
 import { cardSchema, role, styleSchema, versionedId, type Card, type Rule, type StylePack, type TasteRules } from "./library.ts";
-import { id, publicPath, sha256 } from "./primitives.ts";
+import { roleMatches } from "./beat-roles.ts";
+import { id, publicPath, sha256, hexColor } from "./primitives.ts";
 import { resolvePlan } from "./resolve.ts";
 import { parseEditPlan, PlanError, type EditPlanInput } from "./schema.ts";
 import type { Transcript } from "./transcript.ts";
@@ -15,11 +16,19 @@ import type { Transcript } from "./transcript.ts";
 export const projectSchema = z.strictObject({
   id,
   title: z.string(),
+  productName: z.string().optional(),
+  mode: z.literal("mix").optional(),
+  style: z.string().optional(),
+  sourceFolder: z.string().optional(),
+  voiceName: z.string().optional(),
+  actorName: z.string().optional(),
+  actorSourceName: z.string().optional(),
   market: z.string().default("US"),
   language: z.string().default("en"),
   output: z.strictObject({ width: z.number().int().positive(), height: z.number().int().positive(), fps: z.number().int().positive() }),
   footage: id,
   transcript: z.strictObject({ words: publicPath, cues: publicPath }),
+  media: z.strictObject({ originalName: z.string(), bytes: z.number().nonnegative(), durationMs: z.number().nonnegative(), width: z.number().positive(), height: z.number().positive() }).optional(),
 });
 export type ProjectInfo = z.output<typeof projectSchema>;
 
@@ -65,6 +74,7 @@ export const beatsSchema = z.strictObject({
       text: z.string(),
       textZh: z.string().optional(),
       claims: z.array(id).default([]),
+      classification: z.object({ recommendedRole: role, confidence: z.number().min(0).max(1), source: z.enum(["ai", "manual", "legacy"]), confirmed: z.boolean(), alternatives: z.array(role).default([]), model: z.string().optional(), analyzedAt: z.string().optional() }).optional(),
     }),
   ),
 });
@@ -99,6 +109,12 @@ export const selectionSchema = z.strictObject({
   state: z.enum(["draft", "confirmed"]).default("draft"),
   style: versionedId.nullable().default(null),
   layoutOverrides: z.record(z.string(), z.strictObject({ x: z.number(), y: z.number(), width: z.number(), height: z.number() })).default({}),
+  draftOption: optionSchema.nullable().default(null),
+  transitions: z.record(id, z.enum(["cut", "fade-black"])).default({}),
+  videoSettings: z.strictObject({
+    captions: z.strictObject({ enabled: z.boolean().optional(), fontSize: z.number().min(16).max(180).optional(), color: hexColor.optional(), activeColor: hexColor.optional(), background: hexColor.nullable().optional(), box: z.strictObject({ x: z.number().nonnegative(), y: z.number().nonnegative(), width: z.number().positive(), height: z.number().positive() }).optional() }).optional(),
+    presenter: z.strictObject({ enabled: z.boolean().optional(), box: z.strictObject({ x: z.number().nonnegative(), y: z.number().nonnegative(), width: z.number().positive(), height: z.number().positive() }).optional() }).optional(),
+  }).optional(),
   confirmedAt: z.string().nullable().default(null),
   updatedAt: z.string().optional(),
 });
@@ -190,7 +206,8 @@ const fill = (template: unknown, values: Record<string, unknown>, style: StylePa
 };
 
 export function compileOption(input: CompileInput): CompileResult {
-  const { project, assets, beats, option, cards, transcript } = input;
+  const { project, assets, beats, cards, transcript } = input;
+  const option = input.selection?.draftOption?.id === input.option.id ? input.selection.draftOption : input.option;
   const problems: string[] = [];
   const warnings: CompileResult["warnings"] = [];
   const needs: CompileNeed[] = [];
@@ -233,7 +250,7 @@ export function compileOption(input: CompileInput): CompileResult {
     const beat = beatId ? beatById.get(beatId)! : null;
     if (card.scope === "beat" && !beat) return problems.push(`${where}: ${card.id} must be used on a beat row`);
     if (card.scope === "global" && beat) return problems.push(`${where}: ${card.id} is a global card; put it in "global"`);
-    if (beat && !card.when.roles.includes(beat.role)) problems.push(`${where}: ${card.id} is for ${card.when.roles.join("/")} beats, ${beat.id} is ${beat.role}`);
+    if (beat && !roleMatches(card.when.roles, beat.role)) problems.push(`${where}: ${card.id} is for ${card.when.roles.join("/")} beats, ${beat.id} is ${beat.role}`);
     countByCard.set(card.id, (countByCard.get(card.id) ?? 0) + 1);
     uses.push({ use, card, beat, where });
     for (const claim of use.claims) recordClaim(claim, `${card.id} on ${beat?.id ?? "video"}`);
@@ -258,6 +275,12 @@ export function compileOption(input: CompileInput): CompileResult {
   const cueOf = (word: number) => ranges.find((range) => word >= range.first && word <= range.last)!.cue;
   const segments: { id: string; beats: typeof ordered; startMs: number; endMs: number }[] = [];
   for (const beat of ordered) {
+    if (project.mode === "mix") {
+      const index = input.beats.beats.indexOf(beat);
+      const next = input.beats.beats[index + 1];
+      segments.push({ id: "", beats: [beat], startMs: index === 0 ? 0 : cueOf(beat.words[0]).startMs, endMs: next ? cueOf(next.words[0]).startMs : project.media?.durationMs ?? cueOf(beat.words[1]).endMs });
+      continue;
+    }
     const last = segments[segments.length - 1];
     if (last && last.beats[last.beats.length - 1].words[1] + 1 === beat.words[0]) {
       last.beats.push(beat);
@@ -332,6 +355,15 @@ export function compileOption(input: CompileInput): CompileResult {
       if (segment) punchIns.set(segment.id, [...(punchIns.get(segment.id) ?? []), punch]);
     }
   }
+
+  ordered.slice(0, -1).forEach((beat) => {
+    if (input.selection?.transitions?.[beat.id] !== "fade-black") return;
+    overlays.push({
+      id: `transition-after-${beat.id}`, effect: "fade-through-black@1",
+      from: { word: beat.words[1], edge: "end", offsetMs: -133 },
+      durationFrames: 8, layer: "above-captions", props: {},
+    });
+  });
 
   // --- Layout overrides from the storyboard desk (dragging an element).
   for (const [overlayId, rect] of Object.entries(input.selection?.layoutOverrides ?? {})) {

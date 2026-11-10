@@ -1,0 +1,25 @@
+{
+  "round": "r1",
+  "editPlanRevision": 13,
+  "segments": [
+    {
+      "segment": "s-b6",
+      "decision": "undecided",
+      "comments": []
+    },
+    {
+      "segment": "s-b1-b2-b3-b4-b5",
+      "decision": "modify",
+      "comments": []
+    },
+    {
+      "segment": "s-b7-b8-b9-b10-b11-b12-b13-b14-b15-b16-b17-b18-b19-b20-b21-b22-b23",
+      "decision": "undecided",
+      "comments": []
+    }
+  ],
+  "comments": [],
+  "submittedAt": null,
+  "updatedAt": "2026-11-05T06:38:49.349Z",
+  "updatedBy": "user"
+}

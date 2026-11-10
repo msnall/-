@@ -1,0 +1,69 @@
+{
+  "round": "r6",
+  "variant": "mix-mw4bbtic-4d4c7e",
+  "revision": 1,
+  "source": {
+    "id": "mixbase-5d8430ea80ff41d3",
+    "file": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/5d8430ea80ff41d3/footage.mp4"
+  },
+  "actor": {
+    "id": "presenter-5d8430ea80ff41d3",
+    "file": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/5d8430ea80ff41d3/presenter-ead11174ea96c642.webm"
+  },
+  "inherited": {
+    "style": "clean-pink@1",
+    "captions": {
+      "box": {
+        "x": 110,
+        "y": 1643,
+        "width": 868,
+        "height": 190
+      },
+      "fontSize": 52,
+      "lineHeight": 62,
+      "fontWeight": 700,
+      "color": "#ffffff",
+      "activeColor": "#4a3dff",
+      "textTransform": "uppercase",
+      "singleLineMaxChars": 20,
+      "wordGap": 12,
+      "maxLines": 2,
+      "balanceWeight": 0.2,
+      "emphasis": []
+    },
+    "theme": {
+      "background": "#101820",
+      "textColor": "#ffffff",
+      "fontFamily": "\"BloomInter\", sans-serif",
+      "fonts": [
+        {
+          "family": "BloomInter",
+          "src": "fonts/Inter-700.woff2",
+          "weight": 700
+        }
+      ]
+    },
+    "layout": {
+      "footage": {
+        "x": 0,
+        "y": 0,
+        "width": 1080,
+        "height": 1920,
+        "borderRadius": 0,
+        "fit": "cover",
+        "grade": {
+          "brightness": 1.02,
+          "contrast": 1.06,
+          "saturate": 1.1
+        }
+      }
+    },
+    "presenter": {
+      "asset": "presenter-ead11174ea96c642",
+      "x": 48,
+      "y": 1243,
+      "width": 191,
+      "height": 339.9799999999999
+    }
+  }
+}

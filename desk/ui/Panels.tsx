@@ -178,8 +178,7 @@ export const Proposals: React.FC<{
   if (!sorted.length)
     return (
       <p className="muted">
-        还没有提案。写好意见后点顶栏的“提交意见给 Claude”，再在对话里让 Claude
-        处理。
+        还没有提案。提交审阅意见后，可复制给 AI 助手处理。
       </p>
     );
   return (
@@ -212,7 +211,7 @@ export const Versions: React.FC<{
           key={version.revision}
           className={version.revision === current ? "current" : ""}
         >
-          <b>r{version.revision}</b>{" "}
+          <b>第 {version.revision} 次修改</b>{" "}
           <span className="muted small">
             {fmtDate(version.savedAt)} · {version.by}
           </span>
@@ -240,7 +239,7 @@ const JOB_LABEL: Record<string, string> = {
   proxy: "生成预览代理",
   faces: "人脸检测",
   stills: "截帧",
-  render: "渲染 + 质检",
+  render: "视频导出",
 };
 const JOB_STATE: Record<Job["state"], string> = {
   queued: "排队",
@@ -256,16 +255,13 @@ export const Jobs: React.FC<{
 }> = ({ projectId, jobs, onStart }) => (
   <div>
     <div className="actions wrap">
-      {(["proxy", "faces", "render"] as const).map((type) => (
+      {(["proxy", "faces"] as const).map((type) => (
         <button key={type} onClick={() => onStart(type)}>
           {JOB_LABEL[type]}
         </button>
       ))}
     </div>
-    <p className="muted small">
-      渲染使用原片，输出到 out/desk/{projectId}
-      /，完成后自动运行质检（plan:verify）。
-    </p>
+    <p className="muted small">导出视频请前往“导出中心”。此处仅显示准备工具与任务记录。</p>
     <ul className="jobs">
       {jobs.map((job) => (
         <li key={job.id} className={job.state}>
@@ -274,15 +270,16 @@ export const Jobs: React.FC<{
             {JOB_STATE[job.state]}
           </span>
           <div className="muted small">
-            {job.id} · {fmtDate(job.createdAt)}
+            {fmtDate(job.createdAt)}
             {job.output ? (
               <>
                 <br />
-                输出：<code>{job.output}</code>
+                已生成文件
               </>
             ) : null}
             {job.error ? <div className="warn-text">{job.error}</div> : null}
           </div>
+          <details className="technical-details"><summary>任务技术详情</summary><code>{job.id}{job.output ? ` · ${job.output}` : ""}</code></details>
           <a
             className="small"
             href={`/api/projects/${projectId}/jobs/${job.id}/log`}

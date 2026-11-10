@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-import { ROLES } from "../../src/engine/library.ts";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { SIMPLE_ROLES, SIMPLE_ROLE_LABEL, simpleRole } from "../../src/engine/beat-roles.ts";
 import { api, storyboardApi, type Assets, type Beats, type Overview } from "./api.ts";
 
 // ① Asset prep: confirm the beats (what each part of the talk does), approve
@@ -19,15 +19,20 @@ export const AssetDesk: React.FC<Props> = ({ projectId, overview, nav, tick, onC
   const [beats, setBeats] = useState<Beats | null>(null);
   const [footage, setFootage] = useState("source");
   const [dirtyBeats, setDirtyBeats] = useState(false);
+  const [classifying, setClassifying] = useState(false);
+  const classificationAttempted = useRef(false);
   const [sheets, setSheets] = useState<string[]>([]);
   const [evidence, setEvidence] = useState<Record<string, string>>({});
   const [message, setMessage] = useState<string | null>(null);
   const [cueMs, setCueMs] = useState<Record<string, number>>({});
+  const [words, setWords] = useState<{ index: number; text: string; startMs: number }[]>([]);
+  const [selectedBeatId, setSelectedBeatId] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     const data = await storyboardApi.assets(projectId);
     setAssets(data.assets);
     setFootage(data.footage);
+    setWords(data.words);
     setBeats((current) => (dirtyBeats && current ? current : data.beats));
     setSheets(await storyboardApi.candidateSheets(projectId));
   }, [projectId, dirtyBeats]);
@@ -35,6 +40,24 @@ export const AssetDesk: React.FC<Props> = ({ projectId, overview, nav, tick, onC
   useEffect(() => {
     load().catch((error) => setMessage(`加载失败：${error.message}`));
   }, [load, tick]);
+
+  useEffect(() => {
+    if (!beats?.beats.length || beats.confirmedAt || dirtyBeats || classificationAttempted.current || beats.beats.some((beat) => beat.classification)) return;
+    classificationAttempted.current = true;
+    setClassifying(true);
+    storyboardApi.classifyBeats(projectId).then((result) => { setBeats(result); setMessage("AI 已预选段落分类，请检查低置信度段落。"); }).catch((error) => setMessage(`自动分类未完成：${error.message}。可点击“重新识别”。`)).finally(() => setClassifying(false));
+  }, [beats, dirtyBeats, projectId]);
+
+  const reclassify = async () => {
+    if (!beats || classifying) return;
+    setClassifying(true); setMessage("正在重新识别段落…");
+    try {
+      if (dirtyBeats) await storyboardApi.saveBeats(projectId, beats);
+      const result = await storyboardApi.classifyBeats(projectId);
+      setBeats(result); setDirtyBeats(false); setMessage("重新识别完成。人工修改的分类已保留。");
+    } catch (error) { setMessage(`重新识别失败：${(error as Error).message}`); }
+    finally { setClassifying(false); }
+  };
 
   const act = async (work: () => Promise<unknown>, done?: string) => {
     try {
@@ -51,6 +74,8 @@ export const AssetDesk: React.FC<Props> = ({ projectId, overview, nav, tick, onC
   if (!assets) return <div className="loading">加载中…</div>;
   const missing = assets.items.filter((item) => item.status === "missing");
   const beatsConfirmed = !!beats?.confirmedAt && !dirtyBeats;
+  const selectedBeat = beats?.beats.find((beat) => beat.id === selectedBeatId) ?? beats?.beats[0];
+  const selectedStartMs = selectedBeat ? words[selectedBeat.words[0]]?.startMs ?? cueMs[selectedBeat.id] ?? 0 : 0;
 
   return (
     <div className="app desk-page">
@@ -63,34 +88,38 @@ export const AssetDesk: React.FC<Props> = ({ projectId, overview, nav, tick, onC
       </header>
       <div className="banner-slot">{message ? <div className="banner" onClick={() => setMessage(null)}>{message}</div> : null}</div>
       <main className="asset-grid">
-        <section className="panel">
+        <section className="panel asset-segments">
           <h2>
-            段落角色 {beatsConfirmed ? <span className="pill state-accepted">已确认</span> : <span className="pill state-pending">待确认</span>}
+            口播段落 {beatsConfirmed ? <span className="pill state-accepted">已确认</span> : <span className="pill state-pending">待确认</span>}
           </h2>
-          <p className="muted small">Claude 按转录把口播分成几段。检查每段的角色对不对；确认后 Claude 才会用它出方案。</p>
+          <p className="muted small">系统先识别七类段落；请检查待确认项，点击分类可修改。</p><button disabled={classifying || !!beats?.confirmedAt} onClick={reclassify}>{classifying ? "AI 识别中…" : "重新识别"}</button>
           {beats?.beats.map((beat, index) => (
-            <div key={beat.id} className="beat-row">
-              <img src={storyboardApi.thumbAt(projectId, footage, cueMs[beat.id] ?? 0)} alt="" style={{ display: cueMs[beat.id] === undefined ? "none" : undefined }} />
+            <div key={beat.id} className={`beat-row${selectedBeat?.id === beat.id ? " selected" : ""}`} onClick={() => setSelectedBeatId(beat.id)}>
+              <img src={storyboardApi.thumbAt(projectId, footage, cueMs[beat.id] ?? 0)} alt="" />
               <div>
                 <div className="beat-head">
                   <b>{beat.id}</b>
                   <select
-                    value={beat.role}
+                    aria-label={`${beat.id}段落分类`}
+                    value={simpleRole(beat.role)}
+                    disabled={classifying || !!beats.confirmedAt}
                     onChange={(event) => {
                       const next = structuredClone(beats);
                       next.beats[index].role = event.target.value as typeof beat.role;
+                      next.beats[index].classification = { recommendedRole: next.beats[index].classification?.recommendedRole ?? beat.role, confidence: next.beats[index].classification?.confidence ?? 0, source: "manual", confirmed: true, alternatives: next.beats[index].classification?.alternatives ?? [], model: next.beats[index].classification?.model, analyzedAt: next.beats[index].classification?.analyzedAt };
                       next.confirmedAt = null;
                       setBeats(next);
                       setDirtyBeats(true);
                     }}
                   >
-                    {ROLES.map((role) => (
+                    {SIMPLE_ROLES.map((role) => (
                       <option key={role} value={role}>
-                        {ROLE_ZH[role]}（{role}）
+                          {SIMPLE_ROLE_LABEL[role]}
                       </option>
                     ))}
                   </select>
-                  <span className="muted small">第 {beat.words[0]}–{beat.words[1]} 个词</span>
+                  <span className={`pill ${beat.classification?.source === "manual" ? "state-accepted" : beat.classification && beat.classification.confidence >= 0.75 ? "state-accepted" : "state-pending"}`}>{beat.classification?.source === "manual" ? "人工修改" : beat.classification?.source === "ai" && beat.classification.confidence >= 0.75 ? `AI 已识别 ${Math.round(beat.classification.confidence * 100)}%` : beat.classification?.source === "ai" ? `待确认 · AI 建议 ${Math.round(beat.classification.confidence * 100)}%` : "待识别"}</span>
+                  <span className="muted small">{((words[beat.words[0]]?.startMs ?? 0) / 1000).toFixed(1)} 秒</span>
                 </div>
                 {beat.textZh ? <div className="zh">{beat.textZh}</div> : null}
                 <div className="en small muted">{beat.text}</div>
@@ -115,24 +144,23 @@ export const AssetDesk: React.FC<Props> = ({ projectId, overview, nav, tick, onC
                 <button onClick={() => act(async () => { await storyboardApi.saveBeats(projectId, beats); setDirtyBeats(false); }, "段落角色已保存")}>保存修改</button>
               ) : null}
               <button className="primary" disabled={beatsConfirmed} onClick={() => act(async () => { await storyboardApi.confirmBeats(projectId, beats); setDirtyBeats(false); }, "段落角色已确认")}>
-                {beatsConfirmed ? "已确认" : "确认段落角色"}
+                {beatsConfirmed ? "已确认" : "批量确认分类"}
               </button>
             </div>
           ) : (
-            <p className="muted">还没有段落分析。在对话里让 Claude 开始这条视频（video-workflow）。</p>
+            <p className="muted">尚未生成段落分析，请先完成语音转录。</p>
           )}
         </section>
 
-        <section className="panel">
-          <h2>素材</h2>
+        <section className="panel asset-main">
+          <div className="asset-current"><div><span className="eyebrow">CURRENT SEGMENT</span><h2>当前段落 · {selectedBeat ? ROLE_ZH[selectedBeat.role] : "等待分析"}</h2><p>{selectedBeat?.textZh ?? selectedBeat?.text ?? "暂无转录文字"}</p>{selectedBeat?.textZh ? <p className="muted">{selectedBeat.text}</p> : null}{selectedBeat?.claims.length ? <div className="asset-current-claims">{selectedBeat.claims.map((id) => { const claim = assets.claims.find((item) => item.id === id); return <span key={id} className={`pill claim-${claim?.status ?? "unverified"}`}>{claim?.text ?? "产品事实"} · {CLAIM_ZH[claim?.status ?? "unverified"]}</span>; })}</div> : null}</div><video key={`${selectedBeat?.id}-${selectedStartMs}`} controls preload="metadata" src={`/media/${encodeURIComponent(projectId)}/${encodeURIComponent(footage)}#t=${selectedStartMs / 1000}`} aria-label="当前段落原片预览" /></div>
+          <div className="asset-section-head"><div><h2>关联素材</h2><p className="muted small">确认候选图、补齐缺失素材，原片始终保留。</p></div><span className="pill">{missing.length} 项待补</span></div>
           {assets.items.map((item) => (
             <div key={item.id} className={`asset-card ${item.status}`}>
               <div className="beat-head">
                 <b>{item.label ?? item.id}</b>
                 <span className={`pill asset-${item.status}`}>{STATUS_ZH[item.status]}</span>
-                <span className="muted small">
-                  {item.id} · {item.kind}
-                </span>
+                <details className="asset-technical"><summary>技术信息</summary><code>{item.id} · {item.kind}</code></details>
               </div>
               {item.neededBy.length ? <div className="muted small">用于：{item.neededBy.join("、")}</div> : null}
               {item.status === "available" && item.file && item.kind !== "footage" ? (
@@ -141,7 +169,7 @@ export const AssetDesk: React.FC<Props> = ({ projectId, overview, nav, tick, onC
                   <div className="small">
                     {item.source}
                     <br />
-                    <code>{item.file}</code>
+                    <details><summary>素材来源</summary><code>{item.file}</code></details>
                     <br />
                     <button className="small-button" onClick={() => act(() => storyboardApi.resetAsset(projectId, item.id), `${item.id} 已撤回`)}>
                       撤回
@@ -184,7 +212,7 @@ export const AssetDesk: React.FC<Props> = ({ projectId, overview, nav, tick, onC
             </div>
           ))}
           <details>
-            <summary className="small">原片联系表（Claude 找候选帧用，编号是原片帧号）</summary>
+            <summary className="small">原片候选帧参考</summary>
             <button className="small-button" onClick={() => act(() => api.startJob(projectId, "candidates"), "已开始生成联系表")}>
               重新生成
             </button>
@@ -194,20 +222,20 @@ export const AssetDesk: React.FC<Props> = ({ projectId, overview, nav, tick, onC
           </details>
         </section>
 
-        <section className="panel">
+        <section className="panel asset-facts">
           <h2>产品事实核实</h2>
-          <p className="muted small">上屏或口播里的产品事实必须核实并写明依据。未核实的事实，方案不能确认。</p>
+          <p className="muted small">可直接标记为已核实；依据可以选填。未核实的事实仍会影响方案确认。</p>
           {assets.claims.map((claim) => (
             <div key={claim.id} className={`claim claim-${claim.status}`}>
               <div className="beat-head">
                 <b>{claim.text}</b>
                 <span className={`pill claim-${claim.status}`}>{CLAIM_ZH[claim.status]}</span>
               </div>
-              {claim.note ? <div className="small muted">Claude 的说明：{claim.note}</div> : null}
+              {claim.note ? <div className="small muted">备注：{claim.note}</div> : null}
               {claim.evidence ? <div className="small">依据：{claim.evidence}</div> : null}
               <textarea
                 rows={2}
-                placeholder="依据：例如『包装背面写明 60 粒，每天 2 粒』，或素材 id wrapped-evidence"
+                placeholder="依据（选填）：可记录包装、商品页或关联素材"
                 value={evidence[claim.id] ?? ""}
                 onChange={(event) => setEvidence({ ...evidence, [claim.id]: event.target.value })}
               />

@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "video-mw0eqb2i",
+  "revision": 12,
+  "meta": {
+    "title": "P-01",
+    "storyboard": {
+      "round": "r1",
+      "option": "option-a",
+      "style": "clean-pink@1",
+      "title": "基础口播方案"
+    },
+    "compiledBy": "src/engine/storyboard.ts compileOption"
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "theme": {
+    "background": "#101820",
+    "textColor": "#ffffff",
+    "fontFamily": "\"BloomInter\", sans-serif",
+    "fonts": [
+      {
+        "family": "BloomInter",
+        "src": "fonts/Inter-700.woff2",
+        "weight": 700
+      }
+    ]
+  },
+  "assets": {
+    "source": {
+      "type": "video",
+      "path": "projects/video-mw0eqb2i/video-mw0eqb2i-source.mp4",
+      "sha256": "a06d57cc837a452ee87d00976a5d7d7042f3d4fc834139811349ed76cfd693e0"
+    },
+    "product-front": {
+      "type": "image",
+      "path": "projects/video-mw0eqb2i/assets/product-front-upload-20261105020708.png",
+      "sha256": "91e74484fb360e0f700152c7619791c738e24894dde8a3d23ce741fdd98b4973"
+    }
+  },
+  "transcript": {
+    "asset": "source",
+    "words": "transcripts/video-mw0eqb2i-source.json",
+    "cues": "transcripts/video-mw0eqb2i-source.cues.json"
+  },
+  "segments": [
+    {
+      "id": "s-b6",
+      "asset": "source",
+      "sourceStartMs": 13200,
+      "sourceEndMs": 16000,
+      "camera": {
+        "punchIns": [
+          {
+            "at": {
+              "word": 29,
+              "expect": "contains"
+            },
+            "durationFrames": 30,
+            "zoom": 1.15,
+            "rampFrames": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "s-b1-b2-b3-b4-b5",
+      "asset": "source",
+      "sourceStartMs": 110,
+      "sourceEndMs": 13200,
+      "camera": {
+        "punchIns": [
+          {
+            "at": {
+              "word": 0,
+              "expect": "These"
+            },
+            "durationFrames": 30,
+            "zoom": 1.15,
+            "rampFrames": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "s-b7-b8-b9-b10-b11-b12-b13-b14-b15-b16-b17-b18-b19-b20-b21-b22-b23",
+      "asset": "source",
+      "sourceStartMs": 16000,
+      "sourceEndMs": 56540
+    }
+  ],
+  "layout": {
+    "footage": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "borderRadius": 0,
+      "fit": "cover",
+      "grade": {
+        "brightness": 1.02,
+        "contrast": 1.06,
+        "saturate": 1.1
+      }
+    }
+  },
+  "captions": {
+    "box": {
+      "x": 70,
+      "y": 1330,
+      "width": 860,
+      "height": 190
+    },
+    "fontSize": 66,
+    "lineHeight": 80,
+    "fontWeight": 700,
+    "color": "#ffffff",
+    "activeColor": "#ffd23f",
+    "background": "#101820b3",
+    "textTransform": "uppercase",
+    "singleLineMaxChars": 20,
+    "wordGap": 12,
+    "maxLines": 2,
+    "balanceWeight": 0.2,
+    "emphasis": []
+  },
+  "overlays": [
+    {
+      "id": "product-fade-b6",
+      "effect": "image-card@1",
+      "from": {
+        "word": 29,
+        "expect": "contains"
+      },
+      "durationFrames": 66,
+      "layer": "below-captions",
+      "props": {
+        "x": 18,
+        "y": 108,
+        "width": 316,
+        "height": 467,
+        "fit": "cover",
+        "background": "#ffffff",
+        "padding": 10,
+        "borderRadius": 28,
+        "shadow": true,
+        "asset": "product-front",
+        "enter": {
+          "type": "fade",
+          "frames": 12
+        },
+        "exit": {
+          "type": "fade",
+          "frames": 8
+        }
+      }
+    },
+    {
+      "id": "transition-after-b6",
+      "effect": "fade-through-black@1",
+      "from": {
+        "word": 30,
+        "edge": "end",
+        "offsetMs": -133
+      },
+      "durationFrames": 8,
+      "layer": "above-captions",
+      "props": {}
+    }
+  ],
+  "audio": {
+    "segmentAudio": true
+  },
+  "qc": {
+    "maxTruePeakDb": -1
+  }
+}

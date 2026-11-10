@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "id": "mix-mw4bb0i7-4c5eb0",
+  "revision": 1,
+  "meta": {
+    "title": "车锁-01",
+    "storyboard": {
+      "round": "r2",
+      "option": "option-a",
+      "style": "clean-pink@1",
+      "title": "混剪版本 1 · 效果方案"
+    },
+    "compiledBy": "src/engine/storyboard.ts compileOption",
+    "mix": {
+      "variant": "mix-mw4bbti2-d15090",
+      "revision": 4,
+      "round": "r2"
+    }
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "theme": {
+    "background": "#101820",
+    "textColor": "#ffffff",
+    "fontFamily": "\"BloomInter\", sans-serif",
+    "fonts": [
+      {
+        "family": "BloomInter",
+        "src": "fonts/Inter-700.woff2",
+        "weight": 700
+      }
+    ]
+  },
+  "assets": {
+    "mixbase-7486367ae8b15caf": {
+      "type": "video",
+      "path": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/footage.mp4"
+    },
+    "presenter-7486367ae8b15caf": {
+      "type": "video",
+      "path": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/presenter.webm"
+    }
+  },
+  "transcript": {
+    "asset": "mixbase-7486367ae8b15caf",
+    "words": "transcripts/mix-mw4bb0i7-4c5eb0-source.json",
+    "cues": "transcripts/mix-mw4bb0i7-4c5eb0-source.cues.json"
+  },
+  "segments": [
+    {
+      "id": "s-b1",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 0,
+      "sourceEndMs": 2560
+    },
+    {
+      "id": "s-b2",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 2560,
+      "sourceEndMs": 4720
+    },
+    {
+      "id": "s-b3",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 4720,
+      "sourceEndMs": 5520
+    },
+    {
+      "id": "s-b4",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 5520,
+      "sourceEndMs": 7200
+    },
+    {
+      "id": "s-b5",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 7200,
+      "sourceEndMs": 10180
+    },
+    {
+      "id": "s-b6",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 10180,
+      "sourceEndMs": 12290
+    },
+    {
+      "id": "s-b7",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 12290,
+      "sourceEndMs": 13680
+    },
+    {
+      "id": "s-b8",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 13680,
+      "sourceEndMs": 15870
+    },
+    {
+      "id": "s-b9",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 15870,
+      "sourceEndMs": 18560
+    },
+    {
+      "id": "s-b10",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 18560,
+      "sourceEndMs": 19350
+    },
+    {
+      "id": "s-b11",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 19350,
+      "sourceEndMs": 20700
+    },
+    {
+      "id": "s-b12",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 20700,
+      "sourceEndMs": 21920
+    },
+    {
+      "id": "s-b13",
+      "asset": "mixbase-7486367ae8b15caf",
+      "sourceStartMs": 21920,
+      "sourceEndMs": 24999
+    }
+  ],
+  "layout": {
+    "footage": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "borderRadius": 0,
+      "fit": "cover",
+      "grade": {
+        "brightness": 1.02,
+        "contrast": 1.06,
+        "saturate": 1.1
+      }
+    }
+  },
+  "captions": {
+    "box": {
+      "x": 70,
+      "y": 840,
+      "width": 860,
+      "height": 190
+    },
+    "fontSize": 66,
+    "lineHeight": 80,
+    "fontWeight": 700,
+    "color": "#ffffff",
+    "activeColor": "#ffd23f",
+    "background": "#101820b3",
+    "textTransform": "uppercase",
+    "singleLineMaxChars": 20,
+    "wordGap": 12,
+    "maxLines": 2,
+    "balanceWeight": 0.2,
+    "emphasis": []
+  },
+  "overlays": [
+    {
+      "id": "mix-presenter",
+      "effect": "alpha-video@1",
+      "from": {
+        "frame": 0
+      },
+      "until": {
+        "fromEnd": 0
+      },
+      "layer": "below-captions",
+      "props": {
+        "asset": "presenter-7486367ae8b15caf",
+        "x": 590,
+        "y": 1060,
+        "width": 300,
+        "height": 534
+      }
+    }
+  ],
+  "audio": {
+    "segmentAudio": true
+  },
+  "qc": {
+    "maxTruePeakDb": -1
+  }
+}

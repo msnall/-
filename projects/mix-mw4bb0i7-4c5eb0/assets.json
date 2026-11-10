@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "mixbase-e14132298775699f",
+      "kind": "footage",
+      "label": "混剪实拍画面",
+      "status": "available",
+      "file": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/e14132298775699f/footage.mp4",
+      "source": "项目混剪组合",
+      "neededBy": [],
+      "candidates": []
+    },
+    {
+      "id": "presenter-e14132298775699f",
+      "kind": "video",
+      "label": "达人图层",
+      "status": "available",
+      "file": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/e14132298775699f/presenter.webm",
+      "source": "项目混剪组合",
+      "neededBy": [],
+      "candidates": []
+    },
+    {
+      "id": "mixbase-7486367ae8b15caf",
+      "kind": "footage",
+      "label": "混剪实拍画面",
+      "status": "available",
+      "file": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/footage.mp4",
+      "source": "项目混剪组合",
+      "neededBy": [],
+      "candidates": []
+    },
+    {
+      "id": "presenter-7486367ae8b15caf",
+      "kind": "video",
+      "label": "达人图层",
+      "status": "available",
+      "file": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/7486367ae8b15caf/presenter.webm",
+      "source": "项目混剪组合",
+      "neededBy": [],
+      "candidates": []
+    },
+    {
+      "id": "presenter-ead11174ea96c642",
+      "kind": "video",
+      "status": "available",
+      "label": "自动抠像达人",
+      "file": "projects/mix-mw4bb0i7-4c5eb0/presenter-layers/presenter-ead11174ea96c642.webm",
+      "source": "达人原片自动抠像",
+      "neededBy": [],
+      "candidates": []
+    },
+    {
+      "id": "mixbase-5d8430ea80ff41d3",
+      "kind": "footage",
+      "label": "混剪实拍画面",
+      "status": "available",
+      "file": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/5d8430ea80ff41d3/footage.mp4",
+      "source": "项目混剪组合",
+      "neededBy": [],
+      "candidates": []
+    },
+    {
+      "id": "presenter-5d8430ea80ff41d3",
+      "kind": "video",
+      "label": "达人图层",
+      "status": "available",
+      "file": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/5d8430ea80ff41d3/presenter-ead11174ea96c642.webm",
+      "source": "项目混剪组合",
+      "neededBy": [],
+      "candidates": []
+    }
+  ],
+  "claims": []
+}

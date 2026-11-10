@@ -1,0 +1,489 @@
+{
+  "version": 1,
+  "confirmedAt": "2026-11-05T02:07:15.588Z",
+  "beats": [
+    {
+      "id": "b1",
+      "role": "hook",
+      "words": [
+        0,
+        5
+      ],
+      "text": "These grow your bum, enhance your",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "hook",
+        "confidence": 0.94,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "benefit"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.335Z"
+      }
+    },
+    {
+      "id": "b2",
+      "role": "hook",
+      "words": [
+        6,
+        11
+      ],
+      "text": "curves, literally says it right here.",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "hook",
+        "confidence": 0.9,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "benefit"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b3",
+      "role": "benefit",
+      "words": [
+        12,
+        15
+      ],
+      "text": "Buttock, support, and health.",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.86,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "hook"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b4",
+      "role": "proof",
+      "words": [
+        16,
+        23
+      ],
+      "text": "I'll be taking my prebiotics every day, I'm",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "proof",
+        "confidence": 0.72,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "benefit"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b5",
+      "role": "proof",
+      "words": [
+        24,
+        28
+      ],
+      "text": "consistently with it, and this",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "proof",
+        "confidence": 0.7,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "benefit"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b6",
+      "role": "benefit",
+      "words": [
+        29,
+        30
+      ],
+      "text": "contains prebiotics,",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.94,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "proof"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b7",
+      "role": "benefit",
+      "words": [
+        31,
+        33
+      ],
+      "text": "as well as",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.83,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "filler"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b8",
+      "role": "benefit",
+      "words": [
+        34,
+        36
+      ],
+      "text": "enhances your buttocks.",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.96,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "proof"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b9",
+      "role": "benefit",
+      "words": [
+        37,
+        46
+      ],
+      "text": "Not only does it enhance your bum, it has the",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.94,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "filler"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b10",
+      "role": "benefit",
+      "words": [
+        47,
+        52
+      ],
+      "text": "prebiotics, and it also has core",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.95,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "filler"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b11",
+      "role": "benefit",
+      "words": [
+        53,
+        56
+      ],
+      "text": "vitamins for radiant skin,",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.91,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "filler"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b12",
+      "role": "benefit",
+      "words": [
+        57,
+        62
+      ],
+      "text": "which is a plus that has",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.83,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "filler"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b13",
+      "role": "benefit",
+      "words": [
+        63,
+        66
+      ],
+      "text": "herbal extracts for body",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.94,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "filler"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b14",
+      "role": "benefit",
+      "words": [
+        67,
+        68
+      ],
+      "text": "nourishment, two",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.87,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "filler"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b15",
+      "role": "benefit",
+      "words": [
+        69,
+        72
+      ],
+      "text": "billion CFU bum probiotics.",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.94,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "filler"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b16",
+      "role": "benefit",
+      "words": [
+        73,
+        77
+      ],
+      "text": "So you know there's max",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.82,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "proof"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b17",
+      "role": "benefit",
+      "words": [
+        78,
+        80
+      ],
+      "text": "absorption, they come",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.85,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "filler"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b18",
+      "role": "benefit",
+      "words": [
+        81,
+        84
+      ],
+      "text": "individually wrapped, and they're",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.94,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "filler"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b19",
+      "role": "benefit",
+      "words": [
+        85,
+        87
+      ],
+      "text": "cute little hearts.",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "benefit",
+        "confidence": 0.76,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "cta"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b20",
+      "role": "cta",
+      "words": [
+        88,
+        95
+      ],
+      "text": "I'm gonna link them down below so you",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "cta",
+        "confidence": 0.96,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "benefit"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b21",
+      "role": "cta",
+      "words": [
+        96,
+        100
+      ],
+      "text": "can start being consistent with",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "cta",
+        "confidence": 0.92,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "benefit"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b22",
+      "role": "cta",
+      "words": [
+        101,
+        108
+      ],
+      "text": "your bum health, help as well as your",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "cta",
+        "confidence": 0.76,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "benefit"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    },
+    {
+      "id": "b23",
+      "role": "cta",
+      "words": [
+        109,
+        109
+      ],
+      "text": "probiotic",
+      "claims": [],
+      "classification": {
+        "recommendedRole": "cta",
+        "confidence": 0.7,
+        "source": "ai",
+        "confirmed": true,
+        "alternatives": [
+          "filler"
+        ],
+        "model": "gpt-5.6-luna",
+        "analyzedAt": "2026-11-03T09:17:06.336Z"
+      }
+    }
+  ]
+}

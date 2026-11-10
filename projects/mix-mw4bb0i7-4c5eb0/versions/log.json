@@ -1,0 +1,38 @@
+[
+  {
+    "revision": 0,
+    "savedAt": "2026-11-06T05:21:11.898Z",
+    "by": "user",
+    "note": "compiled from storyboard r1 option-a"
+  },
+  {
+    "revision": 1,
+    "savedAt": "2026-11-06T05:42:11.140Z",
+    "by": "user",
+    "note": "compiled from storyboard r2 option-a"
+  },
+  {
+    "revision": 2,
+    "savedAt": "2026-11-06T05:45:28.762Z",
+    "by": "user",
+    "note": "compiled from storyboard r3 option-a"
+  },
+  {
+    "revision": 3,
+    "savedAt": "2026-11-06T05:57:14.128Z",
+    "by": "user",
+    "note": "自动抠像更新：green，保留时间轴与视觉设置"
+  },
+  {
+    "revision": 4,
+    "savedAt": "2026-11-06T06:11:02.810Z",
+    "by": "user",
+    "note": "compiled from storyboard r5 option-a"
+  },
+  {
+    "revision": 5,
+    "savedAt": "2026-11-06T06:40:08.975Z",
+    "by": "user",
+    "note": "compiled from storyboard r6 option-a"
+  }
+]

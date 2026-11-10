@@ -84,6 +84,7 @@ if (code !== 0) {
   console.error(`Render failed with exit code ${code}; see ${relative(logPath)}`);
   process.exit(code ?? 1);
 }
+console.log("EXPORT_STAGE=processing");
 if (normalize) {
   console.log(`Normalizing loudness to ${loudness.targetLufs} LUFS / ${loudness.truePeakDb} dBTP (video stream copied)...`);
   const report = await normalizeLoudness(remotionOutput, output, loudness, checked.resolved.durationInFrames / checked.resolved.fps);

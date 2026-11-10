@@ -1,0 +1,151 @@
+{
+  "status": "unreviewed machine transcript",
+  "detectedLanguage": "en",
+  "instructions": "Verify names, brands, product terms, numbers and claims against the audio. Token probabilities are not calibrated accuracy scores. No spelling was auto-corrected.",
+  "warnings": [
+    {
+      "index": 4,
+      "text": "bum,",
+      "startMs": 1500,
+      "endMs": 1950,
+      "confidence": 0.317038,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 7,
+      "text": "curves,",
+      "startMs": 3040,
+      "endMs": 4530,
+      "confidence": 0.340081,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 8,
+      "text": "literally",
+      "startMs": 4530,
+      "endMs": 5000,
+      "confidence": 0.606826,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 12,
+      "text": "here.",
+      "startMs": 5600,
+      "endMs": 6000,
+      "confidence": 0.370519,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 13,
+      "text": "Buttock,",
+      "startMs": 6000,
+      "endMs": 6650,
+      "confidence": 0.427581,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 14,
+      "text": "support,",
+      "startMs": 6650,
+      "endMs": 7250,
+      "confidence": 0.48247,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 17,
+      "text": "I'll",
+      "startMs": 8000,
+      "endMs": 8300,
+      "confidence": 0.393788,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 21,
+      "text": "prebiotics",
+      "startMs": 9060,
+      "endMs": 9950,
+      "confidence": 0.359894,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 23,
+      "text": "day,",
+      "startMs": 10210,
+      "endMs": 10670,
+      "confidence": 0.272968,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 27,
+      "text": "it,",
+      "startMs": 12370,
+      "endMs": 12690,
+      "confidence": 0.401402,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 31,
+      "text": "prebiotics,",
+      "startMs": 15020,
+      "endMs": 16000,
+      "confidence": 0.495654,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 38,
+      "text": "Not",
+      "startMs": 20000,
+      "endMs": 20200,
+      "confidence": 0.646845,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 56,
+      "text": "radiant",
+      "startMs": 26500,
+      "endMs": 27190,
+      "confidence": 0.335346,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 70,
+      "text": "two",
+      "startMs": 35320,
+      "endMs": 36360,
+      "confidence": 0.383319,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 80,
+      "text": "absorption,",
+      "startMs": 39950,
+      "endMs": 41170,
+      "confidence": 0.577675,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 91,
+      "text": "gonna",
+      "startMs": 48280,
+      "endMs": 48750,
+      "confidence": 0.343479,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 107,
+      "text": "help",
+      "startMs": 54110,
+      "endMs": 54400,
+      "confidence": 0.0394195,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 112,
+      "text": "probiotic",
+      "startMs": 55600,
+      "endMs": 56540,
+      "confidence": 0.554878,
+      "reason": "low token probability; human review needed"
+    }
+  ]
+}

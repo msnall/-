@@ -1,0 +1,90 @@
+{
+  "id": "option-a",
+  "round": "r3",
+  "title": "混剪版本 1 · 效果方案 · 自定义",
+  "style": "clean-pink@1",
+  "summary": "镜头组合已在内容与素材完成；在此选择字幕、转场和视觉效果。",
+  "rows": [
+    {
+      "beat": "b1",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b2",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b3",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b4",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b5",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b6",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b7",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b8",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b9",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b10",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b11",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b12",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    },
+    {
+      "beat": "b13",
+      "keep": true,
+      "onScreen": "混剪实拍与独立达人图层",
+      "cards": []
+    }
+  ],
+  "global": [],
+  "keyframes": [],
+  "createdBy": "workbench"
+}

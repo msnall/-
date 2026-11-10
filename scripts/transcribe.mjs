@@ -98,7 +98,7 @@ async function main() {
   for (const file of [cli, model]) if (!(await exists(file))) throw new Error(`Required file missing: ${file}`);
   const name = path.parse(input).name;
   const output = path.join(root, "public/transcripts", name);
-  const extensions = ["json", "txt", "srt", "review.json", "meta.json"];
+  const extensions = ["json", "cues.json", "txt", "srt", "review.json", "meta.json"];
   if (!options.force) {
     for (const ext of extensions) if (await exists(`${output}.${ext}`)) {
       throw new Error(`Output exists: ${output}.${ext}. Use --force to replace. Raw runs are always preserved.`);
@@ -140,7 +140,11 @@ async function main() {
     const text = segment.text.trim();
     if (!text) continue;
     const startMs = segment.offsets?.from + audioOffsetMs;
-    const endMs = segment.offsets?.to + audioOffsetMs;
+    let endMs = segment.offsets?.to + audioOffsetMs;
+    if (Number.isInteger(endMs) && endMs > durationMs && endMs <= durationMs + 250 && startMs < durationMs) {
+      warnings.push({ index, text, originalEndMs: endMs, endMs: durationMs, reason: "short timestamp overshoot trimmed to source duration; human review needed" });
+      endMs = durationMs;
+    }
     if (![startMs, endMs].every(Number.isInteger) || startMs < previousEnd ||
         startMs < 0 || endMs < startMs || endMs > durationMs) {
       throw new Error(`Invalid/overlapping timestamp in raw segment ${index}; inspect ${rawPrefix}.json`);
@@ -177,6 +181,7 @@ async function main() {
   };
   console.log("3/3 Validating timestamps and writing captions...");
   await writeFile(`${output}.json`, JSON.stringify(units.map(({ text, startMs, endMs }) => ({ text, startMs, endMs })), null, 2) + "\n");
+  await writeFile(`${output}.cues.json`, JSON.stringify(cues, null, 2) + "\n");
   await writeFile(`${output}.txt`, text + "\n");
   await writeFile(`${output}.srt`, cues.map((cue, i) => `${i + 1}\n${stamp(cue.startMs)} --> ${stamp(cue.endMs)}\n${cue.text}\n`).join("\n"));
   await writeFile(`${output}.review.json`, JSON.stringify(review, null, 2) + "\n");

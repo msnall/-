@@ -1,0 +1,25 @@
+{
+  "project": "video-mw0eqb2i",
+  "stage": "timeline-review",
+  "stages": {
+    "asset-prep": {
+      "state": "done"
+    },
+    "storyboard": {
+      "state": "done",
+      "round": "r1",
+      "selected": "option-a"
+    },
+    "timeline-review": {
+      "state": "waiting-user",
+      "round": "r1",
+      "openProposals": 0
+    },
+    "render-qc": {
+      "state": "pending"
+    }
+  },
+  "editPlanRevision": 13,
+  "updatedAt": "2026-11-05T03:19:15.533Z",
+  "updatedBy": "user"
+}

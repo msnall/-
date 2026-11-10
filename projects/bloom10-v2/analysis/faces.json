@@ -5,7 +5,7 @@
     "sha256": "b4578f35940bf5a1a655214a1cce5cab13eba73c1297cd78e1a04c2380b0152f",
     "runtime": "@mediapipe/tasks-vision@1.1.1 (WASM, CPU)"
   },
-  "createdAt": "2026-10-29T08:32:06.513Z",
+  "createdAt": "2026-11-03T07:55:24.923Z",
   "assets": {
     "source": {
       "width": 540,

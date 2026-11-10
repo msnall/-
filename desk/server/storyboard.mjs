@@ -1,10 +1,10 @@
 // Before the edit-plan: assets (candidates, uploads, claim verification),
 // beats, storyboard rounds (options, selection, compile, confirm) and the
 // technique library.
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readdir, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { z } from "zod";
-import { publicDir, sha256File } from "../../scripts/lib/media.mjs";
+import { probe, publicDir, sha256File } from "../../scripts/lib/media.mjs";
 import { exists, projectFile, readJson, writeJson } from "../../scripts/lib/storage.mjs";
 import { compileProjectOption, loadLibrary, loadProjectInputs, loadRound, ROUND } from "../../scripts/lib/storyboard-files.mjs";
 import { assetsSchema, beatsSchema, checkBeats, selectionSchema } from "../../src/engine/storyboard.ts";
@@ -13,12 +13,39 @@ import { installCompiledPlan, readStatus, updateStatus, withLock } from "./proje
 
 const now = () => new Date().toISOString();
 const issues = (error) => error.issues.map((issue) => `${issue.path.join(".") || "(root)"}: ${issue.message}`);
+const mediaCache = new Map();
 
 export async function readOverview(id) {
   const status = await readStatus(id);
   const plan = await readJson(projectFile(id, "edit-plan.json"), null);
   const project = await readJson(projectFile(id, "project.json"), null);
-  return { id, title: project?.title ?? plan?.meta?.title ?? id, status, hasPlan: !!plan, hasProject: !!project, revision: plan ? (plan.revision ?? 0) : null };
+  if (project?.mode === "mix") {
+    const current = await readJson(projectFile(id, "mix/current.json"), null);
+    return { id, title: project.title, productName: project.productName, mode: "mix", style: project.style, editorReady: !!current, mixEditorConfirmed: !!current && plan?.meta?.storyboard?.round === current.round, status, hasPlan: !!plan, hasProject: true, transcriptReady: await exists(path.join(publicDir, project.transcript.words)), previewReady: true, ready: true, revision: plan?.revision ?? null, updatedAt: status.updatedAt, media: project.media };
+  }
+  const transcriptReady = !project || await exists(path.join(publicDir, project.transcript.words)) && await exists(path.join(publicDir, project.transcript.cues)) && await exists(projectFile(id, "analysis/beats.json"));
+  let previewReady = !project;
+  let media = project?.media ?? null;
+  if (project) {
+    const assets = await readJson(projectFile(id, "assets.json"), { items: [] });
+    const source = assets.items.find((item) => item.id === "source");
+    const proxy = (await readJson(projectFile(id, "analysis/proxies.json"), { assets: {} })).assets.source;
+    const sourceInfo = source?.file ? await stat(path.join(publicDir, source.file)).catch(() => null) : null;
+    if (!media && sourceInfo && source?.file) {
+      const key = `${source.file}:${sourceInfo.size}:${sourceInfo.mtimeMs}`;
+      if (!mediaCache.has(key)) {
+        const inspected = await probe(path.join(publicDir, source.file)).catch(() => null);
+        const video = inspected?.streams.find((stream) => stream.codec_type === "video");
+        mediaCache.set(key, inspected && video ? { originalName: source.originalName ?? path.basename(source.file), bytes: sourceInfo.size, durationMs: Math.round(Number(inspected.format.duration) * 1000), width: video.width, height: video.height } : null);
+      }
+      media = mediaCache.get(key);
+    }
+    const proxyInfo = proxy?.file ? await stat(path.join(publicDir, proxy.file)).catch(() => null) : null;
+    previewReady = !!(sourceInfo && proxyInfo?.size && proxy.sourceSize === sourceInfo.size && proxy.sourceMtimeMs === sourceInfo.mtimeMs && proxy.width > 0 && proxy.height > 0 && proxy.durationMs > 0);
+  }
+  const legacyNames = { bloom10: "第一版口播视频", "bloom10-demo": "剪辑效果演示", "bloom10-v2": "卡片式剪辑方案" };
+  const statusInfo = await stat(projectFile(id, "status.json")).catch(() => null);
+  return { id, title: legacyNames[id] ?? project?.title ?? plan?.meta?.title ?? id, productName: project?.productName ?? (id.startsWith("bloom10") ? "Bloom10 软糖" : "未分类产品"), status, hasPlan: !!plan, hasProject: !!project, transcriptReady, previewReady, ready: transcriptReady && previewReady, revision: plan ? (plan.revision ?? 0) : null, updatedAt: status.updatedAt ?? statusInfo?.mtime.toISOString() ?? null, media };
 }
 
 // --- Assets.
@@ -36,8 +63,8 @@ async function editAssets(id, change) {
 }
 
 export async function readAssets(id) {
-  const { assets, beats, project } = await loadProjectInputs(id);
-  return { assets, beats, footage: project.footage };
+  const { assets, beats, project, transcript } = await loadProjectInputs(id);
+  return { assets, beats, footage: project.footage, words: transcript.words.map((word, index) => ({ index, text: word.text, startMs: word.startMs })) };
 }
 
 const findItem = (assets, assetId) => {
@@ -107,7 +134,6 @@ const claimPatch = z.strictObject({ status: z.enum(["unverified", "verified", "r
 export async function updateClaim(id, claimId, body) {
   const parsed = claimPatch.safeParse(body);
   if (!parsed.success) throw unprocessable("claim update is invalid", { problems: issues(parsed.error) });
-  if (parsed.data.status === "verified" && !parsed.data.evidence?.trim()) throw unprocessable("标记为已核实时必须写明依据");
   return editAssets(id, (assets) => {
     const claim = assets.claims.find((entry) => entry.id === claimId);
     if (!claim) throw new HttpError(404, `No claim "${claimId}"`);
@@ -140,7 +166,7 @@ export async function saveBeats(id, body, { confirm = false } = {}) {
   const problems = checkBeats(parsed.data, transcript);
   if (problems.length) throw unprocessable("beats do not match the transcript", { problems });
   return withLock(id, async () => {
-    const beats = { ...parsed.data, confirmedAt: confirm ? now() : parsed.data.confirmedAt };
+    const beats = { ...parsed.data, confirmedAt: confirm ? now() : parsed.data.confirmedAt, beats: confirm ? parsed.data.beats.map((beat) => ({ ...beat, classification: beat.classification ? { ...beat.classification, confirmed: true } : undefined })) : parsed.data.beats };
     await writeJson(projectFile(id, "analysis/beats.json"), beats);
     if (confirm) {
       await updateStatus(id, (status) => {
@@ -168,6 +194,39 @@ export async function readRound(id, round) {
     compiled.push({ ...option, compile: { problems: result.problems, warnings: result.warnings, needs: result.needs, claims: result.claims, gate: result.gate, segments: result.segments } });
   }
   return { round, options: compiled, selection };
+}
+
+export async function listRounds(id) {
+  const names = await readdir(projectFile(id, "storyboard")).catch(() => []);
+  return names.filter((name) => ROUND.test(name)).sort((a, b) => Number(a.slice(1)) - Number(b.slice(1)));
+}
+
+export async function startRevision(id, round) {
+  roundOf(round);
+  return withLock(id, async () => {
+    const { options, selection } = await loadRound(id, round);
+    if (selection.state !== "confirmed" || !selection.option) throw conflict("请先确认当前方案");
+    const rounds = await listRounds(id);
+    if (rounds.at(-1) !== round) throw conflict("已有更新的方案轮次");
+    const next = `r${Number(round.slice(1)) + 1}`;
+    const source = selection.draftOption ?? options.find((item) => item.id === selection.option);
+    if (!source) throw unprocessable("已确认的方案不存在");
+    const option = { ...source, id: "option-a", round: next, title: `${source.title} · 自定义`, keyframes: [] };
+    const mixed = await readJson(projectFile(id, "storyboard", round, "mix.json"), null);
+    if (mixed) {
+      const snapshot = { ...mixed, round: next };
+      await writeJson(projectFile(id, "storyboard", next, "mix.json"), snapshot);
+      await writeJson(projectFile(id, "mix/current.json"), snapshot);
+    }
+    await writeJson(projectFile(id, "storyboard", next, "option-a.json"), option);
+    await writeJson(projectFile(id, "storyboard", next, "selection.json"), {
+      videoSettings: selection.videoSettings,
+      round: next, option: "option-a", state: "draft", style: selection.style,
+      layoutOverrides: selection.layoutOverrides, draftOption: null, transitions: selection.transitions,
+      confirmedAt: null, updatedAt: now(),
+    });
+    return { round: next };
+  });
 }
 
 export async function compilePreview(id, round, optionId, body) {

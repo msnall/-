@@ -1,0 +1,28 @@
+{
+  "id": "mix-mw4bb0i7-4c5eb0",
+  "title": "车锁-01",
+  "productName": "车锁",
+  "mode": "mix",
+  "style": "presenter-mix@1",
+  "sourceFolder": "F:\\VideoAutomation\\sucai",
+  "voiceName": "mix-mw4bb0i7-4c5eb0-source.mp3",
+  "actorName": "11月5日-253021657d.mov",
+  "transcript": {
+    "words": "transcripts/mix-mw4bb0i7-4c5eb0-source.json",
+    "cues": "transcripts/mix-mw4bb0i7-4c5eb0-source.cues.json"
+  },
+  "media": {
+    "originalName": "BBN车锁-10.mp3",
+    "bytes": 416924,
+    "durationMs": 24999,
+    "width": 1080,
+    "height": 1920
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "footage": "mixbase-5d8430ea80ff41d3",
+  "actorSourceName": "11月5日.mov"
+}

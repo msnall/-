@@ -1,0 +1,91 @@
+{
+  "id": "option-a",
+  "round": "r2",
+  "title": "一周测评开场 · 自定义",
+  "style": "dark-glass@1",
+  "summary": "按原顺序讲，开头大字『1 WEEK ON THESE GUMMIES』建立测评感；独立包装处弹出产品图并推近，痛点段保留，结尾推荐。剪掉含未核实用量信息的一段。",
+  "rows": [
+    {
+      "beat": "b1",
+      "keep": true,
+      "onScreen": "【开场】大字『1 week on these gummies』淡入；大字消失后，说到 week 时推近",
+      "cards": [
+        {
+          "card": "hook-big-text@1",
+          "slots": {
+            "text": "1 week on these gummies",
+            "placement": "top"
+          },
+          "claims": []
+        },
+        {
+          "card": "keyword-punch@1",
+          "slots": {
+            "word": 10,
+            "zoom": 1.15
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "beat": "b2",
+      "keep": true,
+      "onScreen": "说到 individually 时左侧弹出产品图",
+      "cards": [
+        {
+          "card": "product-pip@1",
+          "slots": {
+            "word": 34,
+            "image": "product-front",
+            "placement": "left"
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "beat": "b3",
+      "keep": true,
+      "onScreen": "说到 stuck 时推近",
+      "cards": [
+        {
+          "card": "keyword-punch@1",
+          "slots": {
+            "word": 44,
+            "zoom": 1.15
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "beat": "b4",
+      "keep": true,
+      "onScreen": "字幕",
+      "cards": []
+    },
+    {
+      "beat": "b5",
+      "keep": true,
+      "onScreen": "字幕",
+      "cards": []
+    },
+    {
+      "beat": "b6",
+      "keep": false,
+      "reason": "含『30 天用量』『每天两颗』，尚无包装或商品页依据",
+      "cards": []
+    },
+    {
+      "beat": "b7",
+      "keep": true,
+      "onScreen": "字幕",
+      "cards": []
+    }
+  ],
+  "global": [],
+  "keyframes": [],
+  "createdBy": "claude",
+  "createdAt": "2026-10-29T08:30:00.000Z"
+}

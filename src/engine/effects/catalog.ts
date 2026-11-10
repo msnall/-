@@ -133,6 +133,14 @@ export const effectCatalog = {
     box: placedBox,
     bounds: placedBounds,
   },
+  "fade-through-black@1": {
+    description: "A short black dip centered on an edit boundary.",
+    props: z.strictObject({}),
+    assetProps: {},
+    minDurationInFrames: () => 8,
+    box: placedBox,
+    bounds: () => ({ x: 0, y: 0, width: 0, height: 0 }),
+  },
 } satisfies Record<string, EffectDefinition>;
 
 export type EffectId = keyof typeof effectCatalog;

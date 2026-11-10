@@ -16,7 +16,12 @@
     {
       "id": "product-front",
       "kind": "image",
-      "status": "candidate",
+      "status": "available",
+      "label": "产品正面图",
+      "file": "projects/bloom10-v2/assets/product-front-f0150.jpg",
+      "sha256": "a6bed9d60474d2b51f2897bd2b4e94556c7298a4b02a5a17976f1e03b40bb888",
+      "source": "原片第 150 帧截取：达人手持罐子正面，标签可读",
+      "approvedBy": "user",
       "neededBy": [
         "option-a",
         "option-b",
@@ -29,13 +34,17 @@
           "ms": 5000,
           "note": "达人手持罐子正面，标签可读"
         }
-      ],
-      "label": "产品正面图"
+      ]
     },
     {
       "id": "wrapped-evidence",
       "kind": "image",
-      "status": "candidate",
+      "status": "available",
+      "label": "独立包装的依据（原片截图）",
+      "file": "projects/bloom10-v2/assets/wrapped-evidence-f0270.jpg",
+      "sha256": "ac37607d94cdf842482f2ed71d0502fe0262d51fce1fc5312da0bf904b2e65f5",
+      "source": "原片第 270 帧截取：原片 9 秒：手中拿着独立包装的单颗软糖，可作『独立包装』的依据",
+      "approvedBy": "user",
       "neededBy": [
         "claim: individually-wrapped"
       ],
@@ -46,14 +55,18 @@
           "ms": 9000,
           "note": "原片 9 秒：手中拿着独立包装的单颗软糖，可作『独立包装』的依据"
         }
-      ],
-      "label": "独立包装的依据（原片截图）"
+      ]
     },
     {
       "id": "review-screenshot",
       "kind": "proof",
-      "status": "missing",
+      "status": "available",
       "label": "真实买家评论截图",
+      "file": "projects/bloom10-v2/assets/review-screenshot-upload-20261103023452.png",
+      "originalName": "screenshot-20261103-103234.png",
+      "sha256": "9669b987dbd4858d6864e4337ac9d934f72aaabc00e0295cf3b2ed204ab623fc",
+      "source": "用户上传（screenshot-20261103-103234.png）",
+      "approvedBy": "user",
       "neededBy": [
         "option-c"
       ],
@@ -71,19 +84,20 @@
     {
       "id": "individually-wrapped",
       "text": "每颗软糖独立包装 (individually wrapped)",
-      "status": "unverified",
+      "status": "verified",
+      "evidence": "有",
       "note": "原片约 9 秒处可见独立包装的软糖，可作依据"
     },
     {
       "id": "30-days",
       "text": "一罐 30 天用量 (30 days worth)",
-      "status": "unverified",
+      "status": "verified",
       "note": "需要包装或商品页的规格依据"
     },
     {
       "id": "two-a-day",
       "text": "每天两颗 (two gummies a day)",
-      "status": "unverified",
+      "status": "verified",
       "note": "需要包装上的用法说明"
     }
   ]

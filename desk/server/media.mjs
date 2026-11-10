@@ -15,10 +15,10 @@ const types = {
   ".ttf": "font/ttf", ".otf": "font/otf", ".js": "text/javascript", ".mjs": "text/javascript", ".css": "text/css", ".html": "text/html; charset=utf-8", ".svg": "image/svg+xml", ".wasm": "application/wasm",
 };
 
-export async function sendFile(request, response, file, { cache = "no-cache" } = {}) {
+export async function sendFile(request, response, file, { cache = "no-cache", headers: extraHeaders = {} } = {}) {
   const info = await stat(file).catch(() => null);
   if (!info?.isFile()) throw new HttpError(404, "Not found");
-  const headers = { "content-type": types[path.extname(file).toLowerCase()] ?? "application/octet-stream", "accept-ranges": "bytes", "cache-control": cache };
+  const headers = { "content-type": types[path.extname(file).toLowerCase()] ?? "application/octet-stream", "accept-ranges": "bytes", "cache-control": cache, ...extraHeaders };
   const range = /^bytes=(\d*)-(\d*)$/.exec(request.headers.range ?? "");
   if (range) {
     let start = range[1] === "" ? info.size - Number(range[2]) : Number(range[1]);

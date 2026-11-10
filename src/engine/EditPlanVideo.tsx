@@ -12,6 +12,9 @@ import { loadEditPlan, type ResolvedPlan } from "./load.ts";
 export type EditPlanProps = { plan: unknown; resolved?: ResolvedPlan };
 
 export const calculateEditPlanMetadata: CalculateMetadataFunction<EditPlanProps> = async ({ props, abortSignal }) => {
+  if (props.plan === null || props.plan === undefined) return {
+    width: 1080, height: 1920, fps: 30, durationInFrames: 90, props,
+  };
   const { resolved } = await loadEditPlan(props.plan, async (publicPath) => {
     const response = await fetch(staticFile(publicPath), { signal: abortSignal });
     if (!response.ok) throw new Error(`Cannot load public/${publicPath} (HTTP ${response.status})`);

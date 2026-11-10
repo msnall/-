@@ -96,7 +96,7 @@ export const Timeline: React.FC<Props> = ({ resolved, frame, decisions, warnings
           ))}
         </div>
         <div className="track">
-          {resolved.footage.segments.map((segment) => (
+          {resolved.footage.segments.map((segment, index) => (
             <div
               key={segment.id}
               className={`clip segment ${decisions[segment.id] ?? "undecided"}${selection?.kind === "segment" && selection.id === segment.id ? " selected" : ""}`}
@@ -107,7 +107,7 @@ export const Timeline: React.FC<Props> = ({ resolved, frame, decisions, warnings
                 onSeek(segment.from);
               }}
             >
-              {segment.id}
+              片段 {index + 1}
             </div>
           ))}
         </div>

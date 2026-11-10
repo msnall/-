@@ -1,0 +1,14 @@
+{
+  "round": "r1",
+  "variant": "mix-mw4bbti2-d15090",
+  "revision": 3,
+  "source": {
+    "id": "mixbase-e14132298775699f",
+    "file": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/e14132298775699f/footage.mp4"
+  },
+  "actor": {
+    "id": "presenter-e14132298775699f",
+    "file": "projects/mix-mw4bb0i7-4c5eb0/mix-layers/e14132298775699f/presenter.webm"
+  },
+  "inherited": null
+}

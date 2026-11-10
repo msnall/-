@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "confirmedAt": "2026-11-06T06:35:54.176Z",
+  "beats": [
+    {
+      "id": "b1",
+      "role": "hook",
+      "words": [
+        0,
+        5
+      ],
+      "text": "every trailer has an empty hole.",
+      "claims": []
+    },
+    {
+      "id": "b2",
+      "role": "benefit",
+      "words": [
+        6,
+        14
+      ],
+      "text": "Most guys just wrap the chain or strap around",
+      "claims": []
+    },
+    {
+      "id": "b3",
+      "role": "benefit",
+      "words": [
+        15,
+        16
+      ],
+      "text": "the edge.",
+      "claims": []
+    },
+    {
+      "id": "b4",
+      "role": "benefit",
+      "words": [
+        17,
+        22
+      ],
+      "text": "That's how you lose a load.",
+      "claims": []
+    },
+    {
+      "id": "b5",
+      "role": "benefit",
+      "words": [
+        23,
+        33
+      ],
+      "text": "Slide this heavy black D ring in and fill it up.",
+      "claims": []
+    },
+    {
+      "id": "b6",
+      "role": "benefit",
+      "words": [
+        34,
+        41
+      ],
+      "text": "Turn that pocket into a real anchor point.",
+      "claims": []
+    },
+    {
+      "id": "b7",
+      "role": "benefit",
+      "words": [
+        42,
+        44
+      ],
+      "text": "Heavy duty steel.",
+      "claims": []
+    },
+    {
+      "id": "b8",
+      "role": "benefit",
+      "words": [
+        45,
+        49
+      ],
+      "text": "18,000 pound working load limit.",
+      "claims": []
+    },
+    {
+      "id": "b9",
+      "role": "benefit",
+      "words": [
+        50,
+        52
+      ],
+      "text": "24,000 tested brake.",
+      "claims": []
+    },
+    {
+      "id": "b10",
+      "role": "benefit",
+      "words": [
+        53,
+        58
+      ],
+      "text": "Locks in with a hitch pin.",
+      "claims": []
+    },
+    {
+      "id": "b11",
+      "role": "benefit",
+      "words": [
+        59,
+        64
+      ],
+      "text": "Four of them in a set.",
+      "claims": []
+    },
+    {
+      "id": "b12",
+      "role": "benefit",
+      "words": [
+        65,
+        67
+      ],
+      "text": "They just work.",
+      "claims": []
+    },
+    {
+      "id": "b13",
+      "role": "cta",
+      "words": [
+        68,
+        72
+      ],
+      "text": "Your trailer will be satisfied.",
+      "claims": []
+    }
+  ]
+}

@@ -86,6 +86,8 @@ type Props = {
   faceMode: "auto" | "manual" | "none";
   hasFaces: boolean;
   onOverlayProp: (id: string, key: string, value: unknown) => void;
+  onSelectOverlay: (id: string) => void;
+  onRemoveOverlay: (id: string) => void;
   onCaptionProp: (key: string, value: unknown) => void;
   onDecision: (segment: string, decision: Decision) => void;
   onComment: (segment: string | null, text: string) => void;
@@ -98,7 +100,7 @@ const CommentList: React.FC<{ comments: Comment[]; fps: number; onSeek: (frame: 
     {comments.map((comment) => (
       <li key={comment.id}>
         <span className="comment-meta">
-          {comment.id}
+          意见
           {comment.at ? (
             <a onClick={() => onSeek(comment.at!.frame)}> @ {fmtTime(comment.at.frame, fps)}</a>
           ) : null}
@@ -144,8 +146,10 @@ export const Inspector: React.FC<Props> = (props) => {
     return (
       <div className="inspector">
         <h3>
-          {overlay.id} <span className="pill">{overlay.effect}</span>
+          画面元素
         </h3>
+        <details className="technical-details"><summary>技术信息</summary><code>{overlay.id} · {overlay.effect}</code></details>
+        <button className="small-button" onClick={() => props.onRemoveOverlay(overlay.id)}>删除这个画面图层</button>
         <p className="muted small">{definition.description}</p>
         <h4>位置与大小（像素，画面 {resolved.width}×{resolved.height}）</h4>
         <div className="grid4">
@@ -161,9 +165,9 @@ export const Inspector: React.FC<Props> = (props) => {
           {raw.until ? <> · 结束：{describeAnchor(raw.until)}</> : null}
         </p>
         {typeof shown.asset === "string" ? (
-          <p className="small">
+          <details className="technical-details"><summary>素材来源</summary><p className="small">
             素材：<code>{String(shown.asset)}</code> → <code>{plan.assets[String(shown.asset)]?.path ?? plan.assets[String(shown.asset)]?.dir}</code>
-          </p>
+          </p></details>
         ) : null}
         <h4>样式</h4>
         <div className="fields">
@@ -204,15 +208,18 @@ export const Inspector: React.FC<Props> = (props) => {
   if (selection?.kind === "segment") {
     const segment = resolved.footage.segments.find((item) => item.id === selection.id);
     const entry = props.review?.segments.find((item) => item.segment === selection.id);
+    const visibleLayers = resolved.overlays.filter((item) => item.from <= frame && frame < item.from + item.durationInFrames && plan.overlays?.some((raw) => raw.id === item.id));
     if (!segment) return <p className="muted">该段落不在当前版本中。</p>;
     return (
       <div className="inspector">
-        <h3>段落 {segment.id}</h3>
+        <h3>片段 {resolved.footage.segments.indexOf(segment) + 1}</h3>
         <p className="small">
           原片 {(segment.sourceStartMs / 1000).toFixed(2)}–{(segment.sourceEndMs / 1000).toFixed(2)}s → 成片 {fmtTime(segment.from, fps)}–{fmtTime(segment.from + segment.durationInFrames, fps)}
           {segment.camera.zoom !== 1 ? ` · 缩放 ${segment.camera.zoom}` : ""}
           {segment.camera.punchIns.length ? ` · ${segment.camera.punchIns.length} 处推近` : ""}
         </p>
+        <h4>当前画面图层</h4>
+        {visibleLayers.length ? visibleLayers.map((item) => <div className="review-layer-row" key={item.id}><button onClick={() => props.onSelectOverlay(item.id)}>{item.id.startsWith("product-fade") ? "产品图柔和淡入" : item.id.startsWith("product-pip") ? "产品画中画" : item.effect === "image-card@1" ? "图片图层" : item.id}</button><button onClick={() => props.onRemoveOverlay(item.id)}>删除</button></div>) : <p className="muted small">当前帧没有额外画面图层。</p>}
         <h4>标记</h4>
         <div className="decisions">
           {(["keep", "modify", "drop"] as const).map((decision) => (
@@ -221,7 +228,7 @@ export const Inspector: React.FC<Props> = (props) => {
             </button>
           ))}
         </div>
-        <p className="muted small">标记和意见交给 Claude 处理；Claude 的修改以提案形式出现，采纳后才写入 edit-plan。</p>
+        <p className="muted small">意见会保存在本项目。提交后可复制给 AI 助手处理；只有采纳提案后才会更新方案。</p>
         <h4>意见</h4>
         <CommentList comments={entry?.comments ?? []} fps={fps} onSeek={props.onSeek} />
         <CommentBox placeholder={`针对这一段，记在当前帧 ${fmtTime(frame, fps)}`} onAdd={(text) => props.onComment(segment.id, text)} />
@@ -235,9 +242,9 @@ export const Inspector: React.FC<Props> = (props) => {
             ))}
           </div>
         ) : (
-          <p className="muted small">还没有人脸分析。在“作业”里运行“人脸检测”。</p>
+          <p className="muted small">还没有人脸分析。可在检查模式中运行人脸检测。</p>
         )}
-        {props.faceMode === "manual" ? <p className="muted small">在画面上拖动黄色框修正。修正保存在 analysis/faces.overrides.json，不改检测原始结果。</p> : null}
+        {props.faceMode === "manual" ? <p className="muted small">在画面上拖动黄色框修正人脸区域。</p> : null}
       </div>
     );
   }

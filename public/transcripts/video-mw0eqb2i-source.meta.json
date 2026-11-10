@@ -1,0 +1,17 @@
+{
+  "input": "F:\\VideoAutomation\\public\\projects\\video-mw0eqb2i\\video-mw0eqb2i-source.mp4",
+  "sourceSha256": "a06d57cc837a452ee87d00976a5d7d7042f3d4fc834139811349ed76cfd693e0",
+  "sourceBytes": 49924751,
+  "sourceModifiedAt": "2026-11-03T08:09:47.157Z",
+  "model": "F:\\VideoAutomation\\bin\\whisper.cpp\\models\\ggml-base.bin",
+  "detectedLanguage": "en",
+  "requestedLanguage": "en",
+  "durationMs": 56590,
+  "audioOffsetMs": 0,
+  "runDirectory": "F:\\VideoAutomation\\out\\transcriptions\\video-mw0eqb2i-source\\2026-11-03T08-10-08-346Z",
+  "unitCount": 110,
+  "cueCount": 23,
+  "timing": "Whisper estimated short segments; not forced alignment or guaranteed linguistic words. Chinese can contain characters/tokens.",
+  "validation": "finite integer milliseconds, ordered non-overlapping units within source duration",
+  "humanReviewRequired": true
+}

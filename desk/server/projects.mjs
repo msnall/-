@@ -209,15 +209,32 @@ export function saveReview(id, round, body) {
 export function submitReview(id, round) {
   return withLock(id, async () => {
     const review = await readReview(id, round);
+    const { plan } = await readPlan(id);
+    review.storyboardRound = plan.meta?.storyboard?.round ?? null;
     review.submittedAt = now();
     review.updatedAt = review.submittedAt;
     await writeJson(reviewFile(id, round), review);
+    await writeJson(projectFile(id, "review", "history", round, `${review.submittedAt.replaceAll(":", "-")}.json`), review);
     await updateStatus(id, (status) => {
-      status.stages["timeline-review"] = { ...status.stages["timeline-review"], state: "in-progress", round, note: "comments submitted; waiting for Claude's proposals" };
+      status.stages["timeline-review"] = { ...status.stages["timeline-review"], state: "in-progress", round, note: "review feedback saved; awaiting separate AI processing" };
       status.updatedBy = "user";
     });
     return review;
   });
+}
+
+export async function reviewHistory(id) {
+  const rounds = await import("node:fs/promises").then(({ readdir }) => readdir(projectFile(id, "review", "history")).catch(() => []));
+  const entries = [];
+  for (const round of rounds.filter((name) => ROUND.test(name))) {
+    for (const name of await listJson(projectFile(id, "review", "history", round))) entries.push(await readJson(projectFile(id, "review", "history", round, name)));
+  }
+  for (const name of await listJson(projectFile(id, "review"))) {
+    if (!/^r[1-9]\d*\.json$/.test(name)) continue;
+    const current = await readJson(projectFile(id, "review", name));
+    if (current.submittedAt && !entries.some((entry) => entry.round === current.round && entry.submittedAt === current.submittedAt)) entries.push(current);
+  }
+  return entries.sort((a, b) => b.submittedAt.localeCompare(a.submittedAt));
 }
 
 const nextCommentId = (review) => {
