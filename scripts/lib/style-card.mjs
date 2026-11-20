@@ -2,6 +2,7 @@
 // Stored as library/style-cards/<id>.json. A card starts as "draft" (written by the model) and only a confirmed card can
 // steer the auto director. See docs/style-card.md.
 import { z } from "zod";
+import { parseCardV2 } from "./style-card2.mjs";
 
 const num = (fallback) => z.coerce.number().finite().catch(fallback);
 const text = (fallback = "") => z.string().catch(fallback).transform((s) => s.slice(0, 600));
@@ -32,10 +33,20 @@ export const cardSchema = z.object({
   confirmedAt: z.string().nullable().catch(null),
 });
 
-export const parseCard = (raw) => cardSchema.parse(raw);
+// v1 cards (six free-text areas) still load; v2 cards (direction + measured numbers + worked timeline) are the current format.
+export const isV2 = (card) => card?.schemaVersion === 2;
+export const parseCard = (raw) => (raw?.schemaVersion === 2 ? parseCardV2(raw) : cardSchema.parse(raw));
 
 // What the auto director takes from a confirmed card: one-line rules for the prompt plus the numbers that tighten its limits.
 export function directorGuide(card) {
+  if (isV2(card)) {
+    const lines = [...card.directorRules];
+    const d = card.direction;
+    lines.push(`The reference is cut with: hook ${d.hookTreatment}, pacing ${d.pacing}, B-roll placement ${d.brollPlacement}, layout ${d.layoutBias}, zoom pattern ${d.zoomPattern}, B-roll about ${Math.round(d.brollRatioTarget * 100)}% of the video.`);
+    const structure = card.structure.map((s) => `${s.role} ${(s.startMs / 1000).toFixed(1)}-${(s.endMs / 1000).toFixed(1)}s: ${s.technique_zh}`);
+    const text = `STYLE CARD "${card.name}":\n${lines.map((l) => `- ${l}`).join("\n")}\nStructure of the reference (roles are generic; translate to this product):\n${structure.map((l) => `- ${l}`).join("\n")}`;
+    return { v2: true, text, limits: {}, presetOverrides: card.presetOverrides, direction: card.direction, timeline: card.timeline, allowsPip: d.layoutBias !== "full", wantsLogo: card.directorRules.some((r) => /logo|brand icon/i.test(r)) };
+  }
   const lines = [...card.directorRules];
   const i = card.inserts;
   if (i.layout !== "full") lines.push(`Use picture-in-picture (layout "pip") for most cutaways; the creator stays visible.`);

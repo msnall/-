@@ -1,4 +1,5 @@
 import type { PlayerRef } from "@remotion/player";
+import { confirmBox } from "./confirm.ts";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { applyPatch } from "../../scripts/lib/json-patch.mjs";
 import { getEffect, type EffectId } from "../../src/engine/effects/catalog.ts";
@@ -503,9 +504,7 @@ export const App: React.FC<{ projectId: string; nav: React.ReactNode; onOpenExpo
   const restore = async (revision: number) => {
     if (
       !project ||
-      !window.confirm(
-        `把第 ${revision} 次修改恢复为新版本？当前版本仍保留在历史中。`,
-      )
+      !(await confirmBox(`把第 ${revision} 次修改恢复为新版本？当前版本仍保留在历史中。`, { danger: false }))
     )
       return;
     try {

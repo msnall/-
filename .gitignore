@@ -38,3 +38,6 @@ out
 
 # Videos dragged into the page (素材箱); originals stay out of Git.
 /inbox/
+
+# Reference videos dragged into the 风格库 (analysis only).
+/library/references/_uploads/

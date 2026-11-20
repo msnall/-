@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-20T06:35:01.262Z",
+  "model": "claude-sonnet-5-5",
+  "card": "ibebp-260923-01",
+  "attempts": 1,
+  "directions": [
+    {
+      "name_zh": "画面开场演示",
+      "hookTreatment": "pip_hook",
+      "structureEmphasis": "product_demo",
+      "pacing": "medium",
+      "brollPlacement": "front_loaded",
+      "layoutBias": "mixed",
+      "zoomPattern": "alternate",
+      "brollRatioTarget": 0.71,
+      "hookBeat": "b01",
+      "climaxBeat": "b05",
+      "followsStyleCard": true,
+      "why_zh": "沿用风格卡:b01「Stop swiping」一开口就用全屏手持手机和情感空镜铺满画面,创作者缩在角落小窗。b03 到 b05 再用创作者近景配画中画,把 Kismia 的筛选和照片认证讲清楚。",
+      "oneLineSummary_zh": "全屏画面+角落小窗开场｜中速｜素材前置｜混合版式｜推近交替"
+    },
+    {
+      "name_zh": "反刷脸警告",
+      "hookTreatment": "color_hook",
+      "structureEmphasis": "problem",
+      "pacing": "fast",
+      "brollPlacement": "spread",
+      "layoutBias": "pip",
+      "zoomPattern": "peaks_only",
+      "brollRatioTarget": 0.45,
+      "hookBeat": "b01",
+      "climaxBeat": "b06",
+      "followsStyleCard": false,
+      "why_zh": "b01「Stop swiping on random profiles」是现成的痛点开场,把 random profiles 标成红色就能立刻抓人。b04 到 b06 讲浪费时间、catfish 和 bots,节奏快、一环扣一环,最后在 b06 用 z120 收住,素材只用手持手机镜头做小窗点缀。",
+      "oneLineSummary_zh": "红字痛点开场｜快节奏｜素材均匀穿插小窗｜只在峰值推近"
+    },
+    {
+      "name_zh": "真实连接",
+      "hookTreatment": "slow_tension",
+      "structureEmphasis": "story",
+      "pacing": "calm",
+      "brollPlacement": "demo_cluster",
+      "layoutBias": "full",
+      "zoomPattern": "build_up",
+      "brollRatioTarget": 0.3,
+      "hookBeat": "b01",
+      "climaxBeat": "b07",
+      "followsStyleCard": false,
+      "why_zh": "b01 到 b03 从疲惫到说出 Kismia,镜头逐步推近。b07「real connections」是情绪高点,正好把牵手和爱心手势这两条情感空镜集中放在 b07 到 b08,最后用品牌结尾卡带出下载。",
+      "oneLineSummary_zh": "渐推悬念开场｜舒缓节奏｜情感空镜集中在结尾｜逐步推近"
+    }
+  ]
+}

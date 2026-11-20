@@ -8,9 +8,9 @@ import { projectFile, readJson, writeJson } from "../../scripts/lib/storage.mjs"
 import { readCatalog } from "./catalog.mjs";
 import { badRequest, HttpError } from "./errors.mjs";
 import { cutName, directorStatus, recompile, STYLES } from "./director.mjs";
+import { EFFECTS, ZOOM_SCALE, zoomIdOf } from "../../scripts/lib/effects.mjs";
 
 const PIP_SLOTS = ["top-left", "top-right", "lower-left", "lower-right"];
-const SFX = ["auto", "none", "whoosh", "pop"];
 const norm = (t) => t.toLowerCase().replace(/[^a-z0-9']/g, "");
 const FPS = 30;
 
@@ -36,12 +36,12 @@ export async function readTable(id, variant) {
       broll: b.broll.map((s) => ({ id: s.id, asset: s.asset, srcStartMs: s.srcStartMs, atMs: s.atMs, durationMs: s.durationMs, layout: s.layout ?? "full", slot: s.slot ?? null, note: s.note ?? "" })),
       voice: { asset: b.voice.asset, atMs: Math.min((b.voice.ranges?.[0]?.[0] ?? b.voice.startMs) + 300, b.voice.endMs - 100) }, // a still of the creator on this line
       zoom: typeof b.zoom === "number" ? b.zoom : null, // null = automatic (alternating close-ups)
-      sfx: b.sfx ?? "auto", logoAtMs: cut.logo?.beat === b.id ? cut.logo.atMs : null,
+      zoomId: typeof b.zoom === "number" ? zoomIdOf(b.zoom) : null, logoAtMs: cut.logo?.beat === b.id ? cut.logo.atMs : null,
     };
     at += length;
     return row;
   });
-  return { variant, label: STYLES[variant]?.label ?? "当前草稿", totalMs: Math.round(at), logo: !!cut.logo, rows, assets: await assetOptions(id), builtAt: cut.builtAt };
+  return { variant, label: cut.director?.direction?.name_zh ?? STYLES[variant]?.label ?? "当前草稿", blurb: cut.director?.direction?.oneLineSummary_zh ?? null, zoomOptions: EFFECTS.zoom.filter((z) => z.ready).map((z) => ({ id: z.id, scale: z.scale })), totalMs: Math.round(at), logo: !!cut.logo, rows, assets: await assetOptions(id), builtAt: cut.builtAt };
 }
 
 // body.rows: [{ id, broll?, zoom?, sfx?, emphasis? }] — only the fields present change. Everything is checked before anything is written.
@@ -75,13 +75,10 @@ export async function saveTable(id, variant, body) {
       beat.broll = shots;
     }
     if (edit.zoom !== undefined) {
+      const scale = typeof edit.zoom === "string" ? ZOOM_SCALE[edit.zoom] : edit.zoom;
       if (edit.zoom === null) delete beat.zoom;
-      else if (typeof edit.zoom === "number" && edit.zoom >= 1 && edit.zoom <= 1.5) beat.zoom = edit.zoom;
-      else problems.push(`${label}：推近倍数要在 1–1.5 之间`);
-    }
-    if (edit.sfx !== undefined) {
-      if (!SFX.includes(edit.sfx)) problems.push(`${label}：音效只能是 ${SFX.join(" / ")}`);
-      else if (edit.sfx === "auto") delete beat.sfx; else beat.sfx = edit.sfx;
+      else if (typeof scale === "number" && scale >= 1 && scale <= 1.5) beat.zoom = scale;
+      else problems.push(`${label}：推近要选 ${Object.keys(ZOOM_SCALE).join(" / ")}`);
     }
     if (edit.emphasis !== undefined) {
       const known = new Set(beat.text.split(/\s+/).map(norm));

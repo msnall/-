@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 2,
+  "projectId": "kismia",
+  "scriptId": "creator",
+  "status": "draft",
+  "builtAt": "2026-11-20T06:35:43.662Z",
+  "fps": 30,
+  "director": {
+    "slot": "a",
+    "direction": {
+      "name_zh": "画面开场演示",
+      "hookTreatment": "pip_hook",
+      "structureEmphasis": "product_demo",
+      "pacing": "medium",
+      "brollPlacement": "front_loaded",
+      "layoutBias": "mixed",
+      "zoomPattern": "alternate",
+      "brollRatioTarget": 0.71,
+      "hookBeat": "b01",
+      "climaxBeat": "b05",
+      "followsStyleCard": true,
+      "why_zh": "沿用风格卡:b01「Stop swiping」一开口就用全屏手持手机和情感空镜铺满画面,创作者缩在角落小窗。b03 到 b05 再用创作者近景配画中画,把 Kismia 的筛选和照片认证讲清楚。",
+      "oneLineSummary_zh": "全屏画面+角落小窗开场｜中速｜素材前置｜混合版式｜推近交替"
+    },
+    "model": "claude-sonnet-5-5",
+    "at": "2026-11-20T06:35:43.662Z",
+    "notes": "因为开头2秒内不能全屏B-roll,开场改用右下角画中画情感空镜,创作者始终可见。b03 太短(0.81秒)不放素材,b04a 是个人情绪句,保留创作者。b04 拆成三段以便素材穿插。B-roll 总时长约15.2秒,占比约0.68。素材前置在 b01 到 b05,b07 用全屏爱心画面,结尾用 screen-o1 品牌结尾卡收尾。缩放 b01 和 b05 都用 z120,其余相邻节拍都不同。素材使用次数:c1-action 2次,screen-o2 2次,screen-o3 2次,screen-o1 1次。",
+    "attempts": 1,
+    "warnings": [],
+    "brollRatio": 0.64,
+    "styleCard": {
+      "id": "ibebp-260923-01",
+      "name": "IBEBP-260923成片01发"
+    },
+    "answer": {
+      "direction": "画面开场演示",
+      "splits": [
+        {
+          "beat": "b04",
+          "word": 24
+        },
+        {
+          "beat": "b04",
+          "word": 31
+        }
+      ],
+      "beats": [
+        {
+          "beat": "b01",
+          "zoom": "z120"
+        },
+        {
+          "beat": "b02",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b03",
+          "zoom": "z110"
+        },
+        {
+          "beat": "b04a",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b04b",
+          "zoom": "z110"
+        },
+        {
+          "beat": "b04c",
+          "zoom": "z115"
+        },
+        {
+          "beat": "b05",
+          "zoom": "z120"
+        },
+        {
+          "beat": "b06",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b07",
+          "zoom": "z115"
+        },
+        {
+          "beat": "b08",
+          "zoom": "z100"
+        }
+      ],
+      "broll": [
+        {
+          "asset": "screen-o2",
+          "beat": "b01",
+          "word": 0,
+          "srcStartMs": 300,
+          "durationMs": 1700,
+          "layout": "pip",
+          "slot": "lower-right",
+          "reason_zh": "开场0秒就用牵手海边的情感画面做小窗,创作者仍在画面中,用画面点出“别再乱刷”的情绪"
+        },
+        {
+          "asset": "c1-action",
+          "beat": "b02",
+          "word": 8,
+          "srcStartMs": 0,
+          "durationMs": 1900,
+          "layout": "full",
+          "reason_zh": "说到“筛选”时切全屏手持手机操作画面,对应筛选动作,且已过2秒"
+        },
+        {
+          "asset": "c1-action",
+          "beat": "b04b",
+          "word": 25,
+          "srcStartMs": 500,
+          "durationMs": 2000,
+          "layout": "pip",
+          "slot": "top-right",
+          "reason_zh": "讲“智能算法匹配”时用手机操作小窗,创作者留在画面里"
+        },
+        {
+          "asset": "screen-o2",
+          "beat": "b04c",
+          "word": 31,
+          "srcStartMs": 1500,
+          "durationMs": 2600,
+          "layout": "pip",
+          "slot": "lower-left",
+          "reason_zh": "“想要认真关系的人”配牵手画面,呼应认真的感情"
+        },
+        {
+          "asset": "screen-o3",
+          "beat": "b05",
+          "word": 38,
+          "srcStartMs": 300,
+          "durationMs": 2400,
+          "layout": "pip",
+          "slot": "top-right",
+          "reason_zh": "高潮句“最棒的是”用爱心手势小窗烘托好感,创作者特写保持可见"
+        },
+        {
+          "asset": "screen-o3",
+          "beat": "b07",
+          "word": 59,
+          "srcStartMs": 1200,
+          "durationMs": 1950,
+          "layout": "full",
+          "reason_zh": "“真实的连接”用日落爱心手势全屏,情感收束"
+        },
+        {
+          "asset": "screen-o1",
+          "beat": "b08",
+          "word": 69,
+          "srcStartMs": 0,
+          "durationMs": 1950,
+          "layout": "full",
+          "reason_zh": "行动号召后以Kismia品牌结尾卡全屏收尾,引导下载"
+        }
+      ],
+      "emphasis": [
+        {
+          "beat": "b01",
+          "word": 1,
+          "color": "red"
+        },
+        {
+          "beat": "b02",
+          "word": 10,
+          "color": "yellow"
+        },
+        {
+          "beat": "b02",
+          "word": 11,
+          "color": "yellow"
+        },
+        {
+          "beat": "b03",
+          "word": 16,
+          "color": "default"
+        },
+        {
+          "beat": "b04a",
+          "word": 22,
+          "color": "red"
+        },
+        {
+          "beat": "b04b",
+          "word": 27,
+          "color": "yellow"
+        },
+        {
+          "beat": "b04c",
+          "word": 37,
+          "color": "green"
+        },
+        {
+          "beat": "b05",
+          "word": 44,
+          "color": "green"
+        },
+        {
+          "beat": "b05",
+          "word": 45,
+          "color": "green"
+        },
+        {
+          "beat": "b06",
+          "word": 53,
+          "color": "red"
+        },
+        {
+          "beat": "b07",
+          "word": 63,
+          "color": "green"
+        },
+        {
+          "beat": "b08",
+          "word": 71,
+          "color": "yellow"
+        },
+        {
+          "beat": "b08",
+          "word": 75,
+          "color": "default"
+        }
+      ],
+      "logo": null,
+      "notes_zh": "因为开头2秒内不能全屏B-roll,开场改用右下角画中画情感空镜,创作者始终可见。b03 太短(0.81秒)不放素材,b04a 是个人情绪句,保留创作者。b04 拆成三段以便素材穿插。B-roll 总时长约15.2秒,占比约0.68。素材前置在 b01 到 b05,b07 用全屏爱心画面,结尾用 screen-o1 品牌结尾卡收尾。缩放 b01 和 b05 都用 z120,其余相邻节拍都不同。素材使用次数:c1-action 2次,screen-o2 2次,screen-o3 2次,screen-o1 1次。"
+    }
+  },
+  "note": "Beats from the creators' proofread transcripts; zoom, b-roll and emphasis proposed by the auto director and validated by code. Review in the desk.",
+  "beats": [
+    {
+      "id": "b01",
+      "text": "Stop swiping on random profiles.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 0,
+        "endMs": 1733.3333333333333,
+        "wordStart": 0,
+        "wordEnd": 4,
+        "ranges": [
+          [
+            0,
+            1733.3333333333333
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b01-1",
+          "asset": "screen-o2",
+          "srcStartMs": 300,
+          "atMs": 0,
+          "durationMs": 1700,
+          "layout": "pip",
+          "slot": "lower-right",
+          "note": "开场0秒就用牵手海边的情感画面做小窗,创作者仍在画面中,用画面点出“别再乱刷”的情绪"
+        }
+      ],
+      "zoom": 1.2
+    },
+    {
+      "id": "b02",
+      "text": "Now, I only filter by shared values and distance.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 1733.3333333333333,
+        "endMs": 4366.666666666667,
+        "wordStart": 5,
+        "wordEnd": 13,
+        "ranges": [
+          [
+            1733.3333333333333,
+            4366.666666666667
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b02-1",
+          "asset": "c1-action",
+          "srcStartMs": 0,
+          "atMs": 640,
+          "durationMs": 1900,
+          "layout": "full",
+          "note": "说到“筛选”时切全屏手持手机操作画面,对应筛选动作,且已过2秒"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b03",
+      "text": "This is Kismia. I was so tired of wasting time,",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 4366.666666666667,
+        "endMs": 6800,
+        "wordStart": 14,
+        "wordEnd": 23,
+        "ranges": [
+          [
+            4366.666666666667,
+            6800
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1.1
+    },
+    {
+      "id": "b04a",
+      "text": "but their smart algorithm matches you with",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 6800,
+        "endMs": 9066.666666666666,
+        "wordStart": 24,
+        "wordEnd": 30,
+        "ranges": [
+          [
+            6800,
+            9066.666666666666
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b04a-1",
+          "asset": "c1-action",
+          "srcStartMs": 500,
+          "atMs": 195,
+          "durationMs": 2000,
+          "layout": "pip",
+          "slot": "top-right",
+          "note": "讲“智能算法匹配”时用手机操作小窗,创作者留在画面里"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b04b",
+      "text": "people who actually want a serious relationship.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 9066.666666666666,
+        "endMs": 11733.333333333334,
+        "wordStart": 31,
+        "wordEnd": 37,
+        "ranges": [
+          [
+            9066.666666666666,
+            11733.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b04b-1",
+          "asset": "screen-o2",
+          "srcStartMs": 1500,
+          "atMs": 0,
+          "durationMs": 2600,
+          "layout": "pip",
+          "slot": "lower-left",
+          "note": "“想要认真关系的人”配牵手画面,呼应认真的感情"
+        }
+      ],
+      "zoom": 1.1
+    },
+    {
+      "id": "b05",
+      "text": "The best part, every profile is photo verified.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 11733.333333333334,
+        "endMs": 14233.333333333334,
+        "wordStart": 38,
+        "wordEnd": 45,
+        "ranges": [
+          [
+            11733.333333333334,
+            14233.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b05-1",
+          "asset": "screen-o3",
+          "srcStartMs": 300,
+          "atMs": 8,
+          "durationMs": 2400,
+          "layout": "pip",
+          "slot": "top-right",
+          "note": "高潮句“最棒的是”用爱心手势小窗烘托好感,创作者特写保持可见"
+        }
+      ],
+      "zoom": 1.2
+    },
+    {
+      "id": "b06",
+      "text": "So you don't have to worry about catfish or bots.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 14233.333333333334,
+        "endMs": 16733.333333333332,
+        "wordStart": 46,
+        "wordEnd": 55,
+        "ranges": [
+          [
+            14233.333333333334,
+            16733.333333333332
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1
+    },
+    {
+      "id": "b07",
+      "text": "It's built for people looking for real connections.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 16733.333333333332,
+        "endMs": 19500,
+        "wordStart": 56,
+        "wordEnd": 63,
+        "ranges": [
+          [
+            16733.333333333332,
+            19500
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b07-1",
+          "asset": "screen-o3",
+          "srcStartMs": 1200,
+          "atMs": 753,
+          "durationMs": 1950,
+          "layout": "full",
+          "note": "“真实的连接”用日落爱心手势全屏,情感收束"
+        }
+      ],
+      "zoom": 1.15
+    },
+    {
+      "id": "b08",
+      "text": "If you want to stop wasting time, tap below to try Kismia.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 19500,
+        "endMs": 22500,
+        "wordStart": 64,
+        "wordEnd": 75,
+        "ranges": [
+          [
+            19500,
+            22500
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b08-1",
+          "asset": "screen-o1",
+          "srcStartMs": 0,
+          "atMs": 922,
+          "durationMs": 1950,
+          "layout": "full",
+          "note": "行动号召后以Kismia品牌结尾卡全屏收尾,引导下载"
+        }
+      ],
+      "zoom": 1
+    }
+  ],
+  "emphasis": [
+    {
+      "beat": "b01",
+      "word": "swiping",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b02",
+      "word": "shared",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b02",
+      "word": "values",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b03",
+      "word": "Kismia."
+    },
+    {
+      "beat": "b03",
+      "word": "wasting",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b04a",
+      "word": "algorithm",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b04b",
+      "word": "relationship.",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b05",
+      "word": "photo",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b05",
+      "word": "verified.",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b06",
+      "word": "catfish",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b07",
+      "word": "connections.",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b08",
+      "word": "tap",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b08",
+      "word": "Kismia."
+    }
+  ]
+}

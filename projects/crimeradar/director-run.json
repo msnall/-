@@ -1,8 +1,8 @@
 {
   "state": "done",
   "kind": "variants",
-  "startedAt": "2026-11-19T09:33:38.295Z",
-  "finishedAt": "2026-11-19T09:34:43.138Z",
+  "startedAt": "2026-11-20T06:21:27.500Z",
+  "finishedAt": "2026-11-20T06:23:30.575Z",
   "steps": [
     {
       "name": "同步校对文案",
@@ -10,45 +10,48 @@
       "state": "done"
     },
     {
-      "name": "模型出方案：全屏插画",
-      "key": "direct:full",
+      "name": "定三个创意方向",
+      "key": "directions",
       "state": "done"
     },
     {
-      "name": "模型出方案：极简口播",
-      "key": "direct:minimal",
+      "name": "模型出方案：方向 1",
+      "key": "direct:a",
       "state": "done"
     },
     {
-      "name": "模型出方案：按风格卡",
-      "key": "direct:pip",
+      "name": "模型出方案：方向 2",
+      "key": "direct:b",
       "state": "done"
     },
     {
-      "name": "编译：全屏插画",
-      "key": "compile:full",
+      "name": "模型出方案：方向 3",
+      "key": "direct:c",
       "state": "done"
     },
     {
-      "name": "编译：极简口播",
-      "key": "compile:minimal",
+      "name": "检查三套是否足够不同",
+      "key": "compare",
       "state": "done"
     },
     {
-      "name": "编译：按风格卡",
-      "key": "compile:pip",
+      "name": "编译：方向 1",
+      "key": "compile:a",
+      "state": "done"
+    },
+    {
+      "name": "编译：方向 2",
+      "key": "compile:b",
+      "state": "done"
+    },
+    {
+      "name": "编译：方向 3",
+      "key": "compile:c",
       "state": "done"
     }
   ],
   "error": null,
-  "applied": {
-    "revision": 0,
-    "variant": "pip",
-    "at": "2026-11-19T09:35:22.919Z"
-  },
-  "card": {
-    "id": "kika-ugc1016",
-    "name": "UGC1016 Kika keyboard（订单参考成品）"
-  },
-  "note": null
+  "applied": null,
+  "card": null,
+  "note": "没有选风格卡，三个创意方向都按节奏预设来剪；选一张已确认的风格卡，会有一个方向完全照卡来剪。"
 }

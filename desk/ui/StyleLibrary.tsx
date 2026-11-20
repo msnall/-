@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowLeft, Plus, RefreshCw, Trash2 } from "lucide-react";
+import { confirmBox } from "./confirm.ts";
 import { styleApi, type StyleBrief, type StyleCard, type StyleDetail, type StyleRole, type StyleRun } from "./api.ts";
+import { CardEditorV2, HOOK, PACING } from "./StyleCardV2.tsx";
 
 // 风格库：拆解一条成品 → 模型写一张风格卡 → 你按六栏改 → 起名确认。只有「已确认」的卡能用于出方案。
 
@@ -24,7 +26,7 @@ const Panel: React.FC<{ title: string; hint: string; support: StyleCard["support
   {support.filter((s) => s.area === area).map((s) => <p key={s.feature} className={`sc-support ${s.level}`} title={s.note}><b>{LEVEL[s.level]}</b> {s.feature}{s.note ? ` — ${s.note}` : ""}</p>)}
 </section>;
 
-const CardEditor: React.FC<{ detail: StyleDetail; onChanged: () => void; onDeleted: () => void; onError: (m: string) => void }> = ({ detail, onChanged, onDeleted, onError }) => {
+const CardEditor: React.FC<{ detail: StyleDetail & { card: StyleCard }; onChanged: () => void; onDeleted: () => void; onError: (m: string) => void }> = ({ detail, onChanged, onDeleted, onError }) => {
   const [card, setCard] = useState<StyleCard>(detail.card);
   const [dirty, setDirty] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -37,13 +39,14 @@ const CardEditor: React.FC<{ detail: StyleDetail; onChanged: () => void; onDelet
   const total = a?.facts.durationMs ?? detail.card.source.durationMs ?? 1;
   const setRow = (i: number, part: Partial<StyleCard["structure"][number]>) => change("structure", card.structure.map((r, k) => (k === i ? { ...r, ...part } : r)));
   return <div className="sc-editor">
+    <p className="notice settings-bad">这是旧格式的风格卡：里面混着参考视频的产品内容，也没有测量数字和示范方案。点「重新拆解」生成新格式（旧卡保留不删）。</p>
     <div className="sc-top">
       <input className="sc-name" value={card.name} onChange={(e) => change("name", e.target.value)} aria-label="风格卡名称" placeholder="给这张卡起个名，如 kika-UGC快节奏" />
       <span className={`sc-status ${card.status}`}>{card.status === "confirmed" ? "已确认" : dirty ? "有未保存的修改" : "草稿：确认后才能用于出方案"}</span>
       <button disabled={busy || !dirty} onClick={() => act(save)}>保存修改</button>
       <button className="primary" disabled={busy || (card.status === "confirmed" && !dirty)} onClick={() => act(async () => { if (dirty) await save(); await styleApi.confirm(card.id, card.name); onChanged(); })}>{card.status === "confirmed" ? "改完重新确认" : "确认并存入风格库"}</button>
       {card.source.referenceId ? <button disabled={busy} title="重新让模型看一遍这条成品（会替换草稿；已确认的卡不会被覆盖）" onClick={() => act(async () => { await styleApi.relearn(card.source.referenceId); onChanged(); })}><RefreshCw size={14} /> 重新拆解</button> : null}
-      <button disabled={busy} title="删除这张卡" onClick={() => { if (window.confirm(`删除风格卡「${card.name}」？`)) act(async () => { await styleApi.remove(card.id); onDeleted(); }); }}><Trash2 size={14} /></button>
+      <button disabled={busy} title="删除这张卡" onClick={async () => { if (await confirmBox(`删除风格卡「${card.name}」？删除后不能恢复。`, { yes: "删除" })) act(async () => { await styleApi.remove(card.id); onDeleted(); }); }}><Trash2 size={14} /></button>
     </div>
     <label className="sc-field wide">整体风格（一句话描述，会给你自己看）<textarea rows={2} value={card.summary} onChange={(e) => change("summary", e.target.value)} /></label>
     {a ? <section className="sc-source">
@@ -121,11 +124,17 @@ export const StyleLibrary: React.FC<{ onBack: () => void; onSettings: () => void
   const [detail, setDetail] = useState<StyleDetail | null>(null);
   const [message, setMessage] = useState("");
   const [adding, setAdding] = useState(false);
+  const [dragging, setDragging] = useState(false);
+  const [upload, setUpload] = useState<{ name: string; done: number; total: number } | null>(null);
+  const picker = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState("");
   const [title, setTitle] = useState("");
+  const [filter, setFilter] = useState({ productType: "", format: "", pacing: "" });
+  const [insights, setInsights] = useState<Awaited<ReturnType<typeof styleApi.insights>> | null>(null);
   const pending = useRef<string | null>(null);
   const loadList = useCallback(() => styleApi.list().then((l) => { setList(l); setSelected((cur) => cur ?? l.cards[0]?.id ?? null); return l; }).catch((e) => { setMessage(e.message); return null; }), []);
   useEffect(() => { loadList(); }, [loadList]);
+  useEffect(() => { styleApi.insights().then(setInsights).catch(() => {}); }, [list.cards.length, detail?.card.status]);
   const loadDetail = useCallback((id: string) => styleApi.get(id).then(setDetail).catch((e) => { setDetail(null); setMessage(e.message); }), []);
   useEffect(() => { if (selected) loadDetail(selected); else setDetail(null); }, [selected, loadDetail]);
   // poll while a 拆解 run is going; when it finishes, open the new card
@@ -135,6 +144,13 @@ export const StyleLibrary: React.FC<{ onBack: () => void; onSettings: () => void
     const timer = window.setTimeout(() => loadList().then((l) => { if (l && !l.runs.some((r) => r.state === "running") && pending.current) { const fresh = l.cards.find((c) => c.source.referenceId === pending.current); if (fresh) setSelected(fresh.id); pending.current = null; } }), 3000);
     return () => window.clearTimeout(timer);
   }, [running, list, loadList]);
+  // a dragged-in video is uploaded first (the browser cannot give a file path), then analysed from the saved copy
+  const takeFile = async (f: File) => {
+    if (!/\.(mp4|mov|m4v|webm)$/i.test(f.name)) { setMessage("只支持 mp4 / mov / m4v / webm 视频"); return; }
+    setMessage(""); setUpload({ name: f.name, done: 0, total: f.size });
+    try { const saved = await styleApi.upload(f, (done) => setUpload({ name: f.name, done, total: f.size })); setFile(saved.file); setTitle((t) => t || f.name.replace(/\.\w+$/, "")); }
+    catch (e) { setMessage((e as Error).message); } finally { setUpload(null); }
+  };
   const add = async () => {
     try { const r = await styleApi.import(file, title); pending.current = r.id; setAdding(false); setFile(""); setTitle(""); setMessage(""); await loadList(); }
     catch (e) { setMessage((e as Error).message); }
@@ -149,18 +165,32 @@ export const StyleLibrary: React.FC<{ onBack: () => void; onSettings: () => void
       <button onClick={onSettings}>API 设置</button>
     </header>
     {adding ? <section className="tech-add">
-      <p>选一条<b>已经剪好的成品</b>（本机文件）。程序只读它：每秒抽一帧、找出每个切点、转写口播，再让模型写成一张风格卡。成品的画面不会进入你的视频。</p>
-      <label>视频文件的完整路径<input value={file} onChange={(e) => setFile(e.target.value)} placeholder="F:\TiktokOne订单\…\00_参考成品\xxx.mp4" spellCheck={false} /></label>
+      <p>选一条<b>已经剪好的成品</b>。程序只读它：每秒抽一帧、找出每个切点、转写口播，再让模型写成一张风格卡。成品的画面不会进入你的视频。</p>
+      <div className={`drop-zone ref-drop${dragging ? " over" : ""}`} onDragOver={(e) => { e.preventDefault(); setDragging(true); }} onDragLeave={() => setDragging(false)}
+        onDrop={(e) => { e.preventDefault(); setDragging(false); const f = e.dataTransfer.files[0]; if (f) void takeFile(f); }}>
+        <button type="button" className="drop-pick" disabled={!!upload} onClick={() => picker.current?.click()}>{upload ? `正在上传 ${upload.name} · ${Math.round((upload.done / upload.total) * 100)}%` : file ? "✓ 已选好，点这里换一条" : "把成品视频拖到这里，或点这里选择文件"}</button>
+        {file ? <small className="catalog-hint">{file}</small> : <small className="catalog-hint">mp4 / mov / m4v / webm。视频会复制到本项目的 library/references/_uploads，只用来分析。</small>}
+        <input ref={picker} type="file" accept="video/*,.mov" hidden onChange={(e) => { const f = e.target.files?.[0]; if (f) void takeFile(f); e.target.value = ""; }} />
+      </div>
+      <details><summary>或者填本机文件的完整路径（不复制，直接读）</summary>
+        <label>视频文件的完整路径<input value={file} onChange={(e) => setFile(e.target.value)} placeholder="F:\TiktokOne订单\…\00_参考成品\xxx.mp4" spellCheck={false} /></label></details>
       <label>名称（可选，之后可改）<input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="例如：kika-UGC快节奏" /></label>
-      <div className="catalog-actions"><button className="primary" disabled={!file.trim()} onClick={add}>开始拆解（约 1–2 分钟）</button><button onClick={() => setAdding(false)}>取消</button></div>
+      <div className="catalog-actions"><button className="primary" disabled={!file.trim() || !!upload} onClick={add}>开始拆解（约 1–2 分钟）</button><button disabled={!!upload} onClick={() => setAdding(false)}>取消</button></div>
     </section> : null}
     {message ? <p className="notice settings-bad" role="status">{message}</p> : null}
     <div className="tech-layout">
       <aside className="tech-list">
-        {list.runs.map((r) => <div key={r.id} className={`sc-run ${r.state}`}><b>{r.title}</b><span>{r.state === "running" ? r.steps.find((s) => s.state === "running")?.name ?? "准备中…" : r.error}</span></div>)}
-        {list.cards.length ? list.cards.map((c) => <button key={c.id} className={selected === c.id ? "active" : ""} onClick={() => setSelected(c.id)}><b>{c.name}</b><span>{c.status === "confirmed" ? "已确认" : "草稿"} · {c.layout === "pip" ? "画中画" : c.layout === "mixed" ? "混合插画" : "全屏插画"}{c.source.durationMs ? ` · ${sec(c.source.durationMs)}s` : ""}</span></button>) : !list.runs.length ? <p className="catalog-hint">风格库还是空的。点右上角「拆解新视频」，选一条剪得好的成品。</p> : null}
+        <div className="sc-filters" aria-label="筛选" title="产品类型：参考视频卖的是 App 还是实物。视频形式：单人口播、反应型、对比型、清单型、剧情型。节奏：按平均镜头时长，快节奏不到 2 秒一换，中速 2–3 秒，舒缓更长。">
+          <select value={filter.productType} onChange={(e) => setFilter({ ...filter, productType: e.target.value })}><option value="">产品类型：全部</option><option value="app">App（软件）</option><option value="physical">实物商品</option></select>
+          <select value={filter.format} onChange={(e) => setFilter({ ...filter, format: e.target.value })}><option value="">视频形式：全部</option><option value="single_creator_talking">单人口播</option><option value="reaction">反应型</option><option value="comparison">对比型</option><option value="list">清单型</option><option value="story">剧情型</option></select>
+          <select value={filter.pacing} onChange={(e) => setFilter({ ...filter, pacing: e.target.value })}><option value="">节奏：全部</option>{Object.entries(PACING).map(([k, t]) => <option key={k} value={k}>{t}</option>)}</select>
+        </div>
+        {list.runs.map((r) => <div key={r.id} className={`sc-run ${r.state}`}><b>{r.title}</b><span>{r.state === "running" ? r.steps.find((s) => s.state === "running")?.name ?? "准备中…" : r.error}</span>{r.state === "failed" ? <button className="sc-run-x" title="关掉这条失败记录" onClick={() => styleApi.dismissRun(r.id).then(() => loadList()).catch((e) => setMessage(e.message))}>×</button> : null}</div>)}
+        {list.cards.length ? list.cards.filter((c) => (!filter.productType || c.meta?.productType === filter.productType) && (!filter.format || c.meta?.format === filter.format) && (!filter.pacing || c.pacing === filter.pacing)).map((c) => <button key={c.id} className={selected === c.id ? "active" : ""} onClick={() => setSelected(c.id)}><b>{c.name}</b><span>{c.status === "confirmed" ? "已确认" : "草稿"}{c.version === 2 ? ` · ${PACING[c.pacing ?? ""] ?? ""} · ${HOOK[c.hookTreatment ?? ""] ?? ""}` : " · 旧格式"} · {c.layout === "pip" ? "画中画" : c.layout === "mixed" ? "混合插画" : "全屏插画"}{c.source.durationMs ? ` · ${sec(c.source.durationMs)}s` : ""}</span></button>) : !list.runs.length ? <p className="catalog-hint">{list.cards.length ? "没有符合筛选条件的卡，把上面的筛选改回「全部」。" : "风格库还是空的。点右上角「拆解新视频」，选一条剪得好的成品。"}</p> : null}
+        {list.cards.length && !list.cards.some((c) => (!filter.productType || c.meta?.productType === filter.productType) && (!filter.format || c.meta?.format === filter.format) && (!filter.pacing || c.pacing === filter.pacing)) ? <p className="catalog-hint">没有符合筛选条件的卡（旧格式的卡没有这些标签，筛选时不会出现）。把上面的筛选改回「全部」。</p> : null}
+        {insights?.toBuild.length ? <section className="sc-tobuild"><h4>待开发的效果</h4><p className="catalog-hint">已确认的卡里用到、但引擎还没做好的技巧，用到的卡越多越优先。</p><ol>{insights.toBuild.map((t) => <li key={t.key}><b>{t.name}</b><span>{t.count} 张卡{t.effectId ? ` · ${t.effectId}` : ""}</span></li>)}</ol></section> : null}
       </aside>
-      <main className="tech-detail">{detail ? <CardEditor key={detail.card.id} detail={detail} onChanged={changed} onDeleted={() => { setSelected(null); loadList(); }} onError={setMessage} /> : <p className="catalog-hint">选择左边的风格卡，或拆解一条新视频。</p>}</main>
+      <main className="tech-detail">{detail ? ("schemaVersion" in detail.card ? <CardEditorV2 key={detail.card.id} detail={detail} onChanged={changed} onDeleted={() => { setSelected(null); loadList(); }} onError={setMessage} /> : <CardEditor key={detail.card.id} detail={detail as StyleDetail & { card: StyleCard }} onChanged={changed} onDeleted={() => { setSelected(null); loadList(); }} onError={setMessage} />) : <p className="catalog-hint">选择左边的风格卡，或拆解一条新视频。</p>}</main>
     </div>
   </div>;
 };

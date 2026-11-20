@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 2,
+  "projectId": "crimeradar",
+  "scriptId": "creator",
+  "status": "draft",
+  "builtAt": "2026-11-20T06:22:19.723Z",
+  "fps": 30,
+  "director": {
+    "slot": "c",
+    "direction": {
+      "name_zh": "结果抢先",
+      "hookTreatment": "creator_punch",
+      "structureEmphasis": "result",
+      "pacing": "fast",
+      "brollPlacement": "front_loaded",
+      "layoutBias": "full",
+      "zoomPattern": "peaks_only",
+      "brollRatioTarget": 0.65,
+      "hookBeat": "b01",
+      "climaxBeat": "b07",
+      "followsStyleCard": false,
+      "why_zh": "三段App录屏（地图、调度音频、事件列表）素材充足，可在b03之后快速全屏铺开，再以b06“就在几个街区外”和b07“比邻居先知道”作为情绪高点，最后落在b08下载号召。",
+      "oneLineSummary_zh": "达人特写强推开场｜快节奏｜录屏前置全屏｜仅峰值推近"
+    },
+    "model": "claude-sonnet-5-5",
+    "at": "2026-11-20T06:22:19.723Z",
+    "notes": "仅b01钩子和b07高潮用推近（z120），其余z100。b01保持达人特写强推开场；从b02起快速铺开全屏素材，b03到b06连续使用录屏，b07仅在句尾短切，最后b08落在c1-action结束卡。B-roll总时长约13.8秒，占口播约0.64。未使用画中画，没有拆分节拍，也没有使用logo。",
+    "attempts": 1,
+    "warnings": [],
+    "brollRatio": 0.62,
+    "styleCard": null,
+    "answer": {
+      "direction": "结果抢先",
+      "splits": [],
+      "beats": [
+        {
+          "beat": "b01",
+          "zoom": "z120"
+        },
+        {
+          "beat": "b02",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b03",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b04",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b05",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b06",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b07",
+          "zoom": "z120"
+        },
+        {
+          "beat": "b08",
+          "zoom": "z100"
+        }
+      ],
+      "broll": [
+        {
+          "asset": "c1-action",
+          "beat": "b02",
+          "word": 10,
+          "srcStartMs": 1500,
+          "durationMs": 2000,
+          "layout": "full",
+          "reason_zh": "“大脑开始乱猜”接深夜床上转头张望的画面，延续开头的夜晚悬念，同时打破静止画面。"
+        },
+        {
+          "asset": "screen-o3",
+          "beat": "b03",
+          "word": 17,
+          "srcStartMs": 1900,
+          "durationMs": 1500,
+          "layout": "full",
+          "reason_zh": "“想起我有 crime radar”，立刻切到App事件列表，让产品抢先出现。"
+        },
+        {
+          "asset": "screen-o1",
+          "beat": "b04",
+          "word": 23,
+          "srcStartMs": 1500,
+          "durationMs": 2500,
+          "layout": "full",
+          "reason_zh": "“打开地图看到活动位置”，对应地图标记逐步出现的录屏。"
+        },
+        {
+          "asset": "screen-o2",
+          "beat": "b05",
+          "word": 36,
+          "srcStartMs": 4500,
+          "durationMs": 2500,
+          "layout": "full",
+          "reason_zh": "“听实时调度音频”，对应Dispatch Audio播放页和实时转写。"
+        },
+        {
+          "asset": "screen-o1",
+          "beat": "b06",
+          "word": 46,
+          "srcStartMs": 3000,
+          "durationMs": 1800,
+          "layout": "full",
+          "reason_zh": "“就在几个街区外”，用地图上的近处红橙标记展示结果。"
+        },
+        {
+          "asset": "screen-o3",
+          "beat": "b07",
+          "word": 61,
+          "srcStartMs": 3000,
+          "durationMs": 900,
+          "layout": "full",
+          "reason_zh": "“比邻居先知道”高潮句尾短切附近事件列表，避免画面静止超过2.5秒，其余时间保持达人特写。"
+        },
+        {
+          "asset": "c1-action",
+          "beat": "b08",
+          "word": 67,
+          "srcStartMs": 9000,
+          "durationMs": 2400,
+          "layout": "full",
+          "reason_zh": "结尾下载号召落在结束卡素材上，睡前安心入睡的收尾。"
+        }
+      ],
+      "emphasis": [
+        {
+          "beat": "b01",
+          "word": 6,
+          "color": "red"
+        },
+        {
+          "beat": "b02",
+          "word": 12,
+          "color": "yellow"
+        },
+        {
+          "beat": "b03",
+          "word": 21,
+          "color": "default"
+        },
+        {
+          "beat": "b04",
+          "word": 25,
+          "color": "green"
+        },
+        {
+          "beat": "b05",
+          "word": 40,
+          "color": "default"
+        },
+        {
+          "beat": "b06",
+          "word": 53,
+          "color": "red"
+        },
+        {
+          "beat": "b07",
+          "word": 63,
+          "color": "green"
+        },
+        {
+          "beat": "b08",
+          "word": 65,
+          "color": "green"
+        }
+      ],
+      "logo": null,
+      "notes_zh": "仅b01钩子和b07高潮用推近（z120），其余z100。b01保持达人特写强推开场；从b02起快速铺开全屏素材，b03到b06连续使用录屏，b07仅在句尾短切，最后b08落在c1-action结束卡。B-roll总时长约13.8秒，占口播约0.64。未使用画中画，没有拆分节拍，也没有使用logo。"
+    }
+  },
+  "note": "Beats from the creators' proofread transcripts; zoom, b-roll and emphasis proposed by the auto director and validated by code. Review in the desk.",
+  "beats": [
+    {
+      "id": "b01",
+      "text": "It's 2am, and I just heard sirens outside.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 366.6666666666667,
+        "endMs": 2800,
+        "wordStart": 0,
+        "wordEnd": 7,
+        "ranges": [
+          [
+            366.6666666666667,
+            2800
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1.2
+    },
+    {
+      "id": "b02",
+      "text": "My brain immediately starts guessing what happened.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 2800,
+        "endMs": 5800,
+        "wordStart": 8,
+        "wordEnd": 14,
+        "ranges": [
+          [
+            2800,
+            5800
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b02-1",
+          "asset": "c1-action",
+          "srcStartMs": 1500,
+          "atMs": 450,
+          "durationMs": 2000,
+          "layout": "full",
+          "note": "“大脑开始乱猜”接深夜床上转头张望的画面，延续开头的夜晚悬念，同时打破静止画面。"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b03",
+      "text": "Then I remember I have crime radar.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 6066.666666666667,
+        "endMs": 8100,
+        "wordStart": 15,
+        "wordEnd": 21,
+        "ranges": [
+          [
+            6066.666666666667,
+            8100
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b03-1",
+          "asset": "screen-o3",
+          "srcStartMs": 1900,
+          "atMs": 446,
+          "durationMs": 1500,
+          "layout": "full",
+          "note": "“想起我有 crime radar”，立刻切到App事件列表，让产品抢先出现。"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b04",
+      "text": "I open the map and see exactly where the activity is.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 8100,
+        "endMs": 10933.333333333334,
+        "wordStart": 22,
+        "wordEnd": 32,
+        "ranges": [
+          [
+            8100,
+            10933.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b04-1",
+          "asset": "screen-o1",
+          "srcStartMs": 1500,
+          "atMs": 143,
+          "durationMs": 2500,
+          "layout": "full",
+          "note": "“打开地图看到活动位置”，对应地图标记逐步出现的录屏。"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b05",
+      "text": "I can even listen to real-time dispatch audio to get the full story.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 10933.333333333334,
+        "endMs": 14600,
+        "wordStart": 33,
+        "wordEnd": 45,
+        "ranges": [
+          [
+            10933.333333333334,
+            14600
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b05-1",
+          "asset": "screen-o2",
+          "srcStartMs": 4500,
+          "atMs": 576,
+          "durationMs": 2500,
+          "layout": "full",
+          "note": "“听实时调度音频”，对应Dispatch Audio播放页和实时转写。"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b06",
+      "text": "Turns out it was just a few blocks away.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 14700,
+        "endMs": 16633.333333333332,
+        "wordStart": 46,
+        "wordEnd": 54,
+        "ranges": [
+          [
+            14700,
+            16633.333333333332
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b06-1",
+          "asset": "screen-o1",
+          "srcStartMs": 3000,
+          "atMs": 59,
+          "durationMs": 1800,
+          "layout": "full",
+          "note": "“就在几个街区外”，用地图上的近处红橙标记展示结果。"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b07",
+      "text": "Now I always know what's happening before my neighbors do.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 16833.333333333332,
+        "endMs": 19433.333333333332,
+        "wordStart": 55,
+        "wordEnd": 64,
+        "ranges": [
+          [
+            16833.333333333332,
+            19433.333333333332
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b07-1",
+          "asset": "screen-o3",
+          "srcStartMs": 3000,
+          "atMs": 1535,
+          "durationMs": 900,
+          "layout": "full",
+          "note": "“比邻居先知道”高潮句尾短切附近事件列表，避免画面静止超过2.5秒，其余时间保持达人特写。"
+        }
+      ],
+      "zoom": 1.2
+    },
+    {
+      "id": "b08",
+      "text": "Download crime radar to see exactly what's happening near you.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 19433.333333333332,
+        "endMs": 22966.666666666668,
+        "wordStart": 65,
+        "wordEnd": 74,
+        "ranges": [
+          [
+            19433.333333333332,
+            22966.666666666668
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b08-1",
+          "asset": "c1-action",
+          "srcStartMs": 9000,
+          "atMs": 887,
+          "durationMs": 2400,
+          "layout": "full",
+          "note": "结尾下载号召落在结束卡素材上，睡前安心入睡的收尾。"
+        }
+      ],
+      "zoom": 1
+    }
+  ],
+  "emphasis": [
+    {
+      "beat": "b01",
+      "word": "sirens",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b02",
+      "word": "guessing",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b03",
+      "word": "radar."
+    },
+    {
+      "beat": "b04",
+      "word": "map",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b05",
+      "word": "audio"
+    },
+    {
+      "beat": "b06",
+      "word": "blocks",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b07",
+      "word": "neighbors",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b08",
+      "word": "Download",
+      "color": "#2ee6c8"
+    }
+  ]
+}

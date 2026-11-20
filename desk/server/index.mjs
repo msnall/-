@@ -23,10 +23,10 @@ import { publicApiSettings, saveApiSettings, testApi } from "./settings.mjs";
 import { applyDraft, directorLog, directorStatus, setOptions, startDirector } from "./director.mjs";
 import { importOrder, importStatus } from "./orders.mjs";
 import { importInbox, listInboxOrders, newOrderName, readInbox, removeInboxFile, saveInboxFile } from "./inbox.mjs";
-import { buildCapcut, capcutStatus, installCapcut, revealCapcut } from "./capcut.mjs";
+import { buildCapcut, buildCapcutVariants, capcutStatus, installCapcut, revealCapcut } from "./capcut.mjs";
 import { confirmCleanup, detectCleanup, readCleanup, setDecision, setWord } from "./cleanup.mjs";
 import { readTable, saveTable } from "./timeline.mjs";
-import { confirmCard, deleteCard, importReference, listCards, readCard, referenceFrame, relearn, saveCard } from "./styles.mjs";
+import { confirmCard, deleteCard, dismissRun, importReference, libraryInsights, saveReferenceUpload, listCards, readCard, referenceFrame, relearn, saveCard, selfTestCard } from "./styles.mjs";
 import { confirmMany, confirmItem, describeItems, frameAt, frameFile, listCatalogs, mediaPath, readCatalog, saveItem } from "./catalog.mjs";
 
 // Validated project id (throws NotFound otherwise) for paths outside projects/.
@@ -80,9 +80,13 @@ const routes = [
   ["POST", /^\/api\/orders\/import$/, async (_params, request) => importOrder(await readBody(request))],
   ["GET", /^\/api\/orders\/([^/]+)\/import$/, ([id]) => importStatus(projectDirName(id))],
   ["GET", /^\/api\/style-cards$/, () => listCards()],
+  ["PUT", /^\/api\/style-cards\/upload$/, ([], request) => saveReferenceUpload(new URL(request.url, "http://x").searchParams, request)],
   ["POST", /^\/api\/style-cards\/import$/, async (_params, request) => importReference(await readBody(request))],
   ["GET", /^\/api\/style-cards\/references\/([^/]+)\/frames\/(t\d{3}\.jpg)$/, ([id, name], request, response) => sendFile(request, response, referenceFrame(id, name), { cache: "max-age=3600" })],
+  ["DELETE", /^\/api\/style-cards\/references\/([^/]+)\/run$/, ([id]) => dismissRun(id)],
   ["POST", /^\/api\/style-cards\/references\/([^/]+)\/relearn$/, ([id]) => relearn(id)],
+  ["GET", /^\/api\/style-cards\/insights$/, () => libraryInsights()],
+  ["POST", /^\/api\/style-cards\/([^/]+)\/selftest$/, ([id]) => selfTestCard(id)],
   ["GET", /^\/api\/style-cards\/([^/]+)$/, ([id]) => readCard(id)],
   ["PUT", /^\/api\/style-cards\/([^/]+)$/, async ([id], request) => saveCard(id, await readBody(request))],
   ["DELETE", /^\/api\/style-cards\/([^/]+)$/, ([id]) => deleteCard(id)],
@@ -115,6 +119,7 @@ const routes = [
   ["PUT", /^\/api\/projects\/([^/]+)\/cleanup\/words\/([^/]+)\/(\d+)$/, async ([id, clip, word], request) => setWord(projectDirName(id), clip, Number(word), !!(await readBody(request)).cut)],
   ["POST", /^\/api\/projects\/([^/]+)\/cleanup\/confirm$/, ([id]) => confirmCleanup(projectDirName(id))],
   ["GET", /^\/api\/projects\/([^/]+)\/capcut$/, ([id]) => capcutStatus(projectDirName(id))],
+  ["POST", /^\/api\/projects\/([^/]+)\/capcut\/variants$/, async ([id], request) => buildCapcutVariants(projectDirName(id), await readBody(request))],
   ["POST", /^\/api\/projects\/([^/]+)\/capcut$/, async ([id], request) => buildCapcut(projectDirName(id), await readBody(request))],
   ["POST", /^\/api\/projects\/([^/]+)\/capcut\/install$/, async ([id], request) => installCapcut(projectDirName(id), await readBody(request))],
   ["POST", /^\/api\/projects\/([^/]+)\/capcut\/reveal$/, async ([id], request) => revealCapcut(projectDirName(id), await readBody(request))],

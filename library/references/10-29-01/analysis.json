@@ -1,0 +1,518 @@
+{
+  "version": 1,
+  "id": "10-29-01",
+  "title": "10月29日成片01",
+  "analyzedAt": "2026-11-20T06:08:49.579Z",
+  "source": {
+    "file": "F:\\VideoAutomation\\library\\references\\_uploads\\10月29日成片01.mp4",
+    "sha256": "39bbec1c473c60363ba0d109c8b193ac445c1f07b3bde161af29aa01faf9e11c",
+    "bytes": 41675651
+  },
+  "facts": {
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "durationMs": 36339,
+    "hasAudio": true,
+    "loudness": {
+      "integratedLufs": -16.47,
+      "truePeakDb": 0.09,
+      "lra": 7
+    }
+  },
+  "cuts": {
+    "threshold": 0.15,
+    "count": 4,
+    "timesMs": [
+      4433,
+      11367,
+      13700,
+      21000
+    ]
+  },
+  "shots": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 4433,
+      "durationMs": 4433
+    },
+    {
+      "index": 2,
+      "startMs": 4433,
+      "endMs": 11367,
+      "durationMs": 6934
+    },
+    {
+      "index": 3,
+      "startMs": 11367,
+      "endMs": 13700,
+      "durationMs": 2333
+    },
+    {
+      "index": 4,
+      "startMs": 13700,
+      "endMs": 21000,
+      "durationMs": 7300
+    },
+    {
+      "index": 5,
+      "startMs": 21000,
+      "endMs": 36339,
+      "durationMs": 15339
+    }
+  ],
+  "pacing": {
+    "shotCount": 5,
+    "avgShotMs": 7268,
+    "minShotMs": 2333,
+    "maxShotMs": 15339,
+    "cutsPerSecond": 0.11
+  },
+  "transcript": {
+    "words": [
+      {
+        "text": "Everyone",
+        "startMs": 80,
+        "endMs": 430
+      },
+      {
+        "text": "uses",
+        "startMs": 430,
+        "endMs": 650
+      },
+      {
+        "text": "their",
+        "startMs": 650,
+        "endMs": 920
+      },
+      {
+        "text": "hands",
+        "startMs": 920,
+        "endMs": 1230
+      },
+      {
+        "text": "to",
+        "startMs": 1230,
+        "endMs": 1300
+      },
+      {
+        "text": "play",
+        "startMs": 1300,
+        "endMs": 1540
+      },
+      {
+        "text": "a",
+        "startMs": 1540,
+        "endMs": 1630
+      },
+      {
+        "text": "block",
+        "startMs": 1630,
+        "endMs": 2120
+      },
+      {
+        "text": "last.",
+        "startMs": 2120,
+        "endMs": 2700
+      },
+      {
+        "text": "I",
+        "startMs": 2700,
+        "endMs": 2730
+      },
+      {
+        "text": "think",
+        "startMs": 2730,
+        "endMs": 2990
+      },
+      {
+        "text": "that's",
+        "startMs": 2990,
+        "endMs": 3360
+      },
+      {
+        "text": "way",
+        "startMs": 3360,
+        "endMs": 3690
+      },
+      {
+        "text": "too",
+        "startMs": 3690,
+        "endMs": 3980
+      },
+      {
+        "text": "easy.",
+        "startMs": 3980,
+        "endMs": 4570
+      },
+      {
+        "text": "Today,",
+        "startMs": 4570,
+        "endMs": 4800
+      },
+      {
+        "text": "I'm",
+        "startMs": 5520,
+        "endMs": 5600
+      },
+      {
+        "text": "going",
+        "startMs": 5600,
+        "endMs": 5680
+      },
+      {
+        "text": "hands-free.",
+        "startMs": 5680,
+        "endMs": 7110
+      },
+      {
+        "text": "No",
+        "startMs": 7110,
+        "endMs": 7370
+      },
+      {
+        "text": "hands.",
+        "startMs": 7370,
+        "endMs": 8250
+      },
+      {
+        "text": "Just",
+        "startMs": 8250,
+        "endMs": 8580
+      },
+      {
+        "text": "my",
+        "startMs": 8580,
+        "endMs": 8820
+      },
+      {
+        "text": "nose.",
+        "startMs": 8820,
+        "endMs": 9350
+      },
+      {
+        "text": "Let's",
+        "startMs": 9350,
+        "endMs": 9680
+      },
+      {
+        "text": "see",
+        "startMs": 9680,
+        "endMs": 10000
+      },
+      {
+        "text": "if",
+        "startMs": 10000,
+        "endMs": 10040
+      },
+      {
+        "text": "I",
+        "startMs": 10040,
+        "endMs": 10080
+      },
+      {
+        "text": "can",
+        "startMs": 10080,
+        "endMs": 10250
+      },
+      {
+        "text": "clear",
+        "startMs": 10250,
+        "endMs": 10570
+      },
+      {
+        "text": "a",
+        "startMs": 10570,
+        "endMs": 10830
+      },
+      {
+        "text": "line.",
+        "startMs": 10830,
+        "endMs": 10960
+      },
+      {
+        "text": "Okay,",
+        "startMs": 18720,
+        "endMs": 18720
+      },
+      {
+        "text": "my",
+        "startMs": 18720,
+        "endMs": 18720
+      },
+      {
+        "text": "neck",
+        "startMs": 18720,
+        "endMs": 18720
+      },
+      {
+        "text": "is",
+        "startMs": 18720,
+        "endMs": 18720
+      },
+      {
+        "text": "cramping.",
+        "startMs": 18720,
+        "endMs": 21130
+      },
+      {
+        "text": "I",
+        "startMs": 21130,
+        "endMs": 21450
+      },
+      {
+        "text": "look",
+        "startMs": 21450,
+        "endMs": 21490
+      },
+      {
+        "text": "ridiculous.",
+        "startMs": 21490,
+        "endMs": 22550
+      },
+      {
+        "text": "But",
+        "startMs": 22550,
+        "endMs": 22700
+      },
+      {
+        "text": "I",
+        "startMs": 22700,
+        "endMs": 22790
+      },
+      {
+        "text": "just",
+        "startMs": 22790,
+        "endMs": 22950
+      },
+      {
+        "text": "cleared",
+        "startMs": 22950,
+        "endMs": 23310
+      },
+      {
+        "text": "a",
+        "startMs": 23310,
+        "endMs": 23450
+      },
+      {
+        "text": "line.",
+        "startMs": 23450,
+        "endMs": 23760
+      },
+      {
+        "text": "Was",
+        "startMs": 23760,
+        "endMs": 24070
+      },
+      {
+        "text": "it",
+        "startMs": 24070,
+        "endMs": 24260
+      },
+      {
+        "text": "worth",
+        "startMs": 24260,
+        "endMs": 24440
+      },
+      {
+        "text": "it?",
+        "startMs": 24440,
+        "endMs": 24720
+      },
+      {
+        "text": "No.",
+        "startMs": 25440,
+        "endMs": 26790
+      },
+      {
+        "text": "Am",
+        "startMs": 26790,
+        "endMs": 27340
+      },
+      {
+        "text": "I",
+        "startMs": 27340,
+        "endMs": 28090
+      },
+      {
+        "text": "going",
+        "startMs": 28090,
+        "endMs": 29050
+      },
+      {
+        "text": "to",
+        "startMs": 29050,
+        "endMs": 29920
+      },
+      {
+        "text": "stop?",
+        "startMs": 29920,
+        "endMs": 31600
+      },
+      {
+        "text": "Absolutely",
+        "startMs": 31600,
+        "endMs": 34430
+      },
+      {
+        "text": "not.",
+        "startMs": 34430,
+        "endMs": 36160
+      }
+    ],
+    "text": "Everyone uses their hands to play a block last. I think that's way too easy. Today, I'm going hands-free. No hands. Just my nose. Let's see if I can clear a line. Okay, my neck is cramping. I look ridiculous. But I just cleared a line. Was it worth it? No. Am I going to stop? Absolutely not.",
+    "wordsPerSecond": 1.6
+  },
+  "frames": [
+    {
+      "t": 0,
+      "file": "frames/t000.jpg"
+    },
+    {
+      "t": 1,
+      "file": "frames/t001.jpg"
+    },
+    {
+      "t": 2,
+      "file": "frames/t002.jpg"
+    },
+    {
+      "t": 3,
+      "file": "frames/t003.jpg"
+    },
+    {
+      "t": 4,
+      "file": "frames/t004.jpg"
+    },
+    {
+      "t": 5,
+      "file": "frames/t005.jpg"
+    },
+    {
+      "t": 6,
+      "file": "frames/t006.jpg"
+    },
+    {
+      "t": 7,
+      "file": "frames/t007.jpg"
+    },
+    {
+      "t": 8,
+      "file": "frames/t008.jpg"
+    },
+    {
+      "t": 9,
+      "file": "frames/t009.jpg"
+    },
+    {
+      "t": 10,
+      "file": "frames/t010.jpg"
+    },
+    {
+      "t": 11,
+      "file": "frames/t011.jpg"
+    },
+    {
+      "t": 12,
+      "file": "frames/t012.jpg"
+    },
+    {
+      "t": 13,
+      "file": "frames/t013.jpg"
+    },
+    {
+      "t": 14,
+      "file": "frames/t014.jpg"
+    },
+    {
+      "t": 15,
+      "file": "frames/t015.jpg"
+    },
+    {
+      "t": 16,
+      "file": "frames/t016.jpg"
+    },
+    {
+      "t": 17,
+      "file": "frames/t017.jpg"
+    },
+    {
+      "t": 18,
+      "file": "frames/t018.jpg"
+    },
+    {
+      "t": 19,
+      "file": "frames/t019.jpg"
+    },
+    {
+      "t": 20,
+      "file": "frames/t020.jpg"
+    },
+    {
+      "t": 21,
+      "file": "frames/t021.jpg"
+    },
+    {
+      "t": 22,
+      "file": "frames/t022.jpg"
+    },
+    {
+      "t": 23,
+      "file": "frames/t023.jpg"
+    },
+    {
+      "t": 24,
+      "file": "frames/t024.jpg"
+    },
+    {
+      "t": 25,
+      "file": "frames/t025.jpg"
+    },
+    {
+      "t": 26,
+      "file": "frames/t026.jpg"
+    },
+    {
+      "t": 27,
+      "file": "frames/t027.jpg"
+    },
+    {
+      "t": 28,
+      "file": "frames/t028.jpg"
+    },
+    {
+      "t": 29,
+      "file": "frames/t029.jpg"
+    },
+    {
+      "t": 30,
+      "file": "frames/t030.jpg"
+    },
+    {
+      "t": 31,
+      "file": "frames/t031.jpg"
+    },
+    {
+      "t": 32,
+      "file": "frames/t032.jpg"
+    },
+    {
+      "t": 33,
+      "file": "frames/t033.jpg"
+    },
+    {
+      "t": 34,
+      "file": "frames/t034.jpg"
+    },
+    {
+      "t": 35,
+      "file": "frames/t035.jpg"
+    },
+    {
+      "t": 36,
+      "file": "frames/t036.jpg"
+    }
+  ]
+}

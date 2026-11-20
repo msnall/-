@@ -69,17 +69,22 @@ export async function loadClips(projectId) {
 // joins: { "<clipId>": [wordIndex, ...] } — the beat starting at that word is merged into the one before it (a very short line).
 export async function seedBeats(projectId, splits = {}, joins = {}) {
   const beats = [];
+  let lineNo = 0;
   for (const { clip, words, lines, cut } of await loadClips(projectId)) {
+    // A beat's id is its line's number (b01, b02 …); a line cut in several by splits gets letters (b04a, b04b …), so ids never shift.
     let ranges = [];
     let at = 0;
-    for (const line of lines) { const n = line.text.split(/\s+/).length; ranges.push([at, at + n - 1]); at += n; }
-    for (const split of splits[clip.id] ?? []) ranges = ranges.flatMap(([s, e]) => (split > s && split <= e ? [[s, split - 1], [split, e]] : [[s, e]]));
-    for (const join of joins[clip.id] ?? []) { const k = ranges.findIndex(([s]) => s === join); if (k > 0) ranges.splice(k - 1, 2, [ranges[k - 1][0], ranges[k][1]]); }
-    const push = (voice, text) => beats.push({ id: `b${String(beats.length + 1).padStart(2, "0")}`, text, voice: { asset: clip.id, ...voice }, broll: [] });
+    for (const line of lines) { const n = line.text.split(/\s+/).length; lineNo += 1; ranges.push([at, at + n - 1, `b${String(lineNo).padStart(2, "0")}`]); at += n; }
+    for (const split of splits[clip.id] ?? []) ranges = ranges.flatMap(([s, e, base]) => (split > s && split <= e ? [[s, split - 1, base], [split, e, base]] : [[s, e, base]]));
+    for (const join of joins[clip.id] ?? []) { const k = ranges.findIndex(([s]) => s === join); if (k > 0) ranges.splice(k - 1, 2, [ranges[k - 1][0], ranges[k][1], ranges[k - 1][2]]); }
+    const perBase = {}; ranges.forEach(([, , base]) => { perBase[base] = (perBase[base] ?? 0) + 1; });
+    const seen = {};
+    const ids = ranges.map(([, , base]) => { const k = seen[base] = (seen[base] ?? 0); seen[base] += 1; return perBase[base] > 1 ? `${base}${String.fromCharCode(97 + k)}` : base; });
+    const push = (voice, text, id) => beats.push({ id, text, voice: { asset: clip.id, ...voice }, broll: [] });
 
     if (cut) {
       let previousEnd = 0;
-      for (const [s, e] of ranges) {
+      for (const [ri, [s, e]] of ranges.entries()) {
         const kept = [];
         for (let i = s; i <= e; i++) if (!words[i].dropped) kept.push(i);
         if (!kept.length) continue;
@@ -91,7 +96,7 @@ export async function seedBeats(projectId, splits = {}, joins = {}) {
         const pieces = piecesOf(cut, start, end).map(([a, b]) => [snapFrame(a), snapFrame(b)]).filter(([a, b]) => b - a >= 100);
         if (!pieces.length) continue;
         previousEnd = pieces.at(-1)[1];
-        push({ startMs: pieces[0][0], endMs: pieces.at(-1)[1], wordStart: s, wordEnd: e, ranges: pieces, droppedWords: Array.from({ length: e - s + 1 }, (_, k) => s + k).filter((i) => words[i].dropped) }, kept.map((i) => words[i].text).join(" "));
+        push({ startMs: pieces[0][0], endMs: pieces.at(-1)[1], wordStart: s, wordEnd: e, ranges: pieces, droppedWords: Array.from({ length: e - s + 1 }, (_, k) => s + k).filter((i) => words[i].dropped) }, kept.map((i) => words[i].text).join(" "), ids[ri]);
       }
       continue;
     }
@@ -101,7 +106,28 @@ export async function seedBeats(projectId, splits = {}, joins = {}) {
       start: i === 0 ? quietest(rms, words[s].startMs - 200, words[s].startMs + 40, words[s].startMs - 60) : null,
       end: i === ranges.length - 1 ? quietest(rms, words[e].endMs - 40, Math.min(clip.durationMs - 20, words[e].endMs + 250), words[e].endMs + 80) : quietest(rms, words[e].endMs - 120, words[e].endMs + 120, words[e].endMs),
     }));
-    ranges.forEach(([s, e], i) => push({ startMs: snapFrame(i === 0 ? bounds[0].start : bounds[i - 1].end), endMs: snapFrame(bounds[i].end), wordStart: s, wordEnd: e }, words.slice(s, e + 1).map((w) => w.text).join(" ")));
+    ranges.forEach(([s, e], i) => push({ startMs: snapFrame(i === 0 ? bounds[0].start : bounds[i - 1].end), endMs: snapFrame(bounds[i].end), wordStart: s, wordEnd: e }, words.slice(s, e + 1).map((w) => w.text).join(" "), ids[i]));
   }
   return beats;
+}
+
+// The proofread lines of every clip with speech, as the director's first view of the voice-over: id (b01, b02 …), clip, word range,
+// text of the kept words, and the re-timed words. Lines whose words were all cut by the cleanup are left out.
+export async function baseLines(projectId) {
+  const out = [];
+  let lineNo = 0;
+  for (const { clip, words, lines } of await loadClips(projectId)) {
+    let at = 0;
+    for (const line of lines) {
+      const n = line.text.split(/\s+/).length;
+      lineNo += 1;
+      const first = at, last = at + n - 1;
+      at += n;
+      const kept = [];
+      for (let i = first; i <= last; i++) if (!words[i].dropped) kept.push(i);
+      if (!kept.length) continue;
+      out.push({ id: `b${String(lineNo).padStart(2, "0")}`, clip: clip.id, wordStart: first, wordEnd: last, text: kept.map((i) => words[i].text).join(" "), startMs: words[kept[0]].startMs, endMs: words[kept.at(-1)].endMs });
+    }
+  }
+  return out;
 }

@@ -22,7 +22,11 @@ export const STYLES = {
   minimal: { label: "极简口播", blurb: "以达人为主，只在最关键的两三处插画，看起来最真实。" },
   pip: { label: "按风格卡", blurb: "完全按你选的风格卡来剪：画中画、图标、结尾等都照卡上的写法（需要先选一张已确认的风格卡）。" },
 };
-const ORDER = ["full", "minimal", "pip", "default"];
+// a / b / c = the three creative directions of the current generation; full / minimal / pip / default = drafts of the older style-based generation
+const NEW_SLOTS = ["a", "b", "c"];
+const LEGACY = ["full", "minimal", "pip", "default"];
+const ORDER = [...NEW_SLOTS, ...LEGACY];
+const slotLabel = (cut, variant) => cut?.director?.direction?.name_zh ?? STYLES[variant]?.label ?? "当前草稿";
 export const cutName = (v) => (v === "default" ? "cut-script.json" : `cut-script.${v}.json`);
 export const planName = (v) => (v === "default" ? "edit-plan.draft.json" : `edit-plan.draft.${v}.json`);
 
@@ -47,7 +51,7 @@ async function summarize(id, variant, live, catalogUpdatedAt, durations, cleanup
   const shots = cut.beats.flatMap((b) => b.broll);
   const fullMs = shots.filter((s) => s.layout !== "pip").reduce((s, x) => s + x.durationMs, 0);
   return {
-    variant, label: STYLES[variant]?.label ?? "当前草稿", blurb: STYLES[variant]?.blurb ?? "", builtAt: cut.builtAt, model: cut.director?.model ?? null, notes: cut.director?.notes ?? "",
+    variant, label: slotLabel(cut, variant), blurb: cut.director?.direction?.oneLineSummary_zh ?? STYLES[variant]?.blurb ?? "", direction: cut.director?.direction ?? null, builtAt: cut.builtAt, model: cut.director?.model ?? null, notes: cut.director?.notes ?? "",
     stale: !!((catalogUpdatedAt && catalogUpdatedAt > cut.builtAt) || (cleanupAt && cleanupAt > cut.builtAt)), liveRevision: live ? (live.revision ?? 0) : null, logo: !!cut.logo, totalMs: Math.round(total),
     stats: { shots: shots.length, full: shots.filter((s) => s.layout !== "pip").length, pip: shots.filter((s) => s.layout === "pip").length, fullShare: total ? Number((fullMs / total).toFixed(2)) : 0 },
     beats: cut.beats.map((b) => ({ id: b.id, text: b.text, ms: Math.round(voiceMs(b)), broll: b.broll.map((s) => ({ asset: s.asset, frame: Math.max(0, Math.min(3, Math.floor((s.srcStartMs / (durations.get(s.asset) || 1)) * 4))), atMs: s.atMs, durationMs: s.durationMs, layout: s.layout ?? "full", slot: s.slot ?? null, note: s.note })), logoAtMs: cut.logo?.beat === b.id ? cut.logo.atMs : null })),
@@ -81,13 +85,15 @@ export async function startDirector(id, body = {}) {
   const cardId = typeof body.card === "string" && body.card ? body.card : null;
   const card = cardId ? await confirmedCard(cardId) : null;
   if (cardId && !card) throw badRequest("这张风格卡不存在，或还没有在「风格库」里确认");
-  const variants = ["full", "minimal", ...(card ? ["pip"] : [])];
+  const variants = NEW_SLOTS;
   const steps = [
     { name: "同步校对文案", key: "sync" },
-    ...variants.map((v) => ({ name: `模型出方案：${STYLES[v].label}`, key: `direct:${v}` })),
-    ...variants.map((v) => ({ name: `编译：${STYLES[v].label}`, key: `compile:${v}` })),
+    { name: "定三个创意方向", key: "directions" },
+    ...variants.map((v, n) => ({ name: `模型出方案：方向 ${n + 1}`, key: `direct:${v}` })),
+    { name: "检查三套是否足够不同", key: "compare" },
+    ...variants.map((v, n) => ({ name: `编译：方向 ${n + 1}`, key: `compile:${v}` })),
   ];
-  const record = { state: "running", kind: "variants", startedAt: new Date().toISOString(), finishedAt: null, steps: steps.map((s) => ({ name: s.name, key: s.key, state: "pending" })), error: null, applied: null, card: card ? { id: card.id, name: card.name } : null, note: card ? null : "没有选风格卡，所以只出了「全屏插画」和「极简口播」两套；选一张已确认的风格卡会多出「按风格卡」这一套。" };
+  const record = { state: "running", kind: "variants", startedAt: new Date().toISOString(), finishedAt: null, steps: steps.map((s) => ({ name: s.name, key: s.key, state: "pending" })), error: null, applied: null, card: card ? { id: card.id, name: card.name } : null, note: card ? null : "没有选风格卡，三个创意方向都按节奏预设来剪；选一张已确认的风格卡，会有一个方向完全照卡来剪。" };
   await writeJson(runFile(id), record);
   running.add(id);
   (async () => {
@@ -100,12 +106,21 @@ export async function startDirector(id, body = {}) {
           log.write("\n=== 同步校对文案 ===\n");
           const [c0, a0] = node("scripts/sync-transcripts.mjs", id);
           try { await runStep(c0, a0, log); await mark("sync", "done"); } catch (error) { await mark("sync", "failed"); throw new Error(`同步校对文案失败：${error.message}`); }
-          // the model calls run side by side
+          const cardArg = card ? [`--card=${card.id}`] : [];
+          // 1 model call: three distinct creative directions
+          await mark("directions", "running");
+          try { const [c, a] = node("scripts/auto-director.mjs", id, "--stage=directions", ...cardArg); await runStep(c, a, log); await mark("directions", "done"); }
+          catch (error) { await mark("directions", "failed"); throw new Error(`定创意方向失败：${error.message}`); }
+          // one plan per direction, side by side
           await Promise.all(variants.map(async (v) => {
             await mark(`direct:${v}`, "running");
-            try { const [c, a] = node("scripts/auto-director.mjs", id, `--variant=${v}`, ...(card ? [`--card=${card.id}`] : [])); await runStep(c, a, log); await mark(`direct:${v}`, "done"); }
+            try { const [c, a] = node("scripts/auto-director.mjs", id, "--stage=plan", `--slot=${v}`, ...cardArg); await runStep(c, a, log); await mark(`direct:${v}`, "done"); }
             catch (error) { fail[v] = error.message; await mark(`direct:${v}`, "failed"); }
           }));
+          // the plans must not be near copies of each other (the most similar one is asked again)
+          await mark("compare", "running");
+          try { const [c, a] = node("scripts/auto-director.mjs", id, "--stage=compare", ...cardArg); await runStep(c, a, log); await mark("compare", "done"); }
+          catch (error) { await mark("compare", "failed"); log.write(`\ncompare failed (the plans are kept as they are): ${error.message}\n`); }
           // compiling shares the voice master, so one at a time
           for (const v of variants.filter((x) => !fail[x])) {
             await mark(`compile:${v}`, "running");
@@ -114,10 +129,11 @@ export async function startDirector(id, body = {}) {
           }
           const ok = variants.filter((v) => !fail[v]);
           if (!ok.length) throw new Error(`所有方案都失败：${Object.values(fail)[0]}`);
-          if (Object.keys(fail).length) record.note = `${record.note ? `${record.note} ` : ""}有 ${Object.keys(fail).length} 套没成功：${Object.entries(fail).map(([v, m]) => `${STYLES[v].label}（${m.split("\n")[0].slice(0, 120)}）`).join("；")}`;
+          if (Object.keys(fail).length) record.note = `${record.note ? `${record.note} ` : ""}有 ${Object.keys(fail).length} 套没成功：${Object.entries(fail).map(([v, m]) => `方向 ${NEW_SLOTS.indexOf(v) + 1}（${m.split("\n")[0].slice(0, 120)}）`).join("；")}`;
           // a style that failed this time must not keep an old draft around; the earlier single draft is superseded
           for (const v of Object.keys(fail)) { await rm(projectFile(id, cutName(v)), { force: true }); await rm(projectFile(id, planName(v)), { force: true }); }
-          await rm(projectFile(id, cutName("default")), { force: true }); await rm(projectFile(id, planName("default")), { force: true });
+          // the drafts of the older style-based generation are superseded by this run
+          for (const v of LEGACY) { await rm(projectFile(id, cutName(v)), { force: true }); await rm(projectFile(id, planName(v)), { force: true }); }
           record.state = "done";
         } catch (error) {
           record.state = "failed"; record.error = `${error.message}。详细日志：projects/${id}/logs/director.log`;
@@ -138,7 +154,9 @@ export async function setOptions(id, variant, body) {
   if (typeof body.logo === "boolean") {
     if (!body.logo) delete cut.logo;
     else if (!cut.logo) {
-      const beat = cut.beats.find((b) => /kika/i.test(b.text));
+      const brief = await readJson(projectFile(id, "brief.json"), null);
+      const product = String(brief?.product?.name ?? id).split(/[\s-]+/)[0].replace(/[^a-z0-9]/gi, "");
+      const beat = product ? cut.beats.find((b) => new RegExp(product, "i").test(b.text)) : null;
       if (!beat) throw badRequest("口播里没有出现产品名，不知道图标该从哪里开始");
       cut.logo = { beat: beat.id, atMs: 300, position: "top-left" };
     }
@@ -194,7 +212,7 @@ export async function applyDraft(id, { variant, expectedRevision } = {}) {
       const live = await readJson(projectFile(id, "edit-plan.json"), null);
       const liveRevision = live ? (live.revision ?? 0) : null;
       if (expectedRevision !== undefined && expectedRevision !== liveRevision) throw conflict(`审阅台里的方案已经是版本 ${liveRevision}，不是 ${expectedRevision}。刷新后再试。`);
-      return installCompiledPlan(id, mergeDraft(draft, live), `自动导演：${STYLES[variant]?.label ?? "草稿"}${live ? `（保留你调过的字幕/主题样式；上一版本 ${liveRevision} 可在「版本」里还原）` : ""}`);
+      return installCompiledPlan(id, mergeDraft(draft, live), `自动导演：${slotLabel(await readJson(projectFile(id, cutName(variant)), null), variant)}${live ? `（保留你调过的字幕/主题样式；上一版本 ${liveRevision} 可在「版本」里还原）` : ""}`);
     });
     await track(id, { ...record, state: "running" }, async ({ log }) => {
       log.write("\n=== 生成预览和人脸检测 ===\n");

@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-20T06:37:01.999Z",
+  "model": "anthropic.claude-sonnet-5-5",
+  "ok": true,
+  "direction": "反刷脸警告",
+  "attempts": [
+    {
+      "errors": [
+        "last beat b08b is a call to action but the end card \"screen-o1\" is not used there",
+        "b02 → b06: 12.5s without visual change (max 2.5s). Change the zoom on a beat or add B-roll.",
+        "b07 → b08b: 5.8s without visual change (max 2.5s). Change the zoom on a beat or add B-roll.",
+        "direction color_hook but hook beat b01 has 0 strongly coloured emphasis word(s) (need 2-3, color other than default)",
+        "direction color_hook but hook beat b01 is z120 (use z100 or z110)",
+        "B-roll ratio is 0.00, the direction aims for 0.45 (±0.1)"
+      ]
+    },
+    {
+      "errors": []
+    }
+  ],
+  "lastAnswer": "{\"direction\":\"反刷脸警告\",\"splits\":[{\"beat\":\"b04\",\"word\":31},{\"beat\":\"b08\",\"word\":71}],\"beats\":[{\"beat\":\"b01\",\"zoom\":\"z110\"},{\"beat\":\"b02\",\"zoom\":\"z100\"},{\"beat\":\"b03\",\"zoom\":\"z100\"},{\"beat\":\"b04a\",\"zoom\":\"z100\"},{\"beat\":\"b04b\",\"zoom\":\"z100\"},{\"beat\":\"b05\",\"zoom\":\"z100\"},{\"beat\":\"b06\",\"zoom\":\"z120\"},{\"beat\":\"b07\",\"zoom\":\"z100\"},{\"beat\":\"b08a\",\"zoom\":\"z100\"},{\"beat\":\"b08b\",\"zoom\":\"z100\"}],\"broll\":[{\"asset\":\"screen-o3\",\"beat\":\"b02\",\"word\":10,\"srcStartMs\":600,\"durationMs\":1450,\"layout\":\"pip\",\"slot\":\"top-right\",\"reason_zh\":\"讲到共同价值观筛选,用双手合成爱心的小窗点缀,创作者仍可见\"},{\"asset\":\"c1-action\",\"beat\":\"b04a\",\"word\":22,\"srcStartMs\":0,\"durationMs\":2000,\"layout\":\"pip\",\"slot\":\"lower-left\",\"reason_zh\":\"“浪费时间”时配手持手机刷手机的镜头,呼应刷脸疲劳\"},{\"asset\":\"screen-o2\",\"beat\":\"b04b\",\"word\":33,\"srcStartMs\":1500,\"durationMs\":2000,\"layout\":\"pip\",\"slot\":\"top-left\",\"reason_zh\":\"“想要认真关系的人”配牵手特写,贴合语义\"},{\"asset\":\"c1-action\",\"beat\":\"b05\",\"word\":42,\"srcStartMs\":500,\"durationMs\":1350,\"layout\":\"pip\",\"slot\":\"top-right\",\"reason_zh\":\"“每个资料都经过照片认证”配手机操作镜头\"},{\"asset\":\"screen-o3\",\"beat\":\"b06\",\"word\":52,\"srcStartMs\":0,\"durationMs\":1100,\"layout\":\"pip\",\"slot\":\"lower-right\",\"reason_zh\":\"climax 段落用小窗打断,让画面在 z120 上仍有变化\"},{\"asset\":\"screen-o2\",\"beat\":\"b07\",\"word\":60,\"srcStartMs\":300,\"durationMs\":1500,\"layout\":\"pip\",\"slot\":\"top-left\",\"reason_zh\":\"“真实的连接”配牵手画面,情感契合\"},{\"asset\":\"screen-o1\",\"beat\":\"b08b\",\"word\":71,\"srcStartMs\":0,\"durationMs\":1200,\"layout\":\"full\",\"reason_zh\":\"行动号召句,以品牌结尾卡收尾,引导下载\"}],\"emphasis\":[{\"beat\":\"b01\",\"word\":1,\"color\":\"yellow\"},{\"beat\":\"b01\",\"word\":3,\"color\":\"red\"},{\"beat\":\"b01\",\"word\":4,\"color\":\"red\"},{\"beat\":\"b02\",\"word\":8,\"color\":\"yellow\"},{\"beat\":\"b03\",\"word\":16,\"color\":\"default\"},{\"beat\":\"b04a\",\"word\":22,\"color\":\"red\"},{\"beat\":\"b04b\",\"word\":36,\"color\":\"green\"},{\"beat\":\"b05\",\"word\":45,\"color\":\"green\"},{\"beat\":\"b06\",\"word\":53,\"color\":\"red\"},{\"beat\":\"b06\",\"word\":55,\"color\":\"red\"},{\"beat\":\"b07\",\"word\":62,\"color\":\"green\"},{\"beat\":\"b08b\",\"word\":75,\"color\":\"yellow\"}],\"logo\":null,\"notes_zh\":\"钩子 b01 用 z110 加红/黄强调词(random profiles 标红)。其余按 peaks_only 保持 z100,仅 b06 用 z120 作高潮。因同缩放相邻无变化,用小窗 B-roll 的进出每 2.5 秒内制造画面变化。B-roll 约占 47%,全部为小窗,仅结尾品牌卡全屏。每个素材最多用两次。\"}"
+}

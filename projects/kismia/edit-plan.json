@@ -1,38 +1,13 @@
 {
   "schemaVersion": 1,
   "id": "kismia",
-  "revision": 10,
+  "revision": 11,
   "meta": {
     "source": "cut-script.json",
     "scriptId": "creator",
-    "builtAt": "2026-11-19T08:55:02.677Z",
+    "builtAt": "2026-11-20T05:03:44.945Z",
     "brief": null,
-    "sfx": [
-      {
-        "atFrame": 51,
-        "kind": "whoosh"
-      },
-      {
-        "atFrame": 142,
-        "kind": "pop"
-      },
-      {
-        "atFrame": 203,
-        "kind": "whoosh"
-      },
-      {
-        "atFrame": 271,
-        "kind": "whoosh"
-      },
-      {
-        "atFrame": 501,
-        "kind": "whoosh"
-      },
-      {
-        "atFrame": 612,
-        "kind": "whoosh"
-      }
-    ],
+    "sfx": [],
     "note": "First cut r0 compiled from the cut script. Draft for review; not a delivered video."
   },
   "output": {
@@ -60,8 +35,8 @@
   "assets": {
     "master": {
       "type": "video",
-      "path": "derived/kismia/voice-master-73de87a5.mp4",
-      "sha256": "cfd257c21ee00574b16fd2dba2caed3fa65bcb052d223b78643390984bc1172f"
+      "path": "derived/kismia/voice-master-9ff18fce.mp4",
+      "sha256": "e644324b521c986bc716b51d7c4e0dc937d4e93c8aa3e21d169cd154bf631d68"
     },
     "c1-action": {
       "type": "video",
@@ -90,8 +65,8 @@
   },
   "transcript": {
     "asset": "master",
-    "words": "transcripts/kismia-master-003dbadd.json",
-    "cues": "transcripts/kismia-master-003dbadd.cues.json"
+    "words": "transcripts/kismia-master-29bcd013.json",
+    "cues": "transcripts/kismia-master-29bcd013.cues.json"
   },
   "segments": [
     {
@@ -100,7 +75,7 @@
       "sourceStartMs": 0,
       "sourceEndMs": 1734,
       "camera": {
-        "zoom": 1,
+        "zoom": 1.1,
         "originX": 0.5,
         "originY": 0.38,
         "punchIns": []
@@ -112,7 +87,7 @@
       "sourceStartMs": 1733,
       "sourceEndMs": 4367,
       "camera": {
-        "zoom": 1.1,
+        "zoom": 1,
         "originX": 0.5,
         "originY": 0.38,
         "punchIns": []
@@ -124,6 +99,18 @@
       "sourceStartMs": 4366,
       "sourceEndMs": 6801,
       "camera": {
+        "zoom": 1.1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b04a",
+      "asset": "master",
+      "sourceStartMs": 6800,
+      "sourceEndMs": 9634,
+      "camera": {
         "zoom": 1,
         "originX": 0.5,
         "originY": 0.38,
@@ -131,12 +118,12 @@
       }
     },
     {
-      "id": "b04",
+      "id": "b04b",
       "asset": "master",
-      "sourceStartMs": 6800,
-      "sourceEndMs": 9067,
+      "sourceStartMs": 9633,
+      "sourceEndMs": 11734,
       "camera": {
-        "zoom": 1,
+        "zoom": 1.15,
         "originX": 0.5,
         "originY": 0.38,
         "punchIns": []
@@ -145,10 +132,10 @@
     {
       "id": "b05",
       "asset": "master",
-      "sourceStartMs": 9066,
-      "sourceEndMs": 11734,
+      "sourceStartMs": 11733,
+      "sourceEndMs": 14234,
       "camera": {
-        "zoom": 1,
+        "zoom": 1.2,
         "originX": 0.5,
         "originY": 0.38,
         "punchIns": []
@@ -156,18 +143,6 @@
     },
     {
       "id": "b06",
-      "asset": "master",
-      "sourceStartMs": 11733,
-      "sourceEndMs": 14234,
-      "camera": {
-        "zoom": 1.1,
-        "originX": 0.5,
-        "originY": 0.38,
-        "punchIns": []
-      }
-    },
-    {
-      "id": "b07",
       "asset": "master",
       "sourceStartMs": 14233,
       "sourceEndMs": 16734,
@@ -179,24 +154,24 @@
       }
     },
     {
-      "id": "b08",
+      "id": "b07",
       "asset": "master",
       "sourceStartMs": 16733,
       "sourceEndMs": 19500,
       "camera": {
-        "zoom": 1.1,
+        "zoom": 1.15,
         "originX": 0.5,
         "originY": 0.38,
         "punchIns": []
       }
     },
     {
-      "id": "b09",
+      "id": "b08",
       "asset": "master",
       "sourceStartMs": 19500,
       "sourceEndMs": 22500,
       "camera": {
-        "zoom": 1,
+        "zoom": 1.1,
         "originX": 0.5,
         "originY": 0.38,
         "punchIns": []
@@ -233,20 +208,50 @@
     "textTransform": "uppercase",
     "emphasis": [
       {
-        "word": 0,
-        "expect": "Stop",
+        "word": 1,
+        "expect": "swiping",
+        "color": "#ff5a5f",
+        "scale": 1.12
+      },
+      {
+        "word": 3,
+        "expect": "random",
+        "color": "#ff5a5f",
+        "scale": 1.12
+      },
+      {
+        "word": 10,
+        "expect": "shared",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 13,
+        "expect": "distance.",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 16,
+        "expect": "Kismia.",
         "color": "#2ee6c8",
         "scale": 1.12
       },
       {
         "word": 20,
         "expect": "tired",
+        "color": "#ff5a5f",
+        "scale": 1.12
+      },
+      {
+        "word": 27,
+        "expect": "algorithm",
         "color": "#2ee6c8",
         "scale": 1.12
       },
       {
-        "word": 37,
-        "expect": "relationship.",
+        "word": 36,
+        "expect": "serious",
         "color": "#2ee6c8",
         "scale": 1.12
       },
@@ -259,7 +264,25 @@
       {
         "word": 53,
         "expect": "catfish",
+        "color": "#ff5a5f",
+        "scale": 1.12
+      },
+      {
+        "word": 55,
+        "expect": "bots.",
+        "color": "#ff5a5f",
+        "scale": 1.12
+      },
+      {
+        "word": 62,
+        "expect": "real",
         "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 69,
+        "expect": "wasting",
+        "color": "#ff5a5f",
         "scale": 1.12
       },
       {
@@ -277,59 +300,101 @@
       "from": {
         "segment": "b02",
         "edge": "start",
-        "offsetMs": 16
+        "offsetMs": 640
       },
-      "durationFrames": 60,
+      "durationFrames": 57,
       "layer": "below-captions",
       "props": {
         "asset": "c1-action",
         "sourceStartMs": 0,
-        "x": 614,
-        "y": 56,
-        "width": 289,
-        "height": 468,
+        "x": 590,
+        "y": 170,
+        "width": 320,
+        "height": 569,
         "fit": "cover",
         "borderRadius": 24
       }
     },
     {
-      "id": "b04-1",
+      "id": "b04a-1",
       "effect": "video-clip@1",
       "from": {
-        "segment": "b04",
+        "segment": "b04a",
         "edge": "start",
-        "offsetMs": 7
+        "offsetMs": 819
       },
-      "durationFrames": 63,
-      "layer": "below-captions",
-      "props": {
-        "asset": "c1-action",
-        "sourceStartMs": 500,
-        "x": 649,
-        "y": 679,
-        "width": 303,
-        "height": 288,
-        "fit": "cover",
-        "borderRadius": 24
-      }
-    },
-    {
-      "id": "b05-1",
-      "effect": "video-clip@1",
-      "from": {
-        "segment": "b05",
-        "edge": "start",
-        "offsetMs": 0
-      },
-      "durationFrames": 78,
+      "durationFrames": 57,
       "layer": "below-captions",
       "props": {
         "asset": "screen-o2",
-        "sourceStartMs": 0,
-        "x": 711,
-        "y": 180,
-        "width": 268,
-        "height": 459,
+        "sourceStartMs": 500,
+        "x": 40,
+        "y": 840,
+        "width": 320,
+        "height": 330,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b04b-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b04b",
+        "edge": "start",
+        "offsetMs": 0
+      },
+      "durationFrames": 48,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-o3",
+        "sourceStartMs": 1000,
+        "x": 590,
+        "y": 170,
+        "width": 320,
+        "height": 569,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b06-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b06",
+        "edge": "start",
+        "offsetMs": 880
+      },
+      "durationFrames": 47,
+      "layer": "below-captions",
+      "props": {
+        "asset": "c1-action",
+        "sourceStartMs": 1000,
+        "x": 590,
+        "y": 840,
+        "width": 320,
+        "height": 330,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b07-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b07",
+        "edge": "start",
+        "offsetMs": 753
+      },
+      "durationFrames": 57,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-o2",
+        "sourceStartMs": 2000,
+        "x": 40,
+        "y": 840,
+        "width": 320,
+        "height": 330,
         "fit": "cover",
         "borderRadius": 24
       }
@@ -340,30 +405,9 @@
       "from": {
         "segment": "b08",
         "edge": "start",
-        "offsetMs": 4
-      },
-      "durationFrames": 75,
-      "layer": "below-captions",
-      "props": {
-        "asset": "screen-o3",
-        "sourceStartMs": 0,
-        "x": 9,
-        "y": 705,
-        "width": 258,
-        "height": 244,
-        "fit": "cover",
-        "borderRadius": 24
-      }
-    },
-    {
-      "id": "b09-1",
-      "effect": "video-clip@1",
-      "from": {
-        "segment": "b09",
-        "edge": "start",
         "offsetMs": 922
       },
-      "durationFrames": 60,
+      "durationFrames": 59,
       "layer": "below-captions",
       "props": {
         "asset": "screen-o1",

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { ExportDrafts } from "./ExportDrafts.tsx";
 import { catalogApi, cleanupApi, directorApi, styleApi, type StyleBrief, type Catalog, type DirectorDraft, type DirectorRun } from "./api.ts";
 import { PlanTable } from "./PlanTable.tsx";
 
@@ -12,6 +13,8 @@ export const PlanDesk: React.FC<Props> = ({ onCleanup, nav, projectId, onOpenRev
   const [run, setRun] = useState<DirectorRun>({ state: "idle" });
   const [working, setWorking] = useState(false);
   const [message, setMessage] = useState("");
+  const [applying, setApplying] = useState(false);
+  const [confirming, setConfirming] = useState<DirectorDraft | null>(null); // asked in the page itself: window.confirm is silently refused in some embedded browsers
   const [cards, setCards] = useState<StyleBrief[]>([]);
   const [cardId, setCardId] = useState("");
   const [cleaned, setCleaned] = useState<boolean | null>(null);
@@ -31,15 +34,17 @@ export const PlanDesk: React.FC<Props> = ({ onCleanup, nav, projectId, onOpenRev
   const drafts = run.drafts ?? [];
   const current = drafts.find((d) => d.variant === active) ?? drafts[0];
   const start = async () => { try { setRun(await directorApi.start(projectId, cardId || undefined)); setMessage(""); } catch (error) { setMessage((error as Error).message); } };
-  const options = async (variant: string, body: { logo?: boolean; layout?: "full" | "pip" }) => {
+  const options = async (variant: string, body: { logo?: boolean }) => {
     setWorking(true); setMessage("正在按新的效果重新编译这一套…");
     try { setRun(await directorApi.options(projectId, variant, body)); setMessage(""); } catch (error) { setMessage((error as Error).message); } finally { setWorking(false); }
   };
-  const apply = async (draft: DirectorDraft) => {
+  const doApply = async (draft: DirectorDraft) => {
+    setConfirming(null); setWorking(true); setApplying(true); setMessage("正在放进审阅台，并生成预览和人脸检测（约 1 分钟，请不要关闭页面）…");
+    try { await directorApi.apply(projectId, draft.variant, draft.liveRevision); await poll(); setMessage(""); onOpenReview(); } catch (error) { setMessage((error as Error).message); } finally { setWorking(false); setApplying(false); }
+  };
+  const apply = (draft: DirectorDraft) => {
     const live = draft.liveRevision;
-    if (live !== null && live > 0 && !window.confirm(`审阅台里已经有方案（版本 ${live}，包含你的修改）。\n\n放进去会生成新版本 ${live + 1}：内容换成「${draft.label}」，你调过的字幕样式、主题和响度设置会保留；版本 ${live} 仍在审阅台的「版本」里，可以随时还原。\n\n继续吗？`)) return;
-    setWorking(true); setMessage("正在放进审阅台，并生成预览…");
-    try { await directorApi.apply(projectId, draft.variant, live); await poll(); onOpenReview(); } catch (error) { setMessage((error as Error).message); } finally { setWorking(false); }
+    if (live !== null && live > 0) setConfirming(draft); else void doApply(draft);
   };
   const headline = !cleaned ? "先在「口播」把停顿和重说清理一遍" : open.length ? "先回「素材」把素材和文案确认完" : run.state === "running" ? "正在为你出几套方案…" : drafts.length ? "几套方案已生成：比较一下，选一套放进审阅精修" : "素材已确认，可以让模型出方案了";
   return <div className="catalog-page">
@@ -50,15 +55,22 @@ export const PlanDesk: React.FC<Props> = ({ onCleanup, nav, projectId, onOpenRev
       <div className={cleaned ? "ok" : "bad"}><b>{cleaned ? "✓" : "✕"}</b> 口播已清理并确认{cleaned ? "" : <button onClick={onCleanup}>去清理</button>}</div>
       <div className={open.length ? "bad" : "ok"}><b>{open.length ? "✕" : "✓"}</b> 素材和文案已确认 {counted.length - open.length} / {counted.length}{open.length ? <button onClick={onMaterials}>去确认</button> : null}</div>
       <div className={apiReady ? "ok" : "bad"}><b>{apiReady ? "✓" : "✕"}</b> 模型：{apiReady ? catalog.provider.model : "还没有保存 API Key"}{apiReady ? null : <button onClick={onSettings}>去设置</button>}</div>
-      <div className={cards.length ? "ok" : "dim"}><b>{cards.length ? "✓" : "○"}</b> 风格卡：{cards.length ? <select value={cardId} onChange={(e) => setCardId(e.target.value)}><option value="">不用风格卡（只出全屏插画和极简口播两套）</option>{cards.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}</select> : "风格库里还没有已确认的卡（不用也能出方案）"}<button onClick={onTechniques}>{cards.length ? "打开风格库" : "去拆解视频"}</button></div>
+      <div className={cards.length ? "ok" : "dim"}><b>{cards.length ? "✓" : "○"}</b> 风格卡：{cards.length ? <select value={cardId} onChange={(e) => setCardId(e.target.value)}><option value="">不用风格卡（三个创意方向都按节奏预设）</option>{cards.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}</select> : "风格库里还没有已确认的卡（不用也能出方案）"}<button onClick={onTechniques}>{cards.length ? "打开风格库" : "去拆解视频"}</button></div>
     </section>
     {message ? <p className="notice settings-bad" role="status">{message}</p> : null}
     {run.steps?.length && run.state !== "idle" && (run.state === "running" || run.state === "failed") ? <section className="director-panel"><ol className="director-steps">{run.steps.map((step) => <li key={step.key ?? step.name} className={step.state}><span>{step.state === "done" ? "✓" : step.state === "running" ? "…" : step.state === "failed" ? "✕" : "·"}</span>{step.name}</li>)}</ol></section> : null}
     {run.state === "failed" && run.error ? <p className="notice settings-bad">{run.error} <a href={directorApi.logUrl(projectId)} target="_blank" rel="noreferrer">查看日志</a></p> : null}
     {run.note && run.state === "done" ? <p className="notice">{run.note}</p> : null}
     {drafts.length ? <>
-      <nav className="plan-tabs" aria-label="方案版本">{drafts.map((d) => <button key={d.variant} className={d.variant === current?.variant ? "active" : ""} onClick={() => setActive(d.variant)}><b>{d.label}</b><span>{d.stats.shots ? `${d.stats.shots} 个镜头` : "全程达人"} · 插画占 {Math.round(d.stats.fullShare * 100)}%{run.applied?.variant === d.variant && d.liveRevision === run.applied.revision ? " · 已在审阅台" : ""}</span></button>)}</nav>
+      <nav className="plan-tabs" aria-label="方案版本">{drafts.map((d) => <button key={d.variant} className={d.variant === current?.variant ? "active" : ""} onClick={() => setActive(d.variant)}><b>{d.label}{d.direction?.followsStyleCard ? <em className="plan-card-badge" title="这一套的方向和节奏数字直接取自你选的风格卡">照卡</em> : null}</b><span>{d.stats.shots ? `${d.stats.shots} 个镜头` : "全程达人"} · 插画占 {Math.round(d.stats.fullShare * 100)}%{run.applied?.variant === d.variant && d.liveRevision === run.applied.revision ? " · 已在审阅台" : ""}</span></button>)}</nav>
+      <ExportDrafts projectId={projectId} drafts={drafts} busy={working || run.state === "running"} />
       {current ? <PlanTable key={current.variant} projectId={projectId} draft={current} busy={working || run.state === "running"} applied={run.applied?.variant === current.variant && current.liveRevision === run.applied.revision} onSaved={() => { poll(); }} onOptions={(body) => options(current.variant, body)} onApply={() => apply(current)} /> : null}
     </> : null}
+    {confirming ? <div className="home-modal-backdrop"><div className="home-modal" role="dialog" aria-modal="true" aria-label="放进审阅精修">
+      <h2>放进审阅精修？</h2>
+      <p>审阅台里已经有方案（版本 {confirming.liveRevision}，包含你的修改）。放进去会生成新版本 {(confirming.liveRevision ?? 0) + 1}：内容换成「{confirming.label}」，你调过的字幕样式、主题和响度设置会保留；版本 {confirming.liveRevision} 仍在审阅台的「版本」里，可以随时还原。</p>
+      <div className="home-confirm-actions"><button onClick={() => setConfirming(null)}>取消</button><button className="primary" onClick={() => void doApply(confirming)}>继续</button></div>
+    </div></div> : null}
+    {applying ? <div className="home-modal-backdrop"><div className="home-modal" role="status"><h2>正在放进审阅台…</h2><p>{message || "正在生成预览和人脸检测，约 1 分钟，请不要关闭页面。"}</p></div></div> : null}
   </div>;
 };

@@ -204,7 +204,7 @@ export const settingsApi = {
 };
 
 export type DirectorShot = { asset: string; frame: number; atMs: number; durationMs: number; layout: "full" | "pip"; slot: string | null; note: string };
-export type DirectorDraft = { variant: string; label: string; blurb: string; stale: boolean; builtAt: string; model: string | null; notes: string; liveRevision: number | null; logo: boolean; totalMs: number;
+export type DirectorDraft = { variant: string; label: string; blurb: string; direction?: { followsStyleCard?: boolean } | null; stale: boolean; builtAt: string; model: string | null; notes: string; liveRevision: number | null; logo: boolean; totalMs: number;
   stats: { shots: number; full: number; pip: number; fullShare: number }; beats: { id: string; text: string; ms: number; broll: DirectorShot[]; logoAtMs: number | null }[] };
 export type DirectorRun = { card?: { id: string; name: string } | null; state: "idle" | "running" | "done" | "failed"; kind?: string; startedAt?: string; finishedAt?: string | null; steps?: { name: string; key?: string; state: "pending" | "running" | "done" | "failed" }[]; error?: string | null; note?: string | null; applied?: { revision: number; variant?: string; at: string } | null; drafts?: DirectorDraft[]; pipAvailable?: boolean };
 export const directorApi = {
@@ -229,6 +229,7 @@ export const capcutApi = {
   status: (id: string) => call<CapcutStatus>("GET", `${p(id)}/capcut`),
   build: (id: string, name?: string) => call<CapcutStatus>("POST", `${p(id)}/capcut`, { name }),
   install: (id: string, name: string) => call<CapcutStatus>("POST", `${p(id)}/capcut/install`, { name }),
+  buildVariants: (id: string, variants: string[], install: boolean) => call<{ results: { variant: string; label: string; name: string; built: boolean; installed: boolean; error: string | null }[]; status: CapcutStatus }>("POST", `${p(id)}/capcut/variants`, { variants, install }),
   reveal: (id: string, name: string) => call<{ ok: boolean; path: string }>("POST", `${p(id)}/capcut/reveal`, { name }),
 };
 
@@ -246,17 +247,45 @@ export type StyleCard = {
   support: { area: string; feature: string; level: "supported" | "partial" | "needs-effect"; note: string }[];
   directorRules: string[];
 };
-export type StyleBrief = { id: string; name: string; status: "draft" | "confirmed"; summary: string; source: StyleCard["source"]; layout: string; share: number; confirmedAt: string | null; createdAt: string };
+export type RoleV2 = "hook" | "problem" | "product_intro" | "demo" | "benefit" | "proof" | "cta";
+export type StyleCardV2 = {
+  schemaVersion: 2; id: string; name: string; status: "draft" | "confirmed"; summary_zh: string; model: string | null; createdAt: string; confirmedAt: string | null;
+  source: { referenceId: string; path: string; title: string; durationMs: number; sha256: string };
+  meta: { productType: "app" | "physical"; format: string; language: string; tags_zh: string[] };
+  measured: { cutCount: number; avgShotMs: number; medianShotMs: number; maxStaticMs: number; firstBrollMs: number; brollRatio: number; fullRatio: number; pipRatio: number; zoomChangesPerTalkBeat: number };
+  direction: { hookTreatment: string; structureEmphasis: string; pacing: string; brollPlacement: string; layoutBias: string; zoomPattern: string; brollRatioTarget: number };
+  presetOverrides: { noFullBrollBeforeMs: number; noPipBeforeMs: number; minShotMs: number; maxShotMs: number; maxBrollRatio: number; maxStaticMs: number };
+  structure: { role: RoleV2; startMs: number; endMs: number; technique_zh: string }[];
+  timeline: { startMs: number; endMs: number; role: RoleV2; visual: "talk" | "broll"; layout?: "full" | "pip"; zoom?: string; assetType?: string; emphasisWords: string[]; what_zh: string }[];
+  techniques: { name_zh: string; effectId: string | null; support: "ready" | "partial" | "unsupported"; evidenceMs: number[] }[];
+  directorRules: string[]; contentSpecific_zh: string; packaging_zh: string; productTerms: string[];
+  captions: { position: string; case: string; wordsPerBlock: number; emphasis: string };
+  selfTest: { at: string; brollRatioRef: number; brollRatioPlan: number; zoomSame: number; brollOverlap: number; note: string } | null;
+};
+export type StyleBrief = { id: string; version?: 1 | 2; name: string; status: "draft" | "confirmed"; summary: string; source: { referenceId: string; title: string; durationMs: number; shots: number }; layout: string; share: number; confirmedAt: string | null; createdAt: string;
+  meta?: StyleCardV2["meta"]; pacing?: string; hookTreatment?: string; selfTest?: { brollOverlap: number; zoomSame: number } | null; unsupported?: number };
 export type StyleRun = { id: string; state: "running" | "failed" | "done"; title: string; steps: { name: string; state: "pending" | "running" | "done" | "failed" }[]; error: string | null };
-export type StyleDetail = { card: StyleCard; analysis: { facts: { width: number; height: number; durationMs: number }; pacing: { shotCount: number; avgShotMs: number; minShotMs: number; maxShotMs: number }; cuts: number[]; text: string; frames: number[] } | null };
+export type StyleDetail = { card: StyleCard | StyleCardV2; insights?: { usedBy: string[] } | null; analysis: { facts: { width: number; height: number; durationMs: number }; pacing: { shotCount: number; avgShotMs: number; minShotMs: number; maxShotMs: number }; cuts: number[]; text: string; frames: number[] } | null };
 const sc = (id: string) => `/api/style-cards/${encodeURIComponent(id)}`;
 export const styleApi = {
   list: () => call<{ cards: StyleBrief[]; runs: StyleRun[] }>("GET", "/api/style-cards"),
   get: (id: string) => call<StyleDetail>("GET", sc(id)),
-  save: (id: string, body: Partial<StyleCard>) => call<StyleCard>("PUT", sc(id), body),
+  save: (id: string, body: Partial<StyleCard> | Partial<StyleCardV2>) => call<StyleCard & StyleCardV2>("PUT", sc(id), body),
+  // XHR so the page can show upload progress; the file is kept on this computer for analysis only
+  upload: (file: File, onProgress: (done: number) => void) => new Promise<{ file: string; name: string; bytes: number }>((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("PUT", `/api/style-cards/upload?name=${encodeURIComponent(file.name)}`);
+    xhr.upload.onprogress = (e) => onProgress(e.loaded);
+    xhr.onload = () => { const data = JSON.parse(xhr.responseText || "{}"); if (xhr.status < 300) resolve(data); else reject(new ApiError(xhr.status, data.error ?? xhr.statusText)); };
+    xhr.onerror = () => reject(new ApiError(0, "上传中断了，请检查 npm run desk 是否还在运行"));
+    xhr.send(file);
+  }),
+  insights: () => call<{ toBuild: { key: string; name: string; effectId: string | null; support: string; cards: string[]; count: number }[]; usedBy: Record<string, string[]> }>("GET", "/api/style-cards/insights"),
+  selftest: (id: string) => call<StyleDetail>("POST", `${sc(id)}/selftest`),
   confirm: (id: string, name: string) => call<StyleCard>("POST", `${sc(id)}/confirm`, { name }),
   remove: (id: string) => call<{ deleted: boolean }>("DELETE", sc(id)),
   import: (file: string, title: string) => call<{ id: string }>("POST", "/api/style-cards/import", { file, title }),
+  dismissRun: (refId: string) => call<{ dismissed: boolean }>("DELETE", `/api/style-cards/references/${encodeURIComponent(refId)}/run`),
   relearn: (refId: string) => call<{ id: string }>("POST", `/api/style-cards/references/${encodeURIComponent(refId)}/relearn`),
   frameUrl: (refId: string, second: number) => `/api/style-cards/references/${encodeURIComponent(refId)}/frames/t${String(Math.max(0, second)).padStart(3, "0")}.jpg`,
 };
@@ -276,9 +305,9 @@ export const cleanupApi = {
 
 // ---- 表格方案 ----
 export type TableShot = { id?: string; asset: string; srcStartMs: number; atMs: number; durationMs: number; layout: "full" | "pip"; slot: string | null; note?: string };
-export type TableRow = { voice: { asset: string; atMs: number }; id: string; text: string; startMs: number; lengthMs: number; words: string[]; emphasis: string[]; broll: TableShot[]; zoom: number | null; sfx: "auto" | "none" | "whoosh" | "pop"; logoAtMs: number | null };
+export type TableRow = { voice: { asset: string; atMs: number }; id: string; text: string; startMs: number; lengthMs: number; words: string[]; emphasis: string[]; broll: TableShot[]; zoom: number | null; logoAtMs: number | null };
 export type TableAsset = { id: string; title: string; description: string; durationMs: number; width?: number; height?: number; category: string };
-export type PlanTableData = { variant: string; label: string; totalMs: number; logo: boolean; rows: TableRow[]; assets: TableAsset[]; builtAt: string };
+export type PlanTableData = { variant: string; label: string; blurb?: string | null; zoomOptions?: { id: string; scale: number }[]; totalMs: number; logo: boolean; rows: TableRow[]; assets: TableAsset[]; builtAt: string };
 export const tableApi = {
   get: (id: string, variant: string) => call<PlanTableData>("GET", `${cat(id)}/director/${variant}/table`),
   save: (id: string, variant: string, body: { rows?: Partial<TableRow>[]; logo?: boolean }) => call<{ table: PlanTableData; status: DirectorRun }>("PUT", `${cat(id)}/director/${variant}/table`, body),

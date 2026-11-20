@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-20T06:36:22.881Z",
+  "model": "anthropic.claude-sonnet-5-5",
+  "ok": true,
+  "direction": "真实连接",
+  "attempts": [
+    {
+      "errors": [
+        "b04b → b06: 5.4s without visual change (max 5.0s). Change the zoom on a beat or add B-roll.",
+        "zoomPattern build_up but b02 (z100) is looser than b01 (z120) before the climax",
+        "direction slow_tension but hook beat b01 is z120 (start with z100 or z110)"
+      ]
+    },
+    {
+      "errors": [
+        "shot 2 (c1-action at b05 word 44): runs 632 ms past the end of its beat (\"The best part, every profile is photo verified.\", 2500 ms). Shorten it, start it earlier, or split the beat."
+      ]
+    },
+    {
+      "errors": []
+    }
+  ],
+  "lastAnswer": "{\"direction\":\"真实连接\",\"splits\":[{\"beat\":\"b04\",\"word\":24},{\"beat\":\"b04\",\"word\":31}],\"beats\":[{\"beat\":\"b01\",\"zoom\":\"z100\"},{\"beat\":\"b02\",\"zoom\":\"z100\"},{\"beat\":\"b03\",\"zoom\":\"z110\"},{\"beat\":\"b04a\",\"zoom\":\"z110\"},{\"beat\":\"b04b\",\"zoom\":\"z115\"},{\"beat\":\"b04c\",\"zoom\":\"z115\"},{\"beat\":\"b05\",\"zoom\":\"z115\"},{\"beat\":\"b06\",\"zoom\":\"z115\"},{\"beat\":\"b07\",\"zoom\":\"z120\"},{\"beat\":\"b08\",\"zoom\":\"z100\"}],\"broll\":[{\"asset\":\"c1-action\",\"beat\":\"b04b\",\"word\":26,\"srcStartMs\":600,\"durationMs\":1400,\"layout\":\"full\",\"reason_zh\":\"讲到智能算法时,用手持手机的近景做过渡,呼应操作手机的场景,同时打破静态画面\"},{\"asset\":\"c1-action\",\"beat\":\"b05\",\"word\":41,\"srcStartMs\":800,\"durationMs\":1500,\"layout\":\"full\",\"reason_zh\":\"讲到每个资料都经过认证时再用一次手机操作镜头(不同片段),起点提前到 word 41,保证镜头不超出本 beat\"},{\"asset\":\"screen-o2\",\"beat\":\"b07\",\"word\":59,\"srcStartMs\":1000,\"durationMs\":1900,\"layout\":\"full\",\"reason_zh\":\"情绪高点 real connections,用牵手空镜传达真实连接\"},{\"asset\":\"screen-o3\",\"beat\":\"b08\",\"word\":65,\"srcStartMs\":600,\"durationMs\":1500,\"layout\":\"full\",\"reason_zh\":\"用爱心手势延续情感,与「停止浪费时间」的转折呼应\"},{\"asset\":\"screen-o1\",\"beat\":\"b08\",\"word\":71,\"srcStartMs\":0,\"durationMs\":1200,\"layout\":\"full\",\"reason_zh\":\"行动号召 tap below 时切到品牌结尾卡,引导下载\"}],\"emphasis\":[{\"beat\":\"b01\",\"word\":1,\"color\":\"red\"},{\"beat\":\"b02\",\"word\":10,\"color\":\"yellow\"},{\"beat\":\"b03\",\"word\":16,\"color\":\"default\"},{\"beat\":\"b04a\",\"word\":20,\"color\":\"red\"},{\"beat\":\"b04c\",\"word\":36,\"color\":\"green\"},{\"beat\":\"b05\",\"word\":45,\"color\":\"green\"},{\"beat\":\"b06\",\"word\":53,\"color\":\"red\"},{\"beat\":\"b07\",\"word\":62,\"color\":\"green\"},{\"beat\":\"b07\",\"word\":63,\"color\":\"green\"},{\"beat\":\"b08\",\"word\":71,\"color\":\"yellow\"},{\"beat\":\"b08\",\"word\":75,\"color\":\"default\"}],\"logo\":null,\"notes_zh\":\"修正:b05 的手机操作镜头改为从 word 41(12.49s)开始,时长 1.5s,在 beat 结束前(14.24s)收尾,不再越界。其余不变:zoom 单调推近 z100→z110→z115→z120,b07 为高点,b08 复位 z100。情感空镜集中在 b07–b08,最后以 screen-o1 品牌结尾卡收尾。B-roll 全部全屏,总占比约 0.33,无超过 5 秒的静止画面。风格卡不要求常驻 logo,故 logo 为 null。\"}"
+}

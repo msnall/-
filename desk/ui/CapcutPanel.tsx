@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { confirmBox } from "./confirm.ts";
 import { capcutApi, type CapcutStatus } from "./api.ts";
 
 // 剪映草稿：把当前方案铺成剪映（JianYing 专业版）草稿，切点、字幕、插画/画中画、关键帧、音效都已摆好；在剪映里微调后导出。
@@ -20,7 +21,7 @@ export const CapcutPanel: React.FC<{ projectId: string }> = ({ projectId }) => {
   const ready = status.pythonReady && status.planRevision !== null;
   return <section className="surface capcut">
     <h2>剪映草稿</h2>
-    <p>把当前方案铺成<b>剪映专业版</b>草稿：每个切点、字幕、插画和画中画的位置、推近关键帧、音效都已摆好，打开剪映只需要几分钟微调，再在剪映里导出。</p>
+    <p>把当前方案铺成<b>剪映专业版</b>草稿：每个切点、字幕、插画和画中画的位置、推近关键帧都已摆好，打开剪映只需要几分钟微调，再在剪映里导出。</p>
     <ul className="capcut-status">
       <li className={status.planRevision !== null ? "ok" : "bad"}>{status.planRevision !== null ? `当前方案：版本 ${status.planRevision}` : "还没有方案：先在「② 方案」选一套放进审阅精修"}</li>
       <li className={status.jianyingRoot ? "ok" : "bad"}>{status.jianyingRoot ? `剪映草稿箱：${status.jianyingRoot}` : "没有找到剪映专业版的草稿文件夹（需要先打开过一次剪映）"}</li>
@@ -35,14 +36,14 @@ export const CapcutPanel: React.FC<{ projectId: string }> = ({ projectId }) => {
       {d.skipped.length ? <p className="capcut-skipped">没有带进剪映的：{d.skipped.join("；")}</p> : null}
       <div className="catalog-actions">
         <button className="primary" disabled={!status.jianyingRoot || d.installed || !!busy} title={d.installed ? "剪映草稿箱里已经有这份" : undefined}
-          onClick={() => { if (status.jianyingRunning && !window.confirm("剪映正在运行。放进草稿箱后，需要关闭并重新打开剪映才会在草稿列表里看到。继续吗？")) return; work(`install:${d.name}`, () => capcutApi.install(projectId, d.name), status.jianyingRunning ? "已放进剪映草稿箱。请重启剪映，在草稿列表里打开。" : "已放进剪映草稿箱。打开剪映，在草稿列表里找到它。"); }}>{d.installed ? "已在剪映草稿箱" : busy === `install:${d.name}` ? "正在放进…" : "放进剪映草稿箱"}</button>
+          onClick={async () => { if (status.jianyingRunning && !(await confirmBox("剪映正在运行。放进草稿箱后，需要关闭并重新打开剪映才会在草稿列表里看到。继续吗？", { danger: false }))) return; work(`install:${d.name}`, () => capcutApi.install(projectId, d.name), status.jianyingRunning ? "已放进剪映草稿箱。请重启剪映，在草稿列表里打开。" : "已放进剪映草稿箱。打开剪映，在草稿列表里找到它。"); }}>{d.installed ? "已在剪映草稿箱" : busy === `install:${d.name}` ? "正在放进…" : "放进剪映草稿箱"}</button>
         <button disabled={!!busy} onClick={() => capcutApi.reveal(projectId, d.name).catch((e) => setMessage(e.message))}>打开草稿文件夹</button>
       </div>
     </article>)}
     <details className="capcut-notes"><summary>需要知道的事</summary><ul>
       <li>草稿里的视频、录屏、音效都是<b>指向本机文件的链接</b>，不是复制。不要移动或改名 <code>F:\VideoAutomation\public</code> 里的素材，否则剪映会提示"素材丢失"。</li>
       <li>画面效果是按位置和大小近似还原的；字幕样式（字号、背景）可能要在剪映里微调，字幕里单个词的强调色没有带过去。</li>
-      <li>音效是自制的合成音（<code>library/sfx</code>）：每个插画出现处一个 whoosh，品牌图标出现处一个 pop；有授权音效时，直接在剪映里替换。</li>
+      <li>草稿不带音效，需要的话在剪映里加。</li>
       <li>响度没有做标准化，导出前在剪映里看一下音量。</li>
       <li>已放进草稿箱的草稿不会被覆盖；改了方案要重新生成时，换一个名称。</li>
     </ul></details>

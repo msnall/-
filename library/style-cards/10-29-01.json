@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 2,
+  "id": "10-29-01",
+  "name": "10月29日成片01",
+  "status": "confirmed",
+  "source": {
+    "referenceId": "10-29-01",
+    "path": "F:\\VideoAutomation\\library\\references\\_uploads\\10月29日成片01.mp4",
+    "title": "10月29日成片01",
+    "durationMs": 36339,
+    "sha256": "39bbec1c473c60363ba0d109c8b193ac445c1f07b3bde161af29aa01faf9e11c"
+  },
+  "summary_zh": "以博主近景口播开场,中段集中切入全屏实拍特写,再回到中景吐槽,最后用录屏和结尾卡收束的挑战式搞笑短片,节奏中等。",
+  "meta": {
+    "productType": "app",
+    "format": "single_creator_talking",
+    "language": "en",
+    "tags_zh": [
+      "挑战玩法",
+      "搞笑吐槽",
+      "手游",
+      "口播加实拍",
+      "自问自答"
+    ]
+  },
+  "measured": {
+    "cutCount": 8,
+    "avgShotMs": 4038,
+    "medianShotMs": 3367,
+    "maxStaticMs": 9000,
+    "firstBrollMs": 2000,
+    "brollRatio": 0.51,
+    "fullRatio": 0.44,
+    "pipRatio": 0.07,
+    "zoomChangesPerTalkBeat": 0.5
+  },
+  "direction": {
+    "hookTreatment": "creator_punch",
+    "structureEmphasis": "story",
+    "pacing": "calm",
+    "brollPlacement": "demo_cluster",
+    "layoutBias": "full",
+    "zoomPattern": "peaks_only",
+    "brollRatioTarget": 0.51
+  },
+  "presetOverrides": {
+    "noFullBrollBeforeMs": 2000,
+    "noPipBeforeMs": 2000,
+    "minShotMs": 1500,
+    "maxShotMs": 5000,
+    "maxBrollRatio": 0.63,
+    "maxStaticMs": 9500
+  },
+  "structure": [
+    {
+      "role": "hook",
+      "startMs": 0,
+      "endMs": 4433,
+      "technique_zh": "博主近景(z120)直面镜头开场,用一句反常识的话抓人,画面上叠加标志和贴纸点题,不插入B-roll"
+    },
+    {
+      "role": "problem",
+      "startMs": 4433,
+      "endMs": 8000,
+      "technique_zh": "切换到稍远景别(z110),用景别变化形成节奏切换,关键词字幕强调挑战规则"
+    },
+    {
+      "role": "demo",
+      "startMs": 8000,
+      "endMs": 21000,
+      "technique_zh": "先口播加表情贴纸铺垫,再在关键动作词上切全屏动作B-roll,连续两段实拍特写集中呈现过程,配音继续"
+    },
+    {
+      "role": "benefit",
+      "startMs": 21000,
+      "endMs": 30000,
+      "technique_zh": "回到博主中景(z100),边说边做手势,用自问自答的短句吐槽收尾,结尾画面渐暗"
+    },
+    {
+      "role": "proof",
+      "startMs": 30000,
+      "endMs": 35000,
+      "technique_zh": "在最后一个反转句上切全屏录屏,展示分数上涨的结果画面作为佐证"
+    },
+    {
+      "role": "cta",
+      "startMs": 35000,
+      "endMs": 36339,
+      "technique_zh": "以全屏结尾卡收束,短暂停留"
+    }
+  ],
+  "timeline": [
+    {
+      "startMs": 0,
+      "endMs": 2000,
+      "role": "hook",
+      "visual": "talk",
+      "zoom": "z120",
+      "emphasisWords": [
+        "hands"
+      ],
+      "what_zh": "博主近景面对镜头开场,画面起初略模糊"
+    },
+    {
+      "startMs": 2000,
+      "endMs": 4433,
+      "role": "hook",
+      "visual": "talk",
+      "layout": "pip",
+      "zoom": "z120",
+      "assetType": "other",
+      "emphasisWords": [
+        "easy"
+      ],
+      "what_zh": "博主近景,头顶出现Block Blast标志,胸前有手指和手机贴纸"
+    },
+    {
+      "startMs": 4433,
+      "endMs": 8000,
+      "role": "problem",
+      "visual": "talk",
+      "zoom": "z110",
+      "emphasisWords": [
+        "hands-free",
+        "No hands"
+      ],
+      "what_zh": "博主在青绿色背景前说话,切换为稍远的景别"
+    },
+    {
+      "startMs": 8000,
+      "endMs": 11367,
+      "role": "demo",
+      "visual": "talk",
+      "zoom": "z110",
+      "emphasisWords": [
+        "nose",
+        "clear a line"
+      ],
+      "what_zh": "博主继续讲话,旁边出现鼻子表情贴纸"
+    },
+    {
+      "startMs": 11367,
+      "endMs": 13700,
+      "role": "demo",
+      "visual": "broll",
+      "layout": "full",
+      "assetType": "action_clip",
+      "emphasisWords": [],
+      "what_zh": "博主在餐桌前坐着,手机立在桌上,准备用鼻子玩"
+    },
+    {
+      "startMs": 13700,
+      "endMs": 21000,
+      "role": "demo",
+      "visual": "broll",
+      "layout": "full",
+      "assetType": "action_clip",
+      "emphasisWords": [
+        "neck",
+        "cramping"
+      ],
+      "what_zh": "特写博主低头用鼻子点手机屏幕玩方块游戏"
+    },
+    {
+      "startMs": 21000,
+      "endMs": 30000,
+      "role": "benefit",
+      "visual": "talk",
+      "zoom": "z100",
+      "emphasisWords": [
+        "ridiculous",
+        "cleared a line",
+        "worth it",
+        "No",
+        "stop"
+      ],
+      "what_zh": "博主在绿墙房间里边说边做手势吐槽,结尾画面渐暗"
+    },
+    {
+      "startMs": 30000,
+      "endMs": 35000,
+      "role": "proof",
+      "visual": "broll",
+      "layout": "full",
+      "assetType": "screen_recording",
+      "emphasisWords": [
+        "Absolutely not"
+      ],
+      "what_zh": "Block Blast游戏录屏,分数上涨并出现Combo提示"
+    },
+    {
+      "startMs": 35000,
+      "endMs": 36339,
+      "role": "cta",
+      "visual": "broll",
+      "layout": "full",
+      "assetType": "end_card",
+      "emphasisWords": [],
+      "what_zh": "Block Blast应用图标与Hungry Studio结尾画面"
+    }
+  ],
+  "techniques": [
+    {
+      "name_zh": "开场紧贴近景强调",
+      "effectId": "z120",
+      "support": "ready",
+      "evidenceMs": [
+        500,
+        3000
+      ]
+    },
+    {
+      "name_zh": "稍远景别轻推",
+      "effectId": "z110",
+      "support": "ready",
+      "evidenceMs": [
+        5000,
+        9000
+      ]
+    },
+    {
+      "name_zh": "全屏B-roll覆盖口播",
+      "effectId": "full",
+      "support": "ready",
+      "evidenceMs": [
+        12000,
+        15000,
+        31000
+      ]
+    },
+    {
+      "name_zh": "开场短暂画中画/贴纸叠加",
+      "effectId": "pip",
+      "support": "partial",
+      "evidenceMs": [
+        3000
+      ]
+    },
+    {
+      "name_zh": "中景无缩放收尾",
+      "effectId": "z100",
+      "support": "ready",
+      "evidenceMs": [
+        25000
+      ]
+    },
+    {
+      "name_zh": "表情/手机贴纸",
+      "effectId": null,
+      "support": "unsupported",
+      "evidenceMs": [
+        3000,
+        9000
+      ]
+    },
+    {
+      "name_zh": "结尾渐暗与结尾卡",
+      "effectId": null,
+      "support": "unsupported",
+      "evidenceMs": [
+        29500,
+        35500
+      ]
+    }
+  ],
+  "directorRules": [
+    "Open on a tight z120 creator close-up from the first frame with no B-roll before the hook line finishes.",
+    "Drop to a wider z110 shot after the hook to create a clear change of scale at the first topic shift.",
+    "Cluster full-screen B-roll in the middle demo section, cutting in on the exact action word.",
+    "Keep the creator audio running over full-screen B-roll instead of switching to a voiceover.",
+    "Return to the creator at z100 for the reaction and punchline section, letting gestures carry the beat.",
+    "Cut to a full-screen screen recording on the final reversal line as proof.",
+    "End with a short full-screen end card of about one second.",
+    "Keep average shots around 3 to 4 seconds and avoid holding any static shot longer than 9 seconds."
+  ],
+  "contentSpecific_zh": "博主挑战不用手、只用鼻子玩方块消除手游:先说大家都用手太简单,再演示用鼻子点屏幕、脖子抽筋,吐槽自己看着很蠢但还是消了一行,最后以游戏录屏和应用图标结尾卡收束。",
+  "captions": {
+    "position": "center-lower",
+    "case": "sentence",
+    "wordsPerBlock": 3,
+    "emphasis": "关键词高亮变色"
+  },
+  "packaging_zh": "开场有标志和手指/手机贴纸,中段有表情贴纸;未见明显音效和背景音乐信息;结尾画面渐暗并出现应用结尾卡。",
+  "productTerms": [
+    "Block Blast",
+    "block",
+    "Hungry Studio",
+    "line",
+    "nose"
+  ],
+  "selfTest": {
+    "at": "2026-11-20T06:17:27.478Z",
+    "brollRatioRef": 0.51,
+    "brollRatioPlan": 0.36,
+    "zoomSame": 0.72,
+    "brollOverlap": 0.41,
+    "note": "13 句口播、5 个参考插画素材；只比较了插画位置和推近档位，没有跑完整校验"
+  },
+  "model": "claude-sonnet-5-5",
+  "createdAt": "2026-11-20T06:16:43.820Z",
+  "confirmedAt": "2026-11-20T06:32:31.263Z"
+}

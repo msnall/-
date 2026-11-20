@@ -62,6 +62,36 @@ const draftPath = async (id, name) => {
   return dir;
 };
 
+// 多选：把方案页上选中的几套草稿各生成一份剪映草稿（不经过审阅台，用的是方案草稿原样；字幕样式、主题是默认值）。
+// body: { variants: ["a","b"], install?: boolean }。逐份生成（导出组件一次只做一份）；某一份失败不影响其他份。
+export async function buildCapcutVariants(id, body) {
+  const variants = [...new Set(Array.isArray(body?.variants) ? body.variants.map(String) : [])];
+  if (!variants.length) throw badRequest("请先勾选至少一套方案");
+  if (busy) throw conflict("正在生成另一份草稿");
+  for (const v of variants) {
+    if (!/^[a-z]+$/.test(v) || !(await exists(projectFile(id, `edit-plan.draft.${v}.json`)))) throw badRequest(`没有这套方案：${v}（先在「③ 方案」生成）`);
+  }
+  busy = true;
+  const results = [];
+  try {
+    for (const v of variants) {
+      const cut = await readJson(projectFile(id, `cut-script.${v}.json`), null);
+      const label = cut?.director?.direction?.name_zh ?? v;
+      let name;
+      try { name = safeName(`${id} ${label}`); } catch { name = `${id} ${v}`; }
+      const row = { variant: v, label, name, built: false, installed: false, error: null };
+      try { await runScript([id, `--plan=edit-plan.draft.${v}.json`, `--name=${name}`]); row.built = true; }
+      catch (error) { row.error = `生成失败：${error.message}`; results.push(row); continue; }
+      if (body?.install) {
+        try { await installCapcut(id, { name }); row.installed = true; }
+        catch (error) { row.error = `草稿已生成，但没能放进剪映草稿箱：${error.message}`; }
+      }
+      results.push(row);
+    }
+  } finally { busy = false; }
+  return { results, status: await capcutStatus(id) };
+}
+
 export async function installCapcut(id, body) {
   const name = safeName(body?.name);
   const dir = await draftPath(id, name);

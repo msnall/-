@@ -1,0 +1,39 @@
+{
+  "runs": [
+    {
+      "id": "kismia",
+      "at": "2026-11-20T03:57:41.672Z",
+      "plans": 3,
+      "firstPassRate": 0,
+      "meanAttempts": 2,
+      "pairs": [
+        {
+          "pair": "a/b",
+          "sameZoom": 0.2,
+          "brollOverlap": 0.64,
+          "sameHook": false
+        },
+        {
+          "pair": "a/c",
+          "sameZoom": 0.09,
+          "brollOverlap": 0.53,
+          "sameHook": false
+        },
+        {
+          "pair": "b/c",
+          "sameZoom": 0.21,
+          "brollOverlap": 0.4,
+          "sameHook": false
+        }
+      ],
+      "editorChanges": {
+        "chosen": "pip",
+        "appliedRevision": 0,
+        "liveRevision": 10,
+        "shots": 8,
+        "zoom": 0,
+        "emphasis": 0
+      }
+    }
+  ]
+}

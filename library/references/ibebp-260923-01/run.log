@@ -1,0 +1,14 @@
+ibebp-260923-01: 46.6 s, 9 shots (avg 5173 ms), 159 words, 47 frames -> library/references/ibebp-260923-01/analysis.json
+cuts at: 10.0, 16.0, 20.4, 32.0, 33.6, 39.8, 40.9, 43.6
+said: Real talk. You're a small business owner, you finally decide to run your first TikTok ad, and then you open ads manager and think, wait, does it need a rocket science degree for this? Yeah, that was me. But turns out you don't need a desktop, a theme, or a marketing degree. You just need your phone. Let me show you. Step one, just log in with your TikTok account, no password, no hassle. Step two, pick your goal. Maybe you want more traffic, more sales, whatever matters most for your business. Step three, set a small budget. You can start low, and scale up later. That's it. No ad degree required. And if you're a new advertiser, you can actually grab some free ad credits to help kick things off. So you're not jumping in blind. Tap the link below, launch your first ad from your phone, and see how easy it actually is. Seriously, just try it.
+style card v2: annotating 10 strips with anthropic.claude-sonnet-5-5…
+  17 segments; measured: avg 2739 ms, b-roll 71%, first b-roll 0 ms
+style card v2: abstracting the card…
+style card ibebp-260923-01: 钩子 0.0–9.0s / 痛点 9.0–10.0s / 产品引入 10.0–16.0s / 演示 16.0–32.0s / 好处 32.0–34.8s / 证明 34.8–39.0s / 行动号召 39.0–46.6s
+  direction: pip_hook · medium · mixed · alternate · b-roll 71%
+  not ready: 红圈标注截图重点 (no effect) unsupported
+  not ready: 步骤标题文字与搞笑贴图、飘浮特效 (no effect) unsupported
+  not ready: 创作者抠图叠在画面前 (no effect) unsupported
+  corrected: pacing fast → medium (average shot 2739 ms)
+self-test: 17 beats, 9 cutaway assets, asking anthropic.claude-sonnet-5-5…
+复现度: 插画位置重合 81%，推近一致 25%，插画占比 参考 71% / 方案 71%

@@ -1,0 +1,481 @@
+{
+  "schemaVersion": 2,
+  "projectId": "kismia",
+  "scriptId": "creator",
+  "status": "draft",
+  "builtAt": "2026-11-20T06:36:22.889Z",
+  "fps": 30,
+  "director": {
+    "slot": "c",
+    "direction": {
+      "name_zh": "真实连接",
+      "hookTreatment": "slow_tension",
+      "structureEmphasis": "story",
+      "pacing": "calm",
+      "brollPlacement": "demo_cluster",
+      "layoutBias": "full",
+      "zoomPattern": "build_up",
+      "brollRatioTarget": 0.3,
+      "hookBeat": "b01",
+      "climaxBeat": "b07",
+      "followsStyleCard": false,
+      "why_zh": "b01 到 b03 从疲惫到说出 Kismia,镜头逐步推近。b07「real connections」是情绪高点,正好把牵手和爱心手势这两条情感空镜集中放在 b07 到 b08,最后用品牌结尾卡带出下载。",
+      "oneLineSummary_zh": "渐推悬念开场｜舒缓节奏｜情感空镜集中在结尾｜逐步推近"
+    },
+    "model": "claude-sonnet-5-5",
+    "at": "2026-11-20T06:36:22.889Z",
+    "notes": "修正:b05 的手机操作镜头改为从 word 41(12.49s)开始,时长 1.5s,在 beat 结束前(14.24s)收尾,不再越界。其余不变:zoom 单调推近 z100→z110→z115→z120,b07 为高点,b08 复位 z100。情感空镜集中在 b07–b08,最后以 screen-o1 品牌结尾卡收尾。B-roll 全部全屏,总占比约 0.33,无超过 5 秒的静止画面。风格卡不要求常驻 logo,故 logo 为 null。",
+    "attempts": 3,
+    "warnings": [],
+    "brollRatio": 0.33,
+    "styleCard": null,
+    "answer": {
+      "direction": "真实连接",
+      "splits": [
+        {
+          "beat": "b04",
+          "word": 24
+        },
+        {
+          "beat": "b04",
+          "word": 31
+        }
+      ],
+      "beats": [
+        {
+          "beat": "b01",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b02",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b03",
+          "zoom": "z110"
+        },
+        {
+          "beat": "b04a",
+          "zoom": "z110"
+        },
+        {
+          "beat": "b04b",
+          "zoom": "z115"
+        },
+        {
+          "beat": "b04c",
+          "zoom": "z115"
+        },
+        {
+          "beat": "b05",
+          "zoom": "z115"
+        },
+        {
+          "beat": "b06",
+          "zoom": "z115"
+        },
+        {
+          "beat": "b07",
+          "zoom": "z120"
+        },
+        {
+          "beat": "b08",
+          "zoom": "z100"
+        }
+      ],
+      "broll": [
+        {
+          "asset": "c1-action",
+          "beat": "b04b",
+          "word": 26,
+          "srcStartMs": 600,
+          "durationMs": 1400,
+          "layout": "full",
+          "reason_zh": "讲到智能算法时,用手持手机的近景做过渡,呼应操作手机的场景,同时打破静态画面"
+        },
+        {
+          "asset": "c1-action",
+          "beat": "b05",
+          "word": 41,
+          "srcStartMs": 800,
+          "durationMs": 1500,
+          "layout": "full",
+          "reason_zh": "讲到每个资料都经过认证时再用一次手机操作镜头(不同片段),起点提前到 word 41,保证镜头不超出本 beat"
+        },
+        {
+          "asset": "screen-o2",
+          "beat": "b07",
+          "word": 59,
+          "srcStartMs": 1000,
+          "durationMs": 1900,
+          "layout": "full",
+          "reason_zh": "情绪高点 real connections,用牵手空镜传达真实连接"
+        },
+        {
+          "asset": "screen-o3",
+          "beat": "b08",
+          "word": 65,
+          "srcStartMs": 600,
+          "durationMs": 1500,
+          "layout": "full",
+          "reason_zh": "用爱心手势延续情感,与「停止浪费时间」的转折呼应"
+        },
+        {
+          "asset": "screen-o1",
+          "beat": "b08",
+          "word": 71,
+          "srcStartMs": 0,
+          "durationMs": 1200,
+          "layout": "full",
+          "reason_zh": "行动号召 tap below 时切到品牌结尾卡,引导下载"
+        }
+      ],
+      "emphasis": [
+        {
+          "beat": "b01",
+          "word": 1,
+          "color": "red"
+        },
+        {
+          "beat": "b02",
+          "word": 10,
+          "color": "yellow"
+        },
+        {
+          "beat": "b03",
+          "word": 16,
+          "color": "default"
+        },
+        {
+          "beat": "b04a",
+          "word": 20,
+          "color": "red"
+        },
+        {
+          "beat": "b04c",
+          "word": 36,
+          "color": "green"
+        },
+        {
+          "beat": "b05",
+          "word": 45,
+          "color": "green"
+        },
+        {
+          "beat": "b06",
+          "word": 53,
+          "color": "red"
+        },
+        {
+          "beat": "b07",
+          "word": 62,
+          "color": "green"
+        },
+        {
+          "beat": "b07",
+          "word": 63,
+          "color": "green"
+        },
+        {
+          "beat": "b08",
+          "word": 71,
+          "color": "yellow"
+        },
+        {
+          "beat": "b08",
+          "word": 75,
+          "color": "default"
+        }
+      ],
+      "logo": null,
+      "notes_zh": "修正:b05 的手机操作镜头改为从 word 41(12.49s)开始,时长 1.5s,在 beat 结束前(14.24s)收尾,不再越界。其余不变:zoom 单调推近 z100→z110→z115→z120,b07 为高点,b08 复位 z100。情感空镜集中在 b07–b08,最后以 screen-o1 品牌结尾卡收尾。B-roll 全部全屏,总占比约 0.33,无超过 5 秒的静止画面。风格卡不要求常驻 logo,故 logo 为 null。"
+    }
+  },
+  "note": "Beats from the creators' proofread transcripts; zoom, b-roll and emphasis proposed by the auto director and validated by code. Review in the desk.",
+  "beats": [
+    {
+      "id": "b01",
+      "text": "Stop swiping on random profiles.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 0,
+        "endMs": 1733.3333333333333,
+        "wordStart": 0,
+        "wordEnd": 4,
+        "ranges": [
+          [
+            0,
+            1733.3333333333333
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1
+    },
+    {
+      "id": "b02",
+      "text": "Now, I only filter by shared values and distance.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 1733.3333333333333,
+        "endMs": 4366.666666666667,
+        "wordStart": 5,
+        "wordEnd": 13,
+        "ranges": [
+          [
+            1733.3333333333333,
+            4366.666666666667
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1
+    },
+    {
+      "id": "b03",
+      "text": "This is Kismia. I was so tired of wasting time,",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 4366.666666666667,
+        "endMs": 6800,
+        "wordStart": 14,
+        "wordEnd": 23,
+        "ranges": [
+          [
+            4366.666666666667,
+            6800
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1.1
+    },
+    {
+      "id": "b04a",
+      "text": "but their smart algorithm matches you with",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 6800,
+        "endMs": 9066.666666666666,
+        "wordStart": 24,
+        "wordEnd": 30,
+        "ranges": [
+          [
+            6800,
+            9066.666666666666
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b04a-1",
+          "asset": "c1-action",
+          "srcStartMs": 600,
+          "atMs": 507,
+          "durationMs": 1400,
+          "layout": "full",
+          "note": "讲到智能算法时,用手持手机的近景做过渡,呼应操作手机的场景,同时打破静态画面"
+        }
+      ],
+      "zoom": 1.1
+    },
+    {
+      "id": "b04b",
+      "text": "people who actually want a serious relationship.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 9066.666666666666,
+        "endMs": 11733.333333333334,
+        "wordStart": 31,
+        "wordEnd": 37,
+        "ranges": [
+          [
+            9066.666666666666,
+            11733.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1.15
+    },
+    {
+      "id": "b05",
+      "text": "The best part, every profile is photo verified.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 11733.333333333334,
+        "endMs": 14233.333333333334,
+        "wordStart": 38,
+        "wordEnd": 45,
+        "ranges": [
+          [
+            11733.333333333334,
+            14233.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b05-1",
+          "asset": "c1-action",
+          "srcStartMs": 800,
+          "atMs": 757,
+          "durationMs": 1500,
+          "layout": "full",
+          "note": "讲到每个资料都经过认证时再用一次手机操作镜头(不同片段),起点提前到 word 41,保证镜头不超出本 beat"
+        }
+      ],
+      "zoom": 1.15
+    },
+    {
+      "id": "b06",
+      "text": "So you don't have to worry about catfish or bots.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 14233.333333333334,
+        "endMs": 16733.333333333332,
+        "wordStart": 46,
+        "wordEnd": 55,
+        "ranges": [
+          [
+            14233.333333333334,
+            16733.333333333332
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1.15
+    },
+    {
+      "id": "b07",
+      "text": "It's built for people looking for real connections.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 16733.333333333332,
+        "endMs": 19500,
+        "wordStart": 56,
+        "wordEnd": 63,
+        "ranges": [
+          [
+            16733.333333333332,
+            19500
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b07-1",
+          "asset": "screen-o2",
+          "srcStartMs": 1000,
+          "atMs": 753,
+          "durationMs": 1900,
+          "layout": "full",
+          "note": "情绪高点 real connections,用牵手空镜传达真实连接"
+        }
+      ],
+      "zoom": 1.2
+    },
+    {
+      "id": "b08",
+      "text": "If you want to stop wasting time, tap below to try Kismia.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 19500,
+        "endMs": 22500,
+        "wordStart": 64,
+        "wordEnd": 75,
+        "ranges": [
+          [
+            19500,
+            22500
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b08-1",
+          "asset": "screen-o3",
+          "srcStartMs": 600,
+          "atMs": 110,
+          "durationMs": 1500,
+          "layout": "full",
+          "note": "用爱心手势延续情感,与「停止浪费时间」的转折呼应"
+        },
+        {
+          "id": "b08-2",
+          "asset": "screen-o1",
+          "srcStartMs": 0,
+          "atMs": 1671,
+          "durationMs": 1200,
+          "layout": "full",
+          "note": "行动号召 tap below 时切到品牌结尾卡,引导下载"
+        }
+      ],
+      "zoom": 1
+    }
+  ],
+  "emphasis": [
+    {
+      "beat": "b01",
+      "word": "swiping",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b02",
+      "word": "shared",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b03",
+      "word": "Kismia."
+    },
+    {
+      "beat": "b03",
+      "word": "tired",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b04b",
+      "word": "serious",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b05",
+      "word": "verified.",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b06",
+      "word": "catfish",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b07",
+      "word": "real",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b07",
+      "word": "connections.",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b08",
+      "word": "tap",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b08",
+      "word": "Kismia."
+    }
+  ]
+}

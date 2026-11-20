@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-20T06:22:19.712Z",
+  "model": "anthropic.claude-sonnet-5-5",
+  "ok": true,
+  "direction": "结果抢先",
+  "attempts": [
+    {
+      "errors": []
+    }
+  ],
+  "lastAnswer": "{\"direction\":\"结果抢先\",\"splits\":[],\"beats\":[{\"beat\":\"b01\",\"zoom\":\"z120\"},{\"beat\":\"b02\",\"zoom\":\"z100\"},{\"beat\":\"b03\",\"zoom\":\"z100\"},{\"beat\":\"b04\",\"zoom\":\"z100\"},{\"beat\":\"b05\",\"zoom\":\"z100\"},{\"beat\":\"b06\",\"zoom\":\"z100\"},{\"beat\":\"b07\",\"zoom\":\"z120\"},{\"beat\":\"b08\",\"zoom\":\"z100\"}],\"broll\":[{\"asset\":\"c1-action\",\"beat\":\"b02\",\"word\":10,\"srcStartMs\":1500,\"durationMs\":2000,\"layout\":\"full\",\"reason_zh\":\"“大脑开始乱猜”接深夜床上转头张望的画面，延续开头的夜晚悬念，同时打破静止画面。\"},{\"asset\":\"screen-o3\",\"beat\":\"b03\",\"word\":17,\"srcStartMs\":1900,\"durationMs\":1500,\"layout\":\"full\",\"reason_zh\":\"“想起我有 crime radar”，立刻切到App事件列表，让产品抢先出现。\"},{\"asset\":\"screen-o1\",\"beat\":\"b04\",\"word\":23,\"srcStartMs\":1500,\"durationMs\":2500,\"layout\":\"full\",\"reason_zh\":\"“打开地图看到活动位置”，对应地图标记逐步出现的录屏。\"},{\"asset\":\"screen-o2\",\"beat\":\"b05\",\"word\":36,\"srcStartMs\":4500,\"durationMs\":2500,\"layout\":\"full\",\"reason_zh\":\"“听实时调度音频”，对应Dispatch Audio播放页和实时转写。\"},{\"asset\":\"screen-o1\",\"beat\":\"b06\",\"word\":46,\"srcStartMs\":3000,\"durationMs\":1800,\"layout\":\"full\",\"reason_zh\":\"“就在几个街区外”，用地图上的近处红橙标记展示结果。\"},{\"asset\":\"screen-o3\",\"beat\":\"b07\",\"word\":61,\"srcStartMs\":3000,\"durationMs\":900,\"layout\":\"full\",\"reason_zh\":\"“比邻居先知道”高潮句尾短切附近事件列表，避免画面静止超过2.5秒，其余时间保持达人特写。\"},{\"asset\":\"c1-action\",\"beat\":\"b08\",\"word\":67,\"srcStartMs\":9000,\"durationMs\":2400,\"layout\":\"full\",\"reason_zh\":\"结尾下载号召落在结束卡素材上，睡前安心入睡的收尾。\"}],\"emphasis\":[{\"beat\":\"b01\",\"word\":6,\"color\":\"red\"},{\"beat\":\"b02\",\"word\":12,\"color\":\"yellow\"},{\"beat\":\"b03\",\"word\":21,\"color\":\"default\"},{\"beat\":\"b04\",\"word\":25,\"color\":\"green\"},{\"beat\":\"b05\",\"word\":40,\"color\":\"default\"},{\"beat\":\"b06\",\"word\":53,\"color\":\"red\"},{\"beat\":\"b07\",\"word\":63,\"color\":\"green\"},{\"beat\":\"b08\",\"word\":65,\"color\":\"green\"}],\"logo\":null,\"notes_zh\":\"仅b01钩子和b07高潮用推近（z120），其余z100。b01保持达人特写强推开场；从b02起快速铺开全屏素材，b03到b06连续使用录屏，b07仅在句尾短切，最后b08落在c1-action结束卡。B-roll总时长约13.8秒，占口播约0.64。未使用画中画，没有拆分节拍，也没有使用logo。\"}"
+}

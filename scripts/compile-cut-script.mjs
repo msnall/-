@@ -187,17 +187,8 @@ if (cut.logo) {
       props: { asset: "brand-logo", x: 40, y: 170, width: 150, height: 150, fit: "contain", borderRadius: 28, enter: { type: "pop", frames: 8 }, exit: { type: "none", frames: 0 } } });
   }
 }
-// sound effects, per beat: auto = a whoosh under each cutaway and a pop at the logo; none; or one fixed kind at each cutaway (or the beat start)
+// No sound effects: the plan carries an empty list, so neither the render nor the 剪映 draft adds any (方案 v1.2).
 const sfxList = [];
-for (const b of beats) {
-  const mode = b.sfx ?? "auto";
-  if (mode === "none") continue;
-  const shots = b.broll ?? [];
-  if (mode === "auto") shots.forEach((s) => sfxList.push({ atFrame: Math.max(0, b.offsetFrames + toFrames(s.atMs) - 1), kind: "whoosh" }));
-  else if (shots.length) shots.forEach((s) => sfxList.push({ atFrame: b.offsetFrames + toFrames(s.atMs), kind: mode }));
-  else sfxList.push({ atFrame: b.offsetFrames, kind: mode });
-  if (cut.logo?.beat === b.id && mode === "auto") sfxList.push({ atFrame: b.offsetFrames + toFrames(cut.logo.atMs ?? 0), kind: "pop" });
-}
 const norm = (t) => t.toLowerCase().replace(/[^a-z0-9']/g, "");
 const emphasis = (cut.emphasis ?? []).map((e) => {
   const b = beats.find((x) => x.id === e.beat);

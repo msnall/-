@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-20T06:21:35.334Z",
+  "model": "claude-sonnet-5-5",
+  "card": null,
+  "attempts": 1,
+  "directions": [
+    {
+      "name_zh": "深夜警笛悬念",
+      "hookTreatment": "slow_tension",
+      "structureEmphasis": "story",
+      "pacing": "calm",
+      "brollPlacement": "demo_cluster",
+      "layoutBias": "mixed",
+      "zoomPattern": "build_up",
+      "brollRatioTarget": 0.4,
+      "hookBeat": "b01",
+      "climaxBeat": "b05",
+      "followsStyleCard": false,
+      "why_zh": "口播从凌晨2点听到警笛到发现犯罪雷达是完整的小故事，达人躺床上的c1-action素材正好承接开场，用逐步推近的张力把观众带到b03的揭晓和b05的调度音频。",
+      "oneLineSummary_zh": "警笛悬念慢推开场｜平稳节奏｜演示集中在中段｜逐步推近"
+    },
+    {
+      "name_zh": "痛点红字",
+      "hookTreatment": "color_hook",
+      "structureEmphasis": "problem",
+      "pacing": "medium",
+      "brollPlacement": "spread",
+      "layoutBias": "pip",
+      "zoomPattern": "alternate",
+      "brollRatioTarget": 0.45,
+      "hookBeat": "b02",
+      "climaxBeat": "b04",
+      "followsStyleCard": false,
+      "why_zh": "b02“大脑开始乱猜”是不安的痛点，用红色强调关键词放大焦虑，再用画中画录屏（地图、事件列表）让达人始终在画面中，把“猜测”换成“看到确切位置”。",
+      "oneLineSummary_zh": "红字痛点开场｜中速｜录屏画中画分散｜近景交替"
+    },
+    {
+      "name_zh": "结果抢先",
+      "hookTreatment": "creator_punch",
+      "structureEmphasis": "result",
+      "pacing": "fast",
+      "brollPlacement": "front_loaded",
+      "layoutBias": "full",
+      "zoomPattern": "peaks_only",
+      "brollRatioTarget": 0.65,
+      "hookBeat": "b01",
+      "climaxBeat": "b07",
+      "followsStyleCard": false,
+      "why_zh": "三段App录屏（地图、调度音频、事件列表）素材充足，可在b03之后快速全屏铺开，再以b06“就在几个街区外”和b07“比邻居先知道”作为情绪高点，最后落在b08下载号召。",
+      "oneLineSummary_zh": "达人特写强推开场｜快节奏｜录屏前置全屏｜仅峰值推近"
+    }
+  ]
+}

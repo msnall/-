@@ -1,0 +1,13 @@
+10-29-01: 36.3 s, 5 shots (avg 7268 ms), 58 words, 37 frames -> library/references/10-29-01/analysis.json
+cuts at: 4.4, 11.4, 13.7, 21.0
+said: Everyone uses their hands to play a block last. I think that's way too easy. Today, I'm going hands-free. No hands. Just my nose. Let's see if I can clear a line. Okay, my neck is cramping. I look ridiculous. But I just cleared a line. Was it worth it? No. Am I going to stop? Absolutely not.
+style card v2: annotating 8 strips with anthropic.claude-sonnet-5-5…
+  9 segments; measured: avg 4038 ms, b-roll 51%, first b-roll 2000 ms
+style card v2: abstracting the card…
+  abstraction attempt 1 rejected:
+   - the rules must be product-free; remove or move to contentSpecific_zh: directorRules[2] mentions "block"; directorRules[5] mentions "line"
+  abstraction attempt 2 rejected:
+   - the rules must be product-free; remove or move to contentSpecific_zh: directorRules[6] mentions "block"
+  abstraction attempt 3 rejected:
+   - the rules must be product-free; remove or move to contentSpecific_zh: directorRules[7] mentions "block"
+the model did not return a usable card (see the messages above)
