@@ -1,0 +1,32 @@
+[
+  {
+    "text": "A few seconds after I snap the photo, the AI",
+    "startMs": 60,
+    "endMs": 2280
+  },
+  {
+    "text": "coach tells me something based on what's",
+    "startMs": 2280,
+    "endMs": 4750
+  },
+  {
+    "text": "actually on my plate.",
+    "startMs": 4750,
+    "endMs": 5980
+  },
+  {
+    "text": "I just read it out loud, then it makes a",
+    "startMs": 5980,
+    "endMs": 8590
+  },
+  {
+    "text": "recipe and a grocery list for me.",
+    "startMs": 8590,
+    "endMs": 11320
+  },
+  {
+    "text": "That's actually crazy.",
+    "startMs": 11320,
+    "endMs": 12880
+  }
+]

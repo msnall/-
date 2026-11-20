@@ -1,0 +1,26 @@
+{
+  "tracks": [
+    {
+      "name": "口播",
+      "kind": "video",
+      "segments": 7
+    },
+    {
+      "name": "插画",
+      "kind": "video",
+      "segments": 4
+    },
+    {
+      "name": "字幕",
+      "kind": "text",
+      "segments": 19
+    }
+  ],
+  "skipped": [
+    "字幕里单个词的强调色（剪映里请手动选词上色）"
+  ],
+  "draft": "F:\\VideoAutomation\\projects\\mycal\\exports\\capcut\\mycal r2",
+  "durationUs": 20533333,
+  "planRevision": 2,
+  "builtAt": "2026-11-20T09:49:14.917Z"
+}

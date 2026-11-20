@@ -8,7 +8,7 @@ const TYPE: Record<CleanupEdit["type"], string> = { pause: "停顿", filler: "�
 const SOURCE: Record<CleanupEdit["source"], string> = { auto: "规则检测", model: "AI 复核", user: "你标的" };
 const sec = (ms: number) => (ms / 1000).toFixed(2);
 
-type Props = { nav: React.ReactNode; projectId: string; onNext: () => void; onSettings: () => void };
+type Props = { nav: React.ReactNode; projectId: string; onNext: () => void };
 
 const ClipView: React.FC<{ projectId: string; clipId: string; clip: CleanupClip; onData: (c: Cleanup) => void; onError: (m: string) => void; busy: boolean }> = ({ projectId, clipId, clip, onData, onError, busy }) => {
   const video = useRef<HTMLVideoElement>(null);
@@ -47,7 +47,7 @@ const ClipView: React.FC<{ projectId: string; clipId: string; clip: CleanupClip;
   </section>;
 };
 
-export const CleanupDesk: React.FC<Props> = ({ nav, projectId, onNext, onSettings }) => {
+export const CleanupDesk: React.FC<Props> = ({ nav, projectId, onNext }) => {
   const [data, setData] = useState<Cleanup | null>(null);
   const [busy, setBusy] = useState("");
   const [message, setMessage] = useState("");
@@ -61,7 +61,7 @@ export const CleanupDesk: React.FC<Props> = ({ nav, projectId, onNext, onSetting
   const s = data.stats;
   const headline = !data.exists ? "先检测一遍：找出停顿、语气词、重说和口误" : data.confirmedAt ? `已确认：口播从 ${(s!.beforeMs / 1000).toFixed(1)} 秒缩到 ${(s!.afterMs / 1000).toFixed(1)} 秒` : `核对每一处，再确认（现在会删掉 ${s!.cuts} 处，${(s!.beforeMs / 1000).toFixed(1)} 秒 → ${(s!.afterMs / 1000).toFixed(1)} 秒）`;
   return <div className="catalog-page">
-    <header className="catalog-header catalog-navbar">{nav}<span className="spacer" /><button onClick={onSettings}>API 设置</button></header>
+    <header className="catalog-header catalog-navbar">{nav}<span className="spacer" /></header>
     <section className="next-step"><div><span className="eyebrow">第 2 步 · 口播清理</span><h2>{headline}</h2></div>
       <span className="cl-actions">
         <button disabled={!!busy} onClick={() => run("detect", () => cleanupApi.detect(projectId), "检测完成（你之前的取舍会保留）")}>{busy === "detect" ? "检测中…" : data.exists ? "重新检测" : "开始检测"}</button>

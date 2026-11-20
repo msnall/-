@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
-import { api, type Overview, type Version } from "./api.ts";
-import { Clapperboard, Plus, Search, ArrowUpRight, Clock3, Trash2, RotateCcw } from "lucide-react";
-import { nextAction, stageName, timeAgo } from "./WorkspaceUI.tsx";
+import { api, catalogApi, type Overview } from "./api.ts";
+import { Clapperboard, Plus, Search, Clock3, Trash2, RotateCcw, ArrowRight } from "lucide-react";
+import { timeAgo, type WorkspaceView } from "./WorkspaceUI.tsx";
 import { ImportOrder } from "./ImportOrder.tsx";
 
-type Props = { onImported: (id: string) => void; onTechniques: () => void; projects: Overview[]; onOpen: (id: string) => void; onRefresh: () => void };
+// 首页：按产品分组的项目卡片。每张卡有封面帧、五步进度（素材 → 口播 → 方案 → 精修 → 导出）和「下一步」，点一下直接回到该做的那一步。
 
-export const HomeDesk: React.FC<Props> = ({ onImported, onTechniques, projects, onOpen, onRefresh }) => {
+const STEPS = ["素材", "口播", "方案", "精修", "导出"];
+const NEXT = ["确认素材和口播文字", "检测并确认口播清理", "生成方案，选一套", "在审阅台里精修", "导出成片或剪映草稿"];
+const VIEWS: WorkspaceView[] = ["materials", "cleanup", "plan", "review", "render"];
+
+type Props = { onImported: (id: string) => void; onTechniques: () => void; onSettings: () => void; onGo: (id: string, view: WorkspaceView) => void; projects: Overview[]; onOpen: (id: string) => void; onRefresh: () => void };
+
+export const HomeDesk: React.FC<Props> = ({ onImported, onTechniques, onSettings, onGo, projects, onOpen, onRefresh }) => {
   const [importing, setImporting] = useState(false);
   const [busy, setBusy] = useState(false);
   const [deleting, setDeleting] = useState<Overview | null>(null);
@@ -15,8 +21,10 @@ export const HomeDesk: React.FC<Props> = ({ onImported, onTechniques, projects, 
   const [trash, setTrash] = useState<Awaited<ReturnType<typeof api.trash>>>([]);
   const [trashError, setTrashError] = useState("");
   const [query, setQuery] = useState("");
-  const [history, setHistory] = useState<{ project: Overview; version: Version }[]>([]);
+  const [assets, setAssets] = useState<Record<string, boolean>>({});
   useEffect(() => { api.trash().then(setTrash).catch(() => {}); }, []);
+  // 素材是否全部确认：来自素材分类的计数（和「素材」页顶部的"已确认 N / N"是同一份数据）
+  useEffect(() => { catalogApi.list().then((list) => setAssets(Object.fromEntries(list.map((c) => [c.id, c.total > 0 && c.confirmed >= c.total])))).catch(() => {}); }, [projects]);
   const refreshTrash = () => api.trash().then(setTrash).catch((cause) => setTrashError((cause as Error).message));
   const archive = async () => {
     if (!deleting) return;
@@ -39,32 +47,45 @@ export const HomeDesk: React.FC<Props> = ({ onImported, onTechniques, projects, 
     finally { setBusy(false); }
   };
   const ordered = [...projects].sort((a, b) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""));
-  useEffect(() => {
-    let cancelled = false;
-    Promise.all(projects.filter((project) => project.hasPlan).map(async (project) => ({ project, versions: await api.versions(project.id).catch(() => []) }))).then((results) => {
-      if (!cancelled) setHistory(results.flatMap(({ project, versions }) => versions.map((version) => ({ project, version }))).sort((a, b) => b.version.savedAt.localeCompare(a.version.savedAt)).slice(0, 5));
-    });
-    return () => { cancelled = true; };
-  }, [projects]);
   const filtered = ordered.filter((project) => `${project.title} ${project.productName}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));
   const groups = filtered.reduce<Record<string, Overview[]>>((all, project) => { (all[project.productName] ??= []).push(project); return all; }, {});
+  const progress = (item: Overview) => {
+    const done = [!!assets[item.id], !!item.cleanupConfirmed, !!item.hasDrafts, !!item.hasPlan, !!item.hasExports];
+    const current = done.indexOf(false);
+    return { done, current: current < 0 ? 5 : current };
+  };
 
   return <div className="home-page">
     {importing ? <ImportOrder onClose={() => setImporting(false)} onDone={(id) => { setImporting(false); onImported(id); }} /> : null}
-    <header className="home-header"><div className="home-brand"><Clapperboard size={21} /><b>VIDEO STUDIO</b><span>视频项目</span></div><div className="home-header-actions"><button onClick={onTechniques}>风格库</button><button className="primary" onClick={() => setImporting(true)}><Plus size={16} /> 导入订单素材</button></div></header>
+    <header className="home-header"><div className="home-brand"><Clapperboard size={21} /><b>VIDEO STUDIO</b><span>视频项目</span></div><div className="home-header-actions"><button onClick={onTechniques}>风格库</button><button onClick={onSettings}>API 设置</button><button className="primary" onClick={() => setImporting(true)}><Plus size={16} /> 导入订单素材</button></div></header>
     <main className="home-content">
-      <div className="home-intro"><p>VIDEO PROJECTS</p><h1>视频项目</h1><span>管理不同产品的视频，从上次停下的地方继续。</span></div>
-      <div className="home-overview"><div><b>{projects.length}</b><span>当前项目</span></div><div><b>{projects.filter((item) => item.ready).length}</b><span>可进入工作区</span></div><div><b>{projects.filter((item) => !item.ready).length}</b><span>准备中</span></div></div>
-      <div className="home-section-head"><div><h2>最近项目</h2><p>按最近修改时间排序</p></div><label className="home-search"><Search size={16} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索项目或产品" aria-label="搜索项目或产品" /></label></div>
-      {!filtered.length ? <div className="home-empty">{query ? "没有找到匹配的项目" : "还没有项目。点右上角「导入订单素材」开始。"}</div> : null}
-      {Object.entries(groups).map(([product, items]) => <section className="home-group" key={product}>
-        <div className="home-group-head"><h2>{product}</h2><span>{items?.length ?? 0} 条视频</span></div>
-        <div className="home-cards">{items?.map((item) => <article className="home-video-card" key={item.id}><button className="home-card-open" onClick={() => onOpen(item.id)} aria-label={`打开${item.title}`}>
-          <div className="home-cover"><img src={item.id === "bloom10" ? "/storyboards/bloom10/b01.jpg" : `/api/projects/${item.id}/thumbs/at/source/0`} alt="项目首帧" onError={(event) => { event.currentTarget.style.display = "none"; }} /><span>9:16</span></div>
-          <div className="home-card-copy"><div className="home-card-title"><b>{item.title}</b><ArrowUpRight size={17} /></div><span className="home-stage">{stageName(item.status.stage)}</span><div className="home-card-meta"><span><Clock3 size={13} /> {timeAgo(item.updatedAt)}</span><span>{item.ready ? "预览就绪" : item.previewReady ? "转录中" : "预览准备中"}</span></div><div className="home-next">下一步：{nextAction(item)}</div></div>
-        </button><div className="home-card-footer"><span>{item.hasPlan ? `方案版本 ${item.revision ?? 0}` : "方案尚未确认"}</span><button className="home-card-delete" onClick={() => { setDeleting(item); setTrashError(""); }} aria-label={`删除${item.title}`}><Trash2 size={14} /> 移到回收区</button></div></article>)}</div>
+      <div className="hm-top">
+        <div className="hm-title"><h1>我的项目</h1><p>{projects.length ? `共 ${projects.length} 个项目，按最近修改排序。点卡片回到该做的那一步。` : "每个订单一个项目：导入素材，一步步做到导出。"}</p></div>
+        {projects.length ? <label className="home-search"><Search size={16} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索项目或产品" aria-label="搜索项目或产品" /></label> : null}
+      </div>
+      {!filtered.length ? <div className="hm-empty">{query ? <p>没有找到匹配的项目。</p> : <><h2>还没有项目</h2><p>把一个订单的素材拖进来，系统会转竖屏、转文字、写描述，然后带你一步步做到导出。</p><button className="primary" onClick={() => setImporting(true)}><Plus size={16} /> 导入订单素材</button></>}</div> : null}
+      {Object.entries(groups).map(([product, items]) => <section className="hm-group" key={product}>
+        <div className="hm-group-head"><h2>{product}</h2><span>{items?.length ?? 0} 个项目</span></div>
+        <div className="hm-cards">{items?.map((item) => {
+          const { done, current } = progress(item);
+          const tto = !!item.hasCatalog;
+          const open = () => (tto && current < 5 ? onGo(item.id, VIEWS[current]) : tto ? onGo(item.id, "render") : onOpen(item.id));
+          return <article className="hm-card" key={item.id}>
+            <button className="hm-card-main" onClick={open} aria-label={`打开${item.title}`}>
+              <div className="hm-cover">{item.coverAsset ? <img loading="lazy" src={catalogApi.frameUrl(item.id, item.coverAsset, 1)} alt="" onError={(e) => { e.currentTarget.style.display = "none"; }} /> : <Clapperboard size={26} />}<span>9:16</span></div>
+              <div className="hm-body">
+                <div className="hm-title-row"><b>{item.title}</b>{tto && current === 5 ? <i className="hm-done">已完成</i> : null}</div>
+                {tto ? <>
+                  <ol className="hm-steps" aria-label="进度">{STEPS.map((s, i) => <li key={s} className={done[i] ? "done" : i === current ? "now" : ""}><span>{done[i] ? "✓" : i + 1}</span><em>{s}</em></li>)}</ol>
+                  <p className="hm-next">{current < 5 ? <><small>下一步</small>{NEXT[current]} <ArrowRight size={14} /></> : <><small>全部步骤已完成</small>交付前再对一遍自查清单</>}</p>
+                </> : <p className="hm-next"><small>旧项目</small>没有素材分类，只能查看</p>}
+                <div className="hm-meta"><span><Clock3 size={13} /> {timeAgo(item.updatedAt)}</span>{item.hasPlan ? <span>方案版本 {item.revision ?? 0}</span> : null}</div>
+              </div>
+            </button>
+            <button className="hm-trash" onClick={() => { setDeleting(item); setTrashError(""); }} aria-label={`删除${item.title}`} title="移到回收区"><Trash2 size={14} /></button>
+          </article>;
+        })}</div>
       </section>)}
-      <section className="home-history"><div className="home-section-head"><div><h2>项目记录</h2><p>已保存的方案版本</p></div></div><div className="history-list">{history.length ? history.map(({ project, version }) => <button key={`${project.id}-${version.revision}`} onClick={() => onOpen(project.id)}><span className="history-mark" /><span><b>{project.title} · 版本 {version.revision}</b><small>{version.note.startsWith("compiled from storyboard") ? "分镜方案已确认" : version.note.startsWith("edited in the review desk") ? "审阅区修改" : "方案已保存"}</small></span><time>{timeAgo(version.savedAt)}</time></button>) : <p className="history-empty">暂无方案版本记录</p>}</div></section>
       <section className="home-trash"><button onClick={() => { setTrashOpen((value) => !value); refreshTrash(); }}><Trash2 size={15} />{trashOpen ? "收起回收区" : `回收区（${trash.length}）`}</button>
         {trashOpen ? <div className="home-trash-list">{trash.length ? trash.map((item) => <div key={item.archiveId}><span><b>{item.title}</b> · {item.productName} · {new Date(item.archivedAt).toLocaleString("zh-CN")}</span><button disabled={busy} onClick={() => restore(item.archiveId)}><RotateCcw size={14} /> 恢复</button><button className="home-card-delete" disabled={busy} onClick={() => { setPurging(item); setTrashError(""); }} aria-label={`永久删除${item.title}`}><Trash2 size={14} /> 永久删除</button></div>) : <p>回收区为空</p>}</div> : null}
       </section>

@@ -1,0 +1,17 @@
+{
+  "input": "F:\\VideoAutomation\\public\\derived\\mycal\\c1-waist-b.mp4",
+  "sourceSha256": "f431d710c7af4dde754fa0b879500ea5c3c92283dcd87934caa41e317715be85",
+  "sourceBytes": 25707643,
+  "sourceModifiedAt": "2026-11-20T09:33:02.007Z",
+  "model": "F:\\VideoAutomation\\bin\\whisper.cpp\\models\\ggml-small.en.bin",
+  "detectedLanguage": "en",
+  "requestedLanguage": "en",
+  "durationMs": 13100,
+  "audioOffsetMs": 0,
+  "runDirectory": "F:\\VideoAutomation\\out\\transcriptions\\mycal--c1-waist-b\\2026-11-20T09-34-10-845Z",
+  "unitCount": 41,
+  "cueCount": 6,
+  "timing": "Whisper estimated short segments; not forced alignment or guaranteed linguistic words. Chinese can contain characters/tokens.",
+  "validation": "finite integer milliseconds, ordered non-overlapping units within source duration",
+  "humanReviewRequired": true
+}

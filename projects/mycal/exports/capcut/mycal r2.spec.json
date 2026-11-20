@@ -1,0 +1,517 @@
+{
+  "name": "mycal r2",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "lanes": [
+    {
+      "kind": "video",
+      "name": "口播",
+      "segments": [
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\mycal\\voice-master-35cafdb5.mp4",
+          "srcStartUs": 0,
+          "startUs": 0,
+          "durUs": 3200000,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1.2,
+            "scaleY": 1.2,
+            "x": 0,
+            "y": -0.04799999999999998
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\mycal\\voice-master-35cafdb5.mp4",
+          "srcStartUs": 3200000,
+          "startUs": 3200000,
+          "durUs": 2400000,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\mycal\\voice-master-35cafdb5.mp4",
+          "srcStartUs": 5600000,
+          "startUs": 5600000,
+          "durUs": 2733333,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1.1,
+            "scaleY": 1.1,
+            "x": 0,
+            "y": -0.024000000000000018
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\mycal\\voice-master-35cafdb5.mp4",
+          "srcStartUs": 8333000,
+          "startUs": 8333333,
+          "durUs": 1366667,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1.15,
+            "scaleY": 1.15,
+            "x": 0,
+            "y": -0.03599999999999997
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\mycal\\voice-master-35cafdb5.mp4",
+          "srcStartUs": 9700000,
+          "startUs": 9700000,
+          "durUs": 5600000,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1.2,
+            "scaleY": 1.2,
+            "x": 0,
+            "y": -0.04799999999999998
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\mycal\\voice-master-35cafdb5.mp4",
+          "srcStartUs": 15300000,
+          "startUs": 15300000,
+          "durUs": 3833333,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\mycal\\voice-master-35cafdb5.mp4",
+          "srcStartUs": 19133000,
+          "startUs": 19133333,
+          "durUs": 1400000,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1.15,
+            "scaleY": 1.15,
+            "x": 0,
+            "y": -0.03599999999999997
+          },
+          "scaleKeyframes": []
+        }
+      ]
+    },
+    {
+      "kind": "video",
+      "name": "插画",
+      "segments": [
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\mycal\\c1-action.mp4",
+          "srcStartUs": 3760000,
+          "startUs": 33333,
+          "durUs": 3000000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 0.2962962962962963,
+            "scaleY": 0.29629629629629634,
+            "x": 0.34444444444444444,
+            "y": 0.6416666666666667
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\mycal\\c1-action.mp4",
+          "srcStartUs": 8780000,
+          "startUs": 3200000,
+          "durUs": 2200000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": [
+            {
+              "tUs": 0,
+              "value": 1
+            },
+            {
+              "tUs": 2200000,
+              "value": 1.04
+            }
+          ]
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\mycal\\screen-o1.mp4",
+          "srcStartUs": 49340000,
+          "startUs": 9700000,
+          "durUs": 5000000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 0.3611738148984199,
+            "scaleY": 0.3611738148984199,
+            "x": -0.6296296296296297,
+            "y": 0.46197916666666666
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\mycal\\screen-o1.mp4",
+          "srcStartUs": 84000000,
+          "startUs": 15300000,
+          "durUs": 3600000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 0.3611738148984199,
+            "scaleY": 0.3611738148984199,
+            "x": 0.3888888888888889,
+            "y": 0.46197916666666666
+          },
+          "scaleKeyframes": []
+        }
+      ]
+    },
+    {
+      "kind": "text",
+      "name": "字幕",
+      "segments": [
+        {
+          "text": "I'VE STARTED AND QUIT",
+          "startUs": 33333,
+          "durUs": 1233334,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "CALORIE TRACKING LIKE FIVE",
+          "startUs": 1266667,
+          "durUs": 1533333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "TIMES.",
+          "startUs": 2800000,
+          "durUs": 400000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "TYPING EVERY INGREDIENT IS A",
+          "startUs": 3200000,
+          "durUs": 1666667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "NIGHTMARE.",
+          "startUs": 4866667,
+          "durUs": 666666,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "WHO HAS THE TIME?",
+          "startUs": 5666667,
+          "durUs": 866666,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "BUT CHECK THIS OUT.",
+          "startUs": 6600000,
+          "durUs": 1666667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "I LITERALLY JUST SNAPPED ONE",
+          "startUs": 8400000,
+          "durUs": 766667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "PHOTO OF MY LUNCH.",
+          "startUs": 9166667,
+          "durUs": 433333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "A FEW SECONDS AFTER I",
+          "startUs": 9700000,
+          "durUs": 1200000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "SNAP THE PHOTO,",
+          "startUs": 10900000,
+          "durUs": 800000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "THE AI COACH TELLS ME",
+          "startUs": 11700000,
+          "durUs": 1066667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "SOMETHING BASED ON WHAT'S",
+          "startUs": 12766667,
+          "durUs": 1400000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "ACTUALLY ON MY PLATE.",
+          "startUs": 14166667,
+          "durUs": 1133333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "I JUST READ IT OUT",
+          "startUs": 15300000,
+          "durUs": 1000000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "LOUD, THEN IT MAKES A",
+          "startUs": 16300000,
+          "durUs": 1133333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "RECIPE AND A GROCERY LIST",
+          "startUs": 17433333,
+          "durUs": 1166667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "FOR ME.",
+          "startUs": 18766667,
+          "durUs": 366666,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        },
+        {
+          "text": "THAT'S ACTUALLY CRAZY.",
+          "startUs": 19133333,
+          "durUs": 1300000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.08703703703703704,
+          "y": -0.5041666666666667
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    "字幕里单个词的强调色（剪映里请手动选词上色）"
+  ]
+}

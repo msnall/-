@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "projectId": "mycal",
+  "order": "2026-11_MyCal",
+  "ingestedAt": "2026-11-20T09:32:18.046Z",
+  "assets": [
+    {
+      "id": "c1-waist-a",
+      "group": "creator",
+      "kind": "talk",
+      "originalName": "半身_口播A_Teleprompter-2026-20-10_15-28-05 - Kelsie Exley.mp4",
+      "sourceSha256": "101760b87662afcb48e66ba7e2ab66dda97e0dfb53c1660eefecd9946e74c811",
+      "file": "derived/mycal/c1-waist-a.mp4",
+      "sha256": "149cdb9f32f36200820181af805c0f4f988768f593558f29e7b803460929da58",
+      "width": 1080,
+      "height": 1920,
+      "durationMs": 18600,
+      "fps": 30,
+      "hasAudio": true,
+      "orientation": "portrait",
+      "sourceDurationMs": 18600,
+      "sourceHasAudio": true,
+      "creator": {
+        "id": "c1",
+        "name": "达人"
+      },
+      "framing": "waist",
+      "speech": true,
+      "transcript": {
+        "words": "transcripts/mycal--c1-waist-a.json",
+        "cues": "transcripts/mycal--c1-waist-a.cues.json",
+        "model": "ggml-small.en.bin",
+        "unitCount": 32,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "c1-waist-b",
+      "group": "creator",
+      "kind": "talk",
+      "originalName": "半身_口播B_Teleprompter-2026-20-10_15-31-15 - Kelsie Exley.mp4",
+      "sourceSha256": "8af7ac8183efbe890567f5857d3e5408de43a3a4fc43c7e43a8a1d8d8e301c29",
+      "file": "derived/mycal/c1-waist-b.mp4",
+      "sha256": "f431d710c7af4dde754fa0b879500ea5c3c92283dcd87934caa41e317715be85",
+      "width": 1080,
+      "height": 1920,
+      "durationMs": 13100,
+      "fps": 30,
+      "hasAudio": true,
+      "orientation": "portrait",
+      "sourceDurationMs": 13100,
+      "sourceHasAudio": true,
+      "creator": {
+        "id": "c1",
+        "name": "达人"
+      },
+      "framing": "waist",
+      "speech": true,
+      "transcript": {
+        "words": "transcripts/mycal--c1-waist-b.json",
+        "cues": "transcripts/mycal--c1-waist-b.cues.json",
+        "model": "ggml-small.en.bin",
+        "unitCount": 41,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "c1-action",
+      "group": "creator",
+      "kind": "action",
+      "originalName": "动作_1_IMG_8316 - Kelsie Exley.mov",
+      "sourceSha256": "7f7df73d643d4241ef0d9c30f614bbb9c9292faf6178f0b982da405acfe39fc2",
+      "file": "derived/mycal/c1-action.mp4",
+      "sha256": "5d7dc0e89589baf6e23ead8e7d3d5002a3ab614601177a5ee76b5f874cfc284e",
+      "width": 1080,
+      "height": 1920,
+      "durationMs": 20067,
+      "fps": 30,
+      "hasAudio": false,
+      "orientation": "portrait",
+      "sourceDurationMs": 20067,
+      "sourceHasAudio": true,
+      "creator": {
+        "id": "c1",
+        "name": "达人"
+      },
+      "framing": "action",
+      "speech": false
+    },
+    {
+      "id": "screen-o1",
+      "group": "screen",
+      "kind": "screen",
+      "originalName": "2026_10_28_19_09_32_IMG_1258.MP4",
+      "intake": "screen",
+      "sourceSha256": "1ef402012889443dabfead1eec19162dcc1cb406d1d8eb0f07358ecf4b53141d",
+      "file": "derived/mycal/screen-o1.mp4",
+      "sha256": "d4da8493c011f4a09a37a93322e935471c94f44c250040415f2b417979e1804e",
+      "width": 886,
+      "height": 1920,
+      "durationMs": 112767,
+      "fps": 30,
+      "hasAudio": false,
+      "orientation": "portrait",
+      "sourceDurationMs": 112772,
+      "sourceHasAudio": true,
+      "tags": [],
+      "usable": null,
+      "materialId": "o1"
+    }
+  ],
+  "transcribedAt": "2026-11-20T09:34:24.045Z"
+}

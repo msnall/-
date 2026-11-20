@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 2,
+  "id": "ibebp-260923-01-3",
+  "name": "IBEBP-260923成片01发",
+  "status": "draft",
+  "source": {
+    "referenceId": "ibebp-260923-01-3",
+    "path": "F:\\VideoAutomation\\library\\references\\_uploads\\IBEBP-260923成片01发-3.mp4",
+    "title": "IBEBP-260923成片01发",
+    "durationMs": 46556,
+    "sha256": "85b681cf36af60dcc18b504f8848a55a64a060a047f2e59c6148dc3452739b50"
+  },
+  "summary_zh": "以整屏情景画面开场、绿幕口播与画中画截图交替推进的步骤教程风格,节奏中等,用z110/z115/z120变焦跳切,并配步骤标题、红圈和贴纸增加信息感。",
+  "meta": {
+    "productType": "app",
+    "format": "single_creator_talking",
+    "language": "en",
+    "tags_zh": [
+      "绿幕口播",
+      "步骤教程",
+      "画中画截图",
+      "手机应用",
+      "TikTok广告"
+    ]
+  },
+  "measured": {
+    "cutCount": 16,
+    "avgShotMs": 2739,
+    "medianShotMs": 2233,
+    "maxStaticMs": 9000,
+    "firstBrollMs": 0,
+    "brollRatio": 0.7,
+    "fullRatio": 0.29,
+    "pipRatio": 0.41,
+    "zoomChangesPerTalkBeat": 0.54
+  },
+  "direction": {
+    "hookTreatment": "pip_hook",
+    "structureEmphasis": "product_demo",
+    "pacing": "medium",
+    "brollPlacement": "front_loaded",
+    "layoutBias": "mixed",
+    "zoomPattern": "alternate",
+    "brollRatioTarget": 0.7
+  },
+  "presetOverrides": {
+    "noFullBrollBeforeMs": 2000,
+    "noPipBeforeMs": 0,
+    "minShotMs": 1000,
+    "maxShotMs": 5000,
+    "maxBrollRatio": 0.82,
+    "maxStaticMs": 9500
+  },
+  "structure": [
+    {
+      "role": "hook",
+      "startMs": 0,
+      "endMs": 9000,
+      "technique_zh": "开场用整屏情景画面(创作者发愁的动作镜头)配小窗讲话,一上来就用画面讲述痛点,持续约9秒不切回口播"
+    },
+    {
+      "role": "problem",
+      "startMs": 9000,
+      "endMs": 10000,
+      "technique_zh": "创作者抠图叠在上一画面前,用一句短促的口播(z100)承接痛点,节奏变快"
+    },
+    {
+      "role": "product_intro",
+      "startMs": 10000,
+      "endMs": 16033,
+      "technique_zh": "先回到绿幕口播(z115)并配图标贴纸,再切整屏生活化动作镜头引出“只需手机”,贴纸增加趣味"
+    },
+    {
+      "role": "demo",
+      "startMs": 16033,
+      "endMs": 32033,
+      "technique_zh": "按步骤推进:每个步骤顶部出标题,口播配画中画界面截图,约每2-4秒换一张截图,截图上用红圈标注重点,口播在z110与z115之间切换"
+    },
+    {
+      "role": "benefit",
+      "startMs": 32033,
+      "endMs": 35000,
+      "technique_zh": "创作者近景(z120后接z115)强调“无门槛”的收益点,不叠画面,让表情说话"
+    },
+    {
+      "role": "proof",
+      "startMs": 35000,
+      "endMs": 39767,
+      "technique_zh": "用画中画弹窗截图配彩纸特效展示优惠,弹窗淡出后回到口播收束疑虑"
+    },
+    {
+      "role": "cta",
+      "startMs": 39767,
+      "endMs": 46556,
+      "technique_zh": "近景(z120)用手势指向链接位置,接整屏手机操作动作镜头,最后回到绿幕口播(z110)用一句轻松的话收尾"
+    }
+  ],
+  "timeline": [
+    {
+      "startMs": 0,
+      "endMs": 9000,
+      "role": "hook",
+      "visual": "broll",
+      "layout": "full",
+      "assetType": "action_clip",
+      "emphasisWords": [
+        "Real talk",
+        "business owner",
+        "first TikTok ad",
+        "rocket science degree"
+      ],
+      "what_zh": "创作者在笔记本前捂脸、托腮发愁的情景画面,右下角有她讲话的小窗"
+    },
+    {
+      "startMs": 9000,
+      "endMs": 10000,
+      "role": "problem",
+      "visual": "talk",
+      "zoom": "z100",
+      "assetType": "other",
+      "emphasisWords": [
+        "Yeah",
+        "that was me"
+      ],
+      "what_zh": "创作者抠图出现在笔记本画面前,说“那就是我”"
+    },
+    {
+      "startMs": 10000,
+      "endMs": 14000,
+      "role": "product_intro",
+      "visual": "talk",
+      "zoom": "z115",
+      "emphasisWords": [
+        "don't need",
+        "marketing degree"
+      ],
+      "what_zh": "创作者在绿墙前正面讲话,表情为难,配有毕业帽划掉的图标"
+    },
+    {
+      "startMs": 14000,
+      "endMs": 16033,
+      "role": "product_intro",
+      "visual": "broll",
+      "layout": "full",
+      "assetType": "action_clip",
+      "emphasisWords": [
+        "need your phone",
+        "Let me show you"
+      ],
+      "what_zh": "创作者在白桌前笑着看手机,后面出现狗狗表情贴纸"
+    },
+    {
+      "startMs": 16033,
+      "endMs": 17000,
+      "role": "demo",
+      "visual": "talk",
+      "zoom": "z110",
+      "emphasisWords": [
+        "Step one"
+      ],
+      "what_zh": "创作者回到绿墙前,顶部标题“步骤1:用TikTok账号登录”"
+    },
+    {
+      "startMs": 17000,
+      "endMs": 20400,
+      "role": "demo",
+      "visual": "talk",
+      "layout": "pip",
+      "zoom": "z110",
+      "assetType": "screen_recording",
+      "emphasisWords": [
+        "log in",
+        "TikTok account",
+        "password"
+      ],
+      "what_zh": "创作者讲话,前面叠加广告后台活动目标的手机截图"
+    },
+    {
+      "startMs": 20400,
+      "endMs": 25000,
+      "role": "demo",
+      "visual": "talk",
+      "layout": "pip",
+      "zoom": "z110",
+      "assetType": "screen_recording",
+      "emphasisWords": [
+        "Step two",
+        "pick your goal",
+        "more traffic",
+        "more sales"
+      ],
+      "what_zh": "步骤2选目标,叠加广告目标选择的界面截图"
+    },
+    {
+      "startMs": 25000,
+      "endMs": 27000,
+      "role": "demo",
+      "visual": "talk",
+      "layout": "pip",
+      "zoom": "z115",
+      "assetType": "screen_recording",
+      "emphasisWords": [
+        "whatever matters most",
+        "your business"
+      ],
+      "what_zh": "创作者靠近镜头,叠加填写广告详情的截图"
+    },
+    {
+      "startMs": 27000,
+      "endMs": 29800,
+      "role": "demo",
+      "visual": "talk",
+      "layout": "pip",
+      "zoom": "z115",
+      "assetType": "screen_recording",
+      "emphasisWords": [
+        "Step three",
+        "small budget"
+      ],
+      "what_zh": "步骤3设预算,叠加预算界面,红圈圈出选项"
+    },
+    {
+      "startMs": 29800,
+      "endMs": 32033,
+      "role": "demo",
+      "visual": "talk",
+      "layout": "pip",
+      "zoom": "z115",
+      "assetType": "screen_recording",
+      "emphasisWords": [
+        "start low",
+        "scale up later",
+        "That's it"
+      ],
+      "what_zh": "叠加日程设置截图并用红圈标出,创作者边说边做手势"
+    },
+    {
+      "startMs": 32033,
+      "endMs": 33600,
+      "role": "benefit",
+      "visual": "talk",
+      "zoom": "z120",
+      "emphasisWords": [
+        "No ad degree required"
+      ],
+      "what_zh": "创作者近景看镜头说“不需要广告学位”"
+    },
+    {
+      "startMs": 33600,
+      "endMs": 35000,
+      "role": "benefit",
+      "visual": "talk",
+      "zoom": "z115",
+      "emphasisWords": [
+        "new advertiser"
+      ],
+      "what_zh": "创作者中近景,说新广告主可以领优惠"
+    },
+    {
+      "startMs": 35000,
+      "endMs": 39000,
+      "role": "proof",
+      "visual": "talk",
+      "layout": "pip",
+      "zoom": "z115",
+      "assetType": "screen_recording",
+      "emphasisWords": [
+        "free ad credits",
+        "kick things off"
+      ],
+      "what_zh": "叠加6000美元广告额度弹窗的截图,带彩纸特效"
+    },
+    {
+      "startMs": 39000,
+      "endMs": 39767,
+      "role": "benefit",
+      "visual": "talk",
+      "zoom": "z115",
+      "emphasisWords": [
+        "not jumping in blind"
+      ],
+      "what_zh": "弹窗淡出,创作者继续讲话"
+    },
+    {
+      "startMs": 39767,
+      "endMs": 40933,
+      "role": "cta",
+      "visual": "talk",
+      "zoom": "z120",
+      "emphasisWords": [
+        "Tap the link below"
+      ],
+      "what_zh": "创作者近景用手指向下方链接"
+    },
+    {
+      "startMs": 40933,
+      "endMs": 43567,
+      "role": "cta",
+      "visual": "broll",
+      "layout": "full",
+      "assetType": "action_clip",
+      "emphasisWords": [
+        "launch your first ad",
+        "your phone",
+        "how easy"
+      ],
+      "what_zh": "创作者在白桌前微笑着用手机操作"
+    },
+    {
+      "startMs": 43567,
+      "endMs": 46556,
+      "role": "cta",
+      "visual": "talk",
+      "zoom": "z110",
+      "emphasisWords": [
+        "actually is",
+        "Seriously",
+        "Just try it"
+      ],
+      "what_zh": "创作者回到绿墙前,微笑着说“试试吧”收尾"
+    }
+  ],
+  "techniques": [
+    {
+      "name_zh": "整屏情景画面开场",
+      "effectId": "full",
+      "support": "ready",
+      "evidenceMs": [
+        0,
+        14000,
+        40933
+      ]
+    },
+    {
+      "name_zh": "画中画界面截图配口播",
+      "effectId": "pip",
+      "support": "ready",
+      "evidenceMs": [
+        17000,
+        22000,
+        28000,
+        36000
+      ]
+    },
+    {
+      "name_zh": "z115与z100交替跳切变焦",
+      "effectId": "z115",
+      "support": "ready",
+      "evidenceMs": [
+        10000,
+        25000,
+        33600,
+        39000
+      ]
+    },
+    {
+      "name_zh": "情绪峰值/CTA紧致推近",
+      "effectId": "z120",
+      "support": "ready",
+      "evidenceMs": [
+        32033,
+        39767
+      ]
+    },
+    {
+      "name_zh": "轻微推近口播",
+      "effectId": "z110",
+      "support": "ready",
+      "evidenceMs": [
+        16033,
+        17000,
+        43567
+      ]
+    },
+    {
+      "name_zh": "步骤标题条",
+      "effectId": null,
+      "support": "unsupported",
+      "evidenceMs": [
+        16033
+      ]
+    },
+    {
+      "name_zh": "截图上红圈标注",
+      "effectId": null,
+      "support": "unsupported",
+      "evidenceMs": [
+        27000,
+        29800
+      ]
+    },
+    {
+      "name_zh": "贴纸/图标(毕业帽划掉、狗狗表情)",
+      "effectId": null,
+      "support": "unsupported",
+      "evidenceMs": [
+        10000,
+        14500
+      ]
+    },
+    {
+      "name_zh": "彩纸粒子特效",
+      "effectId": null,
+      "support": "unsupported",
+      "evidenceMs": [
+        35000
+      ]
+    },
+    {
+      "name_zh": "创作者抠图叠在画面前",
+      "effectId": null,
+      "support": "unsupported",
+      "evidenceMs": [
+        9000
+      ]
+    }
+  ],
+  "directorRules": [
+    "Open on a full-screen action clip from the first frame, with the creator speaking in a small window, and hold it for roughly the first 9 seconds.",
+    "Switch to a short punchy talking-head beat right after the hook to anchor the creator before moving on.",
+    "Alternate between z100/z110 and z115 on adjacent talking-head beats to create a jump-cut feel.",
+    "Reserve z120 for the emotional peak and the call-to-action beats.",
+    "During step-by-step explanations, show a title bar for each step and cover the creator with a PIP screenshot that changes every 2-4 seconds.",
+    "Mark the key option on each screenshot with a red circle at the moment it is spoken.",
+    "Cut to a lifestyle full-screen clip of the creator using a phone when the ease-of-use line is spoken and again during the CTA.",
+    "Close on a calm talking-head at z110 with a short, casual last line after the CTA."
+  ],
+  "contentSpecific_zh": "参考视频是TikTok广告管理工具的教程:痛点是小商家怕投广告太复杂,三步操作为用TikTok账号登录、选广告目标(流量/销售)、设小预算并日程,之后展示新广告主6000美元免费广告额度弹窗,CTA引导点击下方链接用手机投放第一条广告。",
+  "captions": {
+    "position": "center-lower",
+    "case": "sentence",
+    "wordsPerBlock": 3,
+    "emphasis": "关键词高亮变色"
+  },
+  "packaging_zh": "有表情贴纸(狗狗)、图标贴纸(毕业帽划掉)、步骤标题条、红圈标注、彩纸特效;音效和音乐从标注中无法确认。",
+  "productTerms": [
+    "TikTok",
+    "ads manager",
+    "ad credits",
+    "ad",
+    "advertiser",
+    "log in",
+    "password",
+    "traffic",
+    "sales",
+    "budget"
+  ],
+  "selfTest": {
+    "at": "2026-11-20T09:28:59.542Z",
+    "brollRatioRef": 0.71,
+    "brollRatioPlan": 0.71,
+    "zoomSame": 0.36,
+    "brollOverlap": 0.85,
+    "note": "17 句口播、9 个参考插画素材；只比较了插画位置和推近档位，没有跑完整校验"
+  },
+  "model": "claude-sonnet-5-5",
+  "createdAt": "2026-11-20T09:28:16.640Z",
+  "confirmedAt": null
+}

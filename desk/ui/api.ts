@@ -86,7 +86,7 @@ async function call<T>(method: string, url: string, body?: unknown, headers: Rec
 
 const p = (id: string) => `/api/projects/${encodeURIComponent(id)}`;
 
-export type Overview = { hasCatalog?: boolean; mode?: "mix"; editorReady?: boolean; mixEditorConfirmed?: boolean; style?: string; id: string; title: string; productName: string; status: Status; hasPlan: boolean; hasProject: boolean; transcriptReady: boolean; previewReady: boolean; ready: boolean; revision: number | null; updatedAt: string | null; media: { originalName: string; bytes: number; durationMs: number; width: number; height: number } | null };
+export type Overview = { coverAsset?: string | null; cleanupConfirmed?: boolean; hasDrafts?: boolean; hasExports?: boolean; hasCatalog?: boolean; mode?: "mix"; editorReady?: boolean; mixEditorConfirmed?: boolean; style?: string; id: string; title: string; productName: string; status: Status; hasPlan: boolean; hasProject: boolean; transcriptReady: boolean; previewReady: boolean; ready: boolean; revision: number | null; updatedAt: string | null; media: { originalName: string; bytes: number; durationMs: number; width: number; height: number } | null };
 export type OptionWithCompile = StoryboardOption & {
   compile: Pick<CompileResult, "problems" | "warnings" | "needs" | "claims" | "gate" | "segments">;
 };
@@ -280,7 +280,7 @@ export const styleApi = {
     xhr.onerror = () => reject(new ApiError(0, "上传中断了，请检查 npm run desk 是否还在运行"));
     xhr.send(file);
   }),
-  insights: () => call<{ toBuild: { key: string; name: string; effectId: string | null; support: string; cards: string[]; count: number }[]; usedBy: Record<string, string[]> }>("GET", "/api/style-cards/insights"),
+  insights: () => call<{ segments?: { total: number; reference: number; human_edited: number; ai_accepted: number }; toBuild: { key: string; name: string; effectId: string | null; support: string; cards: string[]; count: number }[]; usedBy: Record<string, string[]> }>("GET", "/api/style-cards/insights"),
   selftest: (id: string) => call<StyleDetail>("POST", `${sc(id)}/selftest`),
   confirm: (id: string, name: string) => call<StyleCard>("POST", `${sc(id)}/confirm`, { name }),
   remove: (id: string) => call<{ deleted: boolean }>("DELETE", sc(id)),

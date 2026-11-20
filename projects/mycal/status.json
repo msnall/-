@@ -1,0 +1,25 @@
+{
+  "project": "mycal",
+  "stage": "timeline-review",
+  "stages": {
+    "asset-prep": {
+      "state": "done",
+      "note": "existing project, assets prepared before the desk existed"
+    },
+    "storyboard": {
+      "state": "done",
+      "note": "existing project, no storyboard round"
+    },
+    "timeline-review": {
+      "state": "waiting-user",
+      "round": "r1",
+      "openProposals": 0
+    },
+    "render-qc": {
+      "state": "pending"
+    }
+  },
+  "editPlanRevision": 2,
+  "updatedAt": "2026-11-20T09:48:59.081Z",
+  "updatedBy": "user"
+}

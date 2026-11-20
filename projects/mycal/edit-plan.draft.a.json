@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "id": "mycal",
+  "revision": 0,
+  "meta": {
+    "source": "cut-script.json",
+    "scriptId": "creator",
+    "builtAt": "2026-11-20T09:44:04.027Z",
+    "brief": null,
+    "sfx": [],
+    "note": "First cut r0 compiled from the cut script. Draft for review; not a delivered video."
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "encoding": {
+      "crf": 18,
+      "x264Preset": "veryfast"
+    }
+  },
+  "theme": {
+    "background": "#101820",
+    "textColor": "#ffffff",
+    "fontFamily": "\"BloomInter\", sans-serif",
+    "fonts": [
+      {
+        "family": "BloomInter",
+        "src": "fonts/Inter-700.woff2",
+        "weight": 700,
+        "style": "normal"
+      }
+    ]
+  },
+  "assets": {
+    "master": {
+      "type": "video",
+      "path": "derived/mycal/voice-master-35cafdb5.mp4",
+      "sha256": "21fa60369b77e299488f7ddfa94736ac1cc33c43725a1846ba5b1fd5f7983760"
+    },
+    "c1-action": {
+      "type": "video",
+      "path": "derived/mycal/c1-action.mp4",
+      "sha256": "5d7dc0e89589baf6e23ead8e7d3d5002a3ab614601177a5ee76b5f874cfc284e"
+    },
+    "screen-o1": {
+      "type": "video",
+      "path": "derived/mycal/screen-o1.mp4",
+      "sha256": "d4da8493c011f4a09a37a93322e935471c94f44c250040415f2b417979e1804e"
+    }
+  },
+  "transcript": {
+    "asset": "master",
+    "words": "transcripts/mycal-master-604d5c4b.json",
+    "cues": "transcripts/mycal-master-604d5c4b.cues.json"
+  },
+  "segments": [
+    {
+      "id": "b01",
+      "asset": "master",
+      "sourceStartMs": 0,
+      "sourceEndMs": 3200,
+      "camera": {
+        "zoom": 1.2,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b02",
+      "asset": "master",
+      "sourceStartMs": 3200,
+      "sourceEndMs": 5600,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b03",
+      "asset": "master",
+      "sourceStartMs": 5600,
+      "sourceEndMs": 8334,
+      "camera": {
+        "zoom": 1.1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b05",
+      "asset": "master",
+      "sourceStartMs": 8333,
+      "sourceEndMs": 9700,
+      "camera": {
+        "zoom": 1.15,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b06",
+      "asset": "master",
+      "sourceStartMs": 9700,
+      "sourceEndMs": 15301,
+      "camera": {
+        "zoom": 1.2,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b07",
+      "asset": "master",
+      "sourceStartMs": 15300,
+      "sourceEndMs": 19134,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b08",
+      "asset": "master",
+      "sourceStartMs": 19133,
+      "sourceEndMs": 20534,
+      "camera": {
+        "zoom": 1.15,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    }
+  ],
+  "layout": {
+    "footage": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "borderRadius": 0,
+      "fit": "cover"
+    }
+  },
+  "captions": {
+    "box": {
+      "x": 70,
+      "y": 1180,
+      "width": 840,
+      "height": 200
+    },
+    "fontSize": 72,
+    "lineHeight": 86,
+    "fontWeight": 700,
+    "color": "#ffffff",
+    "activeColor": "#ffd23f",
+    "background": "#000000a6",
+    "wordGap": 16,
+    "maxLines": 2,
+    "singleLineMaxChars": 18,
+    "balanceWeight": 0.2,
+    "textTransform": "uppercase",
+    "emphasis": [
+      {
+        "word": 7,
+        "expect": "five",
+        "color": "#ffd23f",
+        "scale": 1.12
+      },
+      {
+        "word": 14,
+        "expect": "nightmare.",
+        "color": "#ff5a5f",
+        "scale": 1.12
+      },
+      {
+        "word": 28,
+        "expect": "photo",
+        "color": "#ffd23f",
+        "scale": 1.12
+      },
+      {
+        "word": 42,
+        "expect": "coach",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 63,
+        "expect": "recipe",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 66,
+        "expect": "grocery",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 72,
+        "expect": "crazy.",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      }
+    ]
+  },
+  "overlays": [
+    {
+      "id": "b01-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b01",
+        "edge": "start",
+        "offsetMs": 49
+      },
+      "durationFrames": 90,
+      "layer": "below-captions",
+      "props": {
+        "asset": "c1-action",
+        "sourceStartMs": 3760,
+        "x": 590,
+        "y": 840,
+        "width": 320,
+        "height": 330,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b02-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b02",
+        "edge": "start",
+        "offsetMs": 0
+      },
+      "durationFrames": 66,
+      "layer": "below-captions",
+      "props": {
+        "asset": "c1-action",
+        "sourceStartMs": 8780,
+        "x": 0,
+        "y": 0,
+        "width": 1080,
+        "height": 1920,
+        "fit": "cover",
+        "pushIn": 1.04
+      }
+    },
+    {
+      "id": "b06-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b06",
+        "edge": "start",
+        "offsetMs": 0
+      },
+      "durationFrames": 150,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-o1",
+        "sourceStartMs": 49340,
+        "x": 40,
+        "y": 170,
+        "width": 320,
+        "height": 693,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b07-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b07",
+        "edge": "start",
+        "offsetMs": 0
+      },
+      "durationFrames": 108,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-o1",
+        "sourceStartMs": 84000,
+        "x": 590,
+        "y": 170,
+        "width": 320,
+        "height": 693,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    }
+  ],
+  "audio": {
+    "segmentAudio": true,
+    "tracks": [],
+    "loudness": {
+      "normalize": true,
+      "targetLufs": -16,
+      "truePeakDb": -1.5,
+      "lra": 11
+    }
+  },
+  "qc": {
+    "loudnessLufs": -16,
+    "loudnessToleranceLu": 1.5,
+    "maxTruePeakDb": -1
+  }
+}

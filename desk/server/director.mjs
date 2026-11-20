@@ -205,6 +205,14 @@ export async function applyDraft(id, { variant, expectedRevision } = {}) {
   if (!ORDER.includes(variant)) throw badRequest("请选一套方案");
   if (!(await exists(projectFile(id, planName(variant))))) throw badRequest("这套方案还没有草稿：先点「生成方案」");
   const draft = await readJson(projectFile(id, planName(variant)));
+  // A snapshot of what the AI proposed, kept in the live plan's meta: after export, the editor's changes are measured against it
+  // (scripts/lib/segments-final.mjs), even if the drafts are regenerated in between.
+  const cutForSnapshot = await readJson(projectFile(id, cutName(variant)), null);
+  const shotSig = (o) => `${o.props?.asset}|${o.from?.offsetMs}|${o.durationFrames}|${o.props?.x}|${o.props?.y}|${o.props?.width}|${o.props?.height}`;
+  draft.meta = { ...(draft.meta ?? {}), appliedVariant: variant, aiPlan: { variant, at: new Date().toISOString(), beats: (cutForSnapshot?.beats ?? []).map((b) => {
+    const seg = draft.segments.find((s) => s.id === b.id);
+    return { id: b.id, text: b.text, lengthMs: Math.round(b.voice.ranges ? b.voice.ranges.reduce((t, [x, y]) => t + (y - x), 0) : b.voice.endMs - b.voice.startMs), zoom: seg?.camera?.zoom ?? 1, shots: (draft.overlays ?? []).filter((o) => o.effect === "video-clip@1" && o.from?.segment === b.id).map(shotSig) };
+  }) } };
   const record = { ...(await readJson(runFile(id), { state: "idle" })) };
   running.add(id);
   try {

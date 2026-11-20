@@ -1,0 +1,1091 @@
+{
+  "version": 1,
+  "id": "ibebp-260923-01-2",
+  "title": "IBEBP-260923成片01发",
+  "analyzedAt": "2026-11-20T09:26:03.467Z",
+  "source": {
+    "file": "F:\\VideoAutomation\\library\\references\\_uploads\\IBEBP-260923成片01发-2.mp4",
+    "sha256": "85b681cf36af60dcc18b504f8848a55a64a060a047f2e59c6148dc3452739b50",
+    "bytes": 58771163
+  },
+  "facts": {
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "durationMs": 46556,
+    "hasAudio": true,
+    "loudness": {
+      "integratedLufs": -12.36,
+      "truePeakDb": 0.47,
+      "lra": 3.2
+    }
+  },
+  "cuts": {
+    "threshold": 0.15,
+    "count": 8,
+    "timesMs": [
+      10000,
+      16033,
+      20400,
+      32033,
+      33600,
+      39767,
+      40933,
+      43567
+    ]
+  },
+  "shots": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 10000,
+      "durationMs": 10000
+    },
+    {
+      "index": 2,
+      "startMs": 10000,
+      "endMs": 16033,
+      "durationMs": 6033
+    },
+    {
+      "index": 3,
+      "startMs": 16033,
+      "endMs": 20400,
+      "durationMs": 4367
+    },
+    {
+      "index": 4,
+      "startMs": 20400,
+      "endMs": 32033,
+      "durationMs": 11633
+    },
+    {
+      "index": 5,
+      "startMs": 32033,
+      "endMs": 33600,
+      "durationMs": 1567
+    },
+    {
+      "index": 6,
+      "startMs": 33600,
+      "endMs": 39767,
+      "durationMs": 6167
+    },
+    {
+      "index": 7,
+      "startMs": 39767,
+      "endMs": 40933,
+      "durationMs": 1166
+    },
+    {
+      "index": 8,
+      "startMs": 40933,
+      "endMs": 43567,
+      "durationMs": 2634
+    },
+    {
+      "index": 9,
+      "startMs": 43567,
+      "endMs": 46556,
+      "durationMs": 2989
+    }
+  ],
+  "pacing": {
+    "shotCount": 9,
+    "avgShotMs": 5173,
+    "minShotMs": 1166,
+    "maxShotMs": 11633,
+    "cutsPerSecond": 0.17
+  },
+  "transcript": {
+    "words": [
+      {
+        "text": "Real",
+        "startMs": 60,
+        "endMs": 500
+      },
+      {
+        "text": "talk.",
+        "startMs": 500,
+        "endMs": 1120
+      },
+      {
+        "text": "You're",
+        "startMs": 1120,
+        "endMs": 1300
+      },
+      {
+        "text": "a",
+        "startMs": 1300,
+        "endMs": 1330
+      },
+      {
+        "text": "small",
+        "startMs": 1330,
+        "endMs": 1500
+      },
+      {
+        "text": "business",
+        "startMs": 1500,
+        "endMs": 1780
+      },
+      {
+        "text": "owner,",
+        "startMs": 1780,
+        "endMs": 2090
+      },
+      {
+        "text": "you",
+        "startMs": 2090,
+        "endMs": 2320
+      },
+      {
+        "text": "finally",
+        "startMs": 2320,
+        "endMs": 2570
+      },
+      {
+        "text": "decide",
+        "startMs": 2570,
+        "endMs": 2880
+      },
+      {
+        "text": "to",
+        "startMs": 2880,
+        "endMs": 2970
+      },
+      {
+        "text": "run",
+        "startMs": 2970,
+        "endMs": 3120
+      },
+      {
+        "text": "your",
+        "startMs": 3120,
+        "endMs": 3360
+      },
+      {
+        "text": "first",
+        "startMs": 3360,
+        "endMs": 3590
+      },
+      {
+        "text": "TikTok",
+        "startMs": 3590,
+        "endMs": 3920
+      },
+      {
+        "text": "ad,",
+        "startMs": 3920,
+        "endMs": 4240
+      },
+      {
+        "text": "and",
+        "startMs": 4240,
+        "endMs": 4420
+      },
+      {
+        "text": "then",
+        "startMs": 4420,
+        "endMs": 4670
+      },
+      {
+        "text": "you",
+        "startMs": 4670,
+        "endMs": 4850
+      },
+      {
+        "text": "open",
+        "startMs": 4850,
+        "endMs": 5100
+      },
+      {
+        "text": "ads",
+        "startMs": 5100,
+        "endMs": 5280
+      },
+      {
+        "text": "manager",
+        "startMs": 5280,
+        "endMs": 5710
+      },
+      {
+        "text": "and",
+        "startMs": 5710,
+        "endMs": 5890
+      },
+      {
+        "text": "think,",
+        "startMs": 5890,
+        "endMs": 6320
+      },
+      {
+        "text": "wait,",
+        "startMs": 6320,
+        "endMs": 6720
+      },
+      {
+        "text": "does",
+        "startMs": 6720,
+        "endMs": 6980
+      },
+      {
+        "text": "it",
+        "startMs": 6980,
+        "endMs": 7040
+      },
+      {
+        "text": "need",
+        "startMs": 7040,
+        "endMs": 7200
+      },
+      {
+        "text": "a",
+        "startMs": 7200,
+        "endMs": 7240
+      },
+      {
+        "text": "rocket",
+        "startMs": 7240,
+        "endMs": 7600
+      },
+      {
+        "text": "science",
+        "startMs": 7600,
+        "endMs": 7820
+      },
+      {
+        "text": "degree",
+        "startMs": 7820,
+        "endMs": 8080
+      },
+      {
+        "text": "for",
+        "startMs": 8080,
+        "endMs": 8240
+      },
+      {
+        "text": "this?",
+        "startMs": 8240,
+        "endMs": 8880
+      },
+      {
+        "text": "Yeah,",
+        "startMs": 8880,
+        "endMs": 9270
+      },
+      {
+        "text": "that",
+        "startMs": 9270,
+        "endMs": 9450
+      },
+      {
+        "text": "was",
+        "startMs": 9450,
+        "endMs": 9690
+      },
+      {
+        "text": "me.",
+        "startMs": 9690,
+        "endMs": 9920
+      },
+      {
+        "text": "But",
+        "startMs": 9920,
+        "endMs": 10100
+      },
+      {
+        "text": "turns",
+        "startMs": 10100,
+        "endMs": 10400
+      },
+      {
+        "text": "out",
+        "startMs": 10400,
+        "endMs": 10580
+      },
+      {
+        "text": "you",
+        "startMs": 10580,
+        "endMs": 10760
+      },
+      {
+        "text": "don't",
+        "startMs": 10760,
+        "endMs": 11060
+      },
+      {
+        "text": "need",
+        "startMs": 11060,
+        "endMs": 11300
+      },
+      {
+        "text": "a",
+        "startMs": 11300,
+        "endMs": 11360
+      },
+      {
+        "text": "desktop,",
+        "startMs": 11360,
+        "endMs": 11920
+      },
+      {
+        "text": "a",
+        "startMs": 11920,
+        "endMs": 12000
+      },
+      {
+        "text": "theme,",
+        "startMs": 12000,
+        "endMs": 12490
+      },
+      {
+        "text": "or",
+        "startMs": 12490,
+        "endMs": 12580
+      },
+      {
+        "text": "a",
+        "startMs": 12580,
+        "endMs": 12610
+      },
+      {
+        "text": "marketing",
+        "startMs": 12610,
+        "endMs": 13030
+      },
+      {
+        "text": "degree.",
+        "startMs": 13030,
+        "endMs": 13440
+      },
+      {
+        "text": "You",
+        "startMs": 13440,
+        "endMs": 13620
+      },
+      {
+        "text": "just",
+        "startMs": 13620,
+        "endMs": 13870
+      },
+      {
+        "text": "need",
+        "startMs": 13870,
+        "endMs": 14250
+      },
+      {
+        "text": "your",
+        "startMs": 14250,
+        "endMs": 14370
+      },
+      {
+        "text": "phone.",
+        "startMs": 14370,
+        "endMs": 14880
+      },
+      {
+        "text": "Let",
+        "startMs": 14880,
+        "endMs": 15120
+      },
+      {
+        "text": "me",
+        "startMs": 15120,
+        "endMs": 15280
+      },
+      {
+        "text": "show",
+        "startMs": 15280,
+        "endMs": 15590
+      },
+      {
+        "text": "you.",
+        "startMs": 15590,
+        "endMs": 16080
+      },
+      {
+        "text": "Step",
+        "startMs": 16080,
+        "endMs": 16430
+      },
+      {
+        "text": "one,",
+        "startMs": 16430,
+        "endMs": 16890
+      },
+      {
+        "text": "just",
+        "startMs": 16890,
+        "endMs": 17120
+      },
+      {
+        "text": "log",
+        "startMs": 17120,
+        "endMs": 17300
+      },
+      {
+        "text": "in",
+        "startMs": 17300,
+        "endMs": 17440
+      },
+      {
+        "text": "with",
+        "startMs": 17440,
+        "endMs": 17600
+      },
+      {
+        "text": "your",
+        "startMs": 17600,
+        "endMs": 17760
+      },
+      {
+        "text": "TikTok",
+        "startMs": 17760,
+        "endMs": 18080
+      },
+      {
+        "text": "account,",
+        "startMs": 18080,
+        "endMs": 18560
+      },
+      {
+        "text": "no",
+        "startMs": 18560,
+        "endMs": 18720
+      },
+      {
+        "text": "password,",
+        "startMs": 18720,
+        "endMs": 19530
+      },
+      {
+        "text": "no",
+        "startMs": 19530,
+        "endMs": 19690
+      },
+      {
+        "text": "hassle.",
+        "startMs": 19690,
+        "endMs": 20420
+      },
+      {
+        "text": "Step",
+        "startMs": 20420,
+        "endMs": 20740
+      },
+      {
+        "text": "two,",
+        "startMs": 20740,
+        "endMs": 21140
+      },
+      {
+        "text": "pick",
+        "startMs": 21140,
+        "endMs": 21490
+      },
+      {
+        "text": "your",
+        "startMs": 21490,
+        "endMs": 21780
+      },
+      {
+        "text": "goal.",
+        "startMs": 21780,
+        "endMs": 22400
+      },
+      {
+        "text": "Maybe",
+        "startMs": 22400,
+        "endMs": 22630
+      },
+      {
+        "text": "you",
+        "startMs": 22630,
+        "endMs": 22800
+      },
+      {
+        "text": "want",
+        "startMs": 22800,
+        "endMs": 22960
+      },
+      {
+        "text": "more",
+        "startMs": 22960,
+        "endMs": 23200
+      },
+      {
+        "text": "traffic,",
+        "startMs": 23200,
+        "endMs": 23600
+      },
+      {
+        "text": "more",
+        "startMs": 23600,
+        "endMs": 23860
+      },
+      {
+        "text": "sales,",
+        "startMs": 23860,
+        "endMs": 24320
+      },
+      {
+        "text": "whatever",
+        "startMs": 24320,
+        "endMs": 24930
+      },
+      {
+        "text": "matters",
+        "startMs": 24930,
+        "endMs": 25460
+      },
+      {
+        "text": "most",
+        "startMs": 25460,
+        "endMs": 25760
+      },
+      {
+        "text": "for",
+        "startMs": 25760,
+        "endMs": 25990
+      },
+      {
+        "text": "your",
+        "startMs": 25990,
+        "endMs": 26350
+      },
+      {
+        "text": "business.",
+        "startMs": 26350,
+        "endMs": 27120
+      },
+      {
+        "text": "Step",
+        "startMs": 27120,
+        "endMs": 27420
+      },
+      {
+        "text": "three,",
+        "startMs": 27420,
+        "endMs": 28000
+      },
+      {
+        "text": "set",
+        "startMs": 28000,
+        "endMs": 28170
+      },
+      {
+        "text": "a",
+        "startMs": 28170,
+        "endMs": 28210
+      },
+      {
+        "text": "small",
+        "startMs": 28210,
+        "endMs": 28500
+      },
+      {
+        "text": "budget.",
+        "startMs": 28500,
+        "endMs": 29040
+      },
+      {
+        "text": "You",
+        "startMs": 29040,
+        "endMs": 29200
+      },
+      {
+        "text": "can",
+        "startMs": 29200,
+        "endMs": 29300
+      },
+      {
+        "text": "start",
+        "startMs": 29300,
+        "endMs": 29600
+      },
+      {
+        "text": "low,",
+        "startMs": 29600,
+        "endMs": 29840
+      },
+      {
+        "text": "and",
+        "startMs": 30070,
+        "endMs": 30210
+      },
+      {
+        "text": "scale",
+        "startMs": 30210,
+        "endMs": 30550
+      },
+      {
+        "text": "up",
+        "startMs": 30550,
+        "endMs": 30810
+      },
+      {
+        "text": "later.",
+        "startMs": 30810,
+        "endMs": 31260
+      },
+      {
+        "text": "That's",
+        "startMs": 31260,
+        "endMs": 31680
+      },
+      {
+        "text": "it.",
+        "startMs": 31680,
+        "endMs": 32030
+      },
+      {
+        "text": "No",
+        "startMs": 32030,
+        "endMs": 32170
+      },
+      {
+        "text": "ad",
+        "startMs": 32170,
+        "endMs": 32320
+      },
+      {
+        "text": "degree",
+        "startMs": 32320,
+        "endMs": 32730
+      },
+      {
+        "text": "required.",
+        "startMs": 32730,
+        "endMs": 33520
+      },
+      {
+        "text": "And",
+        "startMs": 33520,
+        "endMs": 33680
+      },
+      {
+        "text": "if",
+        "startMs": 33680,
+        "endMs": 33790
+      },
+      {
+        "text": "you're",
+        "startMs": 33790,
+        "endMs": 34110
+      },
+      {
+        "text": "a",
+        "startMs": 34110,
+        "endMs": 34160
+      },
+      {
+        "text": "new",
+        "startMs": 34160,
+        "endMs": 34320
+      },
+      {
+        "text": "advertiser,",
+        "startMs": 34320,
+        "endMs": 35040
+      },
+      {
+        "text": "you",
+        "startMs": 35040,
+        "endMs": 35210
+      },
+      {
+        "text": "can",
+        "startMs": 35210,
+        "endMs": 35430
+      },
+      {
+        "text": "actually",
+        "startMs": 35430,
+        "endMs": 35850
+      },
+      {
+        "text": "grab",
+        "startMs": 35850,
+        "endMs": 36060
+      },
+      {
+        "text": "some",
+        "startMs": 36060,
+        "endMs": 36290
+      },
+      {
+        "text": "free",
+        "startMs": 36290,
+        "endMs": 36520
+      },
+      {
+        "text": "ad",
+        "startMs": 36520,
+        "endMs": 36620
+      },
+      {
+        "text": "credits",
+        "startMs": 36620,
+        "endMs": 37070
+      },
+      {
+        "text": "to",
+        "startMs": 37070,
+        "endMs": 37150
+      },
+      {
+        "text": "help",
+        "startMs": 37150,
+        "endMs": 37370
+      },
+      {
+        "text": "kick",
+        "startMs": 37370,
+        "endMs": 37600
+      },
+      {
+        "text": "things",
+        "startMs": 37600,
+        "endMs": 37970
+      },
+      {
+        "text": "off.",
+        "startMs": 37970,
+        "endMs": 38310
+      },
+      {
+        "text": "So",
+        "startMs": 38310,
+        "endMs": 38400
+      },
+      {
+        "text": "you're",
+        "startMs": 38400,
+        "endMs": 38660
+      },
+      {
+        "text": "not",
+        "startMs": 38660,
+        "endMs": 38810
+      },
+      {
+        "text": "jumping",
+        "startMs": 38810,
+        "endMs": 39110
+      },
+      {
+        "text": "in",
+        "startMs": 39110,
+        "endMs": 39280
+      },
+      {
+        "text": "blind.",
+        "startMs": 39280,
+        "endMs": 39730
+      },
+      {
+        "text": "Tap",
+        "startMs": 39730,
+        "endMs": 39900
+      },
+      {
+        "text": "the",
+        "startMs": 39900,
+        "endMs": 40090
+      },
+      {
+        "text": "link",
+        "startMs": 40090,
+        "endMs": 40300
+      },
+      {
+        "text": "below,",
+        "startMs": 40300,
+        "endMs": 40690
+      },
+      {
+        "text": "launch",
+        "startMs": 40690,
+        "endMs": 41030
+      },
+      {
+        "text": "your",
+        "startMs": 41030,
+        "endMs": 41310
+      },
+      {
+        "text": "first",
+        "startMs": 41310,
+        "endMs": 41600
+      },
+      {
+        "text": "ad",
+        "startMs": 41600,
+        "endMs": 41650
+      },
+      {
+        "text": "from",
+        "startMs": 41650,
+        "endMs": 41880
+      },
+      {
+        "text": "your",
+        "startMs": 41880,
+        "endMs": 42110
+      },
+      {
+        "text": "phone,",
+        "startMs": 42110,
+        "endMs": 42640
+      },
+      {
+        "text": "and",
+        "startMs": 42640,
+        "endMs": 42850
+      },
+      {
+        "text": "see",
+        "startMs": 42850,
+        "endMs": 43140
+      },
+      {
+        "text": "how",
+        "startMs": 43140,
+        "endMs": 43440
+      },
+      {
+        "text": "easy",
+        "startMs": 43440,
+        "endMs": 43730
+      },
+      {
+        "text": "it",
+        "startMs": 43730,
+        "endMs": 43870
+      },
+      {
+        "text": "actually",
+        "startMs": 43870,
+        "endMs": 44480
+      },
+      {
+        "text": "is.",
+        "startMs": 44480,
+        "endMs": 44960
+      },
+      {
+        "text": "Seriously,",
+        "startMs": 44960,
+        "endMs": 45770
+      },
+      {
+        "text": "just",
+        "startMs": 45770,
+        "endMs": 45840
+      },
+      {
+        "text": "try",
+        "startMs": 45840,
+        "endMs": 46020
+      },
+      {
+        "text": "it.",
+        "startMs": 46020,
+        "endMs": 46240
+      }
+    ],
+    "text": "Real talk. You're a small business owner, you finally decide to run your first TikTok ad, and then you open ads manager and think, wait, does it need a rocket science degree for this? Yeah, that was me. But turns out you don't need a desktop, a theme, or a marketing degree. You just need your phone. Let me show you. Step one, just log in with your TikTok account, no password, no hassle. Step two, pick your goal. Maybe you want more traffic, more sales, whatever matters most for your business. Step three, set a small budget. You can start low, and scale up later. That's it. No ad degree required. And if you're a new advertiser, you can actually grab some free ad credits to help kick things off. So you're not jumping in blind. Tap the link below, launch your first ad from your phone, and see how easy it actually is. Seriously, just try it.",
+    "wordsPerSecond": 3.42
+  },
+  "frames": [
+    {
+      "t": 0,
+      "file": "frames/t000.jpg"
+    },
+    {
+      "t": 1,
+      "file": "frames/t001.jpg"
+    },
+    {
+      "t": 2,
+      "file": "frames/t002.jpg"
+    },
+    {
+      "t": 3,
+      "file": "frames/t003.jpg"
+    },
+    {
+      "t": 4,
+      "file": "frames/t004.jpg"
+    },
+    {
+      "t": 5,
+      "file": "frames/t005.jpg"
+    },
+    {
+      "t": 6,
+      "file": "frames/t006.jpg"
+    },
+    {
+      "t": 7,
+      "file": "frames/t007.jpg"
+    },
+    {
+      "t": 8,
+      "file": "frames/t008.jpg"
+    },
+    {
+      "t": 9,
+      "file": "frames/t009.jpg"
+    },
+    {
+      "t": 10,
+      "file": "frames/t010.jpg"
+    },
+    {
+      "t": 11,
+      "file": "frames/t011.jpg"
+    },
+    {
+      "t": 12,
+      "file": "frames/t012.jpg"
+    },
+    {
+      "t": 13,
+      "file": "frames/t013.jpg"
+    },
+    {
+      "t": 14,
+      "file": "frames/t014.jpg"
+    },
+    {
+      "t": 15,
+      "file": "frames/t015.jpg"
+    },
+    {
+      "t": 16,
+      "file": "frames/t016.jpg"
+    },
+    {
+      "t": 17,
+      "file": "frames/t017.jpg"
+    },
+    {
+      "t": 18,
+      "file": "frames/t018.jpg"
+    },
+    {
+      "t": 19,
+      "file": "frames/t019.jpg"
+    },
+    {
+      "t": 20,
+      "file": "frames/t020.jpg"
+    },
+    {
+      "t": 21,
+      "file": "frames/t021.jpg"
+    },
+    {
+      "t": 22,
+      "file": "frames/t022.jpg"
+    },
+    {
+      "t": 23,
+      "file": "frames/t023.jpg"
+    },
+    {
+      "t": 24,
+      "file": "frames/t024.jpg"
+    },
+    {
+      "t": 25,
+      "file": "frames/t025.jpg"
+    },
+    {
+      "t": 26,
+      "file": "frames/t026.jpg"
+    },
+    {
+      "t": 27,
+      "file": "frames/t027.jpg"
+    },
+    {
+      "t": 28,
+      "file": "frames/t028.jpg"
+    },
+    {
+      "t": 29,
+      "file": "frames/t029.jpg"
+    },
+    {
+      "t": 30,
+      "file": "frames/t030.jpg"
+    },
+    {
+      "t": 31,
+      "file": "frames/t031.jpg"
+    },
+    {
+      "t": 32,
+      "file": "frames/t032.jpg"
+    },
+    {
+      "t": 33,
+      "file": "frames/t033.jpg"
+    },
+    {
+      "t": 34,
+      "file": "frames/t034.jpg"
+    },
+    {
+      "t": 35,
+      "file": "frames/t035.jpg"
+    },
+    {
+      "t": 36,
+      "file": "frames/t036.jpg"
+    },
+    {
+      "t": 37,
+      "file": "frames/t037.jpg"
+    },
+    {
+      "t": 38,
+      "file": "frames/t038.jpg"
+    },
+    {
+      "t": 39,
+      "file": "frames/t039.jpg"
+    },
+    {
+      "t": 40,
+      "file": "frames/t040.jpg"
+    },
+    {
+      "t": 41,
+      "file": "frames/t041.jpg"
+    },
+    {
+      "t": 42,
+      "file": "frames/t042.jpg"
+    },
+    {
+      "t": 43,
+      "file": "frames/t043.jpg"
+    },
+    {
+      "t": 44,
+      "file": "frames/t044.jpg"
+    },
+    {
+      "t": 45,
+      "file": "frames/t045.jpg"
+    },
+    {
+      "t": 46,
+      "file": "frames/t046.jpg"
+    }
+  ]
+}

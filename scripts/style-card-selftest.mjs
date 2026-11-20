@@ -19,6 +19,7 @@ import { PACING_PRESETS, effectsText, planSchema } from "./lib/effects.mjs";
 import { directorGuide, parseCard } from "./lib/style-card.mjs";
 import { isV2 } from "./lib/style-card.mjs";
 import { readJson, writeJson } from "./lib/storage.mjs";
+import { examplesText, labelLines, readSegments, retrieveExamples } from "./lib/segments.mjs";
 
 const cardId = process.argv[2];
 if (!cardId) { console.error("Usage: node scripts/style-card-selftest.mjs <cardId>"); process.exit(1); }
@@ -45,13 +46,19 @@ const limits = { ...PACING_PRESETS[d.pacing], ...card.presetOverrides };
 const guide = directorGuide(card).text;
 const system = fill(PLAN_SYSTEM, { ...limits, brollRatioTarget: d.brollRatioTarget });
 const wordLine = (l) => `${l.id} (${secs(l.endMs - l.startMs)} s) "${l.text}"\n   words (index:text@startSeconds): ${words.slice(l.wordStart, l.wordEnd + 1).map((w, k) => `${l.wordStart + k}:${w.text}@${secs(w.startMs)}`).join(" ")}`;
+// the card's own segments would be the answer sheet: only examples from OTHER sources
+const library = (await readSegments()).filter((s) => s.cardId !== card.id);
+const labelled = library.length ? await labelLines(lines, { productTerms: card.productTerms, quiet: true }) : {};
+const beatsR = lines.map((l) => ({ id: l.id, text: l.text, role: labelled[l.id]?.role ?? "benefit", features: labelled[l.id]?.features ?? [] }));
+const examplesBlock = library.length ? examplesText(beatsR, retrieveExamples(beatsR, library, { productType: card.meta?.productType })) : "";
 const user = [
   `DIRECTION:\n${JSON.stringify(direction, null, 1)}`, "OTHER DIRECTIONS (your plan must look different from these):\n- none (self-test)",
   `PACING (numbers used by the checker): ${JSON.stringify(limits)}`, guide,
   `BEATS (id, length, text, then word index:word@seconds):\n${lines.map(wordLine).join("\n")}`,
+  examplesBlock,
   `EFFECTS (only these ids exist):\n${effectsText()}`,
   `B-ROLL ASSETS (text descriptions only in this self-test; srcStartMs 0 is fine):\n${assets.map((a) => a.text).join("\n")}`,
-].join("\n\n");
+].filter(Boolean).join("\n\n");
 console.log(`self-test: ${lines.length} beats, ${assets.length} cutaway assets, asking ${settings.model}…`);
 let answer = null;
 for (let attempt = 0; attempt < 2 && !answer; attempt++) {

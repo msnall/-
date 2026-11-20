@@ -1,0 +1,65 @@
+{
+  "status": "unreviewed machine transcript",
+  "detectedLanguage": "en",
+  "instructions": "Verify names, brands, product terms, numbers and claims against the audio. Token probabilities are not calibrated accuracy scores. No spelling was auto-corrected.",
+  "warnings": [
+    {
+      "index": 1,
+      "text": "A",
+      "reason": "zero-duration unit"
+    },
+    {
+      "index": 1,
+      "text": "A",
+      "startMs": 60,
+      "endMs": 60,
+      "confidence": 0.631331,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 8,
+      "text": "photo,",
+      "startMs": 1590,
+      "endMs": 1980,
+      "confidence": 0.617411,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 10,
+      "text": "AI",
+      "startMs": 2080,
+      "endMs": 2280,
+      "confidence": 0.61818,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 18,
+      "text": "actually",
+      "startMs": 4750,
+      "endMs": 5040,
+      "confidence": 0.587487,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 22,
+      "text": "I",
+      "reason": "zero-duration unit"
+    },
+    {
+      "index": 27,
+      "text": "loud,",
+      "startMs": 6760,
+      "endMs": 7250,
+      "confidence": 0.389013,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 39,
+      "text": "That's",
+      "startMs": 11320,
+      "endMs": 11600,
+      "confidence": 0.63285,
+      "reason": "low token probability; human review needed"
+    }
+  ]
+}

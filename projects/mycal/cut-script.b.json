@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 2,
+  "projectId": "mycal",
+  "scriptId": "creator",
+  "status": "draft",
+  "builtAt": "2026-11-20T09:43:21.519Z",
+  "fps": 30,
+  "director": {
+    "slot": "b",
+    "direction": {
+      "name_zh": "痛点红字",
+      "hookTreatment": "color_hook",
+      "structureEmphasis": "problem",
+      "pacing": "fast",
+      "brollPlacement": "spread",
+      "layoutBias": "pip",
+      "zoomPattern": "peaks_only",
+      "brollRatioTarget": 0.45,
+      "hookBeat": "b01",
+      "climaxBeat": "b04",
+      "followsStyleCard": false,
+      "why_zh": "b01-b03 连续三句痛点（五次放弃、输入食材像噩梦、谁有时间）很适合用红色强调“five times”“nightmare”，快速短句剪辑，在 b04“But check this out”转折处用最紧的推近；与风格卡相比，此方向改用强调色钩子、快节奏、以问题为主线，B-roll 分散并用 PIP 保留创作者。",
+      "oneLineSummary_zh": "红字痛点开场｜快节奏｜素材分散穿插｜小窗为主｜仅在高点推近"
+    },
+    "model": "claude-sonnet-5-5",
+    "at": "2026-11-20T09:43:21.519Z",
+    "notes": "修正重叠错误：b07 中 c1-action 小窗缩短为 1000ms（从“read”起），与“recipe”处的录屏小窗之间留出间隔，即使句中停顿被语音清理压缩也不会重叠。其余不变：全部 PIP；peaks_only，仅 b01(z110) 与 b04(z120) 推近，其余 z100；b01-b03 红字强调痛点；无持久 logo 要求，logo 为 null；结尾不是 CTA 且无结尾卡素材。",
+    "attempts": 3,
+    "warnings": [],
+    "brollRatio": 0.48,
+    "styleCard": null,
+    "examples": 0,
+    "answer": {
+      "direction": "痛点红字",
+      "splits": [],
+      "beats": [
+        {
+          "beat": "b01",
+          "zoom": "z110"
+        },
+        {
+          "beat": "b02",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b03",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b04",
+          "zoom": "z120"
+        },
+        {
+          "beat": "b05",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b06",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b07",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b08",
+          "zoom": "z100"
+        }
+      ],
+      "broll": [
+        {
+          "asset": "screen-o1",
+          "beat": "b01",
+          "word": 4,
+          "srcStartMs": 7000,
+          "durationMs": 1500,
+          "layout": "pip",
+          "slot": "top-right",
+          "reason_zh": "“calorie tracking”出现时用 App 引导录屏小窗点题，创作者仍在画面。"
+        },
+        {
+          "asset": "screen-o1",
+          "beat": "b02",
+          "word": 11,
+          "srcStartMs": 21000,
+          "durationMs": 1300,
+          "layout": "pip",
+          "slot": "top-left",
+          "reason_zh": "“ingredient”时用繁琐的选择界面表现“输入很麻烦”的痛点。"
+        },
+        {
+          "asset": "c1-action",
+          "beat": "b04",
+          "word": 20,
+          "srcStartMs": 3000,
+          "durationMs": 1000,
+          "layout": "pip",
+          "slot": "lower-right",
+          "reason_zh": "“check this out”转折，用达人拿手机的小窗引出演示。"
+        },
+        {
+          "asset": "c1-action",
+          "beat": "b06",
+          "word": 3,
+          "srcStartMs": 6000,
+          "durationMs": 1300,
+          "layout": "pip",
+          "slot": "top-right",
+          "reason_zh": "“after I snap the photo”对应达人拿手机拍照的动作。"
+        },
+        {
+          "asset": "screen-o1",
+          "beat": "b06",
+          "word": 10,
+          "srcStartMs": 77000,
+          "durationMs": 2200,
+          "layout": "pip",
+          "slot": "top-left",
+          "reason_zh": "“AI coach tells me”时展示 App 个性化建议/计划界面。"
+        },
+        {
+          "asset": "c1-action",
+          "beat": "b07",
+          "word": 23,
+          "srcStartMs": 11000,
+          "durationMs": 1000,
+          "layout": "pip",
+          "slot": "top-right",
+          "reason_zh": "“read it out loud”对应达人看着手机的使用画面；缩短时长，避免与后面的录屏重叠。"
+        },
+        {
+          "asset": "screen-o1",
+          "beat": "b07",
+          "word": 31,
+          "srcStartMs": 91000,
+          "durationMs": 1500,
+          "layout": "pip",
+          "slot": "lower-left",
+          "reason_zh": "“recipe and grocery list”时展示 App 生成结果的录屏。"
+        }
+      ],
+      "emphasis": [
+        {
+          "beat": "b01",
+          "word": 3,
+          "color": "red"
+        },
+        {
+          "beat": "b01",
+          "word": 7,
+          "color": "red"
+        },
+        {
+          "beat": "b01",
+          "word": 8,
+          "color": "red"
+        },
+        {
+          "beat": "b02",
+          "word": 14,
+          "color": "red"
+        },
+        {
+          "beat": "b03",
+          "word": 18,
+          "color": "red"
+        },
+        {
+          "beat": "b04",
+          "word": 20,
+          "color": "yellow"
+        },
+        {
+          "beat": "b05",
+          "word": 28,
+          "color": "yellow"
+        },
+        {
+          "beat": "b06",
+          "word": 10,
+          "color": "yellow"
+        },
+        {
+          "beat": "b07",
+          "word": 31,
+          "color": "green"
+        },
+        {
+          "beat": "b07",
+          "word": 35,
+          "color": "green"
+        },
+        {
+          "beat": "b08",
+          "word": 40,
+          "color": "green"
+        }
+      ],
+      "logo": null,
+      "notes_zh": "修正重叠错误：b07 中 c1-action 小窗缩短为 1000ms（从“read”起），与“recipe”处的录屏小窗之间留出间隔，即使句中停顿被语音清理压缩也不会重叠。其余不变：全部 PIP；peaks_only，仅 b01(z110) 与 b04(z120) 推近，其余 z100；b01-b03 红字强调痛点；无持久 logo 要求，logo 为 null；结尾不是 CTA 且无结尾卡素材。"
+    }
+  },
+  "note": "Beats from the creators' proofread transcripts; zoom, b-roll and emphasis proposed by the auto director and validated by code. Review in the desk.",
+  "beats": [
+    {
+      "id": "b01",
+      "text": "I've started and quit calorie tracking like five times.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 666.6666666666666,
+        "endMs": 3866.6666666666665,
+        "wordStart": 0,
+        "wordEnd": 8,
+        "ranges": [
+          [
+            666.6666666666666,
+            3866.6666666666665
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b01-1",
+          "asset": "screen-o1",
+          "srcStartMs": 7000,
+          "atMs": 1250,
+          "durationMs": 1500,
+          "layout": "pip",
+          "slot": "top-right",
+          "note": "“calorie tracking”出现时用 App 引导录屏小窗点题，创作者仍在画面。"
+        }
+      ],
+      "zoom": 1.1
+    },
+    {
+      "id": "b02",
+      "text": "Typing every ingredient is a nightmare.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 3866.6666666666665,
+        "endMs": 6266.666666666667,
+        "wordStart": 9,
+        "wordEnd": 14,
+        "ranges": [
+          [
+            3866.6666666666665,
+            6266.666666666667
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b02-1",
+          "asset": "screen-o1",
+          "srcStartMs": 21000,
+          "atMs": 720,
+          "durationMs": 1300,
+          "layout": "pip",
+          "slot": "top-left",
+          "note": "“ingredient”时用繁琐的选择界面表现“输入很麻烦”的痛点。"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b03",
+      "text": "Who has the time? But check this out.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 6300,
+        "endMs": 11133.333333333334,
+        "wordStart": 15,
+        "wordEnd": 22,
+        "ranges": [
+          [
+            6300,
+            7266.666666666667
+          ],
+          [
+            9366.666666666666,
+            11133.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b03-1",
+          "asset": "c1-action",
+          "srcStartMs": 3000,
+          "atMs": 1321,
+          "durationMs": 1000,
+          "layout": "pip",
+          "slot": "lower-right",
+          "note": "“check this out”转折，用达人拿手机的小窗引出演示。"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b05",
+      "text": "I literally just snapped one photo of my lunch.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 11133.333333333334,
+        "endMs": 12500,
+        "wordStart": 23,
+        "wordEnd": 31,
+        "ranges": [
+          [
+            11133.333333333334,
+            12500
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1
+    },
+    {
+      "id": "b06",
+      "text": "A few seconds after I snap the photo, the AI coach tells me something based on what's actually on my plate.",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 0,
+        "endMs": 5600,
+        "wordStart": 0,
+        "wordEnd": 20,
+        "ranges": [
+          [
+            0,
+            5600
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b06-1",
+          "asset": "c1-action",
+          "srcStartMs": 6000,
+          "atMs": 753,
+          "durationMs": 1300,
+          "layout": "pip",
+          "slot": "top-right",
+          "note": "“after I snap the photo”对应达人拿手机拍照的动作。"
+        },
+        {
+          "id": "b06-2",
+          "asset": "screen-o1",
+          "srcStartMs": 77000,
+          "atMs": 2322,
+          "durationMs": 2200,
+          "layout": "pip",
+          "slot": "top-left",
+          "note": "“AI coach tells me”时展示 App 个性化建议/计划界面。"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b07",
+      "text": "I just read it out loud, then it makes a recipe and a grocery list for me.",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 5600,
+        "endMs": 11266.666666666666,
+        "wordStart": 21,
+        "wordEnd": 37,
+        "ranges": [
+          [
+            5600,
+            5766.666666666667
+          ],
+          [
+            5966.666666666667,
+            7166.666666666667
+          ],
+          [
+            8800,
+            11266.666666666666
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b07-1",
+          "asset": "c1-action",
+          "srcStartMs": 11000,
+          "atMs": 464,
+          "durationMs": 1000,
+          "layout": "pip",
+          "slot": "top-right",
+          "note": "“read it out loud”对应达人看着手机的使用画面；缩短时长，避免与后面的录屏重叠。"
+        },
+        {
+          "id": "b07-2",
+          "asset": "screen-o1",
+          "srcStartMs": 91000,
+          "atMs": 2127,
+          "durationMs": 1500,
+          "layout": "pip",
+          "slot": "lower-left",
+          "note": "“recipe and grocery list”时展示 App 生成结果的录屏。"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b08",
+      "text": "That's actually crazy.",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 11266.666666666666,
+        "endMs": 12666.666666666666,
+        "wordStart": 38,
+        "wordEnd": 40,
+        "ranges": [
+          [
+            11266.666666666666,
+            12666.666666666666
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1
+    }
+  ],
+  "emphasis": [
+    {
+      "beat": "b01",
+      "word": "quit",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b01",
+      "word": "five",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b01",
+      "word": "times.",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b02",
+      "word": "nightmare.",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b03",
+      "word": "time?",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b03",
+      "word": "check",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b05",
+      "word": "photo",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b06",
+      "word": "coach",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b07",
+      "word": "recipe",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b07",
+      "word": "list",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b08",
+      "word": "crazy.",
+      "color": "#2ee6c8"
+    }
+  ]
+}

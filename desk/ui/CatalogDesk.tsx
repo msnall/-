@@ -5,7 +5,7 @@ import { catalogApi, type Catalog, type CatalogItem } from "./api.ts";
 // 素材分类：入库之后、出方案之前，人工确认每个素材属于哪一类、它是什么。
 // AI 只写草稿（ai），人工修改写在 human，重新描述不会覆盖人工修改。
 
-type Props = { onTechniques?: () => void; onNext?: () => void; nav?: React.ReactNode; onSettings: () => void; projectId: string; onHome: () => void; onPickProject: (id: string) => void; projects: { id: string; order: string; total: number; confirmed: number }[] };
+type Props = { onTechniques?: () => void; onNext?: () => void; nav?: React.ReactNode; projectId: string; onHome: () => void; onPickProject: (id: string) => void; projects: { id: string; order: string; total: number; confirmed: number }[] };
 type Filter = "all" | "todo" | string;
 
 const wordKey = (w: string) => w.toLowerCase().replace(/[^a-z0-9']/g, "");
@@ -72,7 +72,7 @@ const Card: React.FC<{ catalog: Catalog; item: CatalogItem; onSaved: (item: Cata
   </article>;
 };
 
-export const CatalogDesk: React.FC<Props> = ({ onTechniques, onNext, nav, onSettings, projectId, onHome, onPickProject, projects }) => {
+export const CatalogDesk: React.FC<Props> = ({ onTechniques, onNext, nav, projectId, onHome, onPickProject, projects }) => {
   const [catalog, setCatalog] = useState<Catalog | null>(null);
   const [filter, setFilter] = useState<Filter>("all");
   const [busy, setBusy] = useState(false);
@@ -104,14 +104,14 @@ export const CatalogDesk: React.FC<Props> = ({ onTechniques, onNext, nav, onSett
   return <div className="catalog-page">
     {nav ? <header className="catalog-header catalog-navbar">{nav}<span className="spacer" />
       <div className="catalog-progress"><b>{confirmed} / {counted.length}</b><span>已确认</span></div>
-      {onTechniques ? <button onClick={onTechniques}>风格库</button> : null}<button onClick={onSettings}>API 设置</button>
+      {onTechniques ? <button onClick={onTechniques}>风格库</button> : null}
       <button className="primary" disabled={busy} onClick={() => describe()}><Sparkles size={15} /> AI 描述未描述的素材</button>
     </header> : <header className="catalog-header">
       <button onClick={onHome}><ArrowLeft size={15} /> 返回</button>
       <div><span className="eyebrow">ASSET CATALOG</span><h1>素材分类</h1></div>
       {projects.length > 1 ? <select value={projectId} onChange={(event) => onPickProject(event.target.value)}>{projects.map((p) => <option key={p.id} value={p.id}>{p.order}</option>)}</select> : <span className="catalog-order">{catalog.order}</span>}
       <div className="catalog-progress"><b>{confirmed} / {counted.length}</b><span>已确认</span></div>
-      {onTechniques ? <button onClick={onTechniques}>风格库</button> : null}<button onClick={onSettings}>API 设置</button>
+      {onTechniques ? <button onClick={onTechniques}>风格库</button> : null}
       <button className="primary" disabled={busy} onClick={() => describe()}><Sparkles size={15} /> AI 描述未描述的素材</button>
     </header>}
     <section className="next-step">

@@ -48,7 +48,7 @@ export const PlanDesk: React.FC<Props> = ({ onCleanup, nav, projectId, onOpenRev
   };
   const headline = !cleaned ? "先在「口播」把停顿和重说清理一遍" : open.length ? "先回「素材」把素材和文案确认完" : run.state === "running" ? "正在为你出几套方案…" : drafts.length ? "几套方案已生成：比较一下，选一套放进审阅精修" : "素材已确认，可以让模型出方案了";
   return <div className="catalog-page">
-    <header className="catalog-header catalog-navbar">{nav}<span className="spacer" /><button onClick={onTechniques}>风格库</button><button onClick={onSettings}>API 设置</button></header>
+    <header className="catalog-header catalog-navbar">{nav}<span className="spacer" /><button onClick={onTechniques}>风格库</button></header>
     <section className="next-step"><div><span className="eyebrow">第 3 步 · 方案</span><h2>{headline}</h2></div>
       <button className="primary" disabled={run.state === "running" || working || open.length > 0 || !apiReady || !cleaned} title={open.length ? "先把所有素材和文案确认完" : !apiReady ? "先保存 API Key" : undefined} onClick={start}>{run.state === "running" ? "生成中…（约 2 分钟）" : drafts.length ? "重新生成全部方案" : "生成方案"}</button></section>
     <section className="plan-checks">

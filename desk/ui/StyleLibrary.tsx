@@ -118,7 +118,7 @@ const CardEditor: React.FC<{ detail: StyleDetail & { card: StyleCard }; onChange
   </div>;
 };
 
-export const StyleLibrary: React.FC<{ onBack: () => void; onSettings: () => void }> = ({ onBack, onSettings }) => {
+export const StyleLibrary: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [list, setList] = useState<{ cards: StyleBrief[]; runs: StyleRun[] }>({ cards: [], runs: [] });
   const [selected, setSelected] = useState<string | null>(null);
   const [detail, setDetail] = useState<StyleDetail | null>(null);
@@ -160,9 +160,8 @@ export const StyleLibrary: React.FC<{ onBack: () => void; onSettings: () => void
     <header className="catalog-header">
       <button onClick={onBack}><ArrowLeft size={15} /> 返回</button>
       <div><span className="eyebrow">STYLE LIBRARY</span><h1>风格库</h1></div>
-      <span className="tech-adopted"><b>{list.cards.filter((c) => c.status === "confirmed").length}</b> 张已确认的风格卡，可用于出方案</span>
+      <span className="sc-stats"><i><b>{list.cards.filter((c) => c.status === "confirmed").length}</b> 张已确认，可用于出方案</i>{insights?.segments ? <i title="参考视频的每一句、你精修过的、你没改直接用的，出方案时会挑最像的当示范"><b>{insights.segments.total}</b> 句片段库（参考 {insights.segments.reference} · 精修 {insights.segments.human_edited} · 采用 {insights.segments.ai_accepted}）</i> : null}</span>
       <button className="primary" style={{ marginLeft: "auto" }} onClick={() => setAdding((v) => !v)}><Plus size={15} /> 拆解新视频</button>
-      <button onClick={onSettings}>API 设置</button>
     </header>
     {adding ? <section className="tech-add">
       <p>选一条<b>已经剪好的成品</b>。程序只读它：每秒抽一帧、找出每个切点、转写口播，再让模型写成一张风格卡。成品的画面不会进入你的视频。</p>
@@ -186,7 +185,10 @@ export const StyleLibrary: React.FC<{ onBack: () => void; onSettings: () => void
           <select value={filter.pacing} onChange={(e) => setFilter({ ...filter, pacing: e.target.value })}><option value="">节奏：全部</option>{Object.entries(PACING).map(([k, t]) => <option key={k} value={k}>{t}</option>)}</select>
         </div>
         {list.runs.map((r) => <div key={r.id} className={`sc-run ${r.state}`}><b>{r.title}</b><span>{r.state === "running" ? r.steps.find((s) => s.state === "running")?.name ?? "准备中…" : r.error}</span>{r.state === "failed" ? <button className="sc-run-x" title="关掉这条失败记录" onClick={() => styleApi.dismissRun(r.id).then(() => loadList()).catch((e) => setMessage(e.message))}>×</button> : null}</div>)}
-        {list.cards.length ? list.cards.filter((c) => (!filter.productType || c.meta?.productType === filter.productType) && (!filter.format || c.meta?.format === filter.format) && (!filter.pacing || c.pacing === filter.pacing)).map((c) => <button key={c.id} className={selected === c.id ? "active" : ""} onClick={() => setSelected(c.id)}><b>{c.name}</b><span>{c.status === "confirmed" ? "已确认" : "草稿"}{c.version === 2 ? ` · ${PACING[c.pacing ?? ""] ?? ""} · ${HOOK[c.hookTreatment ?? ""] ?? ""}` : " · 旧格式"} · {c.layout === "pip" ? "画中画" : c.layout === "mixed" ? "混合插画" : "全屏插画"}{c.source.durationMs ? ` · ${sec(c.source.durationMs)}s` : ""}</span></button>) : !list.runs.length ? <p className="catalog-hint">{list.cards.length ? "没有符合筛选条件的卡，把上面的筛选改回「全部」。" : "风格库还是空的。点右上角「拆解新视频」，选一条剪得好的成品。"}</p> : null}
+        {list.cards.length ? list.cards.filter((c) => (!filter.productType || c.meta?.productType === filter.productType) && (!filter.format || c.meta?.format === filter.format) && (!filter.pacing || c.pacing === filter.pacing)).map((c) => <button key={c.id} className={`sc-item${selected === c.id ? " active" : ""}`} onClick={() => setSelected(c.id)}>
+          <span className="sc-item-top"><b>{c.name}</b><i className={`sc-chip ${c.status}`}>{c.status === "confirmed" ? "已确认" : "草稿"}</i></span>
+          <span className="sc-item-chips">{c.version === 2 ? <><i className="sc-chip">{PACING[c.pacing ?? ""] ?? "—"}</i><i className="sc-chip">{HOOK[c.hookTreatment ?? ""] ?? "—"}</i></> : <i className="sc-chip warn">旧格式</i>}<i className="sc-chip">{c.layout === "pip" ? "画中画" : c.layout === "mixed" ? "混合插画" : "全屏插画"}</i>{c.source.durationMs ? <i className="sc-chip outline">{sec(c.source.durationMs)}s</i> : null}</span>
+        </button>) : !list.runs.length ? <p className="catalog-hint">{list.cards.length ? "没有符合筛选条件的卡，把上面的筛选改回「全部」。" : "风格库还是空的。点右上角「拆解新视频」，选一条剪得好的成品。"}</p> : null}
         {list.cards.length && !list.cards.some((c) => (!filter.productType || c.meta?.productType === filter.productType) && (!filter.format || c.meta?.format === filter.format) && (!filter.pacing || c.pacing === filter.pacing)) ? <p className="catalog-hint">没有符合筛选条件的卡（旧格式的卡没有这些标签，筛选时不会出现）。把上面的筛选改回「全部」。</p> : null}
         {insights?.toBuild.length ? <section className="sc-tobuild"><h4>待开发的效果</h4><p className="catalog-hint">已确认的卡里用到、但引擎还没做好的技巧，用到的卡越多越优先。</p><ol>{insights.toBuild.map((t) => <li key={t.key}><b>{t.name}</b><span>{t.count} 张卡{t.effectId ? ` · ${t.effectId}` : ""}</span></li>)}</ol></section> : null}
       </aside>

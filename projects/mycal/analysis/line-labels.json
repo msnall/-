@@ -1,0 +1,54 @@
+{
+  "at": "2026-11-20T09:37:04.988Z",
+  "labels": {
+    "b01": {
+      "role": "hook",
+      "features": [
+        "number"
+      ]
+    },
+    "b02": {
+      "role": "problem",
+      "features": [
+        "emotion"
+      ]
+    },
+    "b03": {
+      "role": "problem",
+      "features": [
+        "asks_question"
+      ]
+    },
+    "b04": {
+      "role": "hook",
+      "features": [
+        "turning_point"
+      ]
+    },
+    "b05": {
+      "role": "demo",
+      "features": [
+        "opens_with_scene"
+      ]
+    },
+    "b06": {
+      "role": "demo",
+      "features": [
+        "feature"
+      ]
+    },
+    "b07": {
+      "role": "demo",
+      "features": [
+        "feature",
+        "result"
+      ]
+    },
+    "b08": {
+      "role": "benefit",
+      "features": [
+        "emotion"
+      ]
+    }
+  }
+}

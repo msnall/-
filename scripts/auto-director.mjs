@@ -23,6 +23,7 @@ import { FPS, baseLines, beatLengthMs, loadClips, mapToBeatMs, seedBeats } from 
 import { COLOR_HEX, COLOR_IDS, HOOK_TREATMENTS, LAYOUT_BIAS, PACING_IDS, PACING_PRESETS, PIP_SLOTS, PLACEMENTS, STRUCTURES, ZOOM_IDS, ZOOM_PATTERNS, ZOOM_SCALE, directionsSchema, effectsText, planSchema, zoomIdOf } from "./lib/effects.mjs";
 import { DIRECTIONS_SYSTEM, PLAN_SYSTEM, fill } from "./lib/director-prompts.mjs";
 import { similarity } from "./lib/plan-similarity.mjs";
+import { examplesText, labelLines, readSegments, retrieveExamples, tendenciesText } from "./lib/segments.mjs";
 import { directorGuide, parseCard } from "./lib/style-card.mjs";
 import { readJson, writeJson } from "./lib/storage.mjs";
 
@@ -37,6 +38,7 @@ if (args.some((x) => x.startsWith("--variant"))) { console.error("服务还是�
 const dir = path.join(root, "projects", projectId);
 const maxRetries = Number(opt("retries", "2"));
 const dry = args.includes("--dry");
+const useExamples = !args.includes("--no-examples"); // for comparing runs with and without the segment library
 const frameMs = 1000 / FPS;
 const MIN_BEAT_MS = 1200;
 const analysisFile = (name) => path.join(dir, "analysis", name);
@@ -71,7 +73,20 @@ const FILLER = new Set(["the", "a", "an", "and", "or", "to", "of", "i", "you", "
 const norm = (t) => t.toLowerCase().replace(/[^a-z0-9']/g, "");
 const brandText = brief ? `Brand: ${brief.product?.name}. Allowed claims: ${brief.product?.claimsAllowed?.join("; ")}. Forbidden: ${brief.product?.claimsForbidden?.join("; ")}. Restrictions: ${brief.restrictions?.join("; ")}.` : "";
 const cardText = cardGuide?.text ? `STYLE CARD GUIDE (rhythm and visual habits; anything about another product is reference only):\n${cardGuide.text}` : "";
-const linesText = lines.map((l) => `${l.id} (${secs(l.endMs - l.startMs)} s): "${l.text}"`).join("\n");
+// role + features of every beat (one cheap model call per generation, saved so the three plan calls reuse it)
+const labelsFile = analysisFile("line-labels.json");
+async function loadLabels(fresh) {
+  const saved = await readJson(labelsFile, null);
+  if (!fresh && saved && lines.every((l) => saved.labels?.[l.id])) return saved.labels;
+  const labels = await labelLines(lines, { productTerms: [] });
+  await mkdir(path.dirname(labelsFile), { recursive: true });
+  await writeJson(labelsFile, { at: new Date().toISOString(), labels });
+  return labels;
+}
+const library = useExamples ? await readSegments() : [];
+const labelOf = dry ? {} : await loadLabels(stage === "directions");
+const beatsForRetrieval = lines.map((l) => ({ id: l.id, text: l.text, role: labelOf[l.id]?.role ?? "benefit", features: labelOf[l.id]?.features ?? [] }));
+const linesText = lines.map((l) => `${l.id} (${secs(l.endMs - l.startMs)} s)${labelOf[l.id] ? ` [${labelOf[l.id].role} | ${labelOf[l.id].features.join(", ") || "-"}]` : ""}: "${l.text}"`).join("\n");
 const assetLine = (i) => `ASSET ${i.id}: ${secs(i.durationMs)} s, size ${facts.get(i.id)?.width}x${facts.get(i.id)?.height}, category ${i.category}. ${i.description} tags: ${(i.tags ?? []).join(", ")}.`;
 
 const settings = await readApiSettings();
@@ -134,6 +149,7 @@ async function runDirections() {
     brandText, cardText, fixedText,
     `VOICEOVER BEATS:\n${linesText}`,
     `B-ROLL ASSETS (talking clips are not available as b-roll):\n${pool.map(assetLine).join("\n")}`,
+    tendenciesText(library),
     `HOOK_TREATMENTS:\n${JSON.stringify(HOOK_TREATMENTS, null, 1)}`,
     `PACING PRESETS (max b-roll ratio per pacing): ${PACING_IDS.map((p) => `${p}=${PACING_PRESETS[p].maxBrollRatio}`).join(", ")}`,
     `EFFECTS (what the renderer can do):\n${effects}`,
@@ -348,6 +364,11 @@ async function runPlan(slot, extraFeedback = null) {
   const direction = directions[index];
   if (!direction) { console.error(`no direction ${index + 1}`); process.exit(1); }
   const limits = limitsFor(direction);
+  // examples: the card's own segments for the plan that follows the card, the whole library for the others
+  let examples = library.length ? retrieveExamples(beatsForRetrieval, library, { cardId: direction.followsStyleCard && card ? card.id : null, productType: card?.meta?.productType ?? null }) : {};
+  if (!Object.keys(examples).length && library.length) examples = retrieveExamples(beatsForRetrieval, library, { productType: card?.meta?.productType ?? null });
+  const examplesBlock = examplesText(beatsForRetrieval, examples);
+  if (args.includes("--show-examples")) console.log(examplesBlock || "(no examples)");
   const system = fill(PLAN_SYSTEM, { ...limits, brollRatioTarget: direction.brollRatioTarget });
   const others = directions.filter((_, k) => k !== index).map((d) => `- ${d.name_zh}: ${d.oneLineSummary_zh}`).join("\n");
   const head = [
@@ -357,6 +378,7 @@ async function runPlan(slot, extraFeedback = null) {
     brandText, cardText,
     direction.followsStyleCard && cardGuide?.v2 && cardGuide.timeline?.length ? `WORKED EXAMPLE — how the reference video was cut, in plan terms (copy its rhythm and structure, never its content; translate every role to this product):\n${cardGuide.timeline.map((t) => `${(t.startMs / 1000).toFixed(1)}-${(t.endMs / 1000).toFixed(1)}s ${t.role} ${t.visual}${t.layout ? "/" + t.layout : ""}${t.zoom ? " " + t.zoom : ""}${t.assetType ? " " + t.assetType : ""}: ${t.what_zh}`).join("\n")}` : "",
     `BEATS (id, length, text, then word index:word@seconds):\n${lines.map(wordLine).join("\n")}`,
+    examplesBlock,
     `EFFECTS (only these ids exist):\n${effectsText()}`,
     endCards.length ? `END CARD assets (use one on a closing call-to-action beat): ${endCards.map((c) => c.id).join(", ")}` : "",
     "B-ROLL ASSETS (talking clips are not available as b-roll). Each is followed by a picture strip of 8 frames; the time marks are the frame centres:",
@@ -389,7 +411,7 @@ async function runPlan(slot, extraFeedback = null) {
   await writeJson(analysisFile(`director-log.${slot}.json`), { at: new Date().toISOString(), model: settings.model, ok: !!result, direction: direction.name_zh, attempts, lastAnswer: raw.slice(0, 6000) });
   if (!result) { console.error(`director failed: the answers for direction ${slot} did not pass the checks (see projects/<id>/analysis/director-log.${slot}.json)`); process.exit(1); }
   await writeJson(cutFile(slot), { schemaVersion: 2, projectId, scriptId: "creator", status: "draft", builtAt: new Date().toISOString(), fps: FPS,
-    director: { slot, direction, model: result.model, at: new Date().toISOString(), notes: result.notes, attempts: attempts.length, warnings: result.warnings, brollRatio: Number(result.ratio.toFixed(2)), styleCard: direction.followsStyleCard && card ? { id: card.id, name: card.name } : null, answer: result.answer },
+    director: { slot, direction, model: result.model, at: new Date().toISOString(), notes: result.notes, attempts: attempts.length, warnings: result.warnings, brollRatio: Number(result.ratio.toFixed(2)), styleCard: direction.followsStyleCard && card ? { id: card.id, name: card.name } : null, examples: Object.values(examples).reduce((n, list) => n + list.length, 0), answer: result.answer },
     note: "Beats from the creators' proofread transcripts; zoom, b-roll and emphasis proposed by the auto director and validated by code. Review in the desk.",
     beats: result.beats.map((b) => ({ ...b, zoom: b.zoom })), emphasis: result.emphasis, ...(result.logo ? { logo: result.logo } : {}) });
   const shotCount = result.beats.reduce((s, b) => s + b.broll.length, 0);

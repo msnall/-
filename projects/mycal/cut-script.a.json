@@ -1,0 +1,389 @@
+{
+  "schemaVersion": 2,
+  "projectId": "mycal",
+  "scriptId": "creator",
+  "status": "draft",
+  "builtAt": "2026-11-20T09:43:48.803Z",
+  "fps": 30,
+  "director": {
+    "slot": "a",
+    "direction": {
+      "name_zh": "画面开场",
+      "hookTreatment": "pip_hook",
+      "structureEmphasis": "product_demo",
+      "pacing": "medium",
+      "brollPlacement": "front_loaded",
+      "layoutBias": "mixed",
+      "zoomPattern": "alternate",
+      "brollRatioTarget": 0.71,
+      "hookBeat": "b01",
+      "climaxBeat": "b06",
+      "followsStyleCard": true,
+      "why_zh": "沿用风格卡：开场用全屏吃饭场景（c1-action）配合“戒了五次”的痛点，创作者在小窗口讲话；b05-b07 的拍照、AI 教练、食谱购物清单是核心演示，用录屏 PIP 保持创作者在画面里。",
+      "oneLineSummary_zh": "全屏场景小窗开场｜中速｜画面前置｜混合版式｜推近交替"
+    },
+    "model": "claude-sonnet-5-5",
+    "at": "2026-11-20T09:43:48.803Z",
+    "notes": "修正：与“痛点红字”区分——开场用小窗场景视频，b02全屏紧接，B-roll集中在前两拍和中段演示，红字只用一处，缩放用4档交替而不是只在高点推近；每个素材最多用两次，b07录屏控制在有效时长内。无常驻logo。",
+    "attempts": 1,
+    "warnings": [],
+    "brollRatio": 0.67,
+    "styleCard": {
+      "id": "ibebp-260923-01",
+      "name": "IBEBP-260923成片01发"
+    },
+    "examples": 0,
+    "answer": {
+      "direction": "画面开场",
+      "splits": [],
+      "beats": [
+        {
+          "beat": "b01",
+          "zoom": "z120"
+        },
+        {
+          "beat": "b02",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b03",
+          "zoom": "z110"
+        },
+        {
+          "beat": "b04",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b05",
+          "zoom": "z115"
+        },
+        {
+          "beat": "b06",
+          "zoom": "z120"
+        },
+        {
+          "beat": "b07",
+          "zoom": "z100"
+        },
+        {
+          "beat": "b08",
+          "zoom": "z115"
+        }
+      ],
+      "broll": [
+        {
+          "asset": "c1-action",
+          "beat": "b01",
+          "word": 0,
+          "srcStartMs": 3760,
+          "durationMs": 3000,
+          "layout": "pip",
+          "slot": "lower-right",
+          "reason_zh": "开场用居家边看手机边吃东西的场景铺垫“戒了五次”的痛点，创作者在右下小窗中讲话，前2秒始终可见。"
+        },
+        {
+          "asset": "c1-action",
+          "beat": "b02",
+          "word": 9,
+          "srcStartMs": 8780,
+          "durationMs": 2200,
+          "layout": "full",
+          "reason_zh": "“一个个输入食材太麻烦”，切全屏低头操作手机的画面，紧跟痛点，画面前置。"
+        },
+        {
+          "asset": "screen-o1",
+          "beat": "b06",
+          "word": 0,
+          "srcStartMs": 49340,
+          "durationMs": 5000,
+          "layout": "pip",
+          "slot": "top-left",
+          "reason_zh": "核心演示：拍照后AI教练给反馈，用App录屏做左上小窗，创作者仍在画面里，高潮z120。"
+        },
+        {
+          "asset": "screen-o1",
+          "beat": "b07",
+          "word": 21,
+          "srcStartMs": 84000,
+          "durationMs": 3600,
+          "layout": "pip",
+          "slot": "top-right",
+          "reason_zh": "“生成食谱和购物清单”对应个性化计划与每日推荐的录屏画面，换到右上角小窗形成变化，时长留在该beat有效时长内。"
+        }
+      ],
+      "emphasis": [
+        {
+          "beat": "b01",
+          "word": 7,
+          "color": "yellow"
+        },
+        {
+          "beat": "b02",
+          "word": 14,
+          "color": "red"
+        },
+        {
+          "beat": "b05",
+          "word": 28,
+          "color": "yellow"
+        },
+        {
+          "beat": "b06",
+          "word": 10,
+          "color": "default"
+        },
+        {
+          "beat": "b07",
+          "word": 31,
+          "color": "green"
+        },
+        {
+          "beat": "b07",
+          "word": 34,
+          "color": "green"
+        },
+        {
+          "beat": "b08",
+          "word": 40,
+          "color": "green"
+        }
+      ],
+      "logo": null,
+      "notes_zh": "修正：与“痛点红字”区分——开场用小窗场景视频，b02全屏紧接，B-roll集中在前两拍和中段演示，红字只用一处，缩放用4档交替而不是只在高点推近；每个素材最多用两次，b07录屏控制在有效时长内。无常驻logo。"
+    }
+  },
+  "note": "Beats from the creators' proofread transcripts; zoom, b-roll and emphasis proposed by the auto director and validated by code. Review in the desk.",
+  "beats": [
+    {
+      "id": "b01",
+      "text": "I've started and quit calorie tracking like five times.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 666.6666666666666,
+        "endMs": 3866.6666666666665,
+        "wordStart": 0,
+        "wordEnd": 8,
+        "ranges": [
+          [
+            666.6666666666666,
+            3866.6666666666665
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b01-1",
+          "asset": "c1-action",
+          "srcStartMs": 3760,
+          "atMs": 49,
+          "durationMs": 3000,
+          "layout": "pip",
+          "slot": "lower-right",
+          "note": "开场用居家边看手机边吃东西的场景铺垫“戒了五次”的痛点，创作者在右下小窗中讲话，前2秒始终可见。"
+        }
+      ],
+      "zoom": 1.2
+    },
+    {
+      "id": "b02",
+      "text": "Typing every ingredient is a nightmare.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 3866.6666666666665,
+        "endMs": 6266.666666666667,
+        "wordStart": 9,
+        "wordEnd": 14,
+        "ranges": [
+          [
+            3866.6666666666665,
+            6266.666666666667
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b02-1",
+          "asset": "c1-action",
+          "srcStartMs": 8780,
+          "atMs": 0,
+          "durationMs": 2200,
+          "layout": "full",
+          "note": "“一个个输入食材太麻烦”，切全屏低头操作手机的画面，紧跟痛点，画面前置。"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b03",
+      "text": "Who has the time? But check this out.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 6300,
+        "endMs": 11133.333333333334,
+        "wordStart": 15,
+        "wordEnd": 22,
+        "ranges": [
+          [
+            6300,
+            7266.666666666667
+          ],
+          [
+            9366.666666666666,
+            11133.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1.1
+    },
+    {
+      "id": "b05",
+      "text": "I literally just snapped one photo of my lunch.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 11133.333333333334,
+        "endMs": 12500,
+        "wordStart": 23,
+        "wordEnd": 31,
+        "ranges": [
+          [
+            11133.333333333334,
+            12500
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1.15
+    },
+    {
+      "id": "b06",
+      "text": "A few seconds after I snap the photo, the AI coach tells me something based on what's actually on my plate.",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 0,
+        "endMs": 5600,
+        "wordStart": 0,
+        "wordEnd": 20,
+        "ranges": [
+          [
+            0,
+            5600
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b06-1",
+          "asset": "screen-o1",
+          "srcStartMs": 49340,
+          "atMs": 0,
+          "durationMs": 5000,
+          "layout": "pip",
+          "slot": "top-left",
+          "note": "核心演示：拍照后AI教练给反馈，用App录屏做左上小窗，创作者仍在画面里，高潮z120。"
+        }
+      ],
+      "zoom": 1.2
+    },
+    {
+      "id": "b07",
+      "text": "I just read it out loud, then it makes a recipe and a grocery list for me.",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 5600,
+        "endMs": 11266.666666666666,
+        "wordStart": 21,
+        "wordEnd": 37,
+        "ranges": [
+          [
+            5600,
+            5766.666666666667
+          ],
+          [
+            5966.666666666667,
+            7166.666666666667
+          ],
+          [
+            8800,
+            11266.666666666666
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b07-1",
+          "asset": "screen-o1",
+          "srcStartMs": 84000,
+          "atMs": 0,
+          "durationMs": 3600,
+          "layout": "pip",
+          "slot": "top-right",
+          "note": "“生成食谱和购物清单”对应个性化计划与每日推荐的录屏画面，换到右上角小窗形成变化，时长留在该beat有效时长内。"
+        }
+      ],
+      "zoom": 1
+    },
+    {
+      "id": "b08",
+      "text": "That's actually crazy.",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 11266.666666666666,
+        "endMs": 12666.666666666666,
+        "wordStart": 38,
+        "wordEnd": 40,
+        "ranges": [
+          [
+            11266.666666666666,
+            12666.666666666666
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "zoom": 1.15
+    }
+  ],
+  "emphasis": [
+    {
+      "beat": "b01",
+      "word": "five",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b02",
+      "word": "nightmare.",
+      "color": "#ff5a5f"
+    },
+    {
+      "beat": "b05",
+      "word": "photo",
+      "color": "#ffd23f"
+    },
+    {
+      "beat": "b06",
+      "word": "coach"
+    },
+    {
+      "beat": "b07",
+      "word": "recipe",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b07",
+      "word": "grocery",
+      "color": "#2ee6c8"
+    },
+    {
+      "beat": "b08",
+      "word": "crazy.",
+      "color": "#2ee6c8"
+    }
+  ]
+}

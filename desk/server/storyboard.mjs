@@ -44,7 +44,15 @@ export async function readOverview(id) {
   // TTO order projects (入库后有 ingest.json): name them from the order folder, e.g. 2026-10_Kika-Keyboard.
   const ingest = await readJson(projectFile(id, "ingest.json"), null);
   const orderName = ingest?.order ? { product: ingest.order.split("_").slice(1).join(" ").replace(/-/g, " ") || ingest.order, month: ingest.order.split("_")[0] } : null;
-  return { id, hasCatalog: !!ingest, title: legacyNames[id] ?? project?.title ?? plan?.meta?.title ?? (orderName ? `${orderName.product} · ${orderName.month}` : id), productName: project?.productName ?? (orderName?.product ?? (id.startsWith("bloom10") ? "Bloom10 软糖" : "未分类产品")), status, hasPlan: !!plan, hasProject: !!project, transcriptReady, previewReady, ready: transcriptReady && previewReady, revision: plan ? (plan.revision ?? 0) : null, updatedAt: status.updatedAt ?? statusInfo?.mtime.toISOString() ?? null, media };
+  // 首页卡片的进度（TTO 订单项目）：封面帧、口播清理是否确认、有没有生成过方案、有没有导出
+  let tto = {};
+  if (ingest) {
+    const cleanup = await readJson(projectFile(id, "cleanup.json"), null);
+    const files = await readdir(projectFile(id)).catch(() => []);
+    const exported = await readdir(projectFile(id, "exports")).catch(() => []);
+    tto = { coverAsset: ingest.assets.find((a) => a.group === "creator" && a.kind === "talk")?.id ?? ingest.assets[0]?.id ?? null, cleanupConfirmed: !!cleanup?.confirmedAt, hasDrafts: files.some((n) => /^cut-script\.[a-z]+\.json$/.test(n)), hasExports: exported.length > 0 };
+  }
+  return { ...tto, id, hasCatalog: !!ingest, title: legacyNames[id] ?? project?.title ?? plan?.meta?.title ?? (orderName ? `${orderName.product} · ${orderName.month}` : id), productName: project?.productName ?? (orderName?.product ?? (id.startsWith("bloom10") ? "Bloom10 软糖" : "未分类产品")), status, hasPlan: !!plan, hasProject: !!project, transcriptReady, previewReady, ready: transcriptReady && previewReady, revision: plan ? (plan.revision ?? 0) : null, updatedAt: status.updatedAt ?? statusInfo?.mtime.toISOString() ?? null, media };
 }
 
 // --- Assets.

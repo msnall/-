@@ -2,6 +2,7 @@
 //   projects/<id>/exports/capcut/<name>/            the draft (draft_content.json, draft_meta_info.json, cover)
 //   projects/<id>/exports/capcut/<name>.summary.json  tracks, what could not be exported, plan revision
 import { spawn } from "node:child_process";
+import { recordFinal } from "../../scripts/lib/segments-final.mjs";
 import { readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import { installDraft, jianyingDraftRoot, jianyingRunning } from "../../scripts/lib/capcut.mjs";
@@ -50,7 +51,7 @@ export async function buildCapcut(id, body) {
   const plan = await readJson(projectFile(id, "edit-plan.json"));
   const name = safeName(body?.name || `${id} r${plan.revision ?? 0}`);
   busy = true;
-  try { await runScript([id, `--name=${name}`]); }
+  try { await runScript([id, `--name=${name}`]); await recordFinal(id).catch(() => {}); }
   catch (error) { throw new HttpError(500, `生成失败：${error.message}`); }
   finally { busy = false; }
   return capcutStatus(id);

@@ -1,0 +1,17 @@
+[
+  {
+    "text": "A few seconds after I snap the photo, the AI coach tells me something based on what's actually on my plate.",
+    "startMs": 60,
+    "endMs": 5980
+  },
+  {
+    "text": "I just read it out loud, then it makes a recipe and a grocery list for me.",
+    "startMs": 5980,
+    "endMs": 11320
+  },
+  {
+    "text": "That's actually crazy.",
+    "startMs": 11320,
+    "endMs": 12880
+  }
+]

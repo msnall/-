@@ -21,6 +21,7 @@ Diversity rules (mandatory):
 - Never create directions that differ only in how much B-roll is used.
 - Ground every direction in the actual beats and the actual assets. If an asset type does not exist, do not build a direction on it.
 - The creator must be on screen during the first 2 seconds in every direction.
+- If LIBRARY TENDENCIES are given: at least one direction follows the majority tendencies, and at least one deliberately goes against one of them; say which in why_zh.
 
 Never assume product features beyond the brief and the voiceover.
 Return JSON only: {"directions":[ ...3 items... ]}`;
@@ -53,6 +54,8 @@ MEANING
 - Never use assets that contradict the line, show competitors, or are unclear/low quality.
 - Emphasis words: the word that carries the meaning (problem, product name, result, CTA verb). Never emphasize filler words.
 - Style card: follow its rhythm and visual habits. Anything specific to another product (its features, its screens) is reference only; translate it, never copy it.
+
+REFERENCE EXAMPLES (when given) show how similar lines were edited in proven videos. Use them as patterns for timing and treatment. Adapt to this product and these assets. When examples disagree, follow DIRECTION.
 
 LAYOUT & LOGO
 - layout per shot follows DIRECTION.layoutBias ("full": only full; "pip": only pip, except a closing end card which may be full; "mixed": either). pip needs a slot.

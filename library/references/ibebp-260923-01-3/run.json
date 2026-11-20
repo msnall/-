@@ -1,0 +1,17 @@
+{
+  "state": "done",
+  "title": "IBEBP-260923成片01发",
+  "startedAt": "2026-11-20T09:26:40.939Z",
+  "finishedAt": "2026-11-20T09:28:59.570Z",
+  "steps": [
+    {
+      "name": "本地分析：镜头切点、转录、关键帧",
+      "state": "done"
+    },
+    {
+      "name": "模型写风格卡",
+      "state": "done"
+    }
+  ],
+  "error": null
+}

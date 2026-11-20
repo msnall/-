@@ -1,0 +1,23 @@
+{
+  "state": "done",
+  "id": "mycal",
+  "folder": "F:\\VideoAutomation\\inbox\\2026-11_MyCal",
+  "startedAt": "2026-11-20T09:32:17.911Z",
+  "finishedAt": "2026-11-20T09:34:47.974Z",
+  "error": null,
+  "note": null,
+  "steps": [
+    {
+      "name": "入库：转成竖屏工作副本",
+      "state": "done"
+    },
+    {
+      "name": "达人口播转录",
+      "state": "done"
+    },
+    {
+      "name": "模型描述素材",
+      "state": "done"
+    }
+  ]
+}

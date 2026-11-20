@@ -1,0 +1,367 @@
+[
+  {
+    "text": "I've",
+    "startMs": 49,
+    "endMs": 316
+  },
+  {
+    "text": "started",
+    "startMs": 316,
+    "endMs": 783
+  },
+  {
+    "text": "and",
+    "startMs": 783,
+    "endMs": 983
+  },
+  {
+    "text": "quit",
+    "startMs": 983,
+    "endMs": 1250
+  },
+  {
+    "text": "calorie",
+    "startMs": 1250,
+    "endMs": 1718
+  },
+  {
+    "text": "tracking",
+    "startMs": 1718,
+    "endMs": 2252
+  },
+  {
+    "text": "like",
+    "startMs": 2252,
+    "endMs": 2519
+  },
+  {
+    "text": "five",
+    "startMs": 2519,
+    "endMs": 2786
+  },
+  {
+    "text": "times.",
+    "startMs": 2786,
+    "endMs": 3186
+  },
+  {
+    "text": "Typing",
+    "startMs": 3200,
+    "endMs": 3586
+  },
+  {
+    "text": "every",
+    "startMs": 3586,
+    "endMs": 3920
+  },
+  {
+    "text": "ingredient",
+    "startMs": 3920,
+    "endMs": 4588
+  },
+  {
+    "text": "is",
+    "startMs": 4588,
+    "endMs": 4721
+  },
+  {
+    "text": "a",
+    "startMs": 4721,
+    "endMs": 4855
+  },
+  {
+    "text": "nightmare.",
+    "startMs": 4855,
+    "endMs": 5522
+  },
+  {
+    "text": "Who",
+    "startMs": 5673,
+    "endMs": 5857
+  },
+  {
+    "text": "has",
+    "startMs": 5857,
+    "endMs": 6040
+  },
+  {
+    "text": "the",
+    "startMs": 6040,
+    "endMs": 6224
+  },
+  {
+    "text": "time?",
+    "startMs": 6224,
+    "endMs": 6530
+  },
+  {
+    "text": "But",
+    "startMs": 6609,
+    "endMs": 6921
+  },
+  {
+    "text": "check",
+    "startMs": 6921,
+    "endMs": 7442
+  },
+  {
+    "text": "this",
+    "startMs": 7442,
+    "endMs": 7859
+  },
+  {
+    "text": "out.",
+    "startMs": 7859,
+    "endMs": 8275
+  },
+  {
+    "text": "I",
+    "startMs": 8396,
+    "endMs": 8457
+  },
+  {
+    "text": "literally",
+    "startMs": 8457,
+    "endMs": 8729
+  },
+  {
+    "text": "just",
+    "startMs": 8729,
+    "endMs": 8850
+  },
+  {
+    "text": "snapped",
+    "startMs": 8850,
+    "endMs": 9062
+  },
+  {
+    "text": "one",
+    "startMs": 9062,
+    "endMs": 9152
+  },
+  {
+    "text": "photo",
+    "startMs": 9152,
+    "endMs": 9304
+  },
+  {
+    "text": "of",
+    "startMs": 9304,
+    "endMs": 9364
+  },
+  {
+    "text": "my",
+    "startMs": 9364,
+    "endMs": 9425
+  },
+  {
+    "text": "lunch.",
+    "startMs": 9425,
+    "endMs": 9606
+  },
+  {
+    "text": "A",
+    "startMs": 9700,
+    "endMs": 9826
+  },
+  {
+    "text": "few",
+    "startMs": 9826,
+    "endMs": 10014
+  },
+  {
+    "text": "seconds",
+    "startMs": 10014,
+    "endMs": 10453
+  },
+  {
+    "text": "after",
+    "startMs": 10453,
+    "endMs": 10767
+  },
+  {
+    "text": "I",
+    "startMs": 10767,
+    "endMs": 10893
+  },
+  {
+    "text": "snap",
+    "startMs": 10893,
+    "endMs": 11144
+  },
+  {
+    "text": "the",
+    "startMs": 11144,
+    "endMs": 11332
+  },
+  {
+    "text": "photo,",
+    "startMs": 11332,
+    "endMs": 11709
+  },
+  {
+    "text": "the",
+    "startMs": 11709,
+    "endMs": 11897
+  },
+  {
+    "text": "AI",
+    "startMs": 11897,
+    "endMs": 12022
+  },
+  {
+    "text": "coach",
+    "startMs": 12022,
+    "endMs": 12336
+  },
+  {
+    "text": "tells",
+    "startMs": 12336,
+    "endMs": 12650
+  },
+  {
+    "text": "me",
+    "startMs": 12650,
+    "endMs": 12776
+  },
+  {
+    "text": "something",
+    "startMs": 12776,
+    "endMs": 13341
+  },
+  {
+    "text": "based",
+    "startMs": 13341,
+    "endMs": 13654
+  },
+  {
+    "text": "on",
+    "startMs": 13654,
+    "endMs": 13780
+  },
+  {
+    "text": "what's",
+    "startMs": 13780,
+    "endMs": 14157
+  },
+  {
+    "text": "actually",
+    "startMs": 14157,
+    "endMs": 14659
+  },
+  {
+    "text": "on",
+    "startMs": 14659,
+    "endMs": 14784
+  },
+  {
+    "text": "my",
+    "startMs": 14784,
+    "endMs": 14910
+  },
+  {
+    "text": "plate.",
+    "startMs": 14910,
+    "endMs": 15286
+  },
+  {
+    "text": "I",
+    "startMs": 15300,
+    "endMs": 15412
+  },
+  {
+    "text": "just",
+    "startMs": 15524,
+    "endMs": 15764
+  },
+  {
+    "text": "read",
+    "startMs": 15764,
+    "endMs": 16003
+  },
+  {
+    "text": "it",
+    "startMs": 16003,
+    "endMs": 16123
+  },
+  {
+    "text": "out",
+    "startMs": 16123,
+    "endMs": 16303
+  },
+  {
+    "text": "loud,",
+    "startMs": 16303,
+    "endMs": 16602
+  },
+  {
+    "text": "then",
+    "startMs": 16732,
+    "endMs": 16946
+  },
+  {
+    "text": "it",
+    "startMs": 16946,
+    "endMs": 17053
+  },
+  {
+    "text": "makes",
+    "startMs": 17053,
+    "endMs": 17320
+  },
+  {
+    "text": "a",
+    "startMs": 17320,
+    "endMs": 17427
+  },
+  {
+    "text": "recipe",
+    "startMs": 17427,
+    "endMs": 17748
+  },
+  {
+    "text": "and",
+    "startMs": 17748,
+    "endMs": 17908
+  },
+  {
+    "text": "a",
+    "startMs": 17908,
+    "endMs": 18015
+  },
+  {
+    "text": "grocery",
+    "startMs": 18015,
+    "endMs": 18389
+  },
+  {
+    "text": "list",
+    "startMs": 18389,
+    "endMs": 18603
+  },
+  {
+    "text": "for",
+    "startMs": 18750,
+    "endMs": 18945
+  },
+  {
+    "text": "me.",
+    "startMs": 18945,
+    "endMs": 19133
+  },
+  {
+    "text": "That's",
+    "startMs": 19140,
+    "endMs": 19531
+  },
+  {
+    "text": "actually",
+    "startMs": 19531,
+    "endMs": 20052
+  },
+  {
+    "text": "crazy.",
+    "startMs": 20052,
+    "endMs": 20443
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-20T09:37:21.254Z",
+  "model": "claude-sonnet-5-5",
+  "card": "ibebp-260923-01",
+  "attempts": 1,
+  "directions": [
+    {
+      "name_zh": "画面开场",
+      "hookTreatment": "pip_hook",
+      "structureEmphasis": "product_demo",
+      "pacing": "medium",
+      "brollPlacement": "front_loaded",
+      "layoutBias": "mixed",
+      "zoomPattern": "alternate",
+      "brollRatioTarget": 0.71,
+      "hookBeat": "b01",
+      "climaxBeat": "b06",
+      "followsStyleCard": true,
+      "why_zh": "沿用风格卡：开场用全屏吃饭场景（c1-action）配合“戒了五次”的痛点，创作者在小窗口讲话；b05-b07 的拍照、AI 教练、食谱购物清单是核心演示，用录屏 PIP 保持创作者在画面里。",
+      "oneLineSummary_zh": "全屏场景小窗开场｜中速｜画面前置｜混合版式｜推近交替"
+    },
+    {
+      "name_zh": "痛点红字",
+      "hookTreatment": "color_hook",
+      "structureEmphasis": "problem",
+      "pacing": "fast",
+      "brollPlacement": "spread",
+      "layoutBias": "pip",
+      "zoomPattern": "peaks_only",
+      "brollRatioTarget": 0.45,
+      "hookBeat": "b01",
+      "climaxBeat": "b04",
+      "followsStyleCard": false,
+      "why_zh": "b01-b03 连续三句痛点（五次放弃、输入食材像噩梦、谁有时间）很适合用红色强调“five times”“nightmare”，快速短句剪辑，在 b04“But check this out”转折处用最紧的推近；与风格卡相比，此方向改用强调色钩子、快节奏、以问题为主线，B-roll 分散并用 PIP 保留创作者。",
+      "oneLineSummary_zh": "红字痛点开场｜快节奏｜素材分散穿插｜小窗为主｜仅在高点推近"
+    },
+    {
+      "name_zh": "慢热惊叹",
+      "hookTreatment": "slow_tension",
+      "structureEmphasis": "story",
+      "pacing": "calm",
+      "brollPlacement": "demo_cluster",
+      "layoutBias": "full",
+      "zoomPattern": "build_up",
+      "brollRatioTarget": 0.3,
+      "hookBeat": "b01",
+      "climaxBeat": "b08",
+      "followsStyleCard": false,
+      "why_zh": "把它讲成“放弃五次→发现新方法→That's actually crazy”的个人故事：创作者从 z100 开始，逐步推近到 b05 揭晓，b08 情绪峰值收尾；刻意违背风格卡的前置高 B-roll 占比，让素材集中在 b05-b07 的演示段，其余以创作者口播为主。",
+      "oneLineSummary_zh": "慢推悬念开场｜舒缓节奏｜演示集中在中后段｜逐步推近到惊叹"
+    }
+  ]
+}

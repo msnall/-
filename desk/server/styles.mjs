@@ -9,6 +9,7 @@ import { pipeline } from "node:stream/promises";
 import path from "node:path";
 import { root } from "../../scripts/lib/media.mjs";
 import { isV2, parseCard } from "../../scripts/lib/style-card.mjs";
+import { readSegments, removeCardSegments, syncCardSegments } from "../../scripts/lib/segments.mjs";
 import { measure, productFreeProblems, ROLES2 } from "../../scripts/lib/style-card2.mjs";
 import { exists, readJson, writeJson } from "../../scripts/lib/storage.mjs";
 import { badRequest, conflict, HttpError } from "./errors.mjs";
@@ -79,7 +80,9 @@ export async function libraryInsights() {
       todo.set(key, row);
     }
   }
-  return { toBuild: [...todo.values()].sort((a, b) => b.cards.length - a.cards.length).map((r) => ({ ...r, count: r.cards.length })), usedBy };
+  const segments = await readSegments();
+  const count = (source) => segments.filter((s) => s.source === source).length;
+  return { segments: { total: segments.length, reference: count("reference"), human_edited: count("human_edited"), ai_accepted: count("ai_accepted") }, toBuild: [...todo.values()].sort((a, b) => b.cards.length - a.cards.length).map((r) => ({ ...r, count: r.cards.length })), usedBy };
 }
 
 // body: any of summary, structure, rhythm, camera, captions, inserts, packaging, directorRules, name
@@ -104,6 +107,7 @@ async function saveCardV2(id, card, body) {
   const problems = productFreeProblems(next);
   if (problems.length) throw badRequest("规则里不能出现参考视频的产品名，产品相关的请写到「只属于参考视频的内容」：", { problems });
   await writeJson(cardFile(id), next);
+  await removeCardSegments(id).catch(() => {}); // back to draft: its sentences leave the segment library until it is confirmed again
   return next;
 }
 
@@ -117,12 +121,14 @@ export async function confirmCard(id, body) {
   if (isV2(card)) { const problems = productFreeProblems(card); if (problems.length) throw badRequest("规则里还有产品名，不能确认：", { problems }); }
   const next = parseCard({ ...card, name, status: "confirmed", confirmedAt: new Date().toISOString() });
   await writeJson(cardFile(id), next);
+  if (isV2(next)) await syncCardSegments(next, { quiet: true }).catch(() => {}); // the card's sentences join the segment library (片段库)
   return next;
 }
 
 export async function deleteCard(id) {
   await readCard(id);
   await rm(cardFile(id), { force: true });
+  await removeCardSegments(id).catch(() => {});
   return { id, deleted: true };
 }
 

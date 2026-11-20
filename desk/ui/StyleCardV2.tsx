@@ -22,6 +22,7 @@ const ZOOMS = ["z100", "z110", "z115", "z120"];
 export const directionLine = (d: StyleCardV2["direction"]) => `${HOOK[d.hookTreatment] ?? d.hookTreatment}｜${PACING[d.pacing] ?? d.pacing}｜${PLACEMENT[d.brollPlacement] ?? d.brollPlacement}｜${LAYOUT[d.layoutBias] ?? d.layoutBias}｜${ZOOM_PATTERN[d.zoomPattern] ?? d.zoomPattern}`;
 const sec = (ms: number) => (ms / 1000).toFixed(1);
 const pct = (x: number) => `${Math.round(x * 100)}%`;
+const meterLevel = (x: number) => (x >= 0.7 ? "good" : x >= 0.4 ? "mid" : "low");
 const num = (v: string, fallback = 0) => (Number.isFinite(Number(v)) && v.trim() !== "" ? Number(v) : fallback);
 
 const Sel: React.FC<{ label: string; value: string; options: Record<string, string>; onChange: (v: string) => void }> = ({ label, value, options, onChange }) => <label className="sc-field">{label}<select value={value} onChange={(e) => onChange(e.target.value)}>{Object.entries(options).map(([k, t]) => <option key={k} value={k}>{t}</option>)}</select></label>;
@@ -47,55 +48,82 @@ export const CardEditorV2: React.FC<{ detail: StyleDetail; onChanged: () => void
   const used = detail.insights?.usedBy ?? [];
 
   return <div className="sc-editor">
-    <div className="sc-top">
-      <input className="sc-name" value={card.name} onChange={(e) => change("name", e.target.value)} aria-label="风格卡名称" placeholder="给这张卡起个名" />
-      <span className={`sc-status ${card.status}`}>{card.status === "confirmed" ? "已确认" : dirty ? "有未保存的修改" : "草稿：确认后才能用于出方案"}</span>
-      <button disabled={busy || !dirty} onClick={() => act(save)}>保存修改</button>
-      <button className="primary" disabled={busy || (card.status === "confirmed" && !dirty)} onClick={() => act(async () => { if (dirty) await save(); await styleApi.confirm(card.id, card.name); onChanged(); })}>{card.status === "confirmed" ? "改完重新确认" : "确认并存入风格库"}</button>
-      {card.source.referenceId ? <button disabled={busy} title="重新拆解这条成品（已确认的卡不会被覆盖，会生成新卡）" onClick={() => act(async () => { await styleApi.relearn(card.source.referenceId); onChanged(); })}><RefreshCw size={14} /> 重新拆解</button> : null}
-      <button disabled={busy} title="删除这张卡" onClick={async () => { if (await confirmBox(`删除风格卡「${card.name}」？删除后不能恢复。`, { yes: "删除" })) act(async () => { await styleApi.remove(card.id); onDeleted(); }); }}><Trash2 size={14} /></button>
-    </div>
-    <nav className="plan-tabs sc-tabs" aria-label="风格卡内容">{([["overview", "概览"], ["timeline", "时间线"], ["rules", "规则"], ["tech", `技巧支持${card.techniques.some((t) => t.support !== "ready") ? `（${card.techniques.filter((t) => t.support !== "ready").length} 项待开发）` : ""}`]] as [Tab, string][]).map(([k, t]) => <button key={k} className={tab === k ? "active" : ""} onClick={() => setTab(k)}><b>{t}</b></button>)}</nav>
+    <header className="sc-head">
+      <div className="sc-head-main">
+        <input className="sc-name" value={card.name} onChange={(e) => change("name", e.target.value)} aria-label="风格卡名称" placeholder="给这张卡起个名" />
+        <div className="sc-head-meta">
+          <i className={`sc-chip ${card.status}`}>{card.status === "confirmed" ? "已确认" : "草稿"}</i>
+          {dirty ? <i className="sc-chip warn">有未保存的修改</i> : null}
+          <span>{sec(total)} 秒 · 参考视频拆成 {card.timeline.length} 段{card.source.title ? ` · 来源：${card.source.title}` : ""}</span>
+        </div>
+        {card.status !== "confirmed" ? <p className="sc-hint">草稿：确认后才能用于出方案。</p> : null}
+      </div>
+      <div className="sc-actions">
+        <button disabled={busy || !dirty} onClick={() => act(save)}>保存修改</button>
+        <button className="primary" disabled={busy || (card.status === "confirmed" && !dirty)} onClick={() => act(async () => { if (dirty) await save(); await styleApi.confirm(card.id, card.name); onChanged(); })}>{card.status === "confirmed" ? "改完重新确认" : "确认并存入风格库"}</button>
+        {card.source.referenceId ? <button className="quiet" disabled={busy} title="重新拆解这条成品（已确认的卡不会被覆盖，会生成新卡）" onClick={() => act(async () => { await styleApi.relearn(card.source.referenceId); onChanged(); })}><RefreshCw size={14} /> 重新拆解</button> : null}
+        <button className="quiet danger" disabled={busy} title="删除这张卡" onClick={async () => { if (await confirmBox(`删除风格卡「${card.name}」？删除后不能恢复。`, { yes: "删除" })) act(async () => { await styleApi.remove(card.id); onDeleted(); }); }}><Trash2 size={14} /> 删除</button>
+      </div>
+    </header>
+    <nav className="sc-tabbar" aria-label="风格卡内容">{([["overview", "概览", null], ["timeline", "时间线", card.timeline.length], ["rules", "规则", card.directorRules.length], ["tech", "技巧支持", card.techniques.filter((t) => t.support !== "ready").length || null]] as [Tab, string, number | null][]).map(([k, t, n]) => <button key={k} className={tab === k ? "active" : ""} onClick={() => setTab(k)}>{t}{n ? <em className={k === "tech" ? "warn" : ""}>{k === "tech" ? `${n} 项待开发` : n}</em> : null}</button>)}</nav>
 
     {tab === "overview" ? <>
-      <p className="sc-direction"><b>{directionLine(card.direction)}</b></p>
-      <label className="sc-field wide">整体风格<textarea rows={2} value={card.summary_zh} onChange={(e) => change("summary_zh", e.target.value)} /></label>
-      <section className="sc-panel"><header><h3>复现度</h3><span>用参考视频自己的口播，按这张卡出一次方案，和参考视频比</span></header>
-        {st ? <p className="sc-repro"><b>插画位置重合 {pct(st.brollOverlap)}</b> 推近一致 {pct(st.zoomSame)} 插画占比 参考 {pct(st.brollRatioRef)} / 方案 {pct(st.brollRatioPlan)}<small>{st.note}（{st.at.slice(0, 16).replace("T", " ")}）</small></p> : <p className="catalog-hint">还没有自测。</p>}
-        <div className="catalog-actions"><button disabled={busy} onClick={() => act(async () => { await styleApi.selftest(card.id); onChanged(); })}>{busy ? "自测中…（约 1 分钟）" : st ? "重新自测" : "自测复现度"}</button></div>
-        <p className="catalog-hint">复现度低，说明卡没写准，或者效果清单缺东西（看「技巧支持」里暂不支持的项）。</p>
+      <section className="sc-hero">
+        <div className="sc-hero-chips">
+          <span><small>开场</small>{HOOK[card.direction.hookTreatment] ?? card.direction.hookTreatment}</span>
+          <span><small>节奏</small>{PACING[card.direction.pacing] ?? card.direction.pacing}</span>
+          <span><small>插画</small>{PLACEMENT[card.direction.brollPlacement] ?? card.direction.brollPlacement}</span>
+          <span><small>版式</small>{LAYOUT[card.direction.layoutBias] ?? card.direction.layoutBias}</span>
+          <span><small>推近</small>{ZOOM_PATTERN[card.direction.zoomPattern] ?? card.direction.zoomPattern}</span>
+          <span><small>插画占比</small>{pct(card.direction.brollRatioTarget)}</span>
+        </div>
+        <textarea className="sc-summary" rows={2} value={card.summary_zh} placeholder="一句话描述这张卡的整体风格" onChange={(e) => change("summary_zh", e.target.value)} />
       </section>
-      <section className="sc-panel"><header><h3>方向</h3><span>和出方案时的「创意方向」是同一套字段，选了这张卡，「照卡」那一套直接用它</span></header>
+      <div className="sc-cols">
+        <section className="sc-panel"><header><h3>复现度</h3><p>用参考视频自己的口播，按这张卡出一次方案，和参考视频比</p></header>
+          {st ? <div className="sc-meters">
+            <div className="sc-meter"><label>插画位置重合</label><div><i className={meterLevel(st.brollOverlap)} style={{ width: pct(st.brollOverlap) }} /></div><b>{pct(st.brollOverlap)}</b></div>
+            <div className="sc-meter"><label>推近一致</label><div><i className={meterLevel(st.zoomSame)} style={{ width: pct(st.zoomSame) }} /></div><b>{pct(st.zoomSame)}</b></div>
+            <div className="sc-meter"><label>插画占比 参考 / 方案</label><div className="two"><i className="ref" style={{ width: pct(st.brollRatioRef) }} /><i className="plan" style={{ width: pct(st.brollRatioPlan) }} /></div><b>{pct(st.brollRatioRef)} / {pct(st.brollRatioPlan)}</b></div>
+            <p className="sc-hint">{st.note}（{st.at.slice(0, 16).replace("T", " ")}）</p>
+          </div> : <p className="sc-hint">还没有自测。</p>}
+          <div className="sc-panel-foot"><button disabled={busy} onClick={() => act(async () => { await styleApi.selftest(card.id); onChanged(); })}>{busy ? "自测中…（约 1 分钟）" : st ? "重新自测" : "自测复现度"}</button><span className="sc-hint">复现度低，说明卡没写准，或者引擎缺东西（看「技巧支持」）。</span></div>
+        </section>
+        <section className="sc-panel"><header><h3>程序测出的数字</h3><p>由时间线算出，不用手填；改时间线保存后自动重算</p></header>
+          <div className="sc-measured">
+            <span><b>{m.cutCount}</b>切点</span><span><b>{sec(m.avgShotMs)}s</b>平均镜头</span><span><b>{sec(m.medianShotMs)}s</b>中位镜头</span><span><b>{sec(m.maxStaticMs)}s</b>最长不变画面</span>
+            <span><b>{sec(m.firstBrollMs)}s</b>第一次插画</span><span><b>{pct(m.brollRatio)}</b>插画占比</span><span><b>{pct(m.fullRatio)}</b>其中全屏</span><span><b>{pct(m.pipRatio)}</b>其中画中画</span>
+          </div>
+        </section>
+      </div>
+      <div className="sc-cols">
+        <section className="sc-panel"><header><h3>方向</h3><p>和出方案时的「创意方向」是同一套字段；选了这张卡，「照卡」那一套直接用它</p></header>
+          <div className="sc-fields">
+            <Sel label="开场处理" value={card.direction.hookTreatment} options={HOOK} onChange={(v) => change("direction", { ...card.direction, hookTreatment: v })} />
+            <Sel label="结构重心" value={card.direction.structureEmphasis} options={STRUCTURE} onChange={(v) => change("direction", { ...card.direction, structureEmphasis: v })} />
+            <Sel label="节奏" value={card.direction.pacing} options={PACING} onChange={(v) => change("direction", { ...card.direction, pacing: v })} />
+            <Sel label="插画位置" value={card.direction.brollPlacement} options={PLACEMENT} onChange={(v) => change("direction", { ...card.direction, brollPlacement: v })} />
+            <Sel label="版式" value={card.direction.layoutBias} options={LAYOUT} onChange={(v) => change("direction", { ...card.direction, layoutBias: v })} />
+            <Sel label="推近方式" value={card.direction.zoomPattern} options={ZOOM_PATTERN} onChange={(v) => change("direction", { ...card.direction, zoomPattern: v })} />
+            <Nu label="插画占比目标（0–1）" value={card.direction.brollRatioTarget} step={0.05} onChange={(v) => change("direction", { ...card.direction, brollRatioTarget: v })} />
+          </div></section>
+        <section className="sc-panel"><header><h3>节奏数字</h3><p>覆盖出方案时节奏预设的数字，由测量推出，可以改</p></header>
+          <div className="sc-fields">
+            <Nu label="全屏插画最早（ms）" value={card.presetOverrides.noFullBrollBeforeMs} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, noFullBrollBeforeMs: v })} />
+            <Nu label="画中画最早（ms）" value={card.presetOverrides.noPipBeforeMs} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, noPipBeforeMs: v })} />
+            <Nu label="镜头最短（ms）" value={card.presetOverrides.minShotMs} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, minShotMs: v })} />
+            <Nu label="镜头最长（ms）" value={card.presetOverrides.maxShotMs} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, maxShotMs: v })} />
+            <Nu label="插画占比上限（0–1）" value={card.presetOverrides.maxBrollRatio} step={0.05} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, maxBrollRatio: v })} />
+            <Nu label="画面最长不变（ms）" value={card.presetOverrides.maxStaticMs} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, maxStaticMs: v })} />
+          </div></section>
+      </div>
+      <section className="sc-panel"><header><h3>标签</h3><p>出方案选卡和风格库筛选时用</p></header>
         <div className="sc-fields">
-          <Sel label="开场处理" value={card.direction.hookTreatment} options={HOOK} onChange={(v) => change("direction", { ...card.direction, hookTreatment: v })} />
-          <Sel label="结构重心" value={card.direction.structureEmphasis} options={STRUCTURE} onChange={(v) => change("direction", { ...card.direction, structureEmphasis: v })} />
-          <Sel label="节奏" value={card.direction.pacing} options={PACING} onChange={(v) => change("direction", { ...card.direction, pacing: v })} />
-          <Sel label="插画位置" value={card.direction.brollPlacement} options={PLACEMENT} onChange={(v) => change("direction", { ...card.direction, brollPlacement: v })} />
-          <Sel label="版式" value={card.direction.layoutBias} options={LAYOUT} onChange={(v) => change("direction", { ...card.direction, layoutBias: v })} />
-          <Sel label="推近方式" value={card.direction.zoomPattern} options={ZOOM_PATTERN} onChange={(v) => change("direction", { ...card.direction, zoomPattern: v })} />
-          <Nu label="插画占比目标（0–1）" value={card.direction.brollRatioTarget} step={0.05} onChange={(v) => change("direction", { ...card.direction, brollRatioTarget: v })} />
-        </div></section>
-      <section className="sc-panel"><header><h3>程序测出的数字</h3><span>由时间线算出，不用手填；改时间线保存后自动重算</span></header>
-        <div className="sc-measured">
-          <span><b>{m.cutCount}</b>切点</span><span><b>{sec(m.avgShotMs)}s</b>平均镜头</span><span><b>{sec(m.medianShotMs)}s</b>中位镜头</span><span><b>{sec(m.maxStaticMs)}s</b>最长不变画面</span>
-          <span><b>{sec(m.firstBrollMs)}s</b>第一次插画</span><span><b>{pct(m.brollRatio)}</b>插画占比</span><span><b>{pct(m.fullRatio)}</b>其中全屏</span><span><b>{pct(m.pipRatio)}</b>其中画中画</span><span><b>{m.zoomChangesPerTalkBeat}</b>推近变化/达人镜头</span>
-        </div></section>
-      <section className="sc-panel"><header><h3>节奏数字</h3><span>覆盖出方案时节奏预设的数字（由测量推出，可以改）</span></header>
-        <div className="sc-fields">
-          <Nu label="全屏插画最早（ms）" value={card.presetOverrides.noFullBrollBeforeMs} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, noFullBrollBeforeMs: v })} />
-          <Nu label="画中画最早（ms）" value={card.presetOverrides.noPipBeforeMs} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, noPipBeforeMs: v })} />
-          <Nu label="镜头最短（ms）" value={card.presetOverrides.minShotMs} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, minShotMs: v })} />
-          <Nu label="镜头最长（ms）" value={card.presetOverrides.maxShotMs} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, maxShotMs: v })} />
-          <Nu label="插画占比上限（0–1）" value={card.presetOverrides.maxBrollRatio} step={0.05} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, maxBrollRatio: v })} />
-          <Nu label="画面最长不变（ms）" value={card.presetOverrides.maxStaticMs} onChange={(v) => change("presetOverrides", { ...card.presetOverrides, maxStaticMs: v })} />
-        </div></section>
-      <section className="sc-panel"><header><h3>标签</h3><span>出方案选卡时按这些排序</span></header>
-        <div className="sc-fields">
-          <Sel label="产品类型" value={card.meta.productType} options={{ app: "App", physical: "实物" }} onChange={(v) => change("meta", { ...card.meta, productType: v as "app" | "physical" })} />
+          <Sel label="产品类型" value={card.meta.productType} options={{ app: "App（软件）", physical: "实物商品" }} onChange={(v) => change("meta", { ...card.meta, productType: v as "app" | "physical" })} />
           <Sel label="视频形式" value={card.meta.format} options={FORMAT} onChange={(v) => change("meta", { ...card.meta, format: v })} />
           <label className="sc-field">标签（逗号分隔）<input value={card.meta.tags_zh.join("，")} onChange={(e) => change("meta", { ...card.meta, tags_zh: e.target.value.split(/[,，、\s]+/).filter(Boolean) })} /></label>
         </div></section>
-      <p className="catalog-hint">用过这张卡的项目：{used.length ? used.join("、") : "还没有"}。{card.model ? ` 草稿由 ${card.model} 生成，请对照视频核对。` : ""}</p>
+      <p className="sc-hint">用过这张卡的项目：{used.length ? used.join("、") : "还没有"}。{card.model ? ` 草稿由 ${card.model} 生成，请对照视频核对。` : ""}</p>
     </> : null}
 
     {tab === "timeline" ? <>
@@ -104,7 +132,8 @@ export const CardEditorV2: React.FC<{ detail: StyleDetail; onChanged: () => void
         {a ? <div className="tech-frames">{a.frames.map((t) => <img key={t} loading="lazy" title={`${t}s`} src={styleApi.frameUrl(card.source.referenceId, t)} alt="" />)}</div> : null}
         <p className="catalog-hint">来源：{card.source.title} · {sec(total)} 秒 · 这条参考视频被拆成 {card.timeline.length} 段，每段的画面、版式、推近都可以改，改完保存，上面的数字会重算。</p>
       </section>
-      <div className="sc-rows">{card.timeline.map((r, i) => <div key={i} className="sc-row sc-seg">
+      <div className="sc-legend">{(Object.keys(ROLE2) as RoleV2[]).map((k) => <span key={k}><i style={{ background: ROLE_COLOR[k] }} />{ROLE2[k]}</span>)}</div>
+      <div className="sc-rows sc-seg-table"><div className="sc-row sc-seg sc-seg-head"><span>时间</span><span>作用</span><span>画面</span><span>版式</span><span>推近</span><span>素材类型</span><span>这一段发生了什么</span></div>{card.timeline.map((r, i) => <div key={i} className="sc-row sc-seg">
         <span className="sc-time">{sec(r.startMs)}–{sec(r.endMs)}s</span>
         <select value={r.role} onChange={(e) => setSeg(i, { role: e.target.value as RoleV2 })}>{(Object.keys(ROLE2) as RoleV2[]).map((k) => <option key={k} value={k}>{ROLE2[k]}</option>)}</select>
         <select value={r.visual} onChange={(e) => setSeg(i, { visual: e.target.value as "talk" | "broll", ...(e.target.value === "broll" ? { zoom: undefined } : {}) })}>{Object.entries(VISUAL).map(([k, t]) => <option key={k} value={k}>{t}</option>)}</select>

@@ -1,0 +1,207 @@
+[
+  {
+    "text": "A",
+    "startMs": 60,
+    "endMs": 60
+  },
+  {
+    "text": "few",
+    "startMs": 60,
+    "endMs": 340
+  },
+  {
+    "text": "seconds",
+    "startMs": 340,
+    "endMs": 710
+  },
+  {
+    "text": "after",
+    "startMs": 710,
+    "endMs": 1040
+  },
+  {
+    "text": "I",
+    "startMs": 1040,
+    "endMs": 1170
+  },
+  {
+    "text": "snap",
+    "startMs": 1170,
+    "endMs": 1350
+  },
+  {
+    "text": "the",
+    "startMs": 1350,
+    "endMs": 1590
+  },
+  {
+    "text": "photo,",
+    "startMs": 1590,
+    "endMs": 1980
+  },
+  {
+    "text": "the",
+    "startMs": 1980,
+    "endMs": 2080
+  },
+  {
+    "text": "AI",
+    "startMs": 2080,
+    "endMs": 2280
+  },
+  {
+    "text": "coach",
+    "startMs": 2280,
+    "endMs": 2800
+  },
+  {
+    "text": "tells",
+    "startMs": 2800,
+    "endMs": 3080
+  },
+  {
+    "text": "me",
+    "startMs": 3080,
+    "endMs": 3200
+  },
+  {
+    "text": "something",
+    "startMs": 3200,
+    "endMs": 3680
+  },
+  {
+    "text": "based",
+    "startMs": 3680,
+    "endMs": 4080
+  },
+  {
+    "text": "on",
+    "startMs": 4080,
+    "endMs": 4240
+  },
+  {
+    "text": "what's",
+    "startMs": 4240,
+    "endMs": 4750
+  },
+  {
+    "text": "actually",
+    "startMs": 4750,
+    "endMs": 5040
+  },
+  {
+    "text": "on",
+    "startMs": 5040,
+    "endMs": 5190
+  },
+  {
+    "text": "my",
+    "startMs": 5190,
+    "endMs": 5380
+  },
+  {
+    "text": "plate.",
+    "startMs": 5380,
+    "endMs": 5980
+  },
+  {
+    "text": "I",
+    "startMs": 5980,
+    "endMs": 5980
+  },
+  {
+    "text": "just",
+    "startMs": 5980,
+    "endMs": 6220
+  },
+  {
+    "text": "read",
+    "startMs": 6220,
+    "endMs": 6460
+  },
+  {
+    "text": "it",
+    "startMs": 6460,
+    "endMs": 6630
+  },
+  {
+    "text": "out",
+    "startMs": 6630,
+    "endMs": 6760
+  },
+  {
+    "text": "loud,",
+    "startMs": 6760,
+    "endMs": 7250
+  },
+  {
+    "text": "then",
+    "startMs": 7250,
+    "endMs": 7680
+  },
+  {
+    "text": "it",
+    "startMs": 7680,
+    "endMs": 7920
+  },
+  {
+    "text": "makes",
+    "startMs": 7920,
+    "endMs": 8430
+  },
+  {
+    "text": "a",
+    "startMs": 8430,
+    "endMs": 8590
+  },
+  {
+    "text": "recipe",
+    "startMs": 8590,
+    "endMs": 9210
+  },
+  {
+    "text": "and",
+    "startMs": 9210,
+    "endMs": 9490
+  },
+  {
+    "text": "a",
+    "startMs": 9490,
+    "endMs": 9600
+  },
+  {
+    "text": "grocery",
+    "startMs": 9600,
+    "endMs": 10400
+  },
+  {
+    "text": "list",
+    "startMs": 10400,
+    "endMs": 10710
+  },
+  {
+    "text": "for",
+    "startMs": 10710,
+    "endMs": 11060
+  },
+  {
+    "text": "me.",
+    "startMs": 11060,
+    "endMs": 11320
+  },
+  {
+    "text": "That's",
+    "startMs": 11320,
+    "endMs": 11600
+  },
+  {
+    "text": "actually",
+    "startMs": 11600,
+    "endMs": 12380
+  },
+  {
+    "text": "crazy.",
+    "startMs": 12380,
+    "endMs": 12880
+  }
+]

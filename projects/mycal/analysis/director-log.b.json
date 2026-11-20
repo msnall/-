@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-20T09:43:21.516Z",
+  "model": "anthropic.claude-sonnet-5-5",
+  "ok": true,
+  "direction": "痛点红字",
+  "attempts": [
+    {
+      "errors": [
+        "shot 4 (c1-action at b07a word 21): runs 1133 ms past the end of its beat (\"I just read it out loud,\", 1367 ms). Shorten it, start it earlier, or split the beat.",
+        "b02 → b06: 4.9s without visual change (max 2.5s). Change the zoom on a beat or add B-roll.",
+        "direction color_hook but hook beat b01a has 1 strongly coloured emphasis word(s) (need 2-3, color other than default)",
+        "direction color_hook but hook beat b01a is z120 (use z100 or z110)"
+      ]
+    },
+    {
+      "errors": [
+        "shots in beat b07 overlap: c1-action and screen-o1"
+      ]
+    },
+    {
+      "errors": []
+    }
+  ],
+  "lastAnswer": "{\"direction\":\"痛点红字\",\"splits\":[],\"beats\":[{\"beat\":\"b01\",\"zoom\":\"z110\"},{\"beat\":\"b02\",\"zoom\":\"z100\"},{\"beat\":\"b03\",\"zoom\":\"z100\"},{\"beat\":\"b04\",\"zoom\":\"z120\"},{\"beat\":\"b05\",\"zoom\":\"z100\"},{\"beat\":\"b06\",\"zoom\":\"z100\"},{\"beat\":\"b07\",\"zoom\":\"z100\"},{\"beat\":\"b08\",\"zoom\":\"z100\"}],\"broll\":[{\"asset\":\"screen-o1\",\"beat\":\"b01\",\"word\":4,\"srcStartMs\":7000,\"durationMs\":1500,\"layout\":\"pip\",\"slot\":\"top-right\",\"reason_zh\":\"“calorie tracking”出现时用 App 引导录屏小窗点题，创作者仍在画面。\"},{\"asset\":\"screen-o1\",\"beat\":\"b02\",\"word\":11,\"srcStartMs\":21000,\"durationMs\":1300,\"layout\":\"pip\",\"slot\":\"top-left\",\"reason_zh\":\"“ingredient”时用繁琐的选择界面表现“输入很麻烦”的痛点。\"},{\"asset\":\"c1-action\",\"beat\":\"b04\",\"word\":20,\"srcStartMs\":3000,\"durationMs\":1000,\"layout\":\"pip\",\"slot\":\"lower-right\",\"reason_zh\":\"“check this out”转折，用达人拿手机的小窗引出演示。\"},{\"asset\":\"c1-action\",\"beat\":\"b06\",\"word\":3,\"srcStartMs\":6000,\"durationMs\":1300,\"layout\":\"pip\",\"slot\":\"top-right\",\"reason_zh\":\"“after I snap the photo”对应达人拿手机拍照的动作。\"},{\"asset\":\"screen-o1\",\"beat\":\"b06\",\"word\":10,\"srcStartMs\":77000,\"durationMs\":2200,\"layout\":\"pip\",\"slot\":\"top-left\",\"reason_zh\":\"“AI coach tells me”时展示 App 个性化建议/计划界面。\"},{\"asset\":\"c1-action\",\"beat\":\"b07\",\"word\":23,\"srcStartMs\":11000,\"durationMs\":1000,\"layout\":\"pip\",\"slot\":\"top-right\",\"reason_zh\":\"“read it out loud”对应达人看着手机的使用画面；缩短时长，避免与后面的录屏重叠。\"},{\"asset\":\"screen-o1\",\"beat\":\"b07\",\"word\":31,\"srcStartMs\":91000,\"durationMs\":1500,\"layout\":\"pip\",\"slot\":\"lower-left\",\"reason_zh\":\"“recipe and grocery list”时展示 App 生成结果的录屏。\"}],\"emphasis\":[{\"beat\":\"b01\",\"word\":3,\"color\":\"red\"},{\"beat\":\"b01\",\"word\":7,\"color\":\"red\"},{\"beat\":\"b01\",\"word\":8,\"color\":\"red\"},{\"beat\":\"b02\",\"word\":14,\"color\":\"red\"},{\"beat\":\"b03\",\"word\":18,\"color\":\"red\"},{\"beat\":\"b04\",\"word\":20,\"color\":\"yellow\"},{\"beat\":\"b05\",\"word\":28,\"color\":\"yellow\"},{\"beat\":\"b06\",\"word\":10,\"color\":\"yellow\"},{\"beat\":\"b07\",\"word\":31,\"color\":\"green\"},{\"beat\":\"b07\",\"word\":35,\"color\":\"green\"},{\"beat\":\"b08\",\"word\":40,\"color\":\"green\"}],\"logo\":null,\"notes_zh\":\"修正重叠错误：b07 中 c1-action 小窗缩短为 1000ms（从“read”起），与“recipe”处的录屏小窗之间留出间隔，即使句中停顿被语音清理压缩也不会重叠。其余不变：全部 PIP；peaks_only，仅 b01(z110) 与 b04(z120) 推近，其余 z100；b01-b03 红字强调痛点；无持久 logo 要求，logo 为 null；结尾不是 CTA 且无结尾卡素材。\"}"
+}

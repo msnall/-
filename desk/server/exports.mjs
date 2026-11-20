@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process";
+import { recordFinal } from "../../scripts/lib/segments-final.mjs";
 import { realpath, stat } from "node:fs/promises";
 import path from "node:path";
 import { root, run, sha256File } from "../../scripts/lib/media.mjs";
@@ -71,6 +72,7 @@ export async function finalizeExport(job) {
     fileSize: info.size, thumbnail: path.relative(root, thumbnail).replaceAll("\\", "/"),
   };
   await writeJson(exportFile(job.project, job.exportId), record);
+  await recordFinal(job.project).catch(() => {}); // the finished plan becomes examples for the next orders (片段库)
   return record;
 }
 
