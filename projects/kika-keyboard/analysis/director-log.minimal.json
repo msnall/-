@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-19T05:25:56.251Z",
+  "model": "anthropic.claude-sonnet-5-5",
+  "baseUrl": "https://api.beeswitch.com",
+  "ok": true,
+  "attempts": [
+    {
+      "errors": [
+        "shot 2 (screen-m8 at c1-waist-b word 23): runs 207 ms past the end of its beat (\"if your chats are dry just get Kika\", 2067 ms). Shorten it, start it earlier, or split the beat."
+      ]
+    },
+    {
+      "errors": []
+    }
+  ],
+  "lastAnswer": "{\"splits\":{\"c1-waist-a\":[],\"c1-waist-b\":[11,18]},\"shots\":[{\"clip\":\"c1-waist-a\",\"atWord\":23,\"asset\":\"screen-m2\",\"srcStartMs\":500,\"durationMs\":1800,\"layout\":\"full\",\"why\":\"说到 crazy fonts 时切到半透明动漫主题键盘的打字画面，最能说明产品\"},{\"clip\":\"c1-waist-b\",\"atWord\":22,\"asset\":\"screen-m8\",\"srcStartMs\":14500,\"durationMs\":1000,\"layout\":\"full\",\"why\":\"结尾 CTA 'just get Kika'，从 dry 起提前切入，落在带 Kika 图标和 Download 按钮的结束画面，并在节拍内结束\"}],\"logo\":null,\"emphasis\":[{\"clip\":\"c1-waist-a\",\"word\":6},{\"clip\":\"c1-waist-a\",\"word\":19},{\"clip\":\"c1-waist-a\",\"word\":24},{\"clip\":\"c1-waist-a\",\"word\":26},{\"clip\":\"c1-waist-b\",\"word\":7},{\"clip\":\"c1-waist-b\",\"word\":25}],\"notes\":\"极简、达人优先：只用两个 b-roll 镜头（字体演示和结尾下载卡），开头 3 秒和个人情绪句都留在达人画面。结尾镜头改为从 'dry' 开始、时长 1000ms，确保在节拍结束前收尾。\"}"
+}

@@ -1,0 +1,54 @@
+{
+  "state": "done",
+  "kind": "variants",
+  "startedAt": "2026-11-19T05:25:18.996Z",
+  "finishedAt": "2026-11-19T05:26:37.758Z",
+  "steps": [
+    {
+      "name": "同步校对文案",
+      "key": "sync",
+      "state": "done"
+    },
+    {
+      "name": "模型出方案：全屏插画",
+      "key": "direct:full",
+      "state": "done"
+    },
+    {
+      "name": "模型出方案：极简口播",
+      "key": "direct:minimal",
+      "state": "done"
+    },
+    {
+      "name": "模型出方案：按风格卡",
+      "key": "direct:pip",
+      "state": "done"
+    },
+    {
+      "name": "编译：全屏插画",
+      "key": "compile:full",
+      "state": "done"
+    },
+    {
+      "name": "编译：极简口播",
+      "key": "compile:minimal",
+      "state": "done"
+    },
+    {
+      "name": "编译：按风格卡",
+      "key": "compile:pip",
+      "state": "done"
+    }
+  ],
+  "error": null,
+  "applied": {
+    "revision": 22,
+    "variant": "pip",
+    "at": "2026-11-19T05:28:36.147Z"
+  },
+  "card": {
+    "id": "kika-ugc1016",
+    "name": "UGC1016 Kika keyboard（订单参考成品）"
+  },
+  "note": null
+}

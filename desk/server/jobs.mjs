@@ -11,7 +11,6 @@ import { root, run, sha256File } from "../../scripts/lib/media.mjs";
 import { exists, listJson, projectFile, readJson, writeJson } from "../../scripts/lib/storage.mjs";
 import { unprocessable } from "./errors.mjs";
 import { emit } from "./events.mjs";
-import { finishTranscription } from "./onboarding.mjs";
 import { exportSettings, finalizeExport, validateFilename } from "./exports.mjs";
 
 const node = (script, ...args) => [process.execPath, ["--disable-warning=MODULE_TYPELESS_PACKAGE_JSON", script, ...args]];
@@ -38,7 +37,6 @@ const definitions = {
     params: z.object({ round: z.string().regex(/^r[1-9]\d*$/), option: z.string().regex(/^option-[a-z]$/) }),
     commands: async (id, params) => [node("scripts/render-stills.mjs", id, `--round=${params.round}`, `--option=${params.option}`)],
   },
-  candidates: { params: z.object({ every: z.number().positive().default(1) }), commands: async (id, params) => [node("scripts/find-candidates.mjs", id, "--sheet", `--every=${params.every}`)] },
   // Render the current revision to out/desk/<id>/<id>-r<rev>.mp4, then QC it.
   render: {
     params: z.object({ filename: z.string().optional(), planHash: z.string().regex(/^[a-f0-9]{64}$/).optional() }),
@@ -168,7 +166,6 @@ async function drain() {
     }
     await new Promise((resolve) => logStream.end(resolve));
     record.exitCode = code;
-    if (code === 0 && record.type === "transcribe") await finishTranscription(record.project);
     if (code === 0 && record.type === "render") {
       record.phase = "finalizing";
       await save(record);

@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 2,
+  "projectId": "kismia",
+  "scriptId": "creator",
+  "status": "draft",
+  "builtAt": "2026-11-19T08:54:48.796Z",
+  "fps": 30,
+  "director": {
+    "variant": "pip",
+    "model": "claude-sonnet-5-5",
+    "at": "2026-11-19T08:54:48.796Z",
+    "notes": "已把结束卡提前到第 69 个词（wasting），时长 2 秒，在最后一个 beat 内结束；去掉了第 71 词的拆分，并把强调词减到 6 个。开头 1 秒和验证、防骗等信任类句子保留达人画面。",
+    "attempts": 2,
+    "styleCard": {
+      "id": "kika-ugc1016",
+      "name": "UGC1016 Kika keyboard（订单参考成品）"
+    }
+  },
+  "note": "Beats from the creators' proofread transcripts; b-roll and emphasis proposed by the auto director and validated by code. Review in the desk.",
+  "beats": [
+    {
+      "id": "b01",
+      "text": "Stop swiping on random profiles.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 0,
+        "endMs": 1733.3333333333333,
+        "wordStart": 0,
+        "wordEnd": 4,
+        "ranges": [
+          [
+            0,
+            1733.3333333333333
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "timelineStartMs": 0
+    },
+    {
+      "id": "b02",
+      "text": "Now, I only filter by shared values and distance.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 1733.3333333333333,
+        "endMs": 4366.666666666667,
+        "wordStart": 5,
+        "wordEnd": 13,
+        "ranges": [
+          [
+            1733.3333333333333,
+            4366.666666666667
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b02-1",
+          "asset": "c1-action",
+          "srcStartMs": 0,
+          "atMs": 16,
+          "durationMs": 2000,
+          "layout": "pip",
+          "slot": "top-right",
+          "note": "说到筛选，用手持手机的操作镜头，画中画保留达人"
+        }
+      ],
+      "timelineStartMs": 1733.3333333333335
+    },
+    {
+      "id": "b03",
+      "text": "This is Kismia. I was so tired of wasting time,",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 4366.666666666667,
+        "endMs": 6800,
+        "wordStart": 14,
+        "wordEnd": 23,
+        "ranges": [
+          [
+            4366.666666666667,
+            6800
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "timelineStartMs": 4366.666666666667
+    },
+    {
+      "id": "b04",
+      "text": "but their smart algorithm matches you with",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 6800,
+        "endMs": 9066.666666666666,
+        "wordStart": 24,
+        "wordEnd": 30,
+        "ranges": [
+          [
+            6800,
+            9066.666666666666
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b04-1",
+          "asset": "c1-action",
+          "srcStartMs": 500,
+          "atMs": 7,
+          "durationMs": 2100,
+          "layout": "pip",
+          "slot": "lower-right",
+          "note": "讲智能算法匹配，用手机操作镜头，换位置和起点避免重复"
+        }
+      ],
+      "timelineStartMs": 6800
+    },
+    {
+      "id": "b05",
+      "text": "people who actually want a serious relationship.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 9066.666666666666,
+        "endMs": 11733.333333333334,
+        "wordStart": 31,
+        "wordEnd": 37,
+        "ranges": [
+          [
+            9066.666666666666,
+            11733.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b05-1",
+          "asset": "screen-o2",
+          "srcStartMs": 0,
+          "atMs": 0,
+          "durationMs": 2600,
+          "layout": "pip",
+          "slot": "top-right",
+          "note": "说到想要认真的关系，用牵手情感镜头"
+        }
+      ],
+      "timelineStartMs": 9066.666666666668
+    },
+    {
+      "id": "b06",
+      "text": "The best part, every profile is photo verified.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 11733.333333333334,
+        "endMs": 14233.333333333334,
+        "wordStart": 38,
+        "wordEnd": 45,
+        "ranges": [
+          [
+            11733.333333333334,
+            14233.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "timelineStartMs": 11733.333333333336
+    },
+    {
+      "id": "b07",
+      "text": "So you don't have to worry about catfish or bots.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 14233.333333333334,
+        "endMs": 16733.333333333332,
+        "wordStart": 46,
+        "wordEnd": 55,
+        "ranges": [
+          [
+            14233.333333333334,
+            16733.333333333332
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "timelineStartMs": 14233.333333333336
+    },
+    {
+      "id": "b08",
+      "text": "It's built for people looking for real connections.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 16733.333333333332,
+        "endMs": 19500,
+        "wordStart": 56,
+        "wordEnd": 63,
+        "ranges": [
+          [
+            16733.333333333332,
+            19500
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b08-1",
+          "asset": "screen-o3",
+          "srcStartMs": 0,
+          "atMs": 4,
+          "durationMs": 2500,
+          "layout": "pip",
+          "slot": "lower-left",
+          "note": "说到真实的连接，用爱心手势表达情感共鸣"
+        }
+      ],
+      "timelineStartMs": 16733.333333333336
+    },
+    {
+      "id": "b09",
+      "text": "If you want to stop wasting time, tap below to try Kismia.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 19500,
+        "endMs": 22500,
+        "wordStart": 64,
+        "wordEnd": 75,
+        "ranges": [
+          [
+            19500,
+            22500
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b09-1",
+          "asset": "screen-o1",
+          "srcStartMs": 0,
+          "atMs": 922,
+          "durationMs": 2000,
+          "layout": "full",
+          "note": "结尾号召下载，从 wasting time 起提前进入全屏品牌结束卡，在最后一句结束前收尾"
+        }
+      ],
+      "timelineStartMs": 19500.000000000004
+    }
+  ],
+  "emphasis": [
+    {
+      "beat": "b01",
+      "word": "Stop"
+    },
+    {
+      "beat": "b03",
+      "word": "tired"
+    },
+    {
+      "beat": "b05",
+      "word": "relationship."
+    },
+    {
+      "beat": "b06",
+      "word": "verified."
+    },
+    {
+      "beat": "b07",
+      "word": "catfish"
+    },
+    {
+      "beat": "b09",
+      "word": "Kismia."
+    }
+  ],
+  "logo": {
+    "beat": "b03",
+    "atMs": 379,
+    "position": "top-left"
+  }
+}

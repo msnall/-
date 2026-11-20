@@ -1,0 +1,23 @@
+{
+  "id": "e-20261119T085758-001",
+  "projectId": "kismia",
+  "storyboardRevision": null,
+  "editPlanRevision": 10,
+  "editPlanSha256": "5b32fd7d3cc8ba738ede216109cf462ac8ca7c96669b45d32b73dd8734c57465",
+  "filename": "kismia_Final_r10.mp4",
+  "absolutePath": "F:\\VideoAutomation\\out\\desk\\kismia\\kismia_Final_r10.mp4",
+  "relativePath": "out/desk/kismia/kismia_Final_r10.mp4",
+  "renderedAt": "2026-11-19T09:01:08.459Z",
+  "qcStatus": "passed",
+  "status": "completed",
+  "video": {
+    "durationSeconds": 22.5,
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "codec": "h264",
+    "audioCodec": "aac"
+  },
+  "fileSize": 27674936,
+  "thumbnail": "out/desk/kismia/kismia_Final_r10.thumbnail.jpg"
+}

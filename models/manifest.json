@@ -7,5 +7,12 @@
     "runtime": "@mediapipe/tasks-vision (version pinned in package.json)",
     "usedBy": "scripts/detect-faces.mjs",
     "license": "Apache-2.0 (MediaPipe model card)"
+  },
+  "whisper_small_en": {
+    "file": "bin/whisper.cpp/models/ggml-small.en.bin",
+    "sha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d",
+    "source": "https://huggingface.co/ggerganov/whisper.cpp (ggml-small.en.bin)",
+    "runtime": "whisper.cpp 1.9.5-dev, commit 231638a0717b7822784297e5980965ffcec05810",
+    "usedBy": "scripts/transcribe.mjs, scripts/transcribe-assets.mjs"
   }
 }

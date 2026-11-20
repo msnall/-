@@ -1,9 +1,11 @@
 ---
 name: timeline-review
-description: Turn the user's review-desk comments into edit-plan proposals. Use when the user says "看我的意见", "process my comments", or a review round was submitted (review/rN.json has submittedAt) and proposals are needed.
+description: Turn the user's review-desk comments into edit-plan proposals (④ 精修). Use when the user says "看我的意见", "process my comments", or a review round was submitted (review/rN.json has submittedAt) and proposals are needed.
 ---
 
-# Timeline review: comments -> proposals
+# ④ 精修：意见 → 提案
+
+用户也可以不经过你，直接在审阅台里改（改动自动存成版本，可还原）。这个 skill 只在用户让你处理意见时用。正式方案的来源是 ③ 方案选定后放进来的 edit-plan。
 
 Inputs: `projects/<id>/status.json` (round), `review/<round>.json`, `edit-plan.json` (note `revision`), `proposals/*.json`.
 

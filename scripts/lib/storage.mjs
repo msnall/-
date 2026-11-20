@@ -30,7 +30,7 @@ export async function listProjects() {
   for (const entry of entries) {
     if (!entry.isDirectory() || !PROJECT_ID.test(entry.name)) continue;
     const dir = path.join(projectsDir, entry.name);
-    if ((await exists(path.join(dir, "edit-plan.json"))) || (await exists(path.join(dir, "project.json")))) ids.push(entry.name);
+    if ((await exists(path.join(dir, "edit-plan.json"))) || (await exists(path.join(dir, "project.json"))) || (await exists(path.join(dir, "ingest.json")))) ids.push(entry.name);
   }
   return ids.sort();
 }

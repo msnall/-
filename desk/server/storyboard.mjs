@@ -19,10 +19,6 @@ export async function readOverview(id) {
   const status = await readStatus(id);
   const plan = await readJson(projectFile(id, "edit-plan.json"), null);
   const project = await readJson(projectFile(id, "project.json"), null);
-  if (project?.mode === "mix") {
-    const current = await readJson(projectFile(id, "mix/current.json"), null);
-    return { id, title: project.title, productName: project.productName, mode: "mix", style: project.style, editorReady: !!current, mixEditorConfirmed: !!current && plan?.meta?.storyboard?.round === current.round, status, hasPlan: !!plan, hasProject: true, transcriptReady: await exists(path.join(publicDir, project.transcript.words)), previewReady: true, ready: true, revision: plan?.revision ?? null, updatedAt: status.updatedAt, media: project.media };
-  }
   const transcriptReady = !project || await exists(path.join(publicDir, project.transcript.words)) && await exists(path.join(publicDir, project.transcript.cues)) && await exists(projectFile(id, "analysis/beats.json"));
   let previewReady = !project;
   let media = project?.media ?? null;
@@ -45,7 +41,10 @@ export async function readOverview(id) {
   }
   const legacyNames = { bloom10: "第一版口播视频", "bloom10-demo": "剪辑效果演示", "bloom10-v2": "卡片式剪辑方案" };
   const statusInfo = await stat(projectFile(id, "status.json")).catch(() => null);
-  return { id, title: legacyNames[id] ?? project?.title ?? plan?.meta?.title ?? id, productName: project?.productName ?? (id.startsWith("bloom10") ? "Bloom10 软糖" : "未分类产品"), status, hasPlan: !!plan, hasProject: !!project, transcriptReady, previewReady, ready: transcriptReady && previewReady, revision: plan ? (plan.revision ?? 0) : null, updatedAt: status.updatedAt ?? statusInfo?.mtime.toISOString() ?? null, media };
+  // TTO order projects (入库后有 ingest.json): name them from the order folder, e.g. 2026-10_Kika-Keyboard.
+  const ingest = await readJson(projectFile(id, "ingest.json"), null);
+  const orderName = ingest?.order ? { product: ingest.order.split("_").slice(1).join(" ").replace(/-/g, " ") || ingest.order, month: ingest.order.split("_")[0] } : null;
+  return { id, hasCatalog: !!ingest, title: legacyNames[id] ?? project?.title ?? plan?.meta?.title ?? (orderName ? `${orderName.product} · ${orderName.month}` : id), productName: project?.productName ?? (orderName?.product ?? (id.startsWith("bloom10") ? "Bloom10 软糖" : "未分类产品")), status, hasPlan: !!plan, hasProject: !!project, transcriptReady, previewReady, ready: transcriptReady && previewReady, revision: plan ? (plan.revision ?? 0) : null, updatedAt: status.updatedAt ?? statusInfo?.mtime.toISOString() ?? null, media };
 }
 
 // --- Assets.

@@ -1,5 +1,7 @@
 # VideoAutomation
 
+> **第一次接手？先看 [docs/SOP.md](docs/SOP.md)**：一条 TikTok One 订单从拿到素材到交出成片的完整步骤。
+
 ## 视频工作台
 
 ### 达人侧边混剪风格

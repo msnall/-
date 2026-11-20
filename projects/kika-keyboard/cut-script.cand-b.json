@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "projectId": "kika-keyboard",
+  "scriptId": "cand-b",
+  "status": "draft",
+  "builtAt": "2026-11-18T06:47:59.175Z",
+  "inputs": {
+    "ingestSha256": "9eafe30eba13a79444cfb3b93e9dd92c07a794b595035190225aa977572c3008",
+    "alignmentSha256": "4402aa9db8b856ba6d69381081710725c8918eee402a57fa288930ed10efd26d",
+    "briefOrder": "2026-10_Kika-Keyboard"
+  },
+  "summary": {
+    "beats": 6,
+    "ready": 0,
+    "needsReview": 0,
+    "missingFootage": 6,
+    "voiceDurationMs": 0
+  },
+  "beats": [
+    {
+      "id": "b01",
+      "lineId": "cand-b.readingA.1",
+      "role": "hook",
+      "text": "I changed my whole phone in like ten seconds.",
+      "tone": "<confident, casual, holding phone up>",
+      "claims": [],
+      "voice": null,
+      "status": "missing-footage"
+    },
+    {
+      "id": "b02",
+      "lineId": "cand-b.readingA.2",
+      "role": "hook",
+      "text": "And no, I didn't buy a new one.",
+      "tone": "<playful, teasing>",
+      "claims": [],
+      "voice": null,
+      "status": "missing-footage"
+    },
+    {
+      "id": "b03",
+      "lineId": "cand-b.readingA.3",
+      "role": "product",
+      "text": "It's Kika Keyboard. Ten thousand plus themes, and you can match it to your lock screen too.",
+      "tone": "<proud, show the themed keyboard>",
+      "claims": [
+        "over 10,000 free keyboard themes",
+        "keyboard and lock screen matching"
+      ],
+      "voice": null,
+      "status": "missing-footage"
+    },
+    {
+      "id": "b04",
+      "lineId": "cand-b.readingB.1",
+      "role": "proof",
+      "text": "My phone used to look like everyone else's.",
+      "tone": "<honest, calm>",
+      "claims": [],
+      "voice": null,
+      "status": "missing-footage"
+    },
+    {
+      "id": "b05",
+      "lineId": "cand-b.readingB.2",
+      "role": "proof",
+      "text": "Now every time I type, it's a different theme.",
+      "tone": "<delighted>",
+      "claims": [],
+      "voice": null,
+      "status": "missing-footage"
+    },
+    {
+      "id": "b06",
+      "lineId": "cand-b.readingB.3",
+      "role": "cta",
+      "text": "Kika Keyboard. Free, and it actually looks good.",
+      "tone": "<warm, direct CTA>",
+      "claims": [
+        "free"
+      ],
+      "voice": null,
+      "status": "missing-footage"
+    }
+  ]
+}

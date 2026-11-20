@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "items": {
+    "c1-closeup": {
+      "ai": {
+        "category": "action",
+        "description": "达人近景（脸和手机在画面里）画面，没有人声，约 9 秒，可作动作镜头。具体动作需看画面确认。",
+        "tags": [
+          "动作",
+          "无人声",
+          "closeup"
+        ],
+        "provider": "heuristic",
+        "model": null,
+        "at": "2026-11-18T07:00:07.286Z"
+      },
+      "human": {
+        "editedAt": "2026-11-18T07:00:07.299Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:10:46.427Z"
+    },
+    "c1-waist-a": {
+      "ai": {
+        "category": "talk",
+        "description": "达人半身（腰部以上）口播，约 15 秒。说的是：“I used to send the most boring texts ever. No font, no emojis, just plain words. Then I downloaded Kika. Now I use crazy fonts, cute stickers, and commojis in every chat.”",
+        "tags": [
+          "口播",
+          "waist"
+        ],
+        "provider": "heuristic",
+        "model": null,
+        "at": "2026-11-18T06:57:00.557Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:10:47.533Z"
+    },
+    "c1-waist-b": {
+      "ai": {
+        "category": "talk",
+        "description": "达人半身（腰部以上）口播，约 8 秒。说的是：“i literally can't stop sending these funny stickers to my friends it makes every conversation way more fun if your chats are dry just get geeka”",
+        "tags": [
+          "口播",
+          "waist"
+        ],
+        "provider": "heuristic",
+        "model": null,
+        "at": "2026-11-18T06:57:00.557Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:10:48.708Z"
+    },
+    "screen-m1": {
+      "ai": {
+        "category": "official",
+        "description": "场景 A：手在手机上打字，展示吸血鬼主题。适合讲 “typing is boring” 前后的反差，或 “10000+ themes” 的举例。",
+        "tags": [
+          "vampire",
+          "themes",
+          "typing",
+          "close-up",
+          "hand"
+        ],
+        "provider": "heuristic",
+        "model": null,
+        "at": "2026-11-18T06:57:00.557Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:10:49.222Z"
+    },
+    "screen-m2": {
+      "ai": {
+        "category": "official",
+        "description": "场景 B：半透明动漫键盘，手指逐键点按。适合 “transparent keyboard” 卖点和 “customize every key” 的演示。",
+        "tags": [
+          "anime",
+          "themes",
+          "typing",
+          "transparent",
+          "close-up"
+        ],
+        "provider": "heuristic",
+        "model": null,
+        "at": "2026-11-18T06:57:00.557Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:10:49.597Z"
+    },
+    "screen-m3": {
+      "ai": {
+        "category": "official",
+        "description": "场景 C：鲨鱼猫、蝴蝶主题合集，时长最长，适合做结尾主题拼贴或卖点处的多主题快切。横屏，剪辑时做裁切或小窗。",
+        "tags": [
+          "cat",
+          "cute",
+          "butterfly",
+          "themes",
+          "montage"
+        ],
+        "provider": "heuristic",
+        "model": null,
+        "at": "2026-11-18T06:57:00.557Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:10:50.322Z"
+    },
+    "screen-m4": {
+      "ai": {
+        "category": "official",
+        "description": "场景 D：带 “FREE KEYBOARD THEMES” 角标的主题轮播，正好对应 “free” 卖点，最适合结尾 CTA 背景。720p，注意别放大。",
+        "tags": [
+          "disney",
+          "dessert",
+          "pink",
+          "themes",
+          "montage",
+          "FREE KEYBOARD THEMES"
+        ],
+        "provider": "heuristic",
+        "model": null,
+        "at": "2026-11-18T06:57:00.557Z"
+      },
+      "human": {
+        "description": "场景 D：带 “FREE KEYBOARD THEMES” 角标的主题轮播，正好对应 “free” 卖点，最适合结尾 CTA 背景。720p，注意别放大。",
+        "tags": [
+          "disney",
+          "dessert",
+          "pink",
+          "themes",
+          "montage",
+          "FREE",
+          "KEYBOARD",
+          "THEMES"
+        ],
+        "editedAt": "2026-11-18T07:10:51.080Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:10:51.098Z"
+    },
+    "screen-m5": {
+      "ai": {
+        "category": "official",
+        "description": "场景 E：足球游戏主题，手持手机点按。适合面向体育迷的举例，旋转元数据需在剪辑时处理。",
+        "tags": [
+          "football",
+          "sports",
+          "game",
+          "hand",
+          "typing"
+        ],
+        "provider": "heuristic",
+        "model": null,
+        "at": "2026-11-18T06:57:00.557Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:10:51.669Z"
+    },
+    "screen-m6": {
+      "ai": {
+        "category": "official",
+        "description": "场景 F：球星主题，手指点按。和 m5 同类，可剪成一组体育风快的快切。",
+        "tags": [
+          "football",
+          "celebrity",
+          "hand",
+          "typing"
+        ],
+        "provider": "heuristic",
+        "model": null,
+        "at": "2026-11-18T06:57:00.557Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:10:52.167Z"
+    },
+    "brand-m7": {
+      "ai": {
+        "category": "official",
+        "description": "Logo 素材：放在角落常驻角标，或转折处弹出。",
+        "tags": [
+          "logo",
+          "brand"
+        ],
+        "provider": "heuristic",
+        "model": null,
+        "at": "2026-11-18T06:57:00.557Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:10:54.738Z"
+    },
+    "screen-m8": {
+      "ai": {
+        "category": "official",
+        "description": "场景 G：多支国家队主题轮播，纯主题展示。适合 “new themes every day” 或结尾多主题拼贴。",
+        "tags": [
+          "football",
+          "national team",
+          "themes",
+          "montage"
+        ],
+        "provider": "heuristic",
+        "model": null,
+        "at": "2026-11-18T06:57:00.557Z"
+      },
+      "human": {
+        "description": "场景 G：多支国家队主题轮播，纯主题展示。适合 “new themes every day” 或结尾多主题拼贴。",
+        "tags": [
+          "football",
+          "national",
+          "team",
+          "themes",
+          "montage"
+        ],
+        "editedAt": "2026-11-18T07:10:58.006Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:10:58.015Z"
+    },
+    "script:c1-waist-a": {
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T11:35:10.518Z",
+      "human": {
+        "editedAt": "2026-11-18T11:35:09.013Z"
+      }
+    },
+    "script:c1-waist-b": {
+      "confirmed": true,
+      "confirmedAt": "2026-11-18T07:53:00.470Z",
+      "human": {
+        "editedAt": "2026-11-18T07:53:00.375Z",
+        "description": "i literally can't stop sending these funny stickers to my friends it makes every conversation way more fun if your chats are dry just get Kika ",
+        "tags": []
+      }
+    }
+  },
+  "updatedAt": "2026-11-18T11:35:10.518Z"
+}

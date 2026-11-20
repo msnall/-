@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-19T08:54:48.787Z",
+  "model": "anthropic.claude-sonnet-5-5",
+  "baseUrl": "https://api.beeswitch.com",
+  "ok": true,
+  "attempts": [
+    {
+      "errors": [
+        "shot 5 (screen-o1 at c1-waist-a word 71): runs 631 ms past the end of its beat (\"tap below to try Kismia.\", 1333 ms). Shorten it, start it earlier, or split the beat.",
+        "emphasis: at most 6 words"
+      ]
+    },
+    {
+      "errors": []
+    }
+  ],
+  "lastAnswer": "{\"splits\":{\"c1-waist-a\":[24,31]},\"shots\":[{\"clip\":\"c1-waist-a\",\"atWord\":5,\"asset\":\"c1-action\",\"srcStartMs\":0,\"durationMs\":2000,\"layout\":\"pip\",\"slot\":\"top-right\",\"why\":\"说到筛选，用手持手机的操作镜头，画中画保留达人\"},{\"clip\":\"c1-waist-a\",\"atWord\":24,\"asset\":\"c1-action\",\"srcStartMs\":500,\"durationMs\":2100,\"layout\":\"pip\",\"slot\":\"lower-right\",\"why\":\"讲智能算法匹配，用手机操作镜头，换位置和起点避免重复\"},{\"clip\":\"c1-waist-a\",\"atWord\":31,\"asset\":\"screen-o2\",\"srcStartMs\":0,\"durationMs\":2600,\"layout\":\"pip\",\"slot\":\"top-right\",\"why\":\"说到想要认真的关系，用牵手情感镜头\"},{\"clip\":\"c1-waist-a\",\"atWord\":56,\"asset\":\"screen-o3\",\"srcStartMs\":0,\"durationMs\":2500,\"layout\":\"pip\",\"slot\":\"lower-left\",\"why\":\"说到真实的连接，用爱心手势表达情感共鸣\"},{\"clip\":\"c1-waist-a\",\"atWord\":69,\"asset\":\"screen-o1\",\"srcStartMs\":0,\"durationMs\":2000,\"layout\":\"full\",\"why\":\"结尾号召下载，从 wasting time 起提前进入全屏品牌结束卡，在最后一句结束前收尾\"}],\"logo\":{\"clip\":\"c1-waist-a\",\"atWord\":16},\"emphasis\":[{\"clip\":\"c1-waist-a\",\"word\":0},{\"clip\":\"c1-waist-a\",\"word\":20},{\"clip\":\"c1-waist-a\",\"word\":37},{\"clip\":\"c1-waist-a\",\"word\":45},{\"clip\":\"c1-waist-a\",\"word\":53},{\"clip\":\"c1-waist-a\",\"word\":75}],\"notes\":\"已把结束卡提前到第 69 个词（wasting），时长 2 秒，在最后一个 beat 内结束；去掉了第 71 词的拆分，并把强调词减到 6 个。开头 1 秒和验证、防骗等信任类句子保留达人画面。\"}"
+}

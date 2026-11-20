@@ -1,0 +1,23 @@
+{
+  "state": "done",
+  "id": "kismia",
+  "folder": "F:\\VideoAutomation\\inbox\\2026-11_Kismia",
+  "startedAt": "2026-11-19T08:06:27.649Z",
+  "finishedAt": "2026-11-19T08:07:12.608Z",
+  "error": null,
+  "note": null,
+  "steps": [
+    {
+      "name": "入库：转成竖屏工作副本",
+      "state": "done"
+    },
+    {
+      "name": "达人口播转录",
+      "state": "done"
+    },
+    {
+      "name": "模型描述素材",
+      "state": "done"
+    }
+  ]
+}

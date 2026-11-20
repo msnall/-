@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-19T09:34:14.958Z",
+  "model": "anthropic.claude-sonnet-5-5",
+  "baseUrl": "https://api.beeswitch.com",
+  "ok": true,
+  "attempts": [
+    {
+      "errors": [
+        "emphasis: at most 6 words"
+      ]
+    },
+    {
+      "errors": []
+    }
+  ],
+  "lastAnswer": "{\"splits\":{},\"shots\":[{\"clip\":\"c1-waist-a\",\"atWord\":25,\"asset\":\"screen-o1\",\"srcStartMs\":1000,\"durationMs\":1800,\"layout\":\"full\",\"why\":\"说到“打开地图”时展示地图标记逐步出现的录屏\"},{\"clip\":\"c1-waist-a\",\"atWord\":38,\"asset\":\"screen-o2\",\"srcStartMs\":5600,\"durationMs\":1900,\"layout\":\"full\",\"why\":\"说到实时调度音频时展示调度播放页和实时转写\"},{\"clip\":\"c1-waist-a\",\"atWord\":69,\"asset\":\"screen-o3\",\"srcStartMs\":2500,\"durationMs\":1700,\"layout\":\"full\",\"why\":\"行动号召“看看你附近发生了什么”，配附近事件列表\"}],\"logo\":null,\"emphasis\":[{\"clip\":\"c1-waist-a\",\"word\":6},{\"clip\":\"c1-waist-a\",\"word\":20},{\"clip\":\"c1-waist-a\",\"word\":21},{\"clip\":\"c1-waist-a\",\"word\":38},{\"clip\":\"c1-waist-a\",\"word\":66},{\"clip\":\"c1-waist-a\",\"word\":67}],\"notes\":\"极简、以达人为主：前3秒和情绪/个人叙述都留在达人画面，只在地图、调度音频和结尾号召三处加产品录屏。强调词已减少到6个；三个镜头共约5.4秒，低于25%上限。没有结尾品牌卡素材，所以结尾用附近事件列表。\"}"
+}

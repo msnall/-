@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "order": "2026-10_Kika-Keyboard",
+  "projectId": "IB26111301",
+  "projectIdLine2": "IBEBP-26111301",
+  "campaignTitle": "IB UGC Campaign",
+  "product": "Kika Keyboard",
+  "tone": "English, first person, casual UGC. Keep every line speakable in one breath.",
+  "limits": { "reading": 8, "action": 4 },
+
+  "guidelines": [
+    "Project contains 2 task sections: a) Reading section and b) Action section.",
+    "EVERY individual task needs to be done within EACH section!",
+    "READING section has 2 parts: a) close-up with phone, b) waist-up talking.",
+    "Complete each individual task and submit videos (in HD quality) within 7 days of project assignment.",
+    "Task Video Submission link:",
+    "https://forms.gle/DC7fEmWLahyZ3S9j6",
+    "IMPORTANT For faster review/approval: Submit videos in the same sequence as the tasks (corresponding 1st task = 1st video you attach)",
+    "Make 1 SUBMISSION for READING section tasks, and 1 separate SUBMISSION for ACTION section tasks. Do NOT mix up Reading vs Action tasks/videos into 1 submission! This WILL lead to payout delays!",
+    "Do NOT record against a \"white wall\" background. Please record anywhere else, ex: living room on the sofa, kitchen, patio, anywhere where your background isn't just a white wall."
+  ],
+
+  "readingIntro": [
+    "Feel free to use a teleprompter or script, but please keep your eye movements natural. We want the video to feel like a conversation, not a reading session",
+    "Please note: If the video clearly shows you reading from a script or if your eye movements look unnatural, we will require a reshoot."
+  ],
+  "readingFormatsLine": "The video you are about to create will be presented in the following format:",
+  "readingParts": [
+    {
+      "title": "A.Vertical/portrait shooting parts(9:16)",
+      "setup": [
+        "Record a selfie video using a second phone, showing the app interface on your first phone. Make sure you are logged in and demonstrating the features inside the app (not just the login screen).",
+        "Make sure the composition of your face in video matches the guideline image below. The video will be like:"
+      ],
+      "framingImage": "images/framing_closeup.png",
+      "framingCaption": "Close-up framing: face and phone in the right half, hand gestures inside the frame, nothing blocking the TikTok UI area at the bottom.",
+      "tasks": [
+        {
+          "number": 1,
+          "role": "hook-a",
+          "title": "Kika Keyboard - Wait, why does my phone look like this?",
+          "spec": "9:16, \"< >\" contains the expressions and tone you use; do not read them. Close-up shot, hold a phone with a light screen. But don't show what's on the screen.",
+          "lines": [
+            { "text": "Wait... why does my phone look like this?", "tone": "<shocked, leaning in>" },
+            { "text": "No, seriously. Look at it.", "tone": "<excited, showing the phone>" }
+          ]
+        },
+        {
+          "number": 2,
+          "role": "hook-b",
+          "title": "Kika Keyboard - Ten seconds to change your whole phone",
+          "spec": "9:16, \"< >\" contains the expressions and tone you use; do not read them. Close-up shot, hold a phone with a light screen, screen facing you.",
+          "lines": [
+            { "text": "I changed my whole phone in like ten seconds.", "tone": "<confident, casual>" },
+            { "text": "And no, I didn't buy a new one.", "tone": "<playful, teasing>" }
+          ]
+        },
+        {
+          "number": 3,
+          "role": "pain",
+          "title": "Kika Keyboard - Every text looked exactly the same",
+          "spec": "9:16, \"< >\" contains the expressions and tone you use; do not read them. Close-up shot, hold a phone with a light screen, no keyboard visible.",
+          "lines": [
+            { "text": "Every text I sent used to look exactly the same.", "tone": "<flat, relatable>" },
+            { "text": "Same font, same keyboard, just... boring.", "tone": "<sighing, unimpressed>" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "B. Vertical/portrait shooting parts(9:16)",
+      "setup": [
+        "Make sure you can at least capture the position of the waistline, the video will be like:"
+      ],
+      "framingImage": "images/framing_waistup.jpg",
+      "framingCaption": "Waist-up framing: head and hands visible, natural room background.",
+      "tasks": [
+        {
+          "number": 4,
+          "role": "turn",
+          "title": "Kika Keyboard - Then I found Kika",
+          "spec": "9:16, \"< >\" contains the expressions and tone you use; do not read them. Medium shot, waist up, no phone needed.",
+          "lines": [
+            { "text": "Then I found Kika Keyboard.", "tone": "<relieved, excited>" },
+            { "text": "It's free, and it completely changed how my phone feels.", "tone": "<warm, confident>" }
+          ]
+        },
+        {
+          "number": 5,
+          "role": "benefit-themes",
+          "title": "Kika Keyboard - Over ten thousand themes",
+          "spec": "9:16, \"< >\" contains the expressions and tone you use; do not read them. Medium shot, waist up, no phone needed.",
+          "lines": [
+            { "text": "There are over ten thousand themes. Cats, anime, galaxy, butterfly...", "tone": "<amazed, storytelling>" },
+            { "text": "There's even a transparent one and an LED one.", "tone": "<impressed, casual>" }
+          ]
+        },
+        {
+          "number": 6,
+          "role": "benefit-fonts",
+          "title": "Kika Keyboard - Fonts, emoji and kaomoji",
+          "spec": "9:16, \"< >\" contains the expressions and tone you use; do not read them. Medium shot, waist up, no phone needed.",
+          "lines": [
+            { "text": "You can change your font, add emojis, stickers and kaomoji.", "tone": "<playful, listing>" },
+            { "text": "So even a plain \"ok\" looks like you.", "tone": "<amused, direct>" }
+          ]
+        },
+        {
+          "number": 7,
+          "role": "benefit-bundle",
+          "title": "Kika Keyboard - Keyboard and lock screen bundle",
+          "spec": "9:16, \"< >\" contains the expressions and tone you use; do not read them. Medium shot, waist up, no phone needed.",
+          "lines": [
+            { "text": "My favorite part? You can match your keyboard to your lock screen.", "tone": "<proud, warm>" },
+            { "text": "The whole phone finally looks like me.", "tone": "<content, sincere>" }
+          ]
+        },
+        {
+          "number": 8,
+          "role": "cta",
+          "title": "Kika Keyboard - Make your keyboard yours",
+          "spec": "9:16, \"< >\" contains the expressions and tone you use; do not read them. Medium shot, waist up, no phone needed.",
+          "lines": [
+            { "text": "Kika Keyboard is free on the App Store and Play Store.", "tone": "<clear, informative>" },
+            { "text": "Go make your keyboard yours.", "tone": "<warm, direct CTA>" }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "actionIntro": [
+    "Requirement (Must do)",
+    "1. According to the reference image, repeat the movement 1:1.",
+    "2. Just repeat the movement, no need subtitle.",
+    "3. Read the line attached while doing action (if there's no line below then don't).",
+    "4. Please disregard the gender of the person in the reference image. There is no need for a corresponding gender to appear on camera. Simply ensure your movements match or resemble those shown."
+  ],
+  "actionTasks": [
+    {
+      "number": 1,
+      "title": "Typing the boring way",
+      "spec": "9:16, No voiceover needed. Shoot separately. (~5-6 seconds)",
+      "steps": [
+        "Sit on the sofa, holding your phone with both hands.",
+        "Type slowly with a flat, unimpressed face, then sigh and let your shoulders drop."
+      ],
+      "image": "images/action_1_typing.jpg",
+      "imageCaption": "Reference: hand tapping keys on the phone keyboard."
+    },
+    {
+      "number": 2,
+      "title": "Scroll and jaw-drop",
+      "spec": "9:16, No voiceover needed. Shoot separately. (~4-5 seconds)",
+      "steps": [
+        "Hold the phone up in portrait, screen facing you.",
+        "Scroll through themes quickly with your thumb, then widen your eyes and let your jaw drop."
+      ],
+      "image": "images/action_2_scroll.jpg",
+      "imageCaption": "Reference: finger swiping through keyboard themes."
+    },
+    {
+      "number": 3,
+      "title": "Tap-tap delight",
+      "spec": "9:16, No voiceover needed. Shoot separately. (~5 seconds)",
+      "steps": [
+        "Hold the phone with the keyboard facing you, and tap a few keys quickly with a small smile.",
+        "Tilt the phone slightly toward the camera but keep the screen glare out of frame, then nod once."
+      ],
+      "image": "images/action_3_tap.jpg",
+      "imageCaption": "Reference: fingers tapping a themed keyboard."
+    },
+    {
+      "number": 4,
+      "title": "Match the lock screen",
+      "spec": "9:16, No voiceover needed. Shoot separately. (~5 seconds)",
+      "steps": [
+        "Hold two phones side by side, one showing the keyboard and one showing the lock screen, bottoms facing the camera.",
+        "Look at them, then at the camera, and smile like you just got away with something."
+      ],
+      "image": "images/action_4_lockscreen.jpg",
+      "imageCaption": "Reference: themed keyboard and matching lock screen held together."
+    }
+  ],
+
+  "referenceNote": "Reference video this script follows: 00_参考成品/UGC1016kika keyboard.mp4",
+  "claimsUsed": [
+    "over 10,000 free keyboard themes",
+    "transparent and LED keyboard themes",
+    "font, emoji, sticker and kaomoji support",
+    "keyboard and lock screen matching",
+    "free"
+  ],
+  "claimsAvoided": [
+    "no download counts, ratings or awards",
+    "no competitor names",
+    "no arrows or click prompts"
+  ]
+}

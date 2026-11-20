@@ -37,7 +37,6 @@
   "scripts": {
     "dev": "remotion studio",
     "transcribe": "node scripts/transcribe.mjs",
-    "prepare:bloom10": "node scripts/prepare-bloom10-first-cut.mjs",
     "plan:check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/edit-plan.mjs",
     "plan:render": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/render-plan.mjs",
     "plan:verify": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/verify-render.mjs",
@@ -47,12 +46,23 @@
     "desk:serve": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON desk/server/index.mjs",
     "desk:proxy": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/make-proxy.mjs",
     "desk:faces": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/detect-faces.mjs",
-    "desk:compile": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/compile-storyboard.mjs",
-    "desk:candidates": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/find-candidates.mjs",
     "desk:stills": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/render-stills.mjs",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src desk/ui && tsc"
+    "lint": "eslint src desk/ui && tsc",
+    "order:ingest": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/ingest-order.mjs",
+    "order:transcribe": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/transcribe-assets.mjs",
+    "order:align": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/align-script.mjs",
+    "cut:build": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/cut-script.mjs build",
+    "cut:check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/cut-script.mjs check",
+    "order:sync-text": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-transcripts.mjs",
+    "cut:seed": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/cut-from-transcripts.mjs",
+    "cut:compile": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/compile-cut-script.mjs",
+    "ref:analyze": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/analyze-reference.mjs",
+    "ref:learn": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/learn-techniques.mjs",
+    "cut:direct": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/auto-director.mjs",
+    "capcut:export": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/export-capcut.mjs",
+    "capcut:check": "node scripts/check-capcut-draft.mjs"
   },
   "allowScripts": {
     "esbuild": false

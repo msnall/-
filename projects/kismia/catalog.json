@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "items": {
+    "c1-waist-a": {
+      "ai": {
+        "category": "talk",
+        "description": "达人在厨房里正对镜头做半身口播，穿白色长袖上衣，背景是橱柜、微波炉和冰箱，边说边配合摊手等手势。口播完整，从“别再乱刷资料”开头，依次讲 Kismia 的价值观/距离筛选、匹配算法、照片认证，最后号召点击下方试用。整条可作主口播主轴，也可按句拆开分段使用。",
+        "tags": [
+          "口播",
+          "半身",
+          "厨房",
+          "Kismia",
+          "真人出镜",
+          "完整口播"
+        ],
+        "provider": "api",
+        "model": "claude-sonnet-5-5",
+        "at": "2026-11-19T08:07:12.593Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-19T08:08:33.179Z"
+    },
+    "c1-action": {
+      "ai": {
+        "category": "action",
+        "description": "桌面近景，达人双手握着一部深色手机，手机背面朝向镜头，拇指在机身侧面轻点，像在打字或滑动。背景是木桌、笔记本、笔记本电脑和一支笔，看不到手机屏幕内容，也没有人声。适合放在讲解前后作为“看手机、操作手机”的过渡或氛围镜头。",
+        "tags": [
+          "手持手机",
+          "手部特写",
+          "桌面场景",
+          "竖屏",
+          "无台词",
+          "过渡镜头"
+        ],
+        "provider": "api",
+        "model": "claude-sonnet-5-5",
+        "at": "2026-11-19T08:07:12.593Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-19T08:08:40.161Z"
+    },
+    "screen-o1": {
+      "ai": {
+        "category": "official",
+        "description": "竖屏 2 秒的品牌结尾卡：深蓝到紫蓝渐变背景，中间是白色 kismia 标志，下方西班牙语“PULSE PARA SABER MÁS”，再下面是 Google Play 和 App Store 两个下载按钮。画面基本静止，只有轻微的缩放和光点变化，适合放在视频结尾做品牌收口和下载引导。",
+        "tags": [
+          "kismia",
+          "品牌结尾",
+          "下载引导",
+          "Google Play",
+          "App Store",
+          "西班牙语"
+        ],
+        "provider": "api",
+        "model": "claude-sonnet-5-5",
+        "at": "2026-11-19T08:07:12.593Z"
+      },
+      "human": {
+        "description": "竖屏 2 秒的品牌结尾卡：深蓝到紫蓝渐变背景，中间是白色 kismia 标志，下方西班牙语“PULSE PARA SABER MÁS”，再下面是 Google Play 和 App Store 两个下载按钮。画面基本静止，只有轻微的缩放和光点变化，适合放在视频结尾做品牌收口和下载引导。",
+        "tags": [
+          "kismia",
+          "品牌结尾",
+          "下载引导",
+          "Google",
+          "Play",
+          "App",
+          "Store",
+          "西班牙语"
+        ],
+        "editedAt": "2026-11-19T08:08:46.985Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-19T08:08:47.004Z"
+    },
+    "screen-o2": {
+      "ai": {
+        "category": "action",
+        "description": "竖屏特写：两只手在海边互相牵握、手指轻轻勾住并摩挲，背景是虚化的海浪和暖色逆光，无台词、无屏幕或文字。画面偏情绪氛围，适合放在视频开头做情感铺垫，或在情感、陪伴类话题的段落中作转场空镜。",
+        "tags": [
+          "双手特写",
+          "牵手",
+          "海边",
+          "海浪",
+          "暖光",
+          "情感氛围",
+          "空镜"
+        ],
+        "provider": "api",
+        "model": "claude-sonnet-5-5",
+        "at": "2026-11-19T08:07:12.593Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-19T08:08:47.735Z"
+    },
+    "screen-o3": {
+      "ai": {
+        "category": "action",
+        "description": "特写镜头：双手在日落逆光下从两侧慢慢靠拢，最后拼成爱心手势，背景是金黄色的太阳和地平线，无台词、无人脸、无屏幕或文字。画面温暖，适合放在视频开头或结尾，用来表达喜爱、情感共鸣或收尾。这不是软件或游戏录屏，来源是否为品牌方提供看不清。",
+        "tags": [
+          "爱心手势",
+          "日落",
+          "逆光",
+          "手部特写",
+          "情感氛围",
+          "转场/收尾"
+        ],
+        "provider": "api",
+        "model": "claude-sonnet-5-5",
+        "at": "2026-11-19T08:07:12.593Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-19T08:08:50.671Z"
+    },
+    "brand-o4": {
+      "ai": {
+        "category": "official",
+        "description": "品牌方提供的 kismia 官方 Logo 图，方形构图，红橙色纯色背景上是白色圆润字体的“kismia”，右上角带一个白色爱心图案。画面没有人物和其他内容，适合放在视频片尾或开头做品牌露出。",
+        "tags": [
+          "kismia",
+          "品牌Logo",
+          "官方素材",
+          "红色背景",
+          "片尾落版"
+        ],
+        "provider": "api",
+        "model": "claude-sonnet-5-5",
+        "at": "2026-11-19T08:07:12.593Z"
+      },
+      "confirmed": true,
+      "confirmedAt": "2026-11-19T08:08:53.385Z"
+    },
+    "script:c1-waist-a": {
+      "confirmed": true,
+      "confirmedAt": "2026-11-19T08:14:04.335Z"
+    }
+  },
+  "updatedAt": "2026-11-19T08:14:04.335Z"
+}

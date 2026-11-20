@@ -6,6 +6,6 @@
   "zones": [
     { "id": "top-tabs", "label": "顶部标签栏", "x": 0, "y": 0, "width": 1080, "height": 150 },
     { "id": "right-rail", "label": "右侧按钮区", "x": 918, "y": 460, "width": 162, "height": 1000 },
-    { "id": "bottom-caption", "label": "底部文案区", "x": 0, "y": 1594, "width": 1080, "height": 326 }
+    { "id": "bottom-caption", "label": "TikTok 文案区（勿放字幕）", "x": 0, "y": 1594, "width": 1080, "height": 326 }
   ]
 }

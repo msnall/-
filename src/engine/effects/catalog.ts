@@ -107,6 +107,27 @@ export const effectCatalog = {
     box: placedBox,
     bounds: placedBounds,
   },
+  "video-clip@1": {
+    description: "Muted video cutaway (screen recording, product shot) placed over the main footage from a source time. The footage's own audio keeps playing underneath.",
+    props: z.strictObject({
+      asset: assetRef,
+      // Where in the clip to start, in the clip's own milliseconds. The clip must have the plan's fps.
+      sourceStartMs: z.number().finite().nonnegative().default(0),
+      x: px,
+      y: px,
+      width: size,
+      height: size,
+      fit: z.enum(["cover", "contain", "fill"]).default("cover"),
+      background: hexColor.optional(),
+      borderRadius: px.nonnegative().default(0),
+      fadeInFrames: frames.default(0),
+      // Slight zoom-in over the clip's duration (1 = none); gives still-ish screen shots some motion.
+      pushIn: z.number().min(1).max(1.3).default(1),
+    }),
+    assetProps: { asset: ["video"] },
+    box: placedBox,
+    bounds: placedBounds,
+  },
   "image-card@1": {
     description: "Still image such as a real product photo, with pop/fade entrance.",
     props: imageCard,

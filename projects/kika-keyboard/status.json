@@ -1,0 +1,25 @@
+{
+  "project": "kika-keyboard",
+  "stage": "timeline-review",
+  "stages": {
+    "asset-prep": {
+      "state": "done",
+      "note": "existing project, assets prepared before the desk existed"
+    },
+    "storyboard": {
+      "state": "done",
+      "note": "existing project, no storyboard round"
+    },
+    "timeline-review": {
+      "state": "waiting-user",
+      "round": "r1",
+      "openProposals": 0
+    },
+    "render-qc": {
+      "state": "pending"
+    }
+  },
+  "editPlanRevision": 25,
+  "updatedAt": "2026-11-19T05:29:30.724Z",
+  "updatedBy": "user"
+}

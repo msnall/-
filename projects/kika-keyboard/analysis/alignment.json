@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "projectId": "kika-keyboard",
+  "scriptId": "cand-b",
+  "minScore": 0.6,
+  "alignedAt": "2026-11-18T06:47:59.047Z",
+  "summary": {
+    "lines": 6,
+    "matched": 0,
+    "partial": 0,
+    "missing": 6
+  },
+  "clips": [
+    {
+      "asset": "c1-waist-a",
+      "words": 32,
+      "durationMs": 15133
+    },
+    {
+      "asset": "c1-waist-b",
+      "words": 26,
+      "durationMs": 8467
+    }
+  ],
+  "lines": [
+    {
+      "lineId": "cand-b.readingA.1",
+      "candidate": "cand-b",
+      "text": "I changed my whole phone in like ten seconds.",
+      "tone": "<confident, casual, holding phone up>",
+      "status": "missing",
+      "best": null,
+      "alternates": []
+    },
+    {
+      "lineId": "cand-b.readingA.2",
+      "candidate": "cand-b",
+      "text": "And no, I didn't buy a new one.",
+      "tone": "<playful, teasing>",
+      "status": "missing",
+      "best": null,
+      "alternates": []
+    },
+    {
+      "lineId": "cand-b.readingA.3",
+      "candidate": "cand-b",
+      "text": "It's Kika Keyboard. Ten thousand plus themes, and you can match it to your lock screen too.",
+      "tone": "<proud, show the themed keyboard>",
+      "status": "missing",
+      "best": null,
+      "alternates": []
+    },
+    {
+      "lineId": "cand-b.readingB.1",
+      "candidate": "cand-b",
+      "text": "My phone used to look like everyone else's.",
+      "tone": "<honest, calm>",
+      "status": "missing",
+      "best": null,
+      "alternates": []
+    },
+    {
+      "lineId": "cand-b.readingB.2",
+      "candidate": "cand-b",
+      "text": "Now every time I type, it's a different theme.",
+      "tone": "<delighted>",
+      "status": "missing",
+      "best": null,
+      "alternates": []
+    },
+    {
+      "lineId": "cand-b.readingB.3",
+      "candidate": "cand-b",
+      "text": "Kika Keyboard. Free, and it actually looks good.",
+      "tone": "<warm, direct CTA>",
+      "status": "missing",
+      "best": null,
+      "alternates": []
+    }
+  ],
+  "unusedSpeech": [
+    {
+      "asset": "c1-waist-a",
+      "wordStart": 0,
+      "wordEnd": 31,
+      "startMs": 10,
+      "endMs": 14200,
+      "text": "I used to send the most boring texts ever. No font, no emojis, just plain words. Then I downloaded Kika. Now I use crazy fonts, cute stickers, and commojis in every chat."
+    },
+    {
+      "asset": "c1-waist-b",
+      "wordStart": 0,
+      "wordEnd": 25,
+      "startMs": 0,
+      "endMs": 8240,
+      "text": "i literally can't stop sending these funny stickers to my friends it makes every conversation way more fun if your chats are dry just get geeka"
+    }
+  ]
+}

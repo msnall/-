@@ -29,3 +29,12 @@ out
 # Original talent footage stays outside Git; scripts verify it by SHA-256.
 /public/recordings/**/*.mp4
 /public/recordings/**/*.mov
+
+# Local secrets and machine settings (API keys). Never commit.
+/.local/
+
+# Project-local Python runtime for the CapCut/剪映 draft export (see docs/capcut-export.md)
+/tools/
+
+# Videos dragged into the page (素材箱); originals stay out of Git.
+/inbox/

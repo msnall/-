@@ -1,0 +1,42 @@
+[
+  {
+    "text": "It's 2am, and I just heard sirens outside.",
+    "startMs": 0,
+    "endMs": 3540
+  },
+  {
+    "text": "My brain immediately starts guessing what happened.",
+    "startMs": 3540,
+    "endMs": 5640
+  },
+  {
+    "text": "Then I remember I have crime radar.",
+    "startMs": 5840,
+    "endMs": 8190
+  },
+  {
+    "text": "I open the map and see exactly where the activity is.",
+    "startMs": 8190,
+    "endMs": 10860
+  },
+  {
+    "text": "I can even listen to real-time dispatch audio to get the full story.",
+    "startMs": 10860,
+    "endMs": 14270
+  },
+  {
+    "text": "Turns out it was just a few blocks away.",
+    "startMs": 14270,
+    "endMs": 16240
+  },
+  {
+    "text": "Now I always know what's happening before my neighbors do.",
+    "startMs": 16560,
+    "endMs": 19200
+  },
+  {
+    "text": "Download crime radar to see exactly what's happening near you.",
+    "startMs": 19200,
+    "endMs": 22680
+  }
+]

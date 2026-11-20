@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-19T09:34:21.457Z",
+  "model": "anthropic.claude-sonnet-5-5",
+  "baseUrl": "https://api.beeswitch.com",
+  "ok": true,
+  "attempts": [
+    {
+      "errors": [
+        "shot 4 (screen-o3 at c1-waist-a word 66): runs 234 ms past the end of its beat (\"Download crime radar to see exactly what's happening near you.\", 3533 ms). Shorten it, start it earlier, or split the beat.",
+        "emphasis: at most 6 words"
+      ]
+    },
+    {
+      "errors": []
+    }
+  ],
+  "lastAnswer": "{\"splits\":{},\"shots\":[{\"clip\":\"c1-waist-a\",\"atWord\":22,\"asset\":\"screen-o1\",\"srcStartMs\":300,\"durationMs\":2500,\"layout\":\"pip\",\"slot\":\"top-right\",\"why\":\"说到打开地图看活动位置，配地图录屏，达人保持在画面中\"},{\"clip\":\"c1-waist-a\",\"atWord\":36,\"asset\":\"screen-o2\",\"srcStartMs\":1500,\"durationMs\":2800,\"layout\":\"pip\",\"slot\":\"lower-right\",\"why\":\"说到实时调度音频，配调度音频录屏，换位置避免单调\"},{\"clip\":\"c1-waist-a\",\"atWord\":59,\"asset\":\"screen-o3\",\"srcStartMs\":400,\"durationMs\":1500,\"layout\":\"pip\",\"slot\":\"top-right\",\"why\":\"说到随时知道附近发生什么，配附近事件列表\"},{\"clip\":\"c1-waist-a\",\"atWord\":65,\"asset\":\"screen-o3\",\"srcStartMs\":0,\"durationMs\":3300,\"layout\":\"full\",\"why\":\"结尾行动号召，从 Download 开始全屏产品录屏收尾，并在本句结束前结束\"}],\"logo\":null,\"emphasis\":[{\"clip\":\"c1-waist-a\",\"word\":6},{\"clip\":\"c1-waist-a\",\"word\":20},{\"clip\":\"c1-waist-a\",\"word\":21},{\"clip\":\"c1-waist-a\",\"word\":39},{\"clip\":\"c1-waist-a\",\"word\":66},{\"clip\":\"c1-waist-a\",\"word\":67}],\"notes\":\"已修正：结尾全屏镜头改从 Download 起，时长 3300ms，在最后一句结束前结束；强调词减到 6 个。没有品牌 logo 素材，所以 logo 为 null。开头和个人情绪句保持达人出镜。\"}"
+}

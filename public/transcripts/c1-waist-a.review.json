@@ -1,0 +1,39 @@
+{
+  "status": "unreviewed machine transcript",
+  "detectedLanguage": "en",
+  "instructions": "Verify names, brands, product terms, numbers and claims against the audio. Token probabilities are not calibrated accuracy scores. No spelling was auto-corrected.",
+  "warnings": [
+    {
+      "index": 20,
+      "text": "Kika.",
+      "startMs": 8360,
+      "endMs": 9060,
+      "confidence": 0.46707,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 26,
+      "text": "cute",
+      "startMs": 10880,
+      "endMs": 11470,
+      "confidence": 0.446381,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 27,
+      "text": "stickers,",
+      "startMs": 11470,
+      "endMs": 12060,
+      "confidence": 0.602346,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 29,
+      "text": "commojis",
+      "startMs": 12310,
+      "endMs": 12970,
+      "confidence": 0.297089,
+      "reason": "low token probability; human review needed"
+    }
+  ]
+}

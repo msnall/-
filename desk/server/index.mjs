@@ -16,13 +16,18 @@ import { createJob, listJobs, readJob, readJobLog, recoverJobs } from "./jobs.mj
 import { footageThumb, mediaFile, publicFile, segmentThumb, sendFile, waveform } from "./media.mjs";
 import * as projects from "./projects.mjs";
 import * as storyboard from "./storyboard.mjs";
-import { createVideo } from "./onboarding.mjs";
 import { archiveVideo, listArchivedVideos, permanentlyDeleteVideo, restoreVideo } from "./trash.mjs";
 import { exportSettings, listExports, resolveExport, revealExport } from "./exports.mjs";
-import { classifyBeats } from "./beat-classifier.mjs";
-import { listStoryboardPresets, createStoryboardPreset } from "./storyboard-presets.mjs";
-import { createMixProject, inspectMixFolder, inMixProject, mixProjectAction } from "./mix-projects.mjs";
-import { createMixVariants, listMixJobs, listMixVariants, mixJob, mixLibrary, mixPreviewFile, mixThumbFile, readMixVariant, saveMixVariant, startMixRender } from "./mix.mjs";
+
+import { publicApiSettings, saveApiSettings, testApi } from "./settings.mjs";
+import { applyDraft, directorLog, directorStatus, setOptions, startDirector } from "./director.mjs";
+import { importOrder, importStatus } from "./orders.mjs";
+import { importInbox, listInboxOrders, newOrderName, readInbox, removeInboxFile, saveInboxFile } from "./inbox.mjs";
+import { buildCapcut, capcutStatus, installCapcut, revealCapcut } from "./capcut.mjs";
+import { confirmCleanup, detectCleanup, readCleanup, setDecision, setWord } from "./cleanup.mjs";
+import { readTable, saveTable } from "./timeline.mjs";
+import { confirmCard, deleteCard, importReference, listCards, readCard, referenceFrame, relearn, saveCard } from "./styles.mjs";
+import { confirmMany, confirmItem, describeItems, frameAt, frameFile, listCatalogs, mediaPath, readCatalog, saveItem } from "./catalog.mjs";
 
 // Validated project id (throws NotFound otherwise) for paths outside projects/.
 const projectDirName = (id) => path.basename(projectFile(id));
@@ -63,34 +68,56 @@ const ifMatch = (request) => {
 
 // [method, pattern, handler(params, request, response) -> body | undefined]
 const routes = [
-  ["GET", /^\/api\/projects\/([^/]+)\/storyboard-presets$/, ([id]) => listStoryboardPresets(id)],
-  ["POST", /^\/api\/projects\/([^/]+)\/storyboard-presets$/, async ([id], request) => createStoryboardPreset(id, await readBody(request))],
-  ["POST", /^\/api\/mix-projects$/, async (_params, request) => createMixProject(await readBody(request))],
-  ["POST", /^\/api\/mix-projects\/inspect$/, async (_params, request) => inspectMixFolder(await readBody(request))],
-  ["GET", /^\/api\/projects\/([^/]+)\/mix\/thumbs\/([^/]+)$/, async ([id, asset], request, response) => sendFile(request, response, await inMixProject(id, () => mixThumbFile(asset)))],
-  ["GET", /^\/api\/projects\/([^/]+)\/mix\/previews\/([^/]+)$/, async ([id, name], request, response) => sendFile(request, response, await inMixProject(id, () => mixPreviewFile(name)))],
-  ...["GET", "POST", "PUT"].map((method) => [method, /^\/api\/projects\/([^/]+)\/mix\/(.+)$/, async ([id, resource], request) => mixProjectAction(id, method, resource, method === "GET" ? {} : await readBody(request))]),
-  ["GET", /^\/api\/mix\/library$/, () => mixLibrary()],
-  ["GET", /^\/api\/mix\/variants$/, () => listMixVariants()],
-  ["POST", /^\/api\/mix\/variants$/, async (_params, request) => createMixVariants((await readBody(request)).count ?? 3)],
-  ["GET", /^\/api\/mix\/variants\/([^/]+)$/, ([id]) => readMixVariant(id)],
-  ["PUT", /^\/api\/mix\/variants\/([^/]+)$/, async ([id], request) => saveMixVariant(id, await readBody(request))],
-  ["POST", /^\/api\/mix\/variants\/([^/]+)\/render$/, ([id]) => startMixRender(id)],
-  ["GET", /^\/api\/mix\/jobs$/, () => listMixJobs()],
-  ["GET", /^\/api\/mix\/jobs\/([^/]+)$/, ([id]) => mixJob(id)],
-  ["GET", /^\/api\/mix\/previews\/([^/]+)$/, async ([name], request, response) => sendFile(request, response, mixPreviewFile(name))],
-  ["GET", /^\/api\/mix\/thumbs\/([^/]+)$/, async ([id], request, response) => sendFile(request, response, await mixThumbFile(id), { cache: "max-age=3600" })],
+  ["GET", /^\/api\/settings\/api$/, () => publicApiSettings()],
+  ["PUT", /^\/api\/settings\/api$/, async (_params, request) => saveApiSettings(await readBody(request))],
+  ["POST", /^\/api\/settings\/api\/test$/, () => testApi()],
+  ["GET", /^\/api\/inbox$/, () => listInboxOrders()],
+  ["POST", /^\/api\/inbox\/new$/, async (_params, request) => readInbox(newOrderName((await readBody(request)).product))],
+  ["GET", /^\/api\/inbox\/([^/]+)$/, ([order]) => readInbox(order)],
+  ["PUT", /^\/api\/inbox\/([^/]+)\/files$/, ([order], request) => saveInboxFile(order, new URL(request.url, "http://x").searchParams, request)],
+  ["DELETE", /^\/api\/inbox\/([^/]+)\/files$/, ([order], request) => removeInboxFile(order, new URL(request.url, "http://x").searchParams.get("rel"))],
+  ["POST", /^\/api\/inbox\/([^/]+)\/import$/, ([order]) => importInbox(order)],
+  ["POST", /^\/api\/orders\/import$/, async (_params, request) => importOrder(await readBody(request))],
+  ["GET", /^\/api\/orders\/([^/]+)\/import$/, ([id]) => importStatus(projectDirName(id))],
+  ["GET", /^\/api\/style-cards$/, () => listCards()],
+  ["POST", /^\/api\/style-cards\/import$/, async (_params, request) => importReference(await readBody(request))],
+  ["GET", /^\/api\/style-cards\/references\/([^/]+)\/frames\/(t\d{3}\.jpg)$/, ([id, name], request, response) => sendFile(request, response, referenceFrame(id, name), { cache: "max-age=3600" })],
+  ["POST", /^\/api\/style-cards\/references\/([^/]+)\/relearn$/, ([id]) => relearn(id)],
+  ["GET", /^\/api\/style-cards\/([^/]+)$/, ([id]) => readCard(id)],
+  ["PUT", /^\/api\/style-cards\/([^/]+)$/, async ([id], request) => saveCard(id, await readBody(request))],
+  ["DELETE", /^\/api\/style-cards\/([^/]+)$/, ([id]) => deleteCard(id)],
+  ["POST", /^\/api\/style-cards\/([^/]+)\/confirm$/, async ([id], request) => confirmCard(id, await readBody(request))],
+  ["POST", /^\/api\/catalogs\/([^/]+)\/director$/, async ([id], request) => startDirector(projectDirName(id), await readBody(request))],
+  ["POST", /^\/api\/catalogs\/([^/]+)\/director\/apply$/, async ([id], request) => applyDraft(projectDirName(id), await readBody(request))],
+  ["GET", /^\/api\/catalogs\/([^/]+)\/frame-at\/([^/]+)\/(\d+)$/, async ([id, item, ms], request, response) => sendFile(request, response, await frameAt(projectDirName(id), item, Number(ms)), { cache: "max-age=3600" })],
+  ["GET", /^\/api\/catalogs\/([^/]+)\/director\/([a-z]+)\/table$/, ([id, variant]) => readTable(projectDirName(id), variant)],
+  ["PUT", /^\/api\/catalogs\/([^/]+)\/director\/([a-z]+)\/table$/, async ([id, variant], request) => saveTable(projectDirName(id), variant, await readBody(request))],
+  ["POST", /^\/api\/catalogs\/([^/]+)\/director\/([a-z]+)\/options$/, async ([id, variant], request) => setOptions(projectDirName(id), variant, await readBody(request))],
+  ["GET", /^\/api\/catalogs\/([^/]+)\/director$/, ([id]) => directorStatus(projectDirName(id))],
+  ["GET", /^\/api\/catalogs\/([^/]+)\/director\/log$/, async ([id], _request, response) => { response.writeHead(200, { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" }); response.end(await directorLog(projectDirName(id))); }],
+  ["GET", /^\/api\/catalogs$/, () => listCatalogs()],
+  ["GET", /^\/api\/catalogs\/([^/]+)$/, ([id]) => readCatalog(projectDirName(id))],
+  ["PUT", /^\/api\/catalogs\/([^/]+)\/items\/([^/]+)$/, async ([id, item], request) => saveItem(projectDirName(id), item, await readBody(request))],
+  ["POST", /^\/api\/catalogs\/([^/]+)\/items\/([^/]+)\/confirm$/, async ([id, item], request) => confirmItem(projectDirName(id), item, (await readBody(request)).confirmed !== false)],
+  ["POST", /^\/api\/catalogs\/([^/]+)\/confirm-many$/, async ([id], request) => { const b = await readBody(request); return confirmMany(projectDirName(id), b.items, b.confirmed !== false); }],
+  ["POST", /^\/api\/catalogs\/([^/]+)\/describe$/, async ([id], request) => describeItems(projectDirName(id), await readBody(request))],
+  ["GET", /^\/api\/catalogs\/([^/]+)\/media\/([^/]+)$/, async ([id, item], request, response) => sendFile(request, response, await mediaPath(projectDirName(id), item), { cache: "max-age=60" })],
+  ["GET", /^\/api\/catalogs\/([^/]+)\/frames\/([^/]+)\/(\d)$/, async ([id, item, n], request, response) => sendFile(request, response, await frameFile(projectDirName(id), item, n), { cache: "max-age=3600" })],
   ["GET", /^\/api\/projects$/, async () => Promise.all((await listProjects()).map((id) => storyboard.readOverview(id)))],
   ["GET", /^\/api\/trash$/, () => listArchivedVideos()],
   ["POST", /^\/api\/projects\/([^/]+)\/archive$/, ([id]) => archiveVideo(id)],
   ["POST", /^\/api\/trash\/([^/]+)\/restore$/, ([archiveId]) => restoreVideo(archiveId)],
   ["DELETE", /^\/api\/trash\/([^/]+)$/, ([archiveId]) => permanentlyDeleteVideo(archiveId)],
-  ["POST", /^\/api\/projects\/new$/, async (_params, request) => {
-    const created = await createVideo(request, new URL(request.url, "http://local").searchParams);
-    const job = await createJob(created.id, "proxy", { transcribeAfter: true });
-    return { ...created, job: job.id };
-  }],
   ["GET", /^\/api\/projects\/([^/]+)\/overview$/, ([id]) => storyboard.readOverview(id)],
+  ["GET", /^\/api\/projects\/([^/]+)\/cleanup$/, ([id]) => readCleanup(projectDirName(id))],
+  ["POST", /^\/api\/projects\/([^/]+)\/cleanup\/detect$/, async ([id], request) => detectCleanup(projectDirName(id), await readBody(request))],
+  ["PUT", /^\/api\/projects\/([^/]+)\/cleanup\/edits\/([^/]+)\/([^/]+)$/, async ([id, clip, edit], request) => setDecision(projectDirName(id), clip, edit, (await readBody(request)).decision)],
+  ["PUT", /^\/api\/projects\/([^/]+)\/cleanup\/words\/([^/]+)\/(\d+)$/, async ([id, clip, word], request) => setWord(projectDirName(id), clip, Number(word), !!(await readBody(request)).cut)],
+  ["POST", /^\/api\/projects\/([^/]+)\/cleanup\/confirm$/, ([id]) => confirmCleanup(projectDirName(id))],
+  ["GET", /^\/api\/projects\/([^/]+)\/capcut$/, ([id]) => capcutStatus(projectDirName(id))],
+  ["POST", /^\/api\/projects\/([^/]+)\/capcut$/, async ([id], request) => buildCapcut(projectDirName(id), await readBody(request))],
+  ["POST", /^\/api\/projects\/([^/]+)\/capcut\/install$/, async ([id], request) => installCapcut(projectDirName(id), await readBody(request))],
+  ["POST", /^\/api\/projects\/([^/]+)\/capcut\/reveal$/, async ([id], request) => revealCapcut(projectDirName(id), await readBody(request))],
   ["GET", /^\/api\/projects\/([^/]+)\/export-settings$/, ([id]) => exportSettings(id)],
   ["GET", /^\/api\/projects\/([^/]+)\/exports$/, ([id]) => listExports(id)],
   ["GET", /^\/api\/projects\/([^/]+)\/exports\/([^/]+)\/video$/, async ([id, exportId], request, response) => sendFile(request, response, (await resolveExport(id, exportId)).file)],
@@ -114,7 +141,6 @@ const routes = [
   ["GET", /^\/api\/projects\/([^/]+)\/beat-times$/, ([id]) => storyboard.beatTimes(id)],
   ["GET", /^\/api\/projects\/([^/]+)\/shotlist$/, ([id]) => storyboard.shotList(id)],
   ["PUT", /^\/api\/projects\/([^/]+)\/beats$/, async ([id], request) => storyboard.saveBeats(id, await readBody(request))],
-  ["POST", /^\/api\/projects\/([^/]+)\/beats\/classify$/, ([id]) => classifyBeats(id)],
   ["POST", /^\/api\/projects\/([^/]+)\/beats\/confirm$/, async ([id], request) => storyboard.saveBeats(id, await readBody(request), { confirm: true })],
   ["GET", /^\/api\/projects\/([^/]+)\/thumbs\/at\/([^/]+)\/(\d+)$/, async ([id, asset, ms], request, response) => sendFile(request, response, await footageThumb(id, asset, Number(ms)), { cache: "max-age=3600" })],
   ["GET", /^\/api\/projects\/([^/]+)\/storyboard\/([^/]+)$/, ([id, round]) => storyboard.readRound(id, round)],

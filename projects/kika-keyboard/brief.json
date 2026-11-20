@@ -1,0 +1,68 @@
+{
+  "orderId": "2026-10_Kika-Keyboard",
+  "source": "TikTok One project screenshots, 2026-10-15",
+  "brand": {
+    "name": "Kika Keyboard: Custom Themes",
+    "agency": "Temisin LLC",
+    "paidBy": "TikTok One",
+    "revenueSharePool": 2500,
+    "basePay": 0
+  },
+  "product": {
+    "name": "Kika Keyboard",
+    "pricing": "free",
+    "description": "A free personalized emoji keyboard app with keyboard themes, backgrounds, widgets, fonts, emojis, stickers, kaomojis and sounds. Also supports a custom photo keyboard.",
+    "sellingPoints": [
+      "10000+ free keyboard themes",
+      "Theme types: LED, transparent, gravity, animated, HD background photo",
+      "New themes updated every day (anime, cute, cat, puppy, wolf, galaxy, flower, love)",
+      "Keyboard + Lock Screen + Background Bundle to match the whole phone",
+      "Aesthetic, neon, fancy, cool and cute backgrounds"
+    ],
+    "claimsAllowed": [
+      "over 10,000 free keyboard themes",
+      "free",
+      "font, emoji, sticker and kaomoji support",
+      "keyboard and lock screen matching"
+    ],
+    "claimsForbidden": [
+      "no invented numbers, ratings, awards or download counts",
+      "no competitor names or comparisons",
+      "no claims about battery, privacy or security"
+    ]
+  },
+  "delivery": {
+    "language": "English",
+    "type": "Branded post, published on the brand's business account",
+    "productionDays": 7,
+    "hardDeadline": true,
+    "sparkAdsAuthorization": "perpetual",
+    "aspectRatio": "9:16 only",
+    "quality": "HD",
+    "submissionLink": "TBC"
+  },
+  "restrictions": [
+    "Discrimination of any type including race and gender",
+    "Political content",
+    "Comparison to competitor products",
+    "Blurred or pixelated content",
+    "Arrows that prompt clicks",
+    "Drugs and weapons",
+    "Indecent content",
+    "Dangerous actions",
+    "Sexually suggestive content"
+  ],
+  "brandAssets": {
+    "count": 54,
+    "receivedLocally": 7,
+    "logo": "02_官方素材/品牌logo_Kika_方图.png"
+  },
+  "referenceVideo": "00_参考成品/UGC1016kika keyboard.mp4",
+  "taskLimits": {
+    "readingMax": 10,
+    "actionMax": 6,
+    "orientation": "9:16 only, no 16:9 tasks"
+  },
+  "projectId": "IB26111301",
+  "projectIdLine2": "IBEBP-26111301"
+}

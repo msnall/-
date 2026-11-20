@@ -1,0 +1,8 @@
+comtypes==1.5.0
+ImageIO==2.38.2
+numpy==2.4.6
+packaging==26.3
+pillow==13.0.0
+pyjianyingdraft==0.3.1
+pymediainfo==7.0.1
+uiautomation==2.0.29

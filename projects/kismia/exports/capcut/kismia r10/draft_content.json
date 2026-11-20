@@ -1,0 +1,3561 @@
+{
+    "canvas_config": {
+        "width": 1080,
+        "height": 1920,
+        "ratio": "original"
+    },
+    "color_space": 0,
+    "config": {
+        "adjust_max_index": 1,
+        "attachment_info": [],
+        "combination_max_index": 1,
+        "export_range": null,
+        "extract_audio_last_index": 1,
+        "lyrics_recognition_id": "",
+        "lyrics_sync": true,
+        "lyrics_taskinfo": [],
+        "maintrack_adsorb": true,
+        "material_save_mode": 0,
+        "multi_language_current": "none",
+        "multi_language_list": [],
+        "multi_language_main": "none",
+        "multi_language_mode": "none",
+        "original_sound_last_index": 1,
+        "record_audio_last_index": 1,
+        "sticker_max_index": 1,
+        "subtitle_keywords_config": null,
+        "subtitle_recognition_id": "",
+        "subtitle_sync": true,
+        "subtitle_taskinfo": [],
+        "system_font_list": [],
+        "video_mute": false,
+        "zoom_info_params": null
+    },
+    "cover": null,
+    "create_time": 0,
+    "duration": 22500000,
+    "extra_info": null,
+    "fps": 30,
+    "free_render_index_mode_on": false,
+    "group_container": null,
+    "id": "91E08AC5-22FB-47e2-9AA0-7DC300FAEA2B",
+    "keyframe_graph_list": [],
+    "keyframes": {
+        "adjusts": [],
+        "audios": [],
+        "effects": [],
+        "filters": [],
+        "handwrites": [],
+        "stickers": [],
+        "texts": [],
+        "videos": []
+    },
+    "last_modified_platform": {
+        "app_id": 3704,
+        "app_source": "lv",
+        "app_version": "5.9.0",
+        "os": "windows"
+    },
+    "platform": {
+        "app_id": 3704,
+        "app_source": "lv",
+        "app_version": "5.9.0",
+        "os": "windows"
+    },
+    "materials": {
+        "ai_translates": [],
+        "audio_balances": [],
+        "audio_effects": [],
+        "audio_fades": [],
+        "audio_track_indexes": [],
+        "audios": [
+            {
+                "app_id": 0,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 3,
+                "copyright_limit_type": "none",
+                "duration": 450000,
+                "effect_id": "",
+                "formula_id": "",
+                "id": "65ac5cf38826420bb79b496b8c7c5408",
+                "local_material_id": "65ac5cf38826420bb79b496b8c7c5408",
+                "music_id": "65ac5cf38826420bb79b496b8c7c5408",
+                "name": "whoosh.wav",
+                "path": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+                "source_platform": 0,
+                "type": "extract_music",
+                "wave_points": []
+            },
+            {
+                "app_id": 0,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 3,
+                "copyright_limit_type": "none",
+                "duration": 140000,
+                "effect_id": "",
+                "formula_id": "",
+                "id": "ef77a1f0370f47f18b958e634da749c1",
+                "local_material_id": "ef77a1f0370f47f18b958e634da749c1",
+                "music_id": "ef77a1f0370f47f18b958e634da749c1",
+                "name": "pop.wav",
+                "path": "F:\\VideoAutomation\\library\\sfx\\pop.wav",
+                "source_platform": 0,
+                "type": "extract_music",
+                "wave_points": []
+            },
+            {
+                "app_id": 0,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 3,
+                "copyright_limit_type": "none",
+                "duration": 450000,
+                "effect_id": "",
+                "formula_id": "",
+                "id": "45d49afa5afd4e5fb8c377ef7588fbc7",
+                "local_material_id": "45d49afa5afd4e5fb8c377ef7588fbc7",
+                "music_id": "45d49afa5afd4e5fb8c377ef7588fbc7",
+                "name": "whoosh.wav",
+                "path": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+                "source_platform": 0,
+                "type": "extract_music",
+                "wave_points": []
+            },
+            {
+                "app_id": 0,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 3,
+                "copyright_limit_type": "none",
+                "duration": 450000,
+                "effect_id": "",
+                "formula_id": "",
+                "id": "8dbac877e7b24063b33b5c75a5026b1a",
+                "local_material_id": "8dbac877e7b24063b33b5c75a5026b1a",
+                "music_id": "8dbac877e7b24063b33b5c75a5026b1a",
+                "name": "whoosh.wav",
+                "path": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+                "source_platform": 0,
+                "type": "extract_music",
+                "wave_points": []
+            },
+            {
+                "app_id": 0,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 3,
+                "copyright_limit_type": "none",
+                "duration": 450000,
+                "effect_id": "",
+                "formula_id": "",
+                "id": "348675919a8140e1a19b5728c14b8c9a",
+                "local_material_id": "348675919a8140e1a19b5728c14b8c9a",
+                "music_id": "348675919a8140e1a19b5728c14b8c9a",
+                "name": "whoosh.wav",
+                "path": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+                "source_platform": 0,
+                "type": "extract_music",
+                "wave_points": []
+            },
+            {
+                "app_id": 0,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 3,
+                "copyright_limit_type": "none",
+                "duration": 450000,
+                "effect_id": "",
+                "formula_id": "",
+                "id": "15f51278c667498b99d24721cff49be7",
+                "local_material_id": "15f51278c667498b99d24721cff49be7",
+                "music_id": "15f51278c667498b99d24721cff49be7",
+                "name": "whoosh.wav",
+                "path": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+                "source_platform": 0,
+                "type": "extract_music",
+                "wave_points": []
+            }
+        ],
+        "beats": [],
+        "canvases": [],
+        "chromas": [],
+        "common_mask": [],
+        "color_curves": [],
+        "digital_humans": [],
+        "drafts": [],
+        "effects": [],
+        "flowers": [],
+        "green_screens": [],
+        "handwrites": [],
+        "hsl": [],
+        "images": [],
+        "log_color_wheels": [],
+        "loudnesses": [],
+        "manual_deformations": [],
+        "masks": [],
+        "material_animations": [],
+        "material_colors": [],
+        "multi_language_refs": [],
+        "placeholders": [],
+        "plugin_effects": [],
+        "primary_color_wheels": [],
+        "realtime_denoises": [],
+        "shapes": [],
+        "smart_crops": [],
+        "smart_relights": [],
+        "sound_channel_mappings": [],
+        "speeds": [
+            {
+                "curve_speed": null,
+                "id": "7ed2f2cbfb104e9fb5a5308f110f58a9",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "68918943c9af44c8aa451d70956e8038",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "223b681b175145bfb61fa8755ef220ef",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "2864f139f80a41199071c86a4f8365af",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "7874ecdc85c744118ee26a0a716d3c88",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "ed7b991cbec04af281bd8f748ff0103e",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "58d91a83490c4af8a3b6cea20b64aa31",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "2e6ae67851304655875511e22416ba68",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "f45fd2dc8af44837afe6b00eb05d7530",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "89bf9aacf1fd41cea767ec5c469101ef",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "de8576ea04b34f04abbb34b02d351bab",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "2ee0086323b24510be44c9eceed5761f",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "f092441d7bf542a2a690b216a817bc4f",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "785ca65a8e1d493f91ec59faceee5cde",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "271c8877c7104b5ab23d595405888799",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "3b1c494b118c4705bd18b29795b8a727",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "d0ad352449ac43cfb472ea97791b30f9",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "3f759e9ce3bd477cb11752dcad94c881",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "da69585cbce144e4b8670a0a5bfb262a",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "c1c4af45a1524507801a40da44b34bf9",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            },
+            {
+                "curve_speed": null,
+                "id": "5a25066b535e4f5989f44ad08ac29520",
+                "mode": 0,
+                "speed": 1.0,
+                "type": "speed"
+            }
+        ],
+        "stickers": [],
+        "tail_leaders": [],
+        "text_templates": [],
+        "texts": [
+            {
+                "id": "bbcd2a5f26664d7981db28dc91be2c31",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 22], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"STOP SWIPING ON RANDOM\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "212d90757b91468781ab587c6fa1d31a",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 9], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"PROFILES.\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "f474926df53445119742922dbfc55715",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 21], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"NOW, I ONLY FILTER BY\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "23ce45c246e04feba788d75761401ff2",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 27], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"SHARED VALUES AND DISTANCE.\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "ea876c084c66476a83587285513c9f33",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 15], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"THIS IS KISMIA.\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "10daa23944d24785a9b6dc912f034e0d",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 17], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"I WAS SO TIRED OF\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "ac6b6ac7fcb540ccb4b7f6b9c7e3581f",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 13], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"WASTING TIME,\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "a6cd79fe535046d7b16f96a3168a459d",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 25], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"BUT THEIR SMART ALGORITHM\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "a685f2282e8f4c399c46ffc522b42ef2",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 16], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"MATCHES YOU WITH\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "25d2da5e06ef44609ba2a2899e98ab21",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 26], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"PEOPLE WHO ACTUALLY WANT A\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "d8e0b902f7284d08b73f68a0a8230b53",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 21], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"SERIOUS RELATIONSHIP.\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "9c3b20a1e92a4efeb88ccb9c300b2504",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 14], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"THE BEST PART,\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "9dcfe8b727a24c5f9875138381b2071c",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 22], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"EVERY PROFILE IS PHOTO\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "969afbfde4e447c9a9398b9f9fd83014",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 9], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"VERIFIED.\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "501e87a15da445638bd0b3cf9213a8e2",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 20], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"SO YOU DON'T HAVE TO\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "3d9697912202466599468d32b77b857d",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 28], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"WORRY ABOUT CATFISH OR BOTS.\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "d0fbfb9e76d24028b65607e09c696b26",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 21], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"IT'S BUILT FOR PEOPLE\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "4bef696276a4491ab926632b3f4a50dc",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 16], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"LOOKING FOR REAL\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "4868239643da409eac1d4ee711d23d1c",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 12], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"CONNECTIONS.\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "2fe9dcb41ff445ee84e03fa4bea8d994",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 19], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"IF YOU WANT TO STOP\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "d71df0017ef74791a8650afa6fcad9f7",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 13], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"WASTING TIME,\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            },
+            {
+                "id": "0f543d20ea9f4b658f50e2fbcc8cdc01",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [1.0, 1.0, 1.0]}}}, \"range\": [0, 24], \"size\": 8, \"bold\": true, \"italic\": false, \"underline\": false, \"strokes\": []}], \"text\": \"TAP BELOW TO TRY KISMIA.\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.7777777777777778,
+                "force_apply_line_max_width": false,
+                "check_flag": 23,
+                "type": "subtitle",
+                "global_alpha": 1.0,
+                "background_style": 1,
+                "background_color": "#000000",
+                "background_alpha": 0.6509803921568628,
+                "background_round_radius": 0.25,
+                "background_height": 0.18,
+                "background_width": 0.18,
+                "background_horizontal_offset": 0.0,
+                "background_vertical_offset": 0.0
+            }
+        ],
+        "time_marks": [],
+        "transitions": [],
+        "video_effects": [],
+        "video_trackings": [],
+        "videos": [
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 22500000,
+                "height": 1920,
+                "id": "48703745d5c848a58f048877393cec3f",
+                "local_material_id": "",
+                "material_id": "48703745d5c848a58f048877393cec3f",
+                "material_name": "voice-master-73de87a5.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 22500000,
+                "height": 1920,
+                "id": "5b6968feab2f4fd4b97dc7e96d10c65a",
+                "local_material_id": "",
+                "material_id": "5b6968feab2f4fd4b97dc7e96d10c65a",
+                "material_name": "voice-master-73de87a5.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 22500000,
+                "height": 1920,
+                "id": "0fbd0f7c0a074a728127b73b2f302794",
+                "local_material_id": "",
+                "material_id": "0fbd0f7c0a074a728127b73b2f302794",
+                "material_name": "voice-master-73de87a5.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 22500000,
+                "height": 1920,
+                "id": "3e04ac23f7c64122a4b3a5861e3c2440",
+                "local_material_id": "",
+                "material_id": "3e04ac23f7c64122a4b3a5861e3c2440",
+                "material_name": "voice-master-73de87a5.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 22500000,
+                "height": 1920,
+                "id": "ff8e916a234e4b62b812cf942a085de7",
+                "local_material_id": "",
+                "material_id": "ff8e916a234e4b62b812cf942a085de7",
+                "material_name": "voice-master-73de87a5.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 22500000,
+                "height": 1920,
+                "id": "9f50682a8cee4a83b9e79fe23efdfbd9",
+                "local_material_id": "",
+                "material_id": "9f50682a8cee4a83b9e79fe23efdfbd9",
+                "material_name": "voice-master-73de87a5.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 22500000,
+                "height": 1920,
+                "id": "5919c7cb39324d35bc49ad5cefaa6b7f",
+                "local_material_id": "",
+                "material_id": "5919c7cb39324d35bc49ad5cefaa6b7f",
+                "material_name": "voice-master-73de87a5.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 22500000,
+                "height": 1920,
+                "id": "65bea073abe6470db4d26c1a2b1e682d",
+                "local_material_id": "",
+                "material_id": "65bea073abe6470db4d26c1a2b1e682d",
+                "material_name": "voice-master-73de87a5.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 22500000,
+                "height": 1920,
+                "id": "c77766155a354df8a839ddb838a64bef",
+                "local_material_id": "",
+                "material_id": "c77766155a354df8a839ddb838a64bef",
+                "material_name": "voice-master-73de87a5.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 2833000,
+                "height": 1920,
+                "id": "8fef8afa103540a7b3b40f90f4a87cf1",
+                "local_material_id": "",
+                "material_id": "8fef8afa103540a7b3b40f90f4a87cf1",
+                "material_name": "c1-action.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\c1-action.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 2833000,
+                "height": 1920,
+                "id": "2ed2177aab47492f8c6716546feb5841",
+                "local_material_id": "",
+                "material_id": "2ed2177aab47492f8c6716546feb5841",
+                "material_name": "c1-action.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\c1-action.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 4367000,
+                "height": 1920,
+                "id": "125cf26a28844df08d9250874040a9db",
+                "local_material_id": "",
+                "material_id": "125cf26a28844df08d9250874040a9db",
+                "material_name": "screen-o2.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\screen-o2.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 3334000,
+                "height": 1920,
+                "id": "774e190b934f4b27a91f79e90807bf28",
+                "local_material_id": "",
+                "material_id": "774e190b934f4b27a91f79e90807bf28",
+                "material_name": "screen-o3.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\screen-o3.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 2034000,
+                "height": 1920,
+                "id": "5a5fed4b02dc4983b171d4a072edb0e0",
+                "local_material_id": "",
+                "material_id": "5a5fed4b02dc4983b171d4a072edb0e0",
+                "material_name": "screen-o1.mp4",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\screen-o1.mp4",
+                "type": "video",
+                "width": 1080
+            },
+            {
+                "audio_fade": null,
+                "category_id": "",
+                "category_name": "local",
+                "check_flag": 63487,
+                "crop": {
+                    "upper_left_x": 0.0,
+                    "upper_left_y": 0.0,
+                    "upper_right_x": 1.0,
+                    "upper_right_y": 0.0,
+                    "lower_left_x": 0.0,
+                    "lower_left_y": 1.0,
+                    "lower_right_x": 1.0,
+                    "lower_right_y": 1.0
+                },
+                "crop_ratio": "free",
+                "crop_scale": 1.0,
+                "duration": 10800000000,
+                "height": 1080,
+                "id": "97467228333c4569b7345b03bbc6b6d0",
+                "local_material_id": "",
+                "material_id": "97467228333c4569b7345b03bbc6b6d0",
+                "material_name": "brand-o4.jpg",
+                "media_path": "",
+                "path": "F:\\VideoAutomation\\public\\derived\\kismia\\brand-o4.jpg",
+                "type": "photo",
+                "width": 1080
+            }
+        ],
+        "vocal_beautifys": [],
+        "vocal_separations": []
+    },
+    "mutable_config": null,
+    "name": "",
+    "new_version": "110.0.0",
+    "relationships": [],
+    "render_index_track_mode_on": false,
+    "retouch_cover": null,
+    "source": "default",
+    "static_cover_image_path": "",
+    "time_marks": null,
+    "tracks": [
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "6f8ec2647d464334893d0b27b1fe2976",
+            "is_default_name": false,
+            "name": "口播",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "affd67105b1b404d8af04b3714269a02",
+                    "material_id": "48703745d5c848a58f048877393cec3f",
+                    "target_timerange": {
+                        "start": 0,
+                        "duration": 1733333
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 1733333
+                    },
+                    "speed": 1.0,
+                    "volume": 1,
+                    "extra_material_refs": [
+                        "7ed2f2cbfb104e9fb5a5308f110f58a9"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 0
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "98dd8a0cb0804db69da8177a396bc24f",
+                    "material_id": "5b6968feab2f4fd4b97dc7e96d10c65a",
+                    "target_timerange": {
+                        "start": 1733333,
+                        "duration": 2633334
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 1733000,
+                        "duration": 2633334
+                    },
+                    "speed": 1.0,
+                    "volume": 1,
+                    "extra_material_refs": [
+                        "68918943c9af44c8aa451d70956e8038"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.1,
+                            "y": 1.1
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": -0.024000000000000018
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 0
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "ae66d4b5dec04bfe992f2a7024a0c928",
+                    "material_id": "0fbd0f7c0a074a728127b73b2f302794",
+                    "target_timerange": {
+                        "start": 4366667,
+                        "duration": 2433333
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 4366000,
+                        "duration": 2433333
+                    },
+                    "speed": 1.0,
+                    "volume": 1,
+                    "extra_material_refs": [
+                        "223b681b175145bfb61fa8755ef220ef"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 0
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "606f5dc29ca74896b0e3f35481c5bc98",
+                    "material_id": "3e04ac23f7c64122a4b3a5861e3c2440",
+                    "target_timerange": {
+                        "start": 6800000,
+                        "duration": 2266667
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 6800000,
+                        "duration": 2266667
+                    },
+                    "speed": 1.0,
+                    "volume": 1,
+                    "extra_material_refs": [
+                        "2864f139f80a41199071c86a4f8365af"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 0
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "e1738c8326ac45feaff8337068bd72d0",
+                    "material_id": "ff8e916a234e4b62b812cf942a085de7",
+                    "target_timerange": {
+                        "start": 9066667,
+                        "duration": 2666666
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 9066000,
+                        "duration": 2666666
+                    },
+                    "speed": 1.0,
+                    "volume": 1,
+                    "extra_material_refs": [
+                        "7874ecdc85c744118ee26a0a716d3c88"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 0
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "6f7d329a2e52450aa8c6a487acaa264e",
+                    "material_id": "9f50682a8cee4a83b9e79fe23efdfbd9",
+                    "target_timerange": {
+                        "start": 11733333,
+                        "duration": 2500000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 11733000,
+                        "duration": 2500000
+                    },
+                    "speed": 1.0,
+                    "volume": 1,
+                    "extra_material_refs": [
+                        "ed7b991cbec04af281bd8f748ff0103e"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.1,
+                            "y": 1.1
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": -0.024000000000000018
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 0
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "7160e1ce9e234aa78d2f043172e65d56",
+                    "material_id": "5919c7cb39324d35bc49ad5cefaa6b7f",
+                    "target_timerange": {
+                        "start": 14233333,
+                        "duration": 2500000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 14233000,
+                        "duration": 2500000
+                    },
+                    "speed": 1.0,
+                    "volume": 1,
+                    "extra_material_refs": [
+                        "58d91a83490c4af8a3b6cea20b64aa31"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 0
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "a7e917f0480b4ba9960bab8b19d81861",
+                    "material_id": "65bea073abe6470db4d26c1a2b1e682d",
+                    "target_timerange": {
+                        "start": 16733333,
+                        "duration": 2766667
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 16733000,
+                        "duration": 2766667
+                    },
+                    "speed": 1.0,
+                    "volume": 1,
+                    "extra_material_refs": [
+                        "2e6ae67851304655875511e22416ba68"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.1,
+                            "y": 1.1
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": -0.024000000000000018
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 0
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "c7da26c7c1a34a72bd8e43ba17d9e76a",
+                    "material_id": "c77766155a354df8a839ddb838a64bef",
+                    "target_timerange": {
+                        "start": 19500000,
+                        "duration": 3000000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 19500000,
+                        "duration": 3000000
+                    },
+                    "speed": 1.0,
+                    "volume": 1,
+                    "extra_material_refs": [
+                        "f45fd2dc8af44837afe6b00eb05d7530"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 0
+                }
+            ],
+            "type": "video"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "f26d5a031fd542a98733f167f3daa837",
+            "is_default_name": false,
+            "name": "插画",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "ffd17ca1b43f482289ddaf1b50cc0df6",
+                    "material_id": "8fef8afa103540a7b3b40f90f4a87cf1",
+                    "target_timerange": {
+                        "start": 1733333,
+                        "duration": 2000000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 2000000
+                    },
+                    "speed": 1.0,
+                    "volume": 0,
+                    "extra_material_refs": [
+                        "89bf9aacf1fd41cea767ec5c469101ef"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 0.2675925925925926,
+                            "y": 0.2675925925925926
+                        },
+                        "transform": {
+                            "x": 0.4046296296296296,
+                            "y": 0.6979166666666666
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 1
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "a589a96342904f6b85f5f34e4b4f325f",
+                    "material_id": "2ed2177aab47492f8c6716546feb5841",
+                    "target_timerange": {
+                        "start": 6800000,
+                        "duration": 2100000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 500000,
+                        "duration": 2100000
+                    },
+                    "speed": 1.0,
+                    "volume": 0,
+                    "extra_material_refs": [
+                        "de8576ea04b34f04abbb34b02d351bab"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 0.28055555555555556,
+                            "y": 0.28055555555555556
+                        },
+                        "transform": {
+                            "x": 0.4824074074074074,
+                            "y": 0.14270833333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 1
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "13a09c84239148e7b56f602a163a355c",
+                    "material_id": "125cf26a28844df08d9250874040a9db",
+                    "target_timerange": {
+                        "start": 9066667,
+                        "duration": 2600000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 2600000
+                    },
+                    "speed": 1.0,
+                    "volume": 0,
+                    "extra_material_refs": [
+                        "2ee0086323b24510be44c9eceed5761f"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 0.24814814814814815,
+                            "y": 0.24814814814814815
+                        },
+                        "transform": {
+                            "x": 0.5648148148148148,
+                            "y": 0.5734375
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 1
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "50a9284102be4a8eb7d6c4a80119e1a9",
+                    "material_id": "774e190b934f4b27a91f79e90807bf28",
+                    "target_timerange": {
+                        "start": 16733333,
+                        "duration": 2500000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 2500000
+                    },
+                    "speed": 1.0,
+                    "volume": 0,
+                    "extra_material_refs": [
+                        "f092441d7bf542a2a690b216a817bc4f"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 0.2388888888888889,
+                            "y": 0.2388888888888889
+                        },
+                        "transform": {
+                            "x": -0.7444444444444445,
+                            "y": 0.13854166666666667
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 1
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "81d7997c565f4bc3a267fe4a81795e81",
+                    "material_id": "5a5fed4b02dc4983b171d4a072edb0e0",
+                    "target_timerange": {
+                        "start": 20433333,
+                        "duration": 2000000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "2d1990e1c9ec440f9dc41b6606ca210d",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "b95dabf505484a4985c82da504fb0f36",
+                                    "time_offset": 0,
+                                    "values": [
+                                        1
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "eaf15385e98f4271818bb94a716a7a51",
+                                    "time_offset": 2000000,
+                                    "values": [
+                                        1.04
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeScaleX"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 2000000
+                    },
+                    "speed": 1.0,
+                    "volume": 0,
+                    "extra_material_refs": [
+                        "785ca65a8e1d493f91ec59faceee5cde"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 1
+                }
+            ],
+            "type": "video"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "4aeaf839aabb43e8acf24748034e0dc5",
+            "is_default_name": false,
+            "name": "品牌图标",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "425f46de2eaf4de88a6a44f56a2f5f00",
+                    "material_id": "97467228333c4569b7345b03bbc6b6d0",
+                    "target_timerange": {
+                        "start": 4733333,
+                        "duration": 17766667
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 17766667
+                    },
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "271c8877c7104b5ab23d595405888799"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 0.1388888888888889,
+                            "y": 0.1388888888888889
+                        },
+                        "transform": {
+                            "x": -0.7870370370370371,
+                            "y": 0.7447916666666666
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "hdr_settings": {
+                        "intensity": 1.0,
+                        "mode": 1,
+                        "nits": 1000
+                    },
+                    "render_index": 2
+                }
+            ],
+            "type": "video"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "26a5542dca354253b9cfb405fa55d49c",
+            "is_default_name": false,
+            "name": "字幕",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "6dd0f0989fb34d5eab616c5116e35da5",
+                    "material_id": "bbcd2a5f26664d7981db28dc91be2c31",
+                    "target_timerange": {
+                        "start": 0,
+                        "duration": 1200000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "070046bfc3344454b7cf16111762b7ea"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "754af5b441cc461aacbe5d02a20e19dd",
+                    "material_id": "212d90757b91468781ab587c6fa1d31a",
+                    "target_timerange": {
+                        "start": 1200000,
+                        "duration": 533333
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "e710544b05c14a33b0d645acff072f11"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "855aba4a5887457b9abc526548d715b3",
+                    "material_id": "f474926df53445119742922dbfc55715",
+                    "target_timerange": {
+                        "start": 1733333,
+                        "duration": 1133334
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "cffaff83eda94ace89f5267c30cfe1c7"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "81bdf5764f884339874bff9bd6088022",
+                    "material_id": "23ce45c246e04feba788d75761401ff2",
+                    "target_timerange": {
+                        "start": 2866667,
+                        "duration": 1500000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "399a7615132d49859f08b0d2fb6f3be6"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "452c36f96e8543f79d48fe5b5d4589ae",
+                    "material_id": "ea876c084c66476a83587285513c9f33",
+                    "target_timerange": {
+                        "start": 4366667,
+                        "duration": 833333
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "f93db91f036647a7895cd57bc710d5c1"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "0566296724d54ab09e49f13f70cdb9f9",
+                    "material_id": "10daa23944d24785a9b6dc912f034e0d",
+                    "target_timerange": {
+                        "start": 5200000,
+                        "duration": 866667
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "8ba24f53b70d48c696a39a4a7425c120"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "f48bc5002a4948258b05a7633b0c2da3",
+                    "material_id": "ac6b6ac7fcb540ccb4b7f6b9c7e3581f",
+                    "target_timerange": {
+                        "start": 6066667,
+                        "duration": 733333
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "74e1a77720c74913a3a4b90d7dbfc044"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "c7bc4c1eb5e6479cbd3162a4735e4d97",
+                    "material_id": "a6cd79fe535046d7b16f96a3168a459d",
+                    "target_timerange": {
+                        "start": 6800000,
+                        "duration": 1366667
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "218511292a3e413d9269922357703a5b"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "90711a3e34dc406f857adcf210ddfae8",
+                    "material_id": "a685f2282e8f4c399c46ffc522b42ef2",
+                    "target_timerange": {
+                        "start": 8166667,
+                        "duration": 900000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "9aa8cfd9a56849ad8c0c16c0daba64e4"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "4d1a321f7bf44fe6a29c87c91b112d50",
+                    "material_id": "25d2da5e06ef44609ba2a2899e98ab21",
+                    "target_timerange": {
+                        "start": 9066667,
+                        "duration": 1433333
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "420ebdbcc0404604906c049071e08e6c"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "3c3d4e2362b84c5eaee5f906308afa31",
+                    "material_id": "d8e0b902f7284d08b73f68a0a8230b53",
+                    "target_timerange": {
+                        "start": 10500000,
+                        "duration": 1233333
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "222d99df346948b68dcf99a7ddac3972"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "3b996453162843ed9d7bba47ac5d73e4",
+                    "material_id": "9c3b20a1e92a4efeb88ccb9c300b2504",
+                    "target_timerange": {
+                        "start": 11733333,
+                        "duration": 766667
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "f1f16fb859444f8bbb7a27b9bea353b3"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "6e39930fdf8245b8b1afb0f9ef5b362a",
+                    "material_id": "9dcfe8b727a24c5f9875138381b2071c",
+                    "target_timerange": {
+                        "start": 12500000,
+                        "duration": 1166667
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "0492657d9fe3485eaf219c7a3f0832e9"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "e8f34e8a3bb54ae68b7cc3551076086d",
+                    "material_id": "969afbfde4e447c9a9398b9f9fd83014",
+                    "target_timerange": {
+                        "start": 13666667,
+                        "duration": 566666
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "d429627904574792818f0934fe35b91f"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "55ba9c1c78724efcaef9f55fdd49c842",
+                    "material_id": "501e87a15da445638bd0b3cf9213a8e2",
+                    "target_timerange": {
+                        "start": 14233333,
+                        "duration": 1000000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "4f5fe655930e493f9d22c9fd0d4f4f77"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "d1f5cbec996943b49719eb0d4e8495c2",
+                    "material_id": "3d9697912202466599468d32b77b857d",
+                    "target_timerange": {
+                        "start": 15233333,
+                        "duration": 1500000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "48e20362705840009ae22dbca167b624"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "e25fc184ad6243879afca0f0cec212ea",
+                    "material_id": "d0fbfb9e76d24028b65607e09c696b26",
+                    "target_timerange": {
+                        "start": 16733333,
+                        "duration": 1133334
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "1605d4fa07004bdeb96f0ed4885bf686"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "32529d591bc34fe3b3d2962a51791226",
+                    "material_id": "4bef696276a4491ab926632b3f4a50dc",
+                    "target_timerange": {
+                        "start": 17866667,
+                        "duration": 866666
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "1906ee4d4af645e588958ec4d6384ab9"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "4489d00354d3479aa1e53581ac7f5169",
+                    "material_id": "4868239643da409eac1d4ee711d23d1c",
+                    "target_timerange": {
+                        "start": 18733333,
+                        "duration": 766667
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "21e7faf6991d44ceb7dba2f68e4780b1"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "a87e454ff9314aac87d323bc74812fd3",
+                    "material_id": "2fe9dcb41ff445ee84e03fa4bea8d994",
+                    "target_timerange": {
+                        "start": 19500000,
+                        "duration": 933333
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "b05d3a3566ff437a8e3d95cbb982ebd5"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "95c0e8573cd548c29a7808401cf5e9a9",
+                    "material_id": "d71df0017ef74791a8650afa6fcad9f7",
+                    "target_timerange": {
+                        "start": 20433333,
+                        "duration": 733334
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "37f0326888f146f6a4cbc0e8ff0a36f1"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "25c9c942eb1a44abbadfd4d02dd1496b",
+                    "material_id": "0f543d20ea9f4b658f50e2fbcc8cdc01",
+                    "target_timerange": {
+                        "start": 21166667,
+                        "duration": 1266666
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "b54d9e275028488198deb2aa05bf0b7f"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": -0.09259259259259259,
+                            "y": -0.3333333333333333
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 3
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "afaf782fe8f6451da3fbb5c945e1210a",
+            "is_default_name": false,
+            "name": "音效",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "de09b8dbc9e44a728fe3707219bcb20d",
+                    "material_id": "65ac5cf38826420bb79b496b8c7c5408",
+                    "target_timerange": {
+                        "start": 1700000,
+                        "duration": 450000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 450000
+                    },
+                    "speed": 1.0,
+                    "volume": 0.5,
+                    "extra_material_refs": [
+                        "3b1c494b118c4705bd18b29795b8a727"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": null,
+                    "hdr_settings": null,
+                    "render_index": 4
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "e96d08d2d46a48c59ad63ed7fe912414",
+                    "material_id": "ef77a1f0370f47f18b958e634da749c1",
+                    "target_timerange": {
+                        "start": 4733333,
+                        "duration": 140000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 140000
+                    },
+                    "speed": 1.0,
+                    "volume": 0.6,
+                    "extra_material_refs": [
+                        "d0ad352449ac43cfb472ea97791b30f9"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": null,
+                    "hdr_settings": null,
+                    "render_index": 4
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "5af53f74a477470a8045c74d5b9e15fc",
+                    "material_id": "45d49afa5afd4e5fb8c377ef7588fbc7",
+                    "target_timerange": {
+                        "start": 6766667,
+                        "duration": 450000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 450000
+                    },
+                    "speed": 1.0,
+                    "volume": 0.5,
+                    "extra_material_refs": [
+                        "3f759e9ce3bd477cb11752dcad94c881"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": null,
+                    "hdr_settings": null,
+                    "render_index": 4
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "35722abbac4f4966b333e089154a5dc8",
+                    "material_id": "8dbac877e7b24063b33b5c75a5026b1a",
+                    "target_timerange": {
+                        "start": 9033333,
+                        "duration": 450000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 450000
+                    },
+                    "speed": 1.0,
+                    "volume": 0.5,
+                    "extra_material_refs": [
+                        "da69585cbce144e4b8670a0a5bfb262a"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": null,
+                    "hdr_settings": null,
+                    "render_index": 4
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "160d23ddb3be4369a6833523d7e4cbc7",
+                    "material_id": "348675919a8140e1a19b5728c14b8c9a",
+                    "target_timerange": {
+                        "start": 16700000,
+                        "duration": 450000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 450000
+                    },
+                    "speed": 1.0,
+                    "volume": 0.5,
+                    "extra_material_refs": [
+                        "c1c4af45a1524507801a40da44b34bf9"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": null,
+                    "hdr_settings": null,
+                    "render_index": 4
+                },
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "a43bd4f30b794657ba72d51c4aa57edf",
+                    "material_id": "15f51278c667498b99d24721cff49be7",
+                    "target_timerange": {
+                        "start": 20400000,
+                        "duration": 450000
+                    },
+                    "common_keyframes": [],
+                    "keyframe_refs": [],
+                    "source_timerange": {
+                        "start": 0,
+                        "duration": 450000
+                    },
+                    "speed": 1.0,
+                    "volume": 0.5,
+                    "extra_material_refs": [
+                        "5a25066b535e4f5989f44ad08ac29520"
+                    ],
+                    "is_tone_modify": false,
+                    "clip": null,
+                    "hdr_settings": null,
+                    "render_index": 4
+                }
+            ],
+            "type": "audio"
+        }
+    ],
+    "update_time": 0,
+    "version": 360000
+}

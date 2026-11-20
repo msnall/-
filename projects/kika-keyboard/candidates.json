@@ -1,0 +1,81 @@
+{
+  "version": 2,
+  "order": "2026-10_Kika-Keyboard",
+  "brand": "Kika Keyboard: Custom Themes",
+  "downloadInstruction": "download Kika Keyboard",
+  "note": "每套候选 = 阅读A（近景拿手机）+ 阅读B（半身）+ 一个动作，配成同一个角度和语气，整套选。",
+  "candidates": [
+    {
+      "id": "cand-a",
+      "label": "A. 无聊打字 → 反差惊喜",
+      "readingA": {
+        "lines": [
+          { "text": "I used to send the most boring texts ever.", "tone": "<show your plain default keyboard>" },
+          { "text": "No font, no emojis, just plain words.", "tone": "<self-deprecating>" },
+          { "text": "Then I found Kika Keyboard. Now I've got crazy fonts, cute stickers and kaomoji in every chat.", "tone": "<excited, show your chat with Kika Keyboard>" }
+        ]
+      },
+      "readingB": {
+        "lines": [
+          { "text": "Every text I sent looked exactly the same.", "tone": "<flat, relatable>" },
+          { "text": "Same font, same keyboard, just boring.", "tone": "<sighing, unimpressed>" },
+          { "text": "Kika Keyboard fixed that in one download.", "tone": "<satisfied, direct>" }
+        ]
+      },
+      "action": {
+        "requirements": ["Prepare a phone with Kika Keyboard installed and set as the default keyboard."],
+        "subactions": [
+          { "title": "Action 1 (Boring to magic): (~5-6 seconds)", "steps": ["Sit on the sofa or at a desk. Hold your phone and type with a flat, bored expression on the plain keyboard, then switch to a Kika theme and font, drop in a kaomoji, and hit send with a big grin."], "image": "images/action_3_tap.jpg", "imageCaption": "Reference: switching to a themed keyboard." }
+        ]
+      }
+    },
+    {
+      "id": "cand-b",
+      "label": "B. 十秒改造整部手机",
+      "readingA": {
+        "lines": [
+          { "text": "I changed my whole phone in like ten seconds.", "tone": "<confident, casual, holding phone up>" },
+          { "text": "And no, I didn't buy a new one.", "tone": "<playful, teasing>" },
+          { "text": "It's Kika Keyboard. Ten thousand plus themes, and you can match it to your lock screen too.", "tone": "<proud, show the themed keyboard>" }
+        ]
+      },
+      "readingB": {
+        "lines": [
+          { "text": "My phone used to look like everyone else's.", "tone": "<honest, calm>" },
+          { "text": "Now every time I type, it's a different theme.", "tone": "<delighted>" },
+          { "text": "Kika Keyboard. Free, and it actually looks good.", "tone": "<warm, direct CTA>" }
+        ]
+      },
+      "action": {
+        "requirements": ["Prepare a phone with Kika Keyboard installed and a theme already downloaded."],
+        "subactions": [
+          { "title": "Action 1 (Scroll and jaw-drop): (~5-6 seconds)", "steps": ["Hold the phone up in portrait, screen facing you, scroll through themes quickly with your thumb, then stop on a favorite theme, widen your eyes and let your jaw drop while showing the screen to the camera."], "image": "images/action_4_lockscreen.jpg", "imageCaption": "Reference: themed keyboard matched with lock screen." }
+        ]
+      }
+    },
+    {
+      "id": "cand-c",
+      "label": "C. 朋友看到后抢手机",
+      "readingA": {
+        "lines": [
+          { "text": "My friend saw my keyboard and literally grabbed my phone out of my hand.", "tone": "<laughing, storytelling>" },
+          { "text": "She couldn't believe it was free.", "tone": "<amused>" },
+          { "text": "It's called Kika Keyboard. Themes, fonts, stickers, kaomoji, all free.", "tone": "<warm, direct CTA>" }
+        ]
+      },
+      "readingB": {
+        "lines": [
+          { "text": "Okay, I'm a little obsessed with my keyboard now.", "tone": "<sheepish, happy>" },
+          { "text": "It's the first thing people notice when I text them.", "tone": "<proud>" },
+          { "text": "If your chats feel dry, get Kika.", "tone": "<playful CTA>" }
+        ]
+      },
+      "action": {
+        "requirements": ["Prepare a phone with Kika Keyboard installed and set as the default keyboard.", "Shoot with a second person, or mime handing the phone to someone off-camera."],
+        "subactions": [
+          { "title": "Action 1 (Tap, then reach): (~5-6 seconds)", "steps": ["Hold the phone with the keyboard facing you, tap a few keys with a small smile, tilt it toward an off-camera friend, then mime them reaching in to grab it and react with a surprised laugh."], "image": "images/action_3_tap.jpg", "imageCaption": "Reference: fingers tapping a themed keyboard." }
+        ]
+      }
+    }
+  ]
+}

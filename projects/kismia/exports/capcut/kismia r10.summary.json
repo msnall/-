@@ -1,0 +1,36 @@
+{
+  "tracks": [
+    {
+      "name": "口播",
+      "kind": "video",
+      "segments": 9
+    },
+    {
+      "name": "插画",
+      "kind": "video",
+      "segments": 5
+    },
+    {
+      "name": "品牌图标",
+      "kind": "video",
+      "segments": 1
+    },
+    {
+      "name": "字幕",
+      "kind": "text",
+      "segments": 22
+    },
+    {
+      "name": "音效",
+      "kind": "audio",
+      "segments": 6
+    }
+  ],
+  "skipped": [
+    "字幕里单个词的强调色（剪映里请手动选词上色）"
+  ],
+  "draft": "F:\\VideoAutomation\\projects\\kismia\\exports\\capcut\\kismia r10",
+  "durationUs": 22500000,
+  "planRevision": 10,
+  "builtAt": "2026-11-19T09:40:08.773Z"
+}

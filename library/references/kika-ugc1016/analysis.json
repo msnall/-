@@ -1,0 +1,511 @@
+{
+  "version": 1,
+  "id": "kika-ugc1016",
+  "title": "UGC1016 Kika keyboard（订单参考成品）",
+  "analyzedAt": "2026-11-18T10:05:07.356Z",
+  "source": {
+    "file": "F:\\TiktokOne订单\\_存档\\IB26111601_20261118-1101\\2026-10_Kika-Keyboard\\00_参考成品\\UGC1016kika keyboard.mp4",
+    "sha256": "eb6d555f61be0872db821fbd72c330bee4d9375eadd22d89e533717d3fbdc8c9",
+    "bytes": 31137943
+  },
+  "facts": {
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "durationMs": 24938,
+    "hasAudio": true,
+    "loudness": {
+      "integratedLufs": -14.48,
+      "truePeakDb": 0.15,
+      "lra": 14.5
+    }
+  },
+  "cuts": {
+    "threshold": 0.15,
+    "count": 7,
+    "timesMs": [
+      4433,
+      9467,
+      15067,
+      16967,
+      20167,
+      22133,
+      24300
+    ]
+  },
+  "shots": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 4433,
+      "durationMs": 4433
+    },
+    {
+      "index": 2,
+      "startMs": 4433,
+      "endMs": 9467,
+      "durationMs": 5034
+    },
+    {
+      "index": 3,
+      "startMs": 9467,
+      "endMs": 15067,
+      "durationMs": 5600
+    },
+    {
+      "index": 4,
+      "startMs": 15067,
+      "endMs": 16967,
+      "durationMs": 1900
+    },
+    {
+      "index": 5,
+      "startMs": 16967,
+      "endMs": 20167,
+      "durationMs": 3200
+    },
+    {
+      "index": 6,
+      "startMs": 20167,
+      "endMs": 22133,
+      "durationMs": 1966
+    },
+    {
+      "index": 7,
+      "startMs": 22133,
+      "endMs": 24300,
+      "durationMs": 2167
+    },
+    {
+      "index": 8,
+      "startMs": 24300,
+      "endMs": 24938,
+      "durationMs": 638
+    }
+  ],
+  "pacing": {
+    "shotCount": 8,
+    "avgShotMs": 3117,
+    "minShotMs": 638,
+    "maxShotMs": 5600,
+    "cutsPerSecond": 0.28
+  },
+  "transcript": {
+    "words": [
+      {
+        "text": "(upbeat",
+        "startMs": 10,
+        "endMs": 1370
+      },
+      {
+        "text": "music)",
+        "startMs": 1370,
+        "endMs": 2580
+      },
+      {
+        "text": "I",
+        "startMs": 4520,
+        "endMs": 4520
+      },
+      {
+        "text": "used",
+        "startMs": 4520,
+        "endMs": 4520
+      },
+      {
+        "text": "to",
+        "startMs": 4520,
+        "endMs": 4520
+      },
+      {
+        "text": "send",
+        "startMs": 4520,
+        "endMs": 4520
+      },
+      {
+        "text": "the",
+        "startMs": 4520,
+        "endMs": 4530
+      },
+      {
+        "text": "most",
+        "startMs": 4530,
+        "endMs": 4680
+      },
+      {
+        "text": "boring",
+        "startMs": 4680,
+        "endMs": 5380
+      },
+      {
+        "text": "texts",
+        "startMs": 5380,
+        "endMs": 5970
+      },
+      {
+        "text": "ever.",
+        "startMs": 5970,
+        "endMs": 6840
+      },
+      {
+        "text": "No",
+        "startMs": 6840,
+        "endMs": 6990
+      },
+      {
+        "text": "font,",
+        "startMs": 6990,
+        "endMs": 7450
+      },
+      {
+        "text": "no",
+        "startMs": 7450,
+        "endMs": 7600
+      },
+      {
+        "text": "emojis,",
+        "startMs": 7600,
+        "endMs": 8200
+      },
+      {
+        "text": "just",
+        "startMs": 8200,
+        "endMs": 8510
+      },
+      {
+        "text": "plain",
+        "startMs": 8510,
+        "endMs": 8890
+      },
+      {
+        "text": "words.",
+        "startMs": 8890,
+        "endMs": 9560
+      },
+      {
+        "text": "Then",
+        "startMs": 9560,
+        "endMs": 9840
+      },
+      {
+        "text": "I",
+        "startMs": 9840,
+        "endMs": 9930
+      },
+      {
+        "text": "downloaded",
+        "startMs": 9930,
+        "endMs": 10620
+      },
+      {
+        "text": "Kika.",
+        "startMs": 10620,
+        "endMs": 10920
+      },
+      {
+        "text": "Now",
+        "startMs": 10920,
+        "endMs": 11200
+      },
+      {
+        "text": "I",
+        "startMs": 11200,
+        "endMs": 11330
+      },
+      {
+        "text": "use",
+        "startMs": 11330,
+        "endMs": 11570
+      },
+      {
+        "text": "crazy",
+        "startMs": 11570,
+        "endMs": 12040
+      },
+      {
+        "text": "fonts,",
+        "startMs": 12040,
+        "endMs": 12720
+      },
+      {
+        "text": "cute",
+        "startMs": 12720,
+        "endMs": 12960
+      },
+      {
+        "text": "stickers,",
+        "startMs": 12960,
+        "endMs": 13440
+      },
+      {
+        "text": "and",
+        "startMs": 13440,
+        "endMs": 13630
+      },
+      {
+        "text": "commojis",
+        "startMs": 13630,
+        "endMs": 14120
+      },
+      {
+        "text": "in",
+        "startMs": 14120,
+        "endMs": 14240
+      },
+      {
+        "text": "every",
+        "startMs": 14240,
+        "endMs": 14560
+      },
+      {
+        "text": "chat.",
+        "startMs": 14560,
+        "endMs": 15060
+      },
+      {
+        "text": "I",
+        "startMs": 15060,
+        "endMs": 15110
+      },
+      {
+        "text": "literally",
+        "startMs": 15110,
+        "endMs": 15570
+      },
+      {
+        "text": "can't",
+        "startMs": 15570,
+        "endMs": 15820
+      },
+      {
+        "text": "stop",
+        "startMs": 15820,
+        "endMs": 16040
+      },
+      {
+        "text": "sending",
+        "startMs": 16040,
+        "endMs": 16360
+      },
+      {
+        "text": "these",
+        "startMs": 16360,
+        "endMs": 16520
+      },
+      {
+        "text": "funny",
+        "startMs": 16520,
+        "endMs": 16740
+      },
+      {
+        "text": "stickers",
+        "startMs": 16740,
+        "endMs": 17100
+      },
+      {
+        "text": "to",
+        "startMs": 17100,
+        "endMs": 17220
+      },
+      {
+        "text": "my",
+        "startMs": 17220,
+        "endMs": 17340
+      },
+      {
+        "text": "friends.",
+        "startMs": 17340,
+        "endMs": 17940
+      },
+      {
+        "text": "It",
+        "startMs": 17940,
+        "endMs": 18050
+      },
+      {
+        "text": "makes",
+        "startMs": 18050,
+        "endMs": 18350
+      },
+      {
+        "text": "every",
+        "startMs": 18350,
+        "endMs": 18630
+      },
+      {
+        "text": "conversation",
+        "startMs": 18630,
+        "endMs": 19340
+      },
+      {
+        "text": "way",
+        "startMs": 19340,
+        "endMs": 19510
+      },
+      {
+        "text": "more",
+        "startMs": 19510,
+        "endMs": 19740
+      },
+      {
+        "text": "fun.",
+        "startMs": 19740,
+        "endMs": 20140
+      },
+      {
+        "text": "If",
+        "startMs": 20140,
+        "endMs": 20260
+      },
+      {
+        "text": "your",
+        "startMs": 20260,
+        "endMs": 20550
+      },
+      {
+        "text": "chats",
+        "startMs": 20550,
+        "endMs": 20780
+      },
+      {
+        "text": "are",
+        "startMs": 20780,
+        "endMs": 20960
+      },
+      {
+        "text": "dry,",
+        "startMs": 20960,
+        "endMs": 21280
+      },
+      {
+        "text": "just",
+        "startMs": 21280,
+        "endMs": 21560
+      },
+      {
+        "text": "get",
+        "startMs": 21560,
+        "endMs": 21770
+      },
+      {
+        "text": "Kika.",
+        "startMs": 21770,
+        "endMs": 22260
+      },
+      {
+        "text": "(upbeat",
+        "startMs": 22260,
+        "endMs": 23630
+      },
+      {
+        "text": "music)",
+        "startMs": 23630,
+        "endMs": 24840
+      }
+    ],
+    "text": "(upbeat music) I used to send the most boring texts ever. No font, no emojis, just plain words. Then I downloaded Kika. Now I use crazy fonts, cute stickers, and commojis in every chat. I literally can't stop sending these funny stickers to my friends. It makes every conversation way more fun. If your chats are dry, just get Kika. (upbeat music)",
+    "wordsPerSecond": 2.49
+  },
+  "frames": [
+    {
+      "t": 0,
+      "file": "frames/t000.jpg"
+    },
+    {
+      "t": 1,
+      "file": "frames/t001.jpg"
+    },
+    {
+      "t": 2,
+      "file": "frames/t002.jpg"
+    },
+    {
+      "t": 3,
+      "file": "frames/t003.jpg"
+    },
+    {
+      "t": 4,
+      "file": "frames/t004.jpg"
+    },
+    {
+      "t": 5,
+      "file": "frames/t005.jpg"
+    },
+    {
+      "t": 6,
+      "file": "frames/t006.jpg"
+    },
+    {
+      "t": 7,
+      "file": "frames/t007.jpg"
+    },
+    {
+      "t": 8,
+      "file": "frames/t008.jpg"
+    },
+    {
+      "t": 9,
+      "file": "frames/t009.jpg"
+    },
+    {
+      "t": 10,
+      "file": "frames/t010.jpg"
+    },
+    {
+      "t": 11,
+      "file": "frames/t011.jpg"
+    },
+    {
+      "t": 12,
+      "file": "frames/t012.jpg"
+    },
+    {
+      "t": 13,
+      "file": "frames/t013.jpg"
+    },
+    {
+      "t": 14,
+      "file": "frames/t014.jpg"
+    },
+    {
+      "t": 15,
+      "file": "frames/t015.jpg"
+    },
+    {
+      "t": 16,
+      "file": "frames/t016.jpg"
+    },
+    {
+      "t": 17,
+      "file": "frames/t017.jpg"
+    },
+    {
+      "t": 18,
+      "file": "frames/t018.jpg"
+    },
+    {
+      "t": 19,
+      "file": "frames/t019.jpg"
+    },
+    {
+      "t": 20,
+      "file": "frames/t020.jpg"
+    },
+    {
+      "t": 21,
+      "file": "frames/t021.jpg"
+    },
+    {
+      "t": 22,
+      "file": "frames/t022.jpg"
+    },
+    {
+      "t": 23,
+      "file": "frames/t023.jpg"
+    },
+    {
+      "t": 24,
+      "file": "frames/t024.jpg"
+    }
+  ]
+}

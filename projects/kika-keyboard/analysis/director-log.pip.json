@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-19T05:26:27.673Z",
+  "model": "anthropic.claude-sonnet-5-5",
+  "baseUrl": "https://api.beeswitch.com",
+  "ok": true,
+  "attempts": [
+    {
+      "errors": [
+        "the answer was not valid JSON; reply with exactly one JSON object"
+      ]
+    },
+    {
+      "errors": [
+        "shot 5 (screen-m2 at c1-waist-b word 14): runs 245 ms past the end of its beat (\"it makes every conversation way more fun\", 1933 ms). Shorten it, start it earlier, or split the beat.",
+        "shot 6 (screen-m8 at c1-waist-b word 19): runs 126 ms past the end of its beat (\"if your chats are dry just get Kika\", 2067 ms). Shorten it, start it earlier, or split the beat.",
+        "emphasis: at most 6 words"
+      ]
+    },
+    {
+      "errors": []
+    }
+  ],
+  "lastAnswer": "{\"splits\":{\"c1-waist-b\":[11,18]},\"shots\":[{\"clip\":\"c1-waist-a\",\"atWord\":10,\"asset\":\"screen-m2\",\"srcStartMs\":500,\"durationMs\":2000,\"layout\":\"pip\",\"slot\":\"top-right\",\"why\":\"说到 font/emojis 时马上出键盘主题画面，达人保持在画面中\"},{\"clip\":\"c1-waist-a\",\"atWord\":23,\"asset\":\"screen-m1\",\"srcStartMs\":0,\"durationMs\":1600,\"layout\":\"pip\",\"slot\":\"lower-right\",\"why\":\"crazy fonts 对应手指打字的主题键盘演示，与前面的 boring 形成对比\"},{\"clip\":\"c1-waist-a\",\"atWord\":27,\"asset\":\"screen-m3\",\"srcStartMs\":1000,\"durationMs\":1500,\"layout\":\"pip\",\"slot\":\"lower-left\",\"why\":\"cute stickers / commojis 对应可爱猫咪主题，位置轮换\"},{\"clip\":\"c1-waist-b\",\"atWord\":4,\"asset\":\"screen-m3\",\"srcStartMs\":6000,\"durationMs\":1700,\"layout\":\"pip\",\"slot\":\"top-right\",\"why\":\"sending stickers 对应可爱的蝴蝶主题画面，与前面的猫咪片段不同\"},{\"clip\":\"c1-waist-b\",\"atWord\":12,\"asset\":\"screen-m2\",\"srcStartMs\":2000,\"durationMs\":1500,\"layout\":\"pip\",\"slot\":\"lower-right\",\"why\":\"makes every conversation 对应聊天键盘打字画面，提前一点开始并缩短，保证在本拍内结束\"},{\"clip\":\"c1-waist-b\",\"atWord\":18,\"asset\":\"screen-m8\",\"srcStartMs\":14000,\"durationMs\":1900,\"layout\":\"full\",\"why\":\"CTA 结尾，全屏切到 Kika 图标和 Download 按钮的结尾画面，在本拍结束前收尾\"}],\"logo\":{\"clip\":\"c1-waist-a\",\"atWord\":19},\"emphasis\":[{\"clip\":\"c1-waist-a\",\"word\":6},{\"clip\":\"c1-waist-a\",\"word\":19},{\"clip\":\"c1-waist-a\",\"word\":24},{\"clip\":\"c1-waist-a\",\"word\":26},{\"clip\":\"c1-waist-b\",\"word\":7},{\"clip\":\"c1-waist-b\",\"word\":22}],\"notes\":\"开头保持达人出镜，大部分插画面用画中画，最后 CTA 用 m8 的 Kika 图标和 Download 画面全屏收尾。Kika 一出现就在左上角固定 logo；强调词控制在 6 个以内，痛点词（boring、dry）用红色，好处词用绿色。\"}"
+}

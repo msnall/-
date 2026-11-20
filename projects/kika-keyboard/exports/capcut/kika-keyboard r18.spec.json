@@ -1,0 +1,524 @@
+{
+  "name": "kika-keyboard r18",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "lanes": [
+    {
+      "kind": "video",
+      "name": "口播",
+      "segments": [
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\voice-master-c0138f4d.mp4",
+          "srcStartUs": 0,
+          "startUs": 0,
+          "durUs": 3333333,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\voice-master-c0138f4d.mp4",
+          "srcStartUs": 3333000,
+          "startUs": 3333333,
+          "durUs": 3533334,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1.1,
+            "scaleY": 1.1,
+            "x": 0,
+            "y": -0.024000000000000018
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\voice-master-c0138f4d.mp4",
+          "srcStartUs": 6866000,
+          "startUs": 6866667,
+          "durUs": 2166666,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\voice-master-c0138f4d.mp4",
+          "srcStartUs": 9033000,
+          "startUs": 9033333,
+          "durUs": 1866667,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1.1,
+            "scaleY": 1.1,
+            "x": 0,
+            "y": -0.024000000000000018
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\voice-master-c0138f4d.mp4",
+          "srcStartUs": 10900000,
+          "startUs": 10900000,
+          "durUs": 3533333,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\voice-master-c0138f4d.mp4",
+          "srcStartUs": 14433000,
+          "startUs": 14433333,
+          "durUs": 2833334,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1.1,
+            "scaleY": 1.1,
+            "x": 0,
+            "y": -0.024000000000000018
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\voice-master-c0138f4d.mp4",
+          "srcStartUs": 17266000,
+          "startUs": 17266667,
+          "durUs": 2466666,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\voice-master-c0138f4d.mp4",
+          "srcStartUs": 19733000,
+          "startUs": 19733333,
+          "durUs": 3000000,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        }
+      ]
+    },
+    {
+      "kind": "video",
+      "name": "插画",
+      "segments": [
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\screen-m3.mp4",
+          "srcStartUs": 1000000,
+          "startUs": 10900000,
+          "durUs": 3000000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 0.5185185185185185,
+            "scaleY": 0.5185185185185185,
+            "x": 0.16666666666666666,
+            "y": 0.6588541666666666
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\screen-m3.mp4",
+          "srcStartUs": 0,
+          "startUs": 15333333,
+          "durUs": 1700000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 0.5185185185185185,
+            "scaleY": 0.5185185185185185,
+            "x": 0.16666666666666666,
+            "y": -0.0546875
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\screen-m1.mp4",
+          "srcStartUs": 0,
+          "startUs": 17266667,
+          "durUs": 2400000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 0.2962962962962963,
+            "scaleY": 0.29629629629629634,
+            "x": -0.6296296296296297,
+            "y": -0.046875
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\screen-m8.mp4",
+          "srcStartUs": 14500000,
+          "startUs": 21100000,
+          "durUs": 1500000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 0.29635416666666664,
+            "scaleY": 0.29635416666666664,
+            "x": 0.3888888888888889,
+            "y": 0.5265625
+          },
+          "scaleKeyframes": []
+        }
+      ]
+    },
+    {
+      "kind": "video",
+      "name": "品牌图标",
+      "segments": [
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\brand-m7.png",
+          "startUs": 8366667,
+          "durUs": 14366666,
+          "clip": {
+            "scaleX": 0.1388888888888889,
+            "scaleY": 0.1388888888888889,
+            "x": -0.7870370370370371,
+            "y": 0.7447916666666666
+          }
+        }
+      ]
+    },
+    {
+      "kind": "text",
+      "name": "字幕",
+      "segments": [
+        {
+          "text": "I USED TO SEND THE",
+          "startUs": 0,
+          "durUs": 1266667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "MOST BORING TEXTS EVER.",
+          "startUs": 1266667,
+          "durUs": 2000000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "NO FONT,",
+          "startUs": 3333333,
+          "durUs": 666667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "NO EMOJIS,",
+          "startUs": 4000000,
+          "durUs": 933333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "JUST PLAIN WORDS.",
+          "startUs": 4933333,
+          "durUs": 1933334,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "THEN I DOWNLOADED KIKA.",
+          "startUs": 6933333,
+          "durUs": 2100000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "NOW I USE CRAZY FONTS,",
+          "startUs": 9066667,
+          "durUs": 1800000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "CUTE STICKERS,",
+          "startUs": 10900000,
+          "durUs": 1166667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "AND COMMOJIS IN EVERY CHAT.",
+          "startUs": 12066667,
+          "durUs": 2133333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "I LITERALLY CAN'T STOP",
+          "startUs": 14433333,
+          "durUs": 900000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "SENDING THESE FUNNY STICKERS",
+          "startUs": 15333333,
+          "durUs": 1200000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "TO MY FRIENDS",
+          "startUs": 16533333,
+          "durUs": 633334,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "IT MAKES EVERY CONVERSATION",
+          "startUs": 17266667,
+          "durUs": 1333333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "WAY MORE FUN",
+          "startUs": 18600000,
+          "durUs": 1033333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "IF YOUR CHATS ARE DRY",
+          "startUs": 19733333,
+          "durUs": 1633334,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        },
+        {
+          "text": "JUST GET KIKA",
+          "startUs": 21366667,
+          "durUs": 1300000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7277777777777777
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": 0.03148148148148148,
+          "y": -0.5723958333333333
+        }
+      ]
+    },
+    {
+      "kind": "audio",
+      "name": "音效",
+      "segments": [
+        {
+          "file": "F:\\VideoAutomation\\library\\sfx\\pop.wav",
+          "startUs": 8366667,
+          "durUs": 140000,
+          "volume": 0.6
+        },
+        {
+          "file": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+          "startUs": 10860000,
+          "durUs": 450000,
+          "volume": 0.5
+        },
+        {
+          "file": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+          "startUs": 15293333,
+          "durUs": 450000,
+          "volume": 0.5
+        },
+        {
+          "file": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+          "startUs": 17226667,
+          "durUs": 450000,
+          "volume": 0.5
+        },
+        {
+          "file": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+          "startUs": 21060000,
+          "durUs": 450000,
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    "字幕里单个词的强调色（剪映里请手动选词上色）"
+  ]
+}

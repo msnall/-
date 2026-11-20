@@ -1,0 +1,17 @@
+{
+  "input": "F:\\VideoAutomation\\public\\derived\\crimeradar\\c1-waist-a.mp4",
+  "sourceSha256": "96802b460df40aa07e6a14549a16e8aeac976234e584bf798b160a9d17ed1026",
+  "sourceBytes": 27947169,
+  "sourceModifiedAt": "2026-11-19T09:30:49.078Z",
+  "model": "F:\\VideoAutomation\\bin\\whisper.cpp\\models\\ggml-small.en.bin",
+  "detectedLanguage": "en",
+  "requestedLanguage": "en",
+  "durationMs": 23367,
+  "audioOffsetMs": 0,
+  "runDirectory": "F:\\VideoAutomation\\out\\transcriptions\\crimeradar--c1-waist-a\\2026-11-19T09-31-09-582Z",
+  "unitCount": 75,
+  "cueCount": 14,
+  "timing": "Whisper estimated short segments; not forced alignment or guaranteed linguistic words. Chinese can contain characters/tokens.",
+  "validation": "finite integer milliseconds, ordered non-overlapping units within source duration",
+  "humanReviewRequired": true
+}

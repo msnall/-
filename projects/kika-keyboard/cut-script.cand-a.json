@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "projectId": "kika-keyboard",
+  "scriptId": "cand-a",
+  "status": "draft",
+  "builtAt": "2026-11-18T06:47:58.753Z",
+  "inputs": {
+    "ingestSha256": "9eafe30eba13a79444cfb3b93e9dd92c07a794b595035190225aa977572c3008",
+    "alignmentSha256": "4a0a3d81b06709f492475902e89d4253c2f839aa7f5f8d1e61b1b1d8247bf2ec",
+    "briefOrder": "2026-10_Kika-Keyboard"
+  },
+  "summary": {
+    "beats": 6,
+    "ready": 2,
+    "needsReview": 1,
+    "missingFootage": 3,
+    "voiceDurationMs": 14375
+  },
+  "beats": [
+    {
+      "id": "b01",
+      "lineId": "cand-a.readingA.1",
+      "role": "hook",
+      "text": "I used to send the most boring texts ever.",
+      "tone": "<show your plain default keyboard>",
+      "claims": [],
+      "status": "ready",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 5,
+        "endMs": 3260,
+        "wordStart": 0,
+        "wordEnd": 8,
+        "score": 1,
+        "heard": "I used to send the most boring texts ever.",
+        "pausesMs": [],
+        "alternates": []
+      },
+      "visuals": [
+        {
+          "kind": "talk",
+          "asset": "c1-waist-a",
+          "layout": "full"
+        }
+      ],
+      "suggest": [
+        "screen-m1",
+        "screen-m2",
+        "screen-m5"
+      ]
+    },
+    {
+      "id": "b02",
+      "lineId": "cand-a.readingA.2",
+      "role": "hook",
+      "text": "No font, no emojis, just plain words.",
+      "tone": "<self-deprecating>",
+      "claims": [
+        "font, emoji, sticker and kaomoji support"
+      ],
+      "status": "ready",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 3260,
+        "endMs": 6920,
+        "wordStart": 9,
+        "wordEnd": 15,
+        "score": 1,
+        "heard": "No font, no emojis, just plain words.",
+        "pausesMs": [],
+        "alternates": []
+      },
+      "visuals": [
+        {
+          "kind": "talk",
+          "asset": "c1-waist-a",
+          "layout": "full"
+        }
+      ],
+      "suggest": [
+        "screen-m1",
+        "screen-m2",
+        "screen-m5"
+      ]
+    },
+    {
+      "id": "b03",
+      "lineId": "cand-a.readingA.3",
+      "role": "product",
+      "text": "Then I found Kika Keyboard. Now I've got crazy fonts, cute stickers and kaomoji in every chat.",
+      "tone": "<excited, show your chat with Kika Keyboard>",
+      "claims": [
+        "font, emoji, sticker and kaomoji support"
+      ],
+      "status": "needs-review",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 6920,
+        "endMs": 14380,
+        "wordStart": 16,
+        "wordEnd": 31,
+        "score": 0.706,
+        "heard": "Then I downloaded Kika. Now I use crazy fonts, cute stickers, and commojis in every chat.",
+        "pausesMs": [],
+        "alternates": []
+      },
+      "visuals": [
+        {
+          "kind": "talk",
+          "asset": "c1-waist-a",
+          "layout": "full"
+        }
+      ],
+      "suggest": [
+        "screen-m1",
+        "screen-m2",
+        "screen-m5"
+      ]
+    },
+    {
+      "id": "b04",
+      "lineId": "cand-a.readingB.1",
+      "role": "proof",
+      "text": "Every text I sent looked exactly the same.",
+      "tone": "<flat, relatable>",
+      "claims": [],
+      "voice": null,
+      "status": "missing-footage"
+    },
+    {
+      "id": "b05",
+      "lineId": "cand-a.readingB.2",
+      "role": "proof",
+      "text": "Same font, same keyboard, just boring.",
+      "tone": "<sighing, unimpressed>",
+      "claims": [
+        "font, emoji, sticker and kaomoji support"
+      ],
+      "voice": null,
+      "status": "missing-footage"
+    },
+    {
+      "id": "b06",
+      "lineId": "cand-a.readingB.3",
+      "role": "cta",
+      "text": "Kika Keyboard fixed that in one download.",
+      "tone": "<satisfied, direct>",
+      "claims": [],
+      "voice": null,
+      "status": "missing-footage"
+    }
+  ]
+}

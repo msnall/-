@@ -1,0 +1,377 @@
+[
+  {
+    "text": "It's",
+    "startMs": 0,
+    "endMs": 360
+  },
+  {
+    "text": "2am,",
+    "startMs": 360,
+    "endMs": 990
+  },
+  {
+    "text": "and",
+    "startMs": 990,
+    "endMs": 1260
+  },
+  {
+    "text": "I",
+    "startMs": 1260,
+    "endMs": 1350
+  },
+  {
+    "text": "just",
+    "startMs": 1350,
+    "endMs": 1710
+  },
+  {
+    "text": "heard",
+    "startMs": 1710,
+    "endMs": 2250
+  },
+  {
+    "text": "sirens",
+    "startMs": 2250,
+    "endMs": 2690
+  },
+  {
+    "text": "outside.",
+    "startMs": 2690,
+    "endMs": 3540
+  },
+  {
+    "text": "My",
+    "startMs": 3540,
+    "endMs": 3630
+  },
+  {
+    "text": "brain",
+    "startMs": 3630,
+    "endMs": 3870
+  },
+  {
+    "text": "immediately",
+    "startMs": 3870,
+    "endMs": 4410
+  },
+  {
+    "text": "starts",
+    "startMs": 4410,
+    "endMs": 4690
+  },
+  {
+    "text": "guessing",
+    "startMs": 4690,
+    "endMs": 5120
+  },
+  {
+    "text": "what",
+    "startMs": 5120,
+    "endMs": 5240
+  },
+  {
+    "text": "happened.",
+    "startMs": 5240,
+    "endMs": 5640
+  },
+  {
+    "text": "Then",
+    "startMs": 5840,
+    "endMs": 5970
+  },
+  {
+    "text": "I",
+    "startMs": 5970,
+    "endMs": 6250
+  },
+  {
+    "text": "remember",
+    "startMs": 6250,
+    "endMs": 6720
+  },
+  {
+    "text": "I",
+    "startMs": 6720,
+    "endMs": 6800
+  },
+  {
+    "text": "have",
+    "startMs": 6800,
+    "endMs": 7130
+  },
+  {
+    "text": "crime",
+    "startMs": 7130,
+    "endMs": 7550
+  },
+  {
+    "text": "radar.",
+    "startMs": 7550,
+    "endMs": 8190
+  },
+  {
+    "text": "I",
+    "startMs": 8190,
+    "endMs": 8250
+  },
+  {
+    "text": "open",
+    "startMs": 8250,
+    "endMs": 8500
+  },
+  {
+    "text": "the",
+    "startMs": 8500,
+    "endMs": 8680
+  },
+  {
+    "text": "map",
+    "startMs": 8680,
+    "endMs": 8880
+  },
+  {
+    "text": "and",
+    "startMs": 8880,
+    "endMs": 9070
+  },
+  {
+    "text": "see",
+    "startMs": 9070,
+    "endMs": 9300
+  },
+  {
+    "text": "exactly",
+    "startMs": 9300,
+    "endMs": 9480
+  },
+  {
+    "text": "where",
+    "startMs": 9480,
+    "endMs": 9850
+  },
+  {
+    "text": "the",
+    "startMs": 9850,
+    "endMs": 10070
+  },
+  {
+    "text": "activity",
+    "startMs": 10070,
+    "endMs": 10670
+  },
+  {
+    "text": "is.",
+    "startMs": 10670,
+    "endMs": 10860
+  },
+  {
+    "text": "I",
+    "startMs": 10860,
+    "endMs": 10910
+  },
+  {
+    "text": "can",
+    "startMs": 10910,
+    "endMs": 11080
+  },
+  {
+    "text": "even",
+    "startMs": 11080,
+    "endMs": 11310
+  },
+  {
+    "text": "listen",
+    "startMs": 11310,
+    "endMs": 11690
+  },
+  {
+    "text": "to",
+    "startMs": 11690,
+    "endMs": 11760
+  },
+  {
+    "text": "real-time",
+    "startMs": 11760,
+    "endMs": 12270
+  },
+  {
+    "text": "dispatch",
+    "startMs": 12270,
+    "endMs": 12730
+  },
+  {
+    "text": "audio",
+    "startMs": 12730,
+    "endMs": 13130
+  },
+  {
+    "text": "to",
+    "startMs": 13130,
+    "endMs": 13150
+  },
+  {
+    "text": "get",
+    "startMs": 13150,
+    "endMs": 13300
+  },
+  {
+    "text": "the",
+    "startMs": 13300,
+    "endMs": 13470
+  },
+  {
+    "text": "full",
+    "startMs": 13470,
+    "endMs": 13700
+  },
+  {
+    "text": "story.",
+    "startMs": 13700,
+    "endMs": 14270
+  },
+  {
+    "text": "Turns",
+    "startMs": 14270,
+    "endMs": 14830
+  },
+  {
+    "text": "out",
+    "startMs": 14830,
+    "endMs": 15200
+  },
+  {
+    "text": "it",
+    "startMs": 15200,
+    "endMs": 15290
+  },
+  {
+    "text": "was",
+    "startMs": 15290,
+    "endMs": 15420
+  },
+  {
+    "text": "just",
+    "startMs": 15420,
+    "endMs": 15640
+  },
+  {
+    "text": "a",
+    "startMs": 15640,
+    "endMs": 15650
+  },
+  {
+    "text": "few",
+    "startMs": 15650,
+    "endMs": 15770
+  },
+  {
+    "text": "blocks",
+    "startMs": 15770,
+    "endMs": 16040
+  },
+  {
+    "text": "away.",
+    "startMs": 16040,
+    "endMs": 16240
+  },
+  {
+    "text": "Now",
+    "startMs": 16560,
+    "endMs": 16560
+  },
+  {
+    "text": "I",
+    "startMs": 16560,
+    "endMs": 16560
+  },
+  {
+    "text": "always",
+    "startMs": 16560,
+    "endMs": 16800
+  },
+  {
+    "text": "know",
+    "startMs": 16800,
+    "endMs": 17030
+  },
+  {
+    "text": "what's",
+    "startMs": 17030,
+    "endMs": 17390
+  },
+  {
+    "text": "happening",
+    "startMs": 17390,
+    "endMs": 17890
+  },
+  {
+    "text": "before",
+    "startMs": 17890,
+    "endMs": 18230
+  },
+  {
+    "text": "my",
+    "startMs": 18230,
+    "endMs": 18340
+  },
+  {
+    "text": "neighbors",
+    "startMs": 18340,
+    "endMs": 18860
+  },
+  {
+    "text": "do.",
+    "startMs": 18860,
+    "endMs": 19200
+  },
+  {
+    "text": "Download",
+    "startMs": 19200,
+    "endMs": 19730
+  },
+  {
+    "text": "crime",
+    "startMs": 19730,
+    "endMs": 20060
+  },
+  {
+    "text": "radar",
+    "startMs": 20060,
+    "endMs": 20390
+  },
+  {
+    "text": "to",
+    "startMs": 20390,
+    "endMs": 20520
+  },
+  {
+    "text": "see",
+    "startMs": 20520,
+    "endMs": 20720
+  },
+  {
+    "text": "exactly",
+    "startMs": 20720,
+    "endMs": 21180
+  },
+  {
+    "text": "what's",
+    "startMs": 21180,
+    "endMs": 21590
+  },
+  {
+    "text": "happening",
+    "startMs": 21590,
+    "endMs": 22170
+  },
+  {
+    "text": "near",
+    "startMs": 22170,
+    "endMs": 22430
+  },
+  {
+    "text": "you.",
+    "startMs": 22430,
+    "endMs": 22680
+  }
+]

@@ -1,19 +1,15 @@
 ---
 name: storyboard
-description: Write storyboard options (3 TK e-commerce edits built from technique cards) for a project whose beats are confirmed. Use when the user asks for options/方案, a new storyboard round, or the project is in the storyboard stage.
+description: Produce and compare plan versions (③ 方案) for a TTO order whose assets and voice cleanup are confirmed - AI director builds 2-3 table versions, the user picks or edits one, then it goes to the review desk. Use when the user asks for 方案/出方案/重新生成, or the project is at ③ 方案.
 ---
 
-# Storyboard options
+# 方案（③ 方案）
 
-Inputs: `projects/<id>/analysis/beats.json` (must be confirmed), `assets.json`, `library/techniques/*.json` (cards), `library/styles/*.json`, `library/taste-rules.json` (approved rules are enforced; follow proposed ones as guidance).
+前提：素材全部 confirmed，口播清理 confirmed；API 可用。缺任何一项先回去（`asset-prep`），不绕过。
 
-1. Read the cards. Only `status: "ready"` cards can be used; others say what they are blocked by (2b work).
-2. Write `storyboard/r<N>/option-a|b|c.json` (schema: `src/engine/storyboard.ts` optionSchema). One row per beat, in beat order; `keep: false` needs a `reason`. Each kept row: `onScreen` (Chinese, what the viewer sees) and `cards` with filled `slots` (word slots are transcript word indices inside that beat; asset slots are assets.json ids; claims shown on screen go in the card's `claims`).
-   - The three options differ in the opening (hook) and style pack; middle and CTA can be shared.
-   - Only make an opening the transcript supports (no pain beat -> no pain opening). Hook text must be a faithful summary of what is said; on-screen text is English for the US market.
-   - Drop beats whose claims cannot be verified, and say so; never put an unverified claim on screen.
-   - If a card needs an asset that does not exist, keep it only if it is worth asking for; add the item to assets.json as missing with a shotRequest (the asset-prep skill).
-3. Compile: `npm run desk:compile -- <id> r<N> --all`. Fix every ERROR. Look at WARN lines (face/safe-zone) and fix placement or timing; a punch-in must end inside its segment.
-4. Keyframes: `npm run desk:stills -- <id> --round=r<N> --option=option-x` for each option, then read the images. If a keyframe shows something wrong (text over the face, card over the product, odd crop), fix the option and redo.
-5. Tell the user, one line per option, and that they choose in ② 方案选择 (style menu, drag elements, then confirm). Confirmation is theirs; the gate requires confirmed beats, available assets and verified claims.
-6. A new round (`r2`) when the user wants different cards or beats; never edit a confirmed round.
+1. **生成**：网页「生成方案」（可选一张已确认的风格卡 → 多一个"按风格卡"版本），或 `npm run cut:direct -- <id> --variant=full|minimal|pip [--card=<卡id>]`。AI 为每句口播选录屏和时间，程序校验时长、重叠、占比、禁止说法，不合格会重试。结果是 `cut-script.<variant>.json`（**唯一的时间线文件**），`edit-plan.draft.<variant>.json` 由它编译而来。
+2. **表格**：每版一张表，一行一句：时间 / 口播 / 画面 / 效果 / 字幕 / 音效。用户可逐行改画面、推近、强调词、音效，保存时先校验再写回 cut-script 并重编译。你要改某版，也改 cut-script（`npm run cut:compile -- <id> --file=cut-script.<variant>.json` 重编译（会拒绝覆盖已修改的正式方案，除非加 `--discard-edits`，不要加）），不要手改 draft。字段说明：`docs/timeline-table.md`、`docs/cut-script.md`。
+3. **看画面再说效果**：编译后抽几帧看（`npm run desk:stills`），别只凭 JSON 描述。
+4. **过期**：生成之后素材、文案或口播清理变了，方案显示"过期"，需重新生成。用户的审阅台正式方案不会被自动覆盖。
+5. **选定**：用户点「选这一版 → 放进审阅精修」。已有改过的 edit-plan 时，系统生成新版本、保留字幕样式、上一版可还原。**这一步是用户的操作。**
+6. 包装（贴纸、音效、音乐）只记录在风格卡里，由用户在剪映里补；网页渲染的成片不含音效，剪映草稿里才有。

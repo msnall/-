@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 2,
+  "projectId": "kika-keyboard",
+  "scriptId": "creator",
+  "status": "draft",
+  "builtAt": "2026-11-18T07:58:09.649Z",
+  "fps": 30,
+  "note": "Beats come from the creators' proofread transcripts. broll[].atMs is the offset inside the beat; srcStartMs is in the b-roll clip. Screen clips are muted; the creator's voice plays underneath.",
+  "beats": [
+    {
+      "id": "b01",
+      "text": "I used to send the most boring texts ever.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 0,
+        "endMs": 3333.3333333333335,
+        "wordStart": 0,
+        "wordEnd": 8
+      },
+      "broll": []
+    },
+    {
+      "id": "b02",
+      "text": "No font, no emojis, just plain words.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 3333.3333333333335,
+        "endMs": 6866.666666666667,
+        "wordStart": 9,
+        "wordEnd": 15
+      },
+      "broll": []
+    },
+    {
+      "id": "b03",
+      "text": "Then I downloaded Kika.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 6866.666666666667,
+        "endMs": 9033.333333333334,
+        "wordStart": 16,
+        "wordEnd": 19
+      },
+      "broll": [
+        {
+          "id": "b03-1",
+          "layout": "full",
+          "asset": "c1-closeup",
+          "srcStartMs": 700,
+          "atMs": 300,
+          "durationMs": 1800,
+          "note": "达人近景看手机的惊讶反应，对应“下载 Kika”的转折"
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "text": "Now I use crazy fonts, cute stickers, and commojis in every chat.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 9033.333333333334,
+        "endMs": 14433.333333333334,
+        "wordStart": 20,
+        "wordEnd": 31
+      },
+      "broll": [
+        {
+          "id": "b04-1",
+          "layout": "full",
+          "asset": "screen-m1",
+          "srcStartMs": 300,
+          "atMs": 700,
+          "durationMs": 1800,
+          "note": "吸血鬼主题打字，对应 crazy fonts"
+        },
+        {
+          "id": "b04-2",
+          "layout": "full",
+          "asset": "screen-m4",
+          "srcStartMs": 1000,
+          "atMs": 2500,
+          "durationMs": 1700,
+          "note": "迪士尼主题键盘，对应 cute stickers"
+        },
+        {
+          "id": "b04-3",
+          "layout": "full",
+          "asset": "screen-m2",
+          "srcStartMs": 1200,
+          "atMs": 4200,
+          "durationMs": 1200,
+          "note": "半透明动漫键盘，收在 every chat"
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "text": "i literally can't stop sending these funny stickers to my friends",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 0,
+        "endMs": 2833.3333333333335,
+        "wordStart": 0,
+        "wordEnd": 10
+      },
+      "broll": []
+    },
+    {
+      "id": "b06",
+      "text": "it makes every conversation way more fun",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 2833.3333333333335,
+        "endMs": 5300,
+        "wordStart": 11,
+        "wordEnd": 17
+      },
+      "broll": [
+        {
+          "id": "b06-1",
+          "layout": "full",
+          "asset": "screen-m6",
+          "srcStartMs": 800,
+          "atMs": 300,
+          "durationMs": 2100,
+          "note": "姆巴佩主题打字，对应 every conversation more fun"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "text": "if your chats are dry just get Kika",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 5300,
+        "endMs": 8300,
+        "wordStart": 18,
+        "wordEnd": 25
+      },
+      "broll": [
+        {
+          "id": "b07-1",
+          "layout": "full",
+          "asset": "screen-m8",
+          "srcStartMs": 13800,
+          "atMs": 1000,
+          "durationMs": 2000,
+          "note": "Kika 下载结尾卡，对应 just get Kika（素材自带 App 图标和 DOWNLOAD）"
+        }
+      ]
+    }
+  ],
+  "emphasis": [
+    {
+      "beat": "b04",
+      "word": "crazy"
+    },
+    {
+      "beat": "b04",
+      "word": "fonts,"
+    },
+    {
+      "beat": "b07",
+      "word": "Kika"
+    },
+    {
+      "beat": "b03",
+      "word": "Kika."
+    }
+  ]
+}

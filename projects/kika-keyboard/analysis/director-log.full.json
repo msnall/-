@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-19T05:26:03.189Z",
+  "model": "anthropic.claude-sonnet-5-5",
+  "baseUrl": "https://api.beeswitch.com",
+  "ok": true,
+  "attempts": [
+    {
+      "errors": [
+        "shot 4 (screen-m4 at c1-waist-b word 15): runs 909 ms past the end of its beat (\"it makes every conversation way more fun\", 1933 ms). Shorten it, start it earlier, or split the beat.",
+        "shot 5 (screen-m8 at c1-waist-b word 23): runs 157 ms past the end of its beat (\"if your chats are dry just get Kika\", 2067 ms). Shorten it, start it earlier, or split the beat.",
+        "emphasis: at most 6 words"
+      ]
+    },
+    {
+      "errors": []
+    }
+  ],
+  "lastAnswer": "{\"splits\":{\"c1-waist-a\":[],\"c1-waist-b\":[11,18]},\"shots\":[{\"clip\":\"c1-waist-a\",\"atWord\":23,\"asset\":\"screen-m1\",\"srcStartMs\":500,\"durationMs\":750,\"layout\":\"full\",\"why\":\"说到 crazy fonts，切手指打字的吸血鬼主题键盘特写\"},{\"clip\":\"c1-waist-a\",\"atWord\":25,\"asset\":\"screen-m3\",\"srcStartMs\":1000,\"durationMs\":2400,\"layout\":\"full\",\"why\":\"cute stickers / commojis 对应可爱的鲨鱼猫主题画面\"},{\"clip\":\"c1-waist-b\",\"atWord\":7,\"asset\":\"screen-m3\",\"srcStartMs\":3750,\"durationMs\":950,\"layout\":\"full\",\"why\":\"说到 stickers，切可爱主题画面，在第一个 beat 内结束\"},{\"clip\":\"c1-waist-b\",\"atWord\":13,\"asset\":\"screen-m4\",\"srcStartMs\":3200,\"durationMs\":1400,\"layout\":\"full\",\"why\":\"every conversation way more fun 配色彩丰富的主题轮播，提前到 every 开始，确保在 beat 内结束\"},{\"clip\":\"c1-waist-b\",\"atWord\":23,\"asset\":\"screen-m8\",\"srcStartMs\":15300,\"durationMs\":800,\"layout\":\"full\",\"why\":\"just get Kika 落在 Kika Keyboard 下载结束卡上，时长缩短以在 beat 内结束\"}],\"logo\":null,\"emphasis\":[{\"clip\":\"c1-waist-a\",\"word\":6},{\"clip\":\"c1-waist-a\",\"word\":19},{\"clip\":\"c1-waist-a\",\"word\":24},{\"clip\":\"c1-waist-a\",\"word\":28},{\"clip\":\"c1-waist-b\",\"word\":7},{\"clip\":\"c1-waist-b\",\"word\":25}],\"notes\":\"全部使用 full 全屏切镜，不加 logo。a 段开头的痛点和 No font 两句保持达人出镜，到 Now I use 后再切产品画面。b 段 m4 镜头提前到 every 起，m8 结束卡镜头缩到 800ms，均在各自 beat 内收尾；强调词已减到 6 个。m3 为横屏素材，剪辑时注意裁切。\"}"
+}

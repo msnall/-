@@ -23,7 +23,7 @@ function parse(args) {
     const arg = args[i];
     if (arg === "--help" || arg === "-h") return { help: true };
     if (arg === "--force") { options.force = true; continue; }
-    if (["--language", "--model", "--threads"].includes(arg)) {
+    if (["--language", "--model", "--threads", "--name"].includes(arg)) {
       const value = args[++i];
       if (!value || value.startsWith("--")) throw new Error(`Missing value for ${arg}`);
       options[arg.slice(2)] = arg === "--threads" ? Number(value) : value;
@@ -94,9 +94,15 @@ async function main() {
   const inputStat = await stat(input);
   if (!inputStat.isFile()) throw new Error(`Not a file: ${input}`);
   const cli = path.join(root, "bin/whisper.cpp/build/bin/Release/whisper-cli.exe");
-  const model = options.model ? path.resolve(options.model) : path.join(root, "bin/whisper.cpp/models/ggml-base.bin");
+  // Default model: the multilingual base if it is installed, otherwise the pinned English-only small.en (models/manifest.json).
+  const baseModel = path.join(root, "bin/whisper.cpp/models/ggml-base.bin");
+  const smallEn = path.join(root, "bin/whisper.cpp/models/ggml-small.en.bin");
+  const model = options.model ? path.resolve(options.model) : (await exists(baseModel)) ? baseModel : smallEn;
+  if (!options.model && model === smallEn && options.language !== "en") {
+    throw new Error("Only the English model (ggml-small.en.bin) is installed. Use --language en, or install a multilingual model and pass --model <path>.");
+  }
   for (const file of [cli, model]) if (!(await exists(file))) throw new Error(`Required file missing: ${file}`);
-  const name = path.parse(input).name;
+  const name = options.name ?? path.parse(input).name;
   const output = path.join(root, "public/transcripts", name);
   const extensions = ["json", "cues.json", "txt", "srt", "review.json", "meta.json"];
   if (!options.force) {

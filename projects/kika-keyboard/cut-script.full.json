@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 2,
+  "projectId": "kika-keyboard",
+  "scriptId": "creator",
+  "status": "draft",
+  "builtAt": "2026-11-19T05:26:03.197Z",
+  "fps": 30,
+  "director": {
+    "variant": "full",
+    "model": "claude-sonnet-5-5",
+    "at": "2026-11-19T05:26:03.197Z",
+    "notes": "全部使用 full 全屏切镜，不加 logo。a 段开头的痛点和 No font 两句保持达人出镜，到 Now I use 后再切产品画面。b 段 m4 镜头提前到 every 起，m8 结束卡镜头缩到 800ms，均在各自 beat 内收尾；强调词已减到 6 个。m3 为横屏素材，剪辑时注意裁切。",
+    "attempts": 2,
+    "styleCard": null
+  },
+  "note": "Beats from the creators' proofread transcripts; b-roll and emphasis proposed by the auto director and validated by code. Review in the desk.",
+  "beats": [
+    {
+      "id": "b01",
+      "text": "I used to send the most boring texts ever.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 533.3333333333334,
+        "endMs": 2833.3333333333335,
+        "wordStart": 0,
+        "wordEnd": 8,
+        "ranges": [
+          [
+            533.3333333333334,
+            2833.3333333333335
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "timelineStartMs": 0
+    },
+    {
+      "id": "b02",
+      "text": "No font, no emojis, just plain words.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 3533.3333333333335,
+        "endMs": 6133.333333333333,
+        "wordStart": 9,
+        "wordEnd": 15,
+        "ranges": [
+          [
+            3533.3333333333335,
+            6133.333333333333
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "timelineStartMs": 2300
+    },
+    {
+      "id": "b03",
+      "text": "Then I downloaded Kika.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 7700,
+        "endMs": 9233.333333333334,
+        "wordStart": 16,
+        "wordEnd": 19,
+        "ranges": [
+          [
+            7700,
+            9233.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "timelineStartMs": 4900
+    },
+    {
+      "id": "b04",
+      "text": "Now I use crazy fonts, cute stickers, and commojis in every chat.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 9233.333333333334,
+        "endMs": 13200,
+        "wordStart": 20,
+        "wordEnd": 31,
+        "ranges": [
+          [
+            9233.333333333334,
+            13200
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b04-1",
+          "asset": "screen-m1",
+          "srcStartMs": 500,
+          "atMs": 556,
+          "durationMs": 750,
+          "layout": "full",
+          "note": "说到 crazy fonts，切手指打字的吸血鬼主题键盘特写"
+        },
+        {
+          "id": "b04-2",
+          "asset": "screen-m3",
+          "srcStartMs": 1000,
+          "atMs": 1332,
+          "durationMs": 2400,
+          "layout": "full",
+          "note": "cute stickers / commojis 对应可爱的鲨鱼猫主题画面"
+        }
+      ],
+      "timelineStartMs": 6433.333333333334
+    },
+    {
+      "id": "b05",
+      "text": "i literally can't stop sending these funny stickers to my friends",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 166.66666666666666,
+        "endMs": 3300,
+        "wordStart": 0,
+        "wordEnd": 10,
+        "ranges": [
+          [
+            166.66666666666666,
+            3300
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b05-1",
+          "asset": "screen-m3",
+          "srcStartMs": 3750,
+          "atMs": 2096,
+          "durationMs": 950,
+          "layout": "full",
+          "note": "说到 stickers，切可爱主题画面，在第一个 beat 内结束"
+        }
+      ],
+      "timelineStartMs": 10400
+    },
+    {
+      "id": "b06",
+      "text": "it makes every conversation way more fun",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 3300,
+        "endMs": 5233.333333333333,
+        "wordStart": 11,
+        "wordEnd": 17,
+        "ranges": [
+          [
+            3300,
+            5233.333333333333
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b06-1",
+          "asset": "screen-m4",
+          "srcStartMs": 3200,
+          "atMs": 401,
+          "durationMs": 1400,
+          "layout": "full",
+          "note": "every conversation way more fun 配色彩丰富的主题轮播，提前到 every 开始，确保在 beat 内结束"
+        }
+      ],
+      "timelineStartMs": 13533.333333333334
+    },
+    {
+      "id": "b07",
+      "text": "if your chats are dry just get Kika",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 6166.666666666667,
+        "endMs": 8233.333333333334,
+        "wordStart": 18,
+        "wordEnd": 25,
+        "ranges": [
+          [
+            6166.666666666667,
+            8233.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b07-1",
+          "asset": "screen-m8",
+          "srcStartMs": 15300,
+          "atMs": 1224,
+          "durationMs": 800,
+          "layout": "full",
+          "note": "just get Kika 落在 Kika Keyboard 下载结束卡上，时长缩短以在 beat 内结束"
+        }
+      ],
+      "timelineStartMs": 15466.666666666668
+    }
+  ],
+  "emphasis": [
+    {
+      "beat": "b01",
+      "word": "boring"
+    },
+    {
+      "beat": "b03",
+      "word": "Kika."
+    },
+    {
+      "beat": "b04",
+      "word": "fonts,"
+    },
+    {
+      "beat": "b04",
+      "word": "commojis"
+    },
+    {
+      "beat": "b05",
+      "word": "stickers"
+    },
+    {
+      "beat": "b07",
+      "word": "Kika"
+    }
+  ]
+}

@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 1,
+  "id": "kismia",
+  "revision": 5,
+  "meta": {
+    "source": "cut-script.json",
+    "scriptId": "creator",
+    "builtAt": "2026-11-19T08:55:02.677Z",
+    "brief": null,
+    "sfx": [
+      {
+        "atFrame": 51,
+        "kind": "whoosh"
+      },
+      {
+        "atFrame": 142,
+        "kind": "pop"
+      },
+      {
+        "atFrame": 203,
+        "kind": "whoosh"
+      },
+      {
+        "atFrame": 271,
+        "kind": "whoosh"
+      },
+      {
+        "atFrame": 501,
+        "kind": "whoosh"
+      },
+      {
+        "atFrame": 612,
+        "kind": "whoosh"
+      }
+    ],
+    "note": "First cut r0 compiled from the cut script. Draft for review; not a delivered video."
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "encoding": {
+      "crf": 18,
+      "x264Preset": "veryfast"
+    }
+  },
+  "theme": {
+    "background": "#101820",
+    "textColor": "#ffffff",
+    "fontFamily": "\"BloomInter\", sans-serif",
+    "fonts": [
+      {
+        "family": "BloomInter",
+        "src": "fonts/Inter-700.woff2",
+        "weight": 700,
+        "style": "normal"
+      }
+    ]
+  },
+  "assets": {
+    "master": {
+      "type": "video",
+      "path": "derived/kismia/voice-master-73de87a5.mp4",
+      "sha256": "cfd257c21ee00574b16fd2dba2caed3fa65bcb052d223b78643390984bc1172f"
+    },
+    "c1-action": {
+      "type": "video",
+      "path": "derived/kismia/c1-action.mp4",
+      "sha256": "ccce4f9e9bd5787a527e064ddd97437aef9fd2627ba39c21fae79139da4e4b6b"
+    },
+    "screen-o2": {
+      "type": "video",
+      "path": "derived/kismia/screen-o2.mp4",
+      "sha256": "282c2d9fab3fca73f7cdc550e14ac843d6a018342006f933f6ce7c92a7faec19"
+    },
+    "screen-o3": {
+      "type": "video",
+      "path": "derived/kismia/screen-o3.mp4",
+      "sha256": "34ef3b6caffaca444646390e45e59fd928a79579ea3dc6c8e2c67f81ff00ec2d"
+    },
+    "screen-o1": {
+      "type": "video",
+      "path": "derived/kismia/screen-o1.mp4",
+      "sha256": "7837f846e6a103707c80c76d91d401c454ad3976cba13c80a18bcaa09eafb772"
+    },
+    "brand-logo": {
+      "type": "image",
+      "path": "derived/kismia/brand-o4.jpg"
+    }
+  },
+  "transcript": {
+    "asset": "master",
+    "words": "transcripts/kismia-master-003dbadd.json",
+    "cues": "transcripts/kismia-master-003dbadd.cues.json"
+  },
+  "segments": [
+    {
+      "id": "b01",
+      "asset": "master",
+      "sourceStartMs": 0,
+      "sourceEndMs": 1734,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b02",
+      "asset": "master",
+      "sourceStartMs": 1733,
+      "sourceEndMs": 4367,
+      "camera": {
+        "zoom": 1.1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b03",
+      "asset": "master",
+      "sourceStartMs": 4366,
+      "sourceEndMs": 6801,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b04",
+      "asset": "master",
+      "sourceStartMs": 6800,
+      "sourceEndMs": 9067,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b05",
+      "asset": "master",
+      "sourceStartMs": 9066,
+      "sourceEndMs": 11734,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b06",
+      "asset": "master",
+      "sourceStartMs": 11733,
+      "sourceEndMs": 14234,
+      "camera": {
+        "zoom": 1.1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b07",
+      "asset": "master",
+      "sourceStartMs": 14233,
+      "sourceEndMs": 16734,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b08",
+      "asset": "master",
+      "sourceStartMs": 16733,
+      "sourceEndMs": 19500,
+      "camera": {
+        "zoom": 1.1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b09",
+      "asset": "master",
+      "sourceStartMs": 19500,
+      "sourceEndMs": 22500,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    }
+  ],
+  "layout": {
+    "footage": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "borderRadius": 0,
+      "fit": "cover"
+    }
+  },
+  "captions": {
+    "box": {
+      "x": 70,
+      "y": 1180,
+      "width": 840,
+      "height": 200
+    },
+    "fontSize": 72,
+    "lineHeight": 86,
+    "fontWeight": 700,
+    "color": "#ffffff",
+    "activeColor": "#ffd23f",
+    "background": "#000000a6",
+    "wordGap": 16,
+    "maxLines": 2,
+    "singleLineMaxChars": 18,
+    "balanceWeight": 0.2,
+    "textTransform": "uppercase",
+    "emphasis": [
+      {
+        "word": 0,
+        "expect": "Stop",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 20,
+        "expect": "tired",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 37,
+        "expect": "relationship.",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 45,
+        "expect": "verified.",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 53,
+        "expect": "catfish",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 75,
+        "expect": "Kismia.",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      }
+    ]
+  },
+  "overlays": [
+    {
+      "id": "b02-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b02",
+        "edge": "start",
+        "offsetMs": 16
+      },
+      "durationFrames": 60,
+      "layer": "below-captions",
+      "props": {
+        "asset": "c1-action",
+        "sourceStartMs": 0,
+        "x": 590,
+        "y": 170,
+        "width": 320,
+        "height": 569,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b04-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b04",
+        "edge": "start",
+        "offsetMs": 7
+      },
+      "durationFrames": 63,
+      "layer": "below-captions",
+      "props": {
+        "asset": "c1-action",
+        "sourceStartMs": 500,
+        "x": 649,
+        "y": 679,
+        "width": 303,
+        "height": 288,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b05-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b05",
+        "edge": "start",
+        "offsetMs": 0
+      },
+      "durationFrames": 78,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-o2",
+        "sourceStartMs": 0,
+        "x": 711,
+        "y": 180,
+        "width": 268,
+        "height": 459,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b08-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b08",
+        "edge": "start",
+        "offsetMs": 4
+      },
+      "durationFrames": 75,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-o3",
+        "sourceStartMs": 0,
+        "x": 40,
+        "y": 840,
+        "width": 320,
+        "height": 330,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b09-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b09",
+        "edge": "start",
+        "offsetMs": 922
+      },
+      "durationFrames": 60,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-o1",
+        "sourceStartMs": 0,
+        "x": 0,
+        "y": 0,
+        "width": 1080,
+        "height": 1920,
+        "fit": "cover",
+        "pushIn": 1.04
+      }
+    },
+    {
+      "id": "brand-logo",
+      "effect": "image-card@1",
+      "from": {
+        "segment": "b03",
+        "edge": "start",
+        "offsetMs": 379
+      },
+      "until": {
+        "fromEnd": 0
+      },
+      "layer": "below-captions",
+      "props": {
+        "asset": "brand-logo",
+        "x": 40,
+        "y": 170,
+        "width": 150,
+        "height": 150,
+        "fit": "contain",
+        "borderRadius": 28,
+        "enter": {
+          "type": "pop",
+          "frames": 8
+        },
+        "exit": {
+          "type": "none",
+          "frames": 0
+        }
+      }
+    }
+  ],
+  "audio": {
+    "segmentAudio": true,
+    "tracks": [],
+    "loudness": {
+      "normalize": true,
+      "targetLufs": -16,
+      "truePeakDb": -1.5,
+      "lra": 11
+    }
+  },
+  "qc": {
+    "loudnessLufs": -16,
+    "loudnessToleranceLu": 1.5,
+    "maxTruePeakDb": -1
+  }
+}

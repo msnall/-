@@ -1,0 +1,669 @@
+{
+  "name": "kismia r10",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "lanes": [
+    {
+      "kind": "video",
+      "name": "口播",
+      "segments": [
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+          "srcStartUs": 0,
+          "startUs": 0,
+          "durUs": 1733333,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+          "srcStartUs": 1733000,
+          "startUs": 1733333,
+          "durUs": 2633334,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1.1,
+            "scaleY": 1.1,
+            "x": 0,
+            "y": -0.024000000000000018
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+          "srcStartUs": 4366000,
+          "startUs": 4366667,
+          "durUs": 2433333,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+          "srcStartUs": 6800000,
+          "startUs": 6800000,
+          "durUs": 2266667,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+          "srcStartUs": 9066000,
+          "startUs": 9066667,
+          "durUs": 2666666,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+          "srcStartUs": 11733000,
+          "startUs": 11733333,
+          "durUs": 2500000,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1.1,
+            "scaleY": 1.1,
+            "x": 0,
+            "y": -0.024000000000000018
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+          "srcStartUs": 14233000,
+          "startUs": 14233333,
+          "durUs": 2500000,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+          "srcStartUs": 16733000,
+          "startUs": 16733333,
+          "durUs": 2766667,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1.1,
+            "scaleY": 1.1,
+            "x": 0,
+            "y": -0.024000000000000018
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\voice-master-73de87a5.mp4",
+          "srcStartUs": 19500000,
+          "startUs": 19500000,
+          "durUs": 3000000,
+          "volume": 1,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": []
+        }
+      ]
+    },
+    {
+      "kind": "video",
+      "name": "插画",
+      "segments": [
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\c1-action.mp4",
+          "srcStartUs": 0,
+          "startUs": 1733333,
+          "durUs": 2000000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 0.2675925925925926,
+            "scaleY": 0.2675925925925926,
+            "x": 0.4046296296296296,
+            "y": 0.6979166666666666
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\c1-action.mp4",
+          "srcStartUs": 500000,
+          "startUs": 6800000,
+          "durUs": 2100000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 0.28055555555555556,
+            "scaleY": 0.28055555555555556,
+            "x": 0.4824074074074074,
+            "y": 0.14270833333333333
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\screen-o2.mp4",
+          "srcStartUs": 0,
+          "startUs": 9066667,
+          "durUs": 2600000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 0.24814814814814815,
+            "scaleY": 0.24814814814814815,
+            "x": 0.5648148148148148,
+            "y": 0.5734375
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\screen-o3.mp4",
+          "srcStartUs": 0,
+          "startUs": 16733333,
+          "durUs": 2500000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 0.2388888888888889,
+            "scaleY": 0.2388888888888889,
+            "x": -0.7444444444444445,
+            "y": 0.13854166666666667
+          },
+          "scaleKeyframes": []
+        },
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\screen-o1.mp4",
+          "srcStartUs": 0,
+          "startUs": 20433333,
+          "durUs": 2000000,
+          "volume": 0,
+          "clip": {
+            "scaleX": 1,
+            "scaleY": 1,
+            "x": 0,
+            "y": 0
+          },
+          "scaleKeyframes": [
+            {
+              "tUs": 0,
+              "value": 1
+            },
+            {
+              "tUs": 2000000,
+              "value": 1.04
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "video",
+      "name": "品牌图标",
+      "segments": [
+        {
+          "file": "F:\\VideoAutomation\\public\\derived\\kismia\\brand-o4.jpg",
+          "startUs": 4733333,
+          "durUs": 17766667,
+          "clip": {
+            "scaleX": 0.1388888888888889,
+            "scaleY": 0.1388888888888889,
+            "x": -0.7870370370370371,
+            "y": 0.7447916666666666
+          }
+        }
+      ]
+    },
+    {
+      "kind": "text",
+      "name": "字幕",
+      "segments": [
+        {
+          "text": "STOP SWIPING ON RANDOM",
+          "startUs": 0,
+          "durUs": 1200000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "PROFILES.",
+          "startUs": 1200000,
+          "durUs": 533333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "NOW, I ONLY FILTER BY",
+          "startUs": 1733333,
+          "durUs": 1133334,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "SHARED VALUES AND DISTANCE.",
+          "startUs": 2866667,
+          "durUs": 1500000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "THIS IS KISMIA.",
+          "startUs": 4366667,
+          "durUs": 833333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "I WAS SO TIRED OF",
+          "startUs": 5200000,
+          "durUs": 866667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "WASTING TIME,",
+          "startUs": 6066667,
+          "durUs": 733333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "BUT THEIR SMART ALGORITHM",
+          "startUs": 6800000,
+          "durUs": 1366667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "MATCHES YOU WITH",
+          "startUs": 8166667,
+          "durUs": 900000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "PEOPLE WHO ACTUALLY WANT A",
+          "startUs": 9066667,
+          "durUs": 1433333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "SERIOUS RELATIONSHIP.",
+          "startUs": 10500000,
+          "durUs": 1233333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "THE BEST PART,",
+          "startUs": 11733333,
+          "durUs": 766667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "EVERY PROFILE IS PHOTO",
+          "startUs": 12500000,
+          "durUs": 1166667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "VERIFIED.",
+          "startUs": 13666667,
+          "durUs": 566666,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "SO YOU DON'T HAVE TO",
+          "startUs": 14233333,
+          "durUs": 1000000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "WORRY ABOUT CATFISH OR BOTS.",
+          "startUs": 15233333,
+          "durUs": 1500000,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "IT'S BUILT FOR PEOPLE",
+          "startUs": 16733333,
+          "durUs": 1133334,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "LOOKING FOR REAL",
+          "startUs": 17866667,
+          "durUs": 866666,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "CONNECTIONS.",
+          "startUs": 18733333,
+          "durUs": 766667,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "IF YOU WANT TO STOP",
+          "startUs": 19500000,
+          "durUs": 933333,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "WASTING TIME,",
+          "startUs": 20433333,
+          "durUs": 733334,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        },
+        {
+          "text": "TAP BELOW TO TRY KISMIA.",
+          "startUs": 21166667,
+          "durUs": 1266666,
+          "style": {
+            "size": 8,
+            "bold": true,
+            "color": "#ffffff",
+            "maxLineWidth": 0.7777777777777778
+          },
+          "background": {
+            "color": "#000000",
+            "alpha": 0.6509803921568628
+          },
+          "x": -0.09259259259259259,
+          "y": -0.3333333333333333
+        }
+      ]
+    },
+    {
+      "kind": "audio",
+      "name": "音效",
+      "segments": [
+        {
+          "file": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+          "startUs": 1700000,
+          "durUs": 450000,
+          "volume": 0.5
+        },
+        {
+          "file": "F:\\VideoAutomation\\library\\sfx\\pop.wav",
+          "startUs": 4733333,
+          "durUs": 140000,
+          "volume": 0.6
+        },
+        {
+          "file": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+          "startUs": 6766667,
+          "durUs": 450000,
+          "volume": 0.5
+        },
+        {
+          "file": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+          "startUs": 9033333,
+          "durUs": 450000,
+          "volume": 0.5
+        },
+        {
+          "file": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+          "startUs": 16700000,
+          "durUs": 450000,
+          "volume": 0.5
+        },
+        {
+          "file": "F:\\VideoAutomation\\library\\sfx\\whoosh.wav",
+          "startUs": 20400000,
+          "durUs": 450000,
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    "字幕里单个词的强调色（剪映里请手动选词上色）"
+  ]
+}

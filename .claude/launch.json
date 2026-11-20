@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "desk-catalog",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["--disable-warning=MODULE_TYPELESS_PACKAGE_JSON", "desk/server/index.mjs", "--port=4311"],
+      "port": 4311
+    }
+  ]
+}

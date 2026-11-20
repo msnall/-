@@ -57,6 +57,31 @@ const AlphaVideo: React.FC<EffectComponentProps<"alpha-video@1">> = ({ props, as
   />
 );
 
+const VideoClip: React.FC<EffectComponentProps<"video-clip@1">> = ({ props, durationInFrames, assets }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const opacity = props.fadeInFrames > 0 ? interpolate(frame, [0, props.fadeInFrames], [0, 1], clamp) : 1;
+  const scale = props.pushIn === 1 ? 1 : interpolate(frame, [0, Math.max(1, durationInFrames - 1)], [1, props.pushIn], clamp);
+  return (
+    <div
+      data-effect="video-clip"
+      style={{
+        position: "absolute", left: props.x, top: props.y, width: props.width, height: props.height, overflow: "hidden",
+        ...(props.background ? { backgroundColor: props.background } : {}),
+        ...(props.borderRadius ? { borderRadius: props.borderRadius } : {}),
+        ...(opacity !== 1 ? { opacity } : {}),
+      }}
+    >
+      <OffthreadVideo
+        src={assetPath(assets, props.asset)}
+        trimBefore={Math.round((props.sourceStartMs * fps) / 1000)}
+        muted
+        style={{ width: "100%", height: "100%", objectFit: props.fit, ...(scale !== 1 ? { transform: `scale(${scale})` } : {}) }}
+      />
+    </div>
+  );
+};
+
 const ImageCard: React.FC<EffectComponentProps<"image-card@1">> = ({ props, durationInFrames, assets }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -107,6 +132,7 @@ const FadeThroughBlack: React.FC<EffectComponentProps<"fade-through-black@1">> =
 export const effectComponents: { [K in EffectId]: React.FC<EffectComponentProps<K>> } = {
   "title-card@1": TitleCard,
   "alpha-video@1": AlphaVideo,
+  "video-clip@1": VideoClip,
   "image-card@1": ImageCard,
   "rect@1": Rect,
   "fade-through-black@1": FadeThroughBlack,

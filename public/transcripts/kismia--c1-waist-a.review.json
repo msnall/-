@@ -1,0 +1,63 @@
+{
+  "status": "unreviewed machine transcript",
+  "detectedLanguage": "en",
+  "instructions": "Verify names, brands, product terms, numbers and claims against the audio. Token probabilities are not calibrated accuracy scores. No spelling was auto-corrected.",
+  "warnings": [
+    {
+      "index": 5,
+      "text": "profiles.",
+      "startMs": 1720,
+      "endMs": 2740,
+      "confidence": 0.462743,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 6,
+      "text": "Now,",
+      "startMs": 2740,
+      "endMs": 2940,
+      "confidence": 0.380554,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 15,
+      "text": "This",
+      "startMs": 5720,
+      "endMs": 6180,
+      "confidence": 0.603604,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 17,
+      "text": "Kismia.",
+      "startMs": 6310,
+      "endMs": 6720,
+      "confidence": 0.581002,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 24,
+      "text": "time,",
+      "startMs": 8190,
+      "endMs": 8520,
+      "confidence": 0.641161,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 41,
+      "text": "part,",
+      "startMs": 12820,
+      "endMs": 13240,
+      "confidence": 0.578823,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 46,
+      "text": "verified.",
+      "startMs": 14720,
+      "endMs": 15120,
+      "confidence": 0.362582,
+      "reason": "low token probability; human review needed"
+    }
+  ]
+}

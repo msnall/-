@@ -86,30 +86,7 @@ async function call<T>(method: string, url: string, body?: unknown, headers: Rec
 
 const p = (id: string) => `/api/projects/${encodeURIComponent(id)}`;
 
-export type Overview = { mode?: "mix"; editorReady?: boolean; mixEditorConfirmed?: boolean; style?: string; id: string; title: string; productName: string; status: Status; hasPlan: boolean; hasProject: boolean; transcriptReady: boolean; previewReady: boolean; ready: boolean; revision: number | null; updatedAt: string | null; media: { originalName: string; bytes: number; durationMs: number; width: number; height: number } | null };
-export type MixAsset = { id: string; group: "wrong" | "detail" | "general"; name: string; durationMs: number; width: number; height: number };
-export type MixSlot = { id: string; label: string; group: "wrong" | "detail"; durationMs: number };
-export type MixLibrary = { voiceOptions: string[]; actorOptions: string[]; voice: { name: string; durationMs: number; captionsReady: boolean }; actor: { name: string; durationMs: number; transparent: boolean; keyMode?: "green" | "black" | "alpha" | "none" }; assets: MixAsset[]; slots: MixSlot[] };
-export type MixVariant = { id: string; name: string; createdAt: string; selections: { slot: string; asset: string }[]; revision: number; preview?: string | null; approvedRevision?: number | null; lockedSlots?: string[]; exports?: { file: string; revision: number; createdAt: string; width: number; height: number; duration: number }[] };
-export type MixJob = { id: string; variantId: string; state: "queued" | "running" | "completed" | "failed"; quality?: "preview" | "hd"; phase: string; message: string; preview: string | null; error: string | null };
-export const createMixApi = (projectId?: string) => { const base = projectId ? `/api/projects/${projectId}/mix` : "/api/mix"; return {
-  library: () => call<MixLibrary>("GET", `${base}/library`),
-  variants: () => call<MixVariant[]>("GET", `${base}/variants`),
-  create: (count = 3) => call<MixVariant[]>("POST", `${base}/variants`, { count }),
-  save: (variant: MixVariant) => call<MixVariant>("PUT", `${base}/variants/${variant.id}`, { name: variant.name, selections: variant.selections, lockedSlots: variant.lockedSlots, revision: variant.revision }),
-  render: (id: string, quality: "preview" | "hd" = "preview") => call<MixJob>("POST", `${base}/variants/${id}/render`, { quality }),
-  refreshPresenter: () => call<{mode: string; changed: boolean}>("POST", `${base}/presenter-refresh`),
-  next: () => call<MixVariant>("POST", `${base}/next`),
-  editor: (variant: string) => call<{round: string}>("POST", `${base}/editor`, { variant }),
-  approve: (id: string) => call<MixVariant>("POST", `${base}/variants/${id}/approve`),
-  unapprove: (id: string) => call<MixVariant>("POST", `${base}/variants/${id}/unapprove`),
-  source: (actorName: string) => call("PUT", `${base}/sources`, { actorName }),
-  stage: (stage: string) => call<Status>("POST", `${base}/stage`, { stage }),
-  jobs: () => call<MixJob[]>("GET", `${base}/jobs`),
-  thumb: (id: string) => `${base}/thumbs/${id}`,
-  preview: (name: string) => `${base}/previews/${name}`,
-}; };
-export const mixApi = createMixApi();
+export type Overview = { hasCatalog?: boolean; mode?: "mix"; editorReady?: boolean; mixEditorConfirmed?: boolean; style?: string; id: string; title: string; productName: string; status: Status; hasPlan: boolean; hasProject: boolean; transcriptReady: boolean; previewReady: boolean; ready: boolean; revision: number | null; updatedAt: string | null; media: { originalName: string; bytes: number; durationMs: number; width: number; height: number } | null };
 export type OptionWithCompile = StoryboardOption & {
   compile: Pick<CompileResult, "problems" | "warnings" | "needs" | "claims" | "gate" | "segments">;
 };
@@ -151,8 +128,6 @@ export const storyboardApi = {
 };
 
 export const api = {
-  inspectMixFolder: (folder: string) => call<MixLibrary>("POST", "/api/mix-projects/inspect", { folder }),
-  createMixProject: (input: { title: string; productName: string; folder: string; voiceName?: string; actorName?: string }) => call<{id: string}>("POST", "/api/mix-projects", input),
   projects: () => call<{ id: string; revision: number; stage: string; title: string }[]>("GET", "/api/projects"),
   trash: () => call<{ archiveId: string; id: string; title: string; productName: string; archivedAt: string }[]>("GET", "/api/trash"),
   archiveVideo: (id: string) => call<{ archiveId: string }>("POST", `${p(id)}/archive`),
@@ -194,3 +169,138 @@ export function listen(onEvent: (type: string, data: unknown) => void) {
   for (const type of ["file", "job", "server"]) source.addEventListener(type, (event) => onEvent(type, JSON.parse((event as MessageEvent).data)));
   return () => source.close();
 }
+
+// ---- asset catalog (素材分类) ----
+export type CatalogCategory = { id: string; label: string; hint: string };
+export type CatalogDraft = { category?: string; description?: string; tags?: string[]; provider?: string; model?: string | null; at?: string; note?: string; editedAt?: string };
+export type CatalogItem = {
+  id: string; type: "video" | "image" | "text"; title: string; body?: string; file?: string; durationMs: number | null; facts: string[];
+  defaultCategory: string; ai: CatalogDraft | null; human: CatalogDraft | null; confirmed: boolean; confirmedAt: string | null;
+  category: string; description: string; tags: string[]; descriptionSource: "human" | "ai" | "transcript" | "none"; counted: boolean;
+  textCheck: { wordCountFrom: number; wordCountTo: number; changes: { index: number; from: string; to: string; similarity: number; big: boolean }[] } | null;
+  context: { assetId?: string };
+};
+export type Catalog = { id: string; order: string; categories: CatalogCategory[]; provider: { name: string; available: string[]; note: string; model?: string | null; baseUrl?: string | null }; items: CatalogItem[]; reference?: { name: string; text: string }[] };
+const cat = (id: string) => `/api/catalogs/${encodeURIComponent(id)}`;
+export const catalogApi = {
+  list: () => call<{ id: string; order: string; total: number; confirmed: number }[]>("GET", "/api/catalogs"),
+  get: (id: string) => call<Catalog>("GET", cat(id)),
+  save: (id: string, item: string, body: { category?: string | null; description?: string | null; tags?: string[] | null; note?: string | null; confirmed?: boolean }) => call<CatalogItem>("PUT", `${cat(id)}/items/${encodeURIComponent(item)}`, body),
+  confirm: (id: string, item: string, confirmed: boolean) => call<CatalogItem>("POST", `${cat(id)}/items/${encodeURIComponent(item)}/confirm`, { confirmed }),
+  confirmMany: (id: string, items: string[], confirmed: boolean) => call<{ changed: number; catalog: Catalog }>("POST", `${cat(id)}/confirm-many`, { items, confirmed }),
+  describe: (id: string, items?: string[], force = false) => call<{ described: number; skipped: number; errors: Record<string, string>; catalog: Catalog }>("POST", `${cat(id)}/describe`, { items, force }),
+  mediaUrl: (id: string, item: string) => `${cat(id)}/media/${encodeURIComponent(item)}`,
+  frameAtUrl: (id: string, item: string, ms: number) => `${cat(id)}/frame-at/${encodeURIComponent(item)}/${Math.round(ms)}`,
+  frameUrl: (id: string, item: string, n: number) => `${cat(id)}/frames/${encodeURIComponent(item)}/${n}`,
+};
+
+// ---- API settings ----
+export type ApiSettings = { baseUrl: string; model: string; format: "anthropic" | "openai"; maxTokens: number; timeoutSec: number; hasKey: boolean; keyHint: string; file: string;
+  defaults: { baseUrl: string; model: string; format: "anthropic" | "openai"; maxTokens: number; timeoutSec: number } };
+export const settingsApi = {
+  get: () => call<ApiSettings>("GET", "/api/settings/api"),
+  save: (body: Partial<Omit<ApiSettings, "hasKey" | "keyHint" | "file" | "defaults">> & { apiKey?: string }) => call<ApiSettings>("PUT", "/api/settings/api", body),
+  test: () => call<{ ok: boolean; ms?: number; model?: string; reply?: string; error?: string }>("POST", "/api/settings/api/test"),
+};
+
+export type DirectorShot = { asset: string; frame: number; atMs: number; durationMs: number; layout: "full" | "pip"; slot: string | null; note: string };
+export type DirectorDraft = { variant: string; label: string; blurb: string; stale: boolean; builtAt: string; model: string | null; notes: string; liveRevision: number | null; logo: boolean; totalMs: number;
+  stats: { shots: number; full: number; pip: number; fullShare: number }; beats: { id: string; text: string; ms: number; broll: DirectorShot[]; logoAtMs: number | null }[] };
+export type DirectorRun = { card?: { id: string; name: string } | null; state: "idle" | "running" | "done" | "failed"; kind?: string; startedAt?: string; finishedAt?: string | null; steps?: { name: string; key?: string; state: "pending" | "running" | "done" | "failed" }[]; error?: string | null; note?: string | null; applied?: { revision: number; variant?: string; at: string } | null; drafts?: DirectorDraft[]; pipAvailable?: boolean };
+export const directorApi = {
+  status: (id: string) => call<DirectorRun>("GET", `${cat(id)}/director`),
+  start: (id: string, card?: string) => call<DirectorRun>("POST", `${cat(id)}/director`, card ? { card } : {}),
+  apply: (id: string, variant: string, expectedRevision: number | null) => call<{ revision: number; warnings: number }>("POST", `${cat(id)}/director/apply`, expectedRevision === null ? { variant } : { variant, expectedRevision }),
+  options: (id: string, variant: string, body: { logo?: boolean; layout?: "full" | "pip" }) => call<DirectorRun>("POST", `${cat(id)}/director/${variant}/options`, body),
+  logUrl: (id: string) => `${cat(id)}/director/log`,
+};
+
+// ---- 导入订单素材 ----
+export type ImportRun = { state: "idle" | "running" | "done" | "failed"; id?: string; folder?: string; steps?: { name: string; state: "pending" | "running" | "done" | "failed" }[]; error?: string | null; note?: string | null };
+export const orderApi = {
+  import: (folder: string) => call<ImportRun & { id: string }>("POST", "/api/orders/import", { folder }),
+  status: (id: string) => call<ImportRun>("GET", `/api/orders/${encodeURIComponent(id)}/import`),
+};
+
+// ---- 剪映草稿 ----
+export type CapcutDraft = { name: string; path: string; builtAt: string; planRevision: number | null; tracks: { name: string; kind: string; segments: number }[]; skipped: string[]; durationUs: number | null; installed: boolean };
+export type CapcutStatus = { pythonReady: boolean; jianyingRoot: string | null; jianyingRunning: boolean; planRevision: number | null; drafts: CapcutDraft[] };
+export const capcutApi = {
+  status: (id: string) => call<CapcutStatus>("GET", `${p(id)}/capcut`),
+  build: (id: string, name?: string) => call<CapcutStatus>("POST", `${p(id)}/capcut`, { name }),
+  install: (id: string, name: string) => call<CapcutStatus>("POST", `${p(id)}/capcut/install`, { name }),
+  reveal: (id: string, name: string) => call<{ ok: boolean; path: string }>("POST", `${p(id)}/capcut/reveal`, { name }),
+};
+
+// ---- 风格库 (style cards) ----
+export type StyleRole = "hook" | "pain" | "demo" | "proof" | "benefit" | "cta" | "other";
+export type StyleCard = {
+  id: string; name: string; status: "draft" | "confirmed"; summary: string; model: string | null; createdAt: string; confirmedAt: string | null;
+  source: { referenceId: string; title: string; durationMs: number; shots: number };
+  structure: { role: StyleRole; label: string; fromMs: number; toMs: number; what: string }[];
+  rhythm: { avgCutMs: number; removePauses: boolean; maxPauseMs: number; note: string };
+  camera: { zoomOnKeywords: boolean; zoomRange: [number, number]; alternateFraming: boolean; note: string };
+  captions: { position: string; yRatio: number; look: string; highlight: string; animation: string; wordsPerChunk: [number, number]; upper: boolean; emoji: boolean; note: string };
+  inserts: { layout: "full" | "pip" | "mixed"; firstAtMs: number; shotMs: [number, number]; share: number; triggers: string; logoPersistent: boolean; ending: "fullscreen" | "end-card" | "none"; note: string };
+  packaging: { stickers: string; sfx: string; music: string; duckDb: number; note: string };
+  support: { area: string; feature: string; level: "supported" | "partial" | "needs-effect"; note: string }[];
+  directorRules: string[];
+};
+export type StyleBrief = { id: string; name: string; status: "draft" | "confirmed"; summary: string; source: StyleCard["source"]; layout: string; share: number; confirmedAt: string | null; createdAt: string };
+export type StyleRun = { id: string; state: "running" | "failed" | "done"; title: string; steps: { name: string; state: "pending" | "running" | "done" | "failed" }[]; error: string | null };
+export type StyleDetail = { card: StyleCard; analysis: { facts: { width: number; height: number; durationMs: number }; pacing: { shotCount: number; avgShotMs: number; minShotMs: number; maxShotMs: number }; cuts: number[]; text: string; frames: number[] } | null };
+const sc = (id: string) => `/api/style-cards/${encodeURIComponent(id)}`;
+export const styleApi = {
+  list: () => call<{ cards: StyleBrief[]; runs: StyleRun[] }>("GET", "/api/style-cards"),
+  get: (id: string) => call<StyleDetail>("GET", sc(id)),
+  save: (id: string, body: Partial<StyleCard>) => call<StyleCard>("PUT", sc(id), body),
+  confirm: (id: string, name: string) => call<StyleCard>("POST", `${sc(id)}/confirm`, { name }),
+  remove: (id: string) => call<{ deleted: boolean }>("DELETE", sc(id)),
+  import: (file: string, title: string) => call<{ id: string }>("POST", "/api/style-cards/import", { file, title }),
+  relearn: (refId: string) => call<{ id: string }>("POST", `/api/style-cards/references/${encodeURIComponent(refId)}/relearn`),
+  frameUrl: (refId: string, second: number) => `/api/style-cards/references/${encodeURIComponent(refId)}/frames/t${String(Math.max(0, second)).padStart(3, "0")}.jpg`,
+};
+
+// ---- 口播清理 ----
+export type CleanupEdit = { id: string; type: "pause" | "filler" | "stutter" | "retake" | "slip"; fromMs: number; toMs: number; reason: string; source: "auto" | "model" | "user"; decision: "delete" | "keep"; part?: "head" | "tail"; wordFrom?: number; wordTo?: number };
+export type CleanupClip = { name: string; durationMs: number; segments: { id: string; startMs: number; endMs: number }[]; edits: CleanupEdit[]; words: { i: number; text: string; startMs: number; endMs: number }[] };
+export type Cleanup = { exists: boolean; confirmedAt?: string | null; createdAt?: string; model?: string | null; stats?: { beforeMs: number; afterMs: number; cuts: number }; clips?: Record<string, CleanupClip>; busy?: boolean };
+const pc = (id: string) => `/api/projects/${encodeURIComponent(id)}/cleanup`;
+export const cleanupApi = {
+  get: (id: string) => call<Cleanup>("GET", pc(id)),
+  detect: (id: string, review = false) => call<Cleanup>("POST", `${pc(id)}/detect`, { review }),
+  decide: (id: string, clip: string, edit: string, decision: "delete" | "keep") => call<Cleanup>("PUT", `${pc(id)}/edits/${encodeURIComponent(clip)}/${encodeURIComponent(edit)}`, { decision }),
+  word: (id: string, clip: string, word: number, cut: boolean) => call<Cleanup>("PUT", `${pc(id)}/words/${encodeURIComponent(clip)}/${word}`, { cut }),
+  confirm: (id: string) => call<Cleanup>("POST", `${pc(id)}/confirm`),
+};
+
+// ---- 表格方案 ----
+export type TableShot = { id?: string; asset: string; srcStartMs: number; atMs: number; durationMs: number; layout: "full" | "pip"; slot: string | null; note?: string };
+export type TableRow = { voice: { asset: string; atMs: number }; id: string; text: string; startMs: number; lengthMs: number; words: string[]; emphasis: string[]; broll: TableShot[]; zoom: number | null; sfx: "auto" | "none" | "whoosh" | "pop"; logoAtMs: number | null };
+export type TableAsset = { id: string; title: string; description: string; durationMs: number; width?: number; height?: number; category: string };
+export type PlanTableData = { variant: string; label: string; totalMs: number; logo: boolean; rows: TableRow[]; assets: TableAsset[]; builtAt: string };
+export const tableApi = {
+  get: (id: string, variant: string) => call<PlanTableData>("GET", `${cat(id)}/director/${variant}/table`),
+  save: (id: string, variant: string, body: { rows?: Partial<TableRow>[]; logo?: boolean }) => call<{ table: PlanTableData; status: DirectorRun }>("PUT", `${cat(id)}/director/${variant}/table`, body),
+};
+
+// ---- 素材箱：按分类拖入素材 ----
+export type InboxFile = { rel: string; name: string; bytes: number };
+export type InboxCategory = { id: "talk" | "action" | "screen" | "script" | "official"; label: string; hint: string; files: InboxFile[] };
+export type Inbox = { order: string; creator: string; categories: InboxCategory[] };
+export const inboxApi = {
+  list: () => call<{ order: string; files: number }[]>("GET", "/api/inbox"),
+  create: (product: string) => call<Inbox>("POST", "/api/inbox/new", { product }),
+  get: (order: string) => call<Inbox>("GET", `/api/inbox/${encodeURIComponent(order)}`),
+  remove: (order: string, rel: string) => call<Inbox>("DELETE", `/api/inbox/${encodeURIComponent(order)}/files?rel=${encodeURIComponent(rel)}`),
+  import: (order: string) => call<ImportRun & { id: string }>("POST", `/api/inbox/${encodeURIComponent(order)}/import`, {}),
+  // XHR rather than fetch so the page can show upload progress for big videos.
+  upload: (order: string, category: string, file: File, creator: string, onProgress: (done: number) => void) => new Promise<Inbox>((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("PUT", `/api/inbox/${encodeURIComponent(order)}/files?category=${category}&name=${encodeURIComponent(file.name)}&creator=${encodeURIComponent(creator)}`);
+    xhr.upload.onprogress = (e) => onProgress(e.loaded);
+    xhr.onload = () => { const data = JSON.parse(xhr.responseText || "{}"); if (xhr.status < 300) resolve(data); else reject(new ApiError(xhr.status, data.error ?? xhr.statusText)); };
+    xhr.onerror = () => reject(new ApiError(0, "上传中断了，请检查 npm run desk 是否还在运行"));
+    xhr.send(file);
+  }),
+};

@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 2,
+  "projectId": "kika-keyboard",
+  "scriptId": "creator",
+  "status": "draft",
+  "builtAt": "2026-11-19T05:26:27.679Z",
+  "fps": 30,
+  "director": {
+    "variant": "pip",
+    "model": "claude-sonnet-5-5",
+    "at": "2026-11-19T05:26:27.679Z",
+    "notes": "开头保持达人出镜，大部分插画面用画中画，最后 CTA 用 m8 的 Kika 图标和 Download 画面全屏收尾。Kika 一出现就在左上角固定 logo；强调词控制在 6 个以内，痛点词（boring、dry）用红色，好处词用绿色。",
+    "attempts": 3,
+    "styleCard": {
+      "id": "kika-ugc1016",
+      "name": "UGC1016 Kika keyboard（订单参考成品）"
+    }
+  },
+  "note": "Beats from the creators' proofread transcripts; b-roll and emphasis proposed by the auto director and validated by code. Review in the desk.",
+  "beats": [
+    {
+      "id": "b01",
+      "text": "I used to send the most boring texts ever.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 533.3333333333334,
+        "endMs": 2833.3333333333335,
+        "wordStart": 0,
+        "wordEnd": 8,
+        "ranges": [
+          [
+            533.3333333333334,
+            2833.3333333333335
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "timelineStartMs": 0
+    },
+    {
+      "id": "b02",
+      "text": "No font, no emojis, just plain words.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 3533.3333333333335,
+        "endMs": 6133.333333333333,
+        "wordStart": 9,
+        "wordEnd": 15,
+        "ranges": [
+          [
+            3533.3333333333335,
+            6133.333333333333
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b02-1",
+          "asset": "screen-m2",
+          "srcStartMs": 500,
+          "atMs": 204,
+          "durationMs": 2000,
+          "layout": "pip",
+          "note": "说到 font/emojis 时马上出键盘主题画面，达人保持在画面中",
+          "slot": "top-right"
+        }
+      ],
+      "timelineStartMs": 2300
+    },
+    {
+      "id": "b03",
+      "text": "Then I downloaded Kika.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 7700,
+        "endMs": 9233.333333333334,
+        "wordStart": 16,
+        "wordEnd": 19,
+        "ranges": [
+          [
+            7700,
+            9233.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [],
+      "timelineStartMs": 4900
+    },
+    {
+      "id": "b04",
+      "text": "Now I use crazy fonts, cute stickers, and commojis in every chat.",
+      "voice": {
+        "asset": "c1-waist-a",
+        "startMs": 9233.333333333334,
+        "endMs": 13200,
+        "wordStart": 20,
+        "wordEnd": 31,
+        "ranges": [
+          [
+            9233.333333333334,
+            13200
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b04-1",
+          "asset": "screen-m1",
+          "srcStartMs": 0,
+          "atMs": 556,
+          "durationMs": 1600,
+          "layout": "pip",
+          "note": "crazy fonts 对应手指打字的主题键盘演示，与前面的 boring 形成对比",
+          "slot": "top-left"
+        },
+        {
+          "id": "b04-2",
+          "asset": "screen-m3",
+          "srcStartMs": 1000,
+          "atMs": 2249,
+          "durationMs": 1500,
+          "layout": "pip",
+          "note": "cute stickers / commojis 对应可爱猫咪主题，位置轮换",
+          "slot": "top-right"
+        }
+      ],
+      "timelineStartMs": 6433.333333333334
+    },
+    {
+      "id": "b05",
+      "text": "i literally can't stop sending these funny stickers to my friends",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 166.66666666666666,
+        "endMs": 3300,
+        "wordStart": 0,
+        "wordEnd": 10,
+        "ranges": [
+          [
+            166.66666666666666,
+            3300
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b05-1",
+          "asset": "screen-m3",
+          "srcStartMs": 6000,
+          "atMs": 1155,
+          "durationMs": 1700,
+          "layout": "pip",
+          "note": "sending stickers 对应可爱的蝴蝶主题画面，与前面的猫咪片段不同",
+          "slot": "top-left"
+        }
+      ],
+      "timelineStartMs": 10400
+    },
+    {
+      "id": "b06",
+      "text": "it makes every conversation way more fun",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 3300,
+        "endMs": 5233.333333333333,
+        "wordStart": 11,
+        "wordEnd": 17,
+        "ranges": [
+          [
+            3300,
+            5233.333333333333
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b06-1",
+          "asset": "screen-m2",
+          "srcStartMs": 2000,
+          "atMs": 125,
+          "durationMs": 1500,
+          "layout": "pip",
+          "note": "makes every conversation 对应聊天键盘打字画面，提前一点开始并缩短，保证在本拍内结束",
+          "slot": "top-right"
+        }
+      ],
+      "timelineStartMs": 13533.333333333334
+    },
+    {
+      "id": "b07",
+      "text": "if your chats are dry just get Kika",
+      "voice": {
+        "asset": "c1-waist-b",
+        "startMs": 6166.666666666667,
+        "endMs": 8233.333333333334,
+        "wordStart": 18,
+        "wordEnd": 25,
+        "ranges": [
+          [
+            6166.666666666667,
+            8233.333333333334
+          ]
+        ],
+        "droppedWords": []
+      },
+      "broll": [
+        {
+          "id": "b07-1",
+          "asset": "screen-m8",
+          "srcStartMs": 14000,
+          "atMs": 55,
+          "durationMs": 1900,
+          "layout": "full",
+          "note": "CTA 结尾，全屏切到 Kika 图标和 Download 按钮的结尾画面，在本拍结束前收尾"
+        }
+      ],
+      "timelineStartMs": 15466.666666666668
+    }
+  ],
+  "emphasis": [
+    {
+      "beat": "b01",
+      "word": "boring"
+    },
+    {
+      "beat": "b03",
+      "word": "Kika."
+    },
+    {
+      "beat": "b04",
+      "word": "fonts,"
+    },
+    {
+      "beat": "b04",
+      "word": "stickers,"
+    },
+    {
+      "beat": "b05",
+      "word": "stickers"
+    },
+    {
+      "beat": "b07",
+      "word": "dry"
+    }
+  ]
+}

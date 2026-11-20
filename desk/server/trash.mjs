@@ -5,8 +5,6 @@ import { root } from "../../scripts/lib/media.mjs";
 import { exists, projectDir, readJson, writeJson } from "../../scripts/lib/storage.mjs";
 import { conflict, unprocessable } from "./errors.mjs";
 import { listJobs } from "./jobs.mjs";
-import { inMixProject } from "./mix-projects.mjs";
-import { listMixJobs } from "./mix.mjs";
 
 const trashDir = path.join(root, "out", "desk-trash");
 const transcriptsDir = path.join(root, "public", "transcripts");
@@ -23,7 +21,6 @@ export async function archiveVideo(id) {
   const jobs = await listJobs(id, 100000);
   if (jobs.some((job) => job.state === "queued" || job.state === "running")) throw conflict("视频有正在运行的任务，请完成后再删除");
   const project = await readJson(path.join(source.project, "project.json"), null);
-  if (project?.mode === "mix" && (await inMixProject(id, () => listMixJobs())).some((job) => job.state === "queued" || job.state === "running")) throw conflict("混剪有正在运行的任务，请完成后再删除");
   const transcriptFiles = project?.transcript?.words === `transcripts/${id}-source.json`
     ? (await readdir(transcriptsDir).catch((error) => error.code === "ENOENT" ? [] : Promise.reject(error))).filter((name) => name.startsWith(`${id}-source.`))
     : [];

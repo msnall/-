@@ -1,0 +1,36 @@
+{
+  "tracks": [
+    {
+      "name": "口播",
+      "kind": "video",
+      "segments": 8
+    },
+    {
+      "name": "插画",
+      "kind": "video",
+      "segments": 4
+    },
+    {
+      "name": "品牌图标",
+      "kind": "video",
+      "segments": 1
+    },
+    {
+      "name": "字幕",
+      "kind": "text",
+      "segments": 16
+    },
+    {
+      "name": "音效",
+      "kind": "audio",
+      "segments": 5
+    }
+  ],
+  "skipped": [
+    "字幕里单个词的强调色（剪映里请手动选词上色）"
+  ],
+  "draft": "F:\\VideoAutomation\\projects\\kika-keyboard\\exports\\capcut\\kika-keyboard r18",
+  "durationUs": 22733333,
+  "planRevision": 18,
+  "builtAt": "2026-11-19T01:53:57.808Z"
+}

@@ -1,0 +1,426 @@
+{
+  "schemaVersion": 1,
+  "id": "kika-keyboard",
+  "revision": 24,
+  "meta": {
+    "source": "cut-script.json",
+    "scriptId": "creator",
+    "builtAt": "2026-11-19T05:26:37.744Z",
+    "brief": "2026-10_Kika-Keyboard",
+    "sfx": [
+      {
+        "atFrame": 74,
+        "kind": "whoosh"
+      },
+      {
+        "atFrame": 182,
+        "kind": "pop"
+      },
+      {
+        "atFrame": 209,
+        "kind": "whoosh"
+      },
+      {
+        "atFrame": 259,
+        "kind": "whoosh"
+      },
+      {
+        "atFrame": 346,
+        "kind": "whoosh"
+      },
+      {
+        "atFrame": 409,
+        "kind": "whoosh"
+      },
+      {
+        "atFrame": 465,
+        "kind": "whoosh"
+      }
+    ],
+    "note": "First cut r0 compiled from the cut script. Draft for review; not a delivered video."
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "encoding": {
+      "crf": 18,
+      "x264Preset": "veryfast"
+    }
+  },
+  "theme": {
+    "background": "#101820",
+    "textColor": "#ffffff",
+    "fontFamily": "\"BloomInter\", sans-serif",
+    "fonts": [
+      {
+        "family": "BloomInter",
+        "src": "fonts/Inter-700.woff2",
+        "weight": 700,
+        "style": "normal"
+      }
+    ]
+  },
+  "assets": {
+    "master": {
+      "type": "video",
+      "path": "derived/kika-keyboard/voice-master-a80422be.mp4",
+      "sha256": "ee30cc8be0bf2324c44d0c0d321a89b849e8156d03bc69d556a187e4149242cb"
+    },
+    "screen-m2": {
+      "type": "video",
+      "path": "derived/kika-keyboard/screen-m2.mp4",
+      "sha256": "b6b15437d61136a4a12dbd0758d6ff81fa89bf8420fdd9a888ef91c57c987a06"
+    },
+    "screen-m1": {
+      "type": "video",
+      "path": "derived/kika-keyboard/screen-m1.mp4",
+      "sha256": "6bbf588de13539a43f07274f6c757f54d421c1479f8939e1548f9505d032c3c8"
+    },
+    "screen-m3": {
+      "type": "video",
+      "path": "derived/kika-keyboard/screen-m3.mp4",
+      "sha256": "fca9a68158d73108acf1d9c1d22ad5b3eec0b1cc6702282f23c8d4955ea59e7d"
+    },
+    "screen-m8": {
+      "type": "video",
+      "path": "derived/kika-keyboard/screen-m8.mp4",
+      "sha256": "79202516cc2561c028e35204f2c0c576de521ea1247d64d79e1807e9f0120711"
+    },
+    "brand-logo": {
+      "type": "image",
+      "path": "derived/kika-keyboard/brand-m7.png"
+    }
+  },
+  "transcript": {
+    "asset": "master",
+    "words": "transcripts/kika-keyboard-master-49b5c467.json",
+    "cues": "transcripts/kika-keyboard-master-49b5c467.cues.json"
+  },
+  "segments": [
+    {
+      "id": "b01",
+      "asset": "master",
+      "sourceStartMs": 0,
+      "sourceEndMs": 2300,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b02",
+      "asset": "master",
+      "sourceStartMs": 2300,
+      "sourceEndMs": 4900,
+      "camera": {
+        "zoom": 1.1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b03",
+      "asset": "master",
+      "sourceStartMs": 4900,
+      "sourceEndMs": 6434,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b04",
+      "asset": "master",
+      "sourceStartMs": 6433,
+      "sourceEndMs": 10400,
+      "camera": {
+        "zoom": 1.1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b05",
+      "asset": "master",
+      "sourceStartMs": 10400,
+      "sourceEndMs": 13534,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b06",
+      "asset": "master",
+      "sourceStartMs": 13533,
+      "sourceEndMs": 15467,
+      "camera": {
+        "zoom": 1.1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    },
+    {
+      "id": "b07",
+      "asset": "master",
+      "sourceStartMs": 15466,
+      "sourceEndMs": 17534,
+      "camera": {
+        "zoom": 1,
+        "originX": 0.5,
+        "originY": 0.38,
+        "punchIns": []
+      }
+    }
+  ],
+  "layout": {
+    "footage": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "borderRadius": 0,
+      "fit": "cover"
+    }
+  },
+  "captions": {
+    "box": {
+      "x": 164,
+      "y": 1430,
+      "width": 786,
+      "height": 159
+    },
+    "fontSize": 72,
+    "lineHeight": 86,
+    "fontWeight": 700,
+    "color": "#ffffff",
+    "activeColor": "#ffd23f",
+    "background": "#000000a6",
+    "wordGap": 16,
+    "maxLines": 2,
+    "singleLineMaxChars": 18,
+    "balanceWeight": 0.2,
+    "textTransform": "uppercase",
+    "emphasis": [
+      {
+        "word": 6,
+        "expect": "boring",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 19,
+        "expect": "Kika.",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 24,
+        "expect": "fonts,",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 26,
+        "expect": "stickers,",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 39,
+        "expect": "stickers",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      },
+      {
+        "word": 54,
+        "expect": "dry",
+        "color": "#2ee6c8",
+        "scale": 1.12
+      }
+    ]
+  },
+  "overlays": [
+    {
+      "id": "b02-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b02",
+        "edge": "start",
+        "offsetMs": 204
+      },
+      "durationFrames": 60,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-m2",
+        "sourceStartMs": 500,
+        "x": 590,
+        "y": 170,
+        "width": 320,
+        "height": 569,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b04-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b04",
+        "edge": "start",
+        "offsetMs": 556
+      },
+      "durationFrames": 48,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-m1",
+        "sourceStartMs": 0,
+        "x": 553,
+        "y": 247,
+        "width": 320,
+        "height": 330,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b04-2",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b04",
+        "edge": "start",
+        "offsetMs": 2249
+      },
+      "durationFrames": 45,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-m3",
+        "sourceStartMs": 1000,
+        "x": 251,
+        "y": 174,
+        "width": 560,
+        "height": 315,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b05-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b05",
+        "edge": "start",
+        "offsetMs": 1155
+      },
+      "durationFrames": 51,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-m3",
+        "sourceStartMs": 6000,
+        "x": 350,
+        "y": 170,
+        "width": 560,
+        "height": 315,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b06-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b06",
+        "edge": "start",
+        "offsetMs": 125
+      },
+      "durationFrames": 45,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-m2",
+        "sourceStartMs": 2000,
+        "x": 590,
+        "y": 840,
+        "width": 320,
+        "height": 330,
+        "fit": "cover",
+        "borderRadius": 24
+      }
+    },
+    {
+      "id": "b07-1",
+      "effect": "video-clip@1",
+      "from": {
+        "segment": "b07",
+        "edge": "start",
+        "offsetMs": 55
+      },
+      "durationFrames": 57,
+      "layer": "below-captions",
+      "props": {
+        "asset": "screen-m8",
+        "sourceStartMs": 14000,
+        "x": 0,
+        "y": 0,
+        "width": 1080,
+        "height": 1920,
+        "fit": "cover",
+        "pushIn": 1.04
+      }
+    },
+    {
+      "id": "brand-logo",
+      "effect": "image-card@1",
+      "from": {
+        "segment": "b03",
+        "edge": "start",
+        "offsetMs": 1172
+      },
+      "until": {
+        "fromEnd": 0
+      },
+      "layer": "below-captions",
+      "props": {
+        "asset": "brand-logo",
+        "x": 40,
+        "y": 170,
+        "width": 150,
+        "height": 150,
+        "fit": "contain",
+        "borderRadius": 28,
+        "enter": {
+          "type": "pop",
+          "frames": 8
+        },
+        "exit": {
+          "type": "none",
+          "frames": 0
+        }
+      }
+    }
+  ],
+  "audio": {
+    "segmentAudio": true,
+    "tracks": [],
+    "loudness": {
+      "normalize": true,
+      "targetLufs": -16,
+      "truePeakDb": -1.5,
+      "lra": 11
+    }
+  },
+  "qc": {
+    "loudnessLufs": -16,
+    "loudnessToleranceLu": 1.5,
+    "maxTruePeakDb": -1
+  }
+}

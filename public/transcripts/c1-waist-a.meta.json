@@ -1,0 +1,17 @@
+{
+  "input": "F:\\VideoAutomation\\public\\derived\\kika-keyboard\\c1-waist-a.mp4",
+  "sourceSha256": "5ae69147b7792ba56aa5820f7f2b9e77bbd9b3cdffd14354acb7380fb4dc9cac",
+  "sourceBytes": 29752045,
+  "sourceModifiedAt": "2026-11-18T06:42:52.272Z",
+  "model": "F:\\VideoAutomation\\bin\\whisper.cpp\\models\\ggml-small.en.bin",
+  "detectedLanguage": "en",
+  "requestedLanguage": "en",
+  "durationMs": 15133,
+  "audioOffsetMs": 0,
+  "runDirectory": "F:\\VideoAutomation\\out\\transcriptions\\c1-waist-a\\2026-11-18T11-55-58-975Z",
+  "unitCount": 32,
+  "cueCount": 7,
+  "timing": "Whisper estimated short segments; not forced alignment or guaranteed linguistic words. Chinese can contain characters/tokens.",
+  "validation": "finite integer milliseconds, ordered non-overlapping units within source duration",
+  "humanReviewRequired": true
+}

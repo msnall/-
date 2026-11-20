@@ -1,0 +1,39 @@
+{
+  "status": "unreviewed machine transcript",
+  "detectedLanguage": "en",
+  "instructions": "Verify names, brands, product terms, numbers and claims against the audio. Token probabilities are not calibrated accuracy scores. No spelling was auto-corrected.",
+  "warnings": [
+    {
+      "index": 1,
+      "text": "i",
+      "startMs": 0,
+      "endMs": 60,
+      "confidence": 0.194251,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 12,
+      "text": "it",
+      "startMs": 2720,
+      "endMs": 2880,
+      "confidence": 0.581661,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 19,
+      "text": "if",
+      "startMs": 5190,
+      "endMs": 5390,
+      "confidence": 0.383351,
+      "reason": "low token probability; human review needed"
+    },
+    {
+      "index": 26,
+      "text": "geeka",
+      "startMs": 7670,
+      "endMs": 8240,
+      "confidence": 0.630142,
+      "reason": "low token probability; human review needed"
+    }
+  ]
+}
